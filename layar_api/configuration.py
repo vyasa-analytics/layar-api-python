@@ -256,7 +256,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                format(env=sys.platform, pyversion=sys.version)
 
     def fetch_access_token(self, client_id, client_secret):
-        return requests.post ("{}/connect/oauth/token".format(self.host),
+        return requests.post ("{}/connect/oauth/token".format(self.host.replace('/layar', '')),
             headers={'Accept':'application/json'},
             auth=HTTPBasicAuth (client_id,client_secret) ,
             params={'grant_type':'client_credentials'}
