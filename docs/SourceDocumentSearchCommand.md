@@ -1,0 +1,46 @@
+# SourceDocumentSearchCommand
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**annotation_searches** | [**list[AnnotationSearch]**](AnnotationSearch.md) |  | [optional] 
+**category_ids** | **list[str]** |  | [optional] 
+**concept_ids** | **list[str]** |  | [optional] 
+**connector_id** | **str** |  | [optional] 
+**connector_ids** | **list[str]** |  | [optional] 
+**data_source_types** | **list[str]** |  | [optional] 
+**excludes** | [**SourceDocumentExcludeSearchCommand**](SourceDocumentExcludeSearchCommand.md) |  | [optional] 
+**has_fields** | **list[str]** |  | [optional] 
+**highlight** | **bool** |  | [optional] 
+**highlight_fragment_size** | **int** |  | [optional] 
+**highlight_number_of_fragments** | **int** |  | [optional] 
+**highlight_post_tag** | **str** |  | [optional] 
+**highlight_pre_tag** | **str** |  | [optional] 
+**ids** | **list[str]** |  | [optional] 
+**live_source_id** | **str** |  | [optional] 
+**live_source_ids** | **list[str]** |  | [optional] 
+**live_source_types** | [**list[LiveSourceType]**](LiveSourceType.md) |  | [optional] 
+**log_search** | **bool** |  | [optional] 
+**mime_types** | **list[str]** |  | [optional] 
+**must_have_annotations** | **bool** |  | [optional] 
+**named_entities** | [**list[NamedEntity]**](NamedEntity.md) |  | [optional] 
+**parent_ids** | **list[str]** |  | [optional] 
+**paths** | **list[str]** |  | [optional] 
+**project_computation_id** | **str** |  | [optional] 
+**question** | **str** |  | [optional] 
+**saved_list_ids** | **list[str]** |  | [optional] 
+**section_searches** | [**list[SectionSearch]**](SectionSearch.md) |  | [optional] 
+**similarity_document_id** | **str** |  | [optional] 
+**similarity_threshold** | **float** |  | [optional] 
+**source_fields** | **list[str]** |  | [optional] 
+**sources** | **list[str]** |  | [optional] 
+**term_operator** | **str** |  | [optional] 
+**terms** | **list[str]** |  | [optional] 
+**trial_data** | **object** |  | [optional] 
+**type** | [**SourceDocumentType**](SourceDocumentType.md) |  | [optional] 
+**types** | [**list[SourceDocumentType]**](SourceDocumentType.md) |  | [optional] 
+**user_ids** | **list[int]** |  | [optional] 
+**vyasa_clients** | **list[str]** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
