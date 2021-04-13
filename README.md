@@ -184,6 +184,8 @@ Class | Method | HTTP request | Description
 *SourceDocumentApi* | [**add_viewer**](docs/SourceDocumentApi.md#add_viewer) | **POST** /sourceDocument/{id}/viewers | add a viewer to the source document
 *SourceDocumentApi* | [**create**](docs/SourceDocumentApi.md#create) | **POST** /sourceDocument | save
 *SourceDocumentApi* | [**delete**](docs/SourceDocumentApi.md#delete) | **DELETE** /sourceDocument/{id} | delete
+*SourceDocumentApi* | [**delete_0**](docs/SourceDocumentApi.md#delete_0) | **DELETE** /sourceDocument/{id}/annotations | delete
+*SourceDocumentApi* | [**delete_1**](docs/SourceDocumentApi.md#delete_1) | **DELETE** /sourceDocument/{id}/annotations/{annotationId} | delete
 *SourceDocumentApi* | [**delete_many**](docs/SourceDocumentApi.md#delete_many) | **DELETE** /sourceDocument/deleteMany | deleteMany
 *SourceDocumentApi* | [**download**](docs/SourceDocumentApi.md#download) | **GET** /sourceDocument/{id}/download | download
 *SourceDocumentApi* | [**download_annotations**](docs/SourceDocumentApi.md#download_annotations) | **GET** /sourceDocument/downloadAnnotations | downloads annotations as csv of one or more source document
@@ -204,6 +206,8 @@ Class | Method | HTTP request | Description
 *SourceDocumentApi* | [**render_pdf**](docs/SourceDocumentApi.md#render_pdf) | **GET** /sourceDocument/{id}/renderPdf | renderPdf
 *SourceDocumentApi* | [**search**](docs/SourceDocumentApi.md#search) | **POST** /sourceDocument/search | 
 *SourceDocumentApi* | [**update**](docs/SourceDocumentApi.md#update) | **PUT** /sourceDocument/{id} | update
+*SourceDocumentApi* | [**update_annotation**](docs/SourceDocumentApi.md#update_annotation) | **PUT** /sourceDocument/{id}/annotations | updateAnnotations
+*SourceDocumentApi* | [**update_annotation_0**](docs/SourceDocumentApi.md#update_annotation_0) | **PUT** /sourceDocument/{id}/annotations/{annotationId} | updateAnnotations
 *StatementApi* | [**create**](docs/StatementApi.md#create) | **POST** /statement | save
 *StatementApi* | [**delete**](docs/StatementApi.md#delete) | **DELETE** /statement/{id} | delete
 *StatementApi* | [**delete_many**](docs/StatementApi.md#delete_many) | **DELETE** /statement/deleteMany | deleteMany
