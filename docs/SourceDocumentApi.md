@@ -10,8 +10,6 @@ Method | HTTP request | Description
 [**add_viewer**](SourceDocumentApi.md#add_viewer) | **POST** /sourceDocument/{id}/viewers | add a viewer to the source document
 [**create**](SourceDocumentApi.md#create) | **POST** /sourceDocument | save
 [**delete**](SourceDocumentApi.md#delete) | **DELETE** /sourceDocument/{id} | delete
-[**delete_0**](SourceDocumentApi.md#delete_0) | **DELETE** /sourceDocument/{id}/annotations | delete
-[**delete_1**](SourceDocumentApi.md#delete_1) | **DELETE** /sourceDocument/{id}/annotations/{annotationId} | delete
 [**delete_many**](SourceDocumentApi.md#delete_many) | **DELETE** /sourceDocument/deleteMany | deleteMany
 [**download**](SourceDocumentApi.md#download) | **GET** /sourceDocument/{id}/download | download
 [**download_annotations**](SourceDocumentApi.md#download_annotations) | **GET** /sourceDocument/downloadAnnotations | downloads annotations as csv of one or more source document
@@ -29,11 +27,11 @@ Method | HTTP request | Description
 [**get_statements**](SourceDocumentApi.md#get_statements) | **GET** /sourceDocument/{id}/statements | bySource
 [**get_status**](SourceDocumentApi.md#get_status) | **GET** /sourceDocument/{id}/status | status
 [**get_viewers**](SourceDocumentApi.md#get_viewers) | **GET** /sourceDocument/{id}/viewers | get a list of all viewers of the source document
+[**remove_annotation**](SourceDocumentApi.md#remove_annotation) | **DELETE** /sourceDocument/{id}/annotations/{annotationId} | delete
 [**render_pdf**](SourceDocumentApi.md#render_pdf) | **GET** /sourceDocument/{id}/renderPdf | renderPdf
 [**search**](SourceDocumentApi.md#search) | **POST** /sourceDocument/search | 
 [**update**](SourceDocumentApi.md#update) | **PUT** /sourceDocument/{id} | update
 [**update_annotation**](SourceDocumentApi.md#update_annotation) | **PUT** /sourceDocument/{id}/annotations | updateAnnotations
-[**update_annotation_0**](SourceDocumentApi.md#update_annotation_0) | **PUT** /sourceDocument/{id}/annotations/{annotationId} | updateAnnotations
 
 # **add_annotation**
 > add_annotation(body, id)
@@ -346,98 +344,6 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_0**
-> delete_0()
-
-delete
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-
-try:
-    # delete
-    api_instance.delete_0()
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->delete_0: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_1**
-> delete_1()
-
-delete
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-
-try:
-    # delete
-    api_instance.delete_1()
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->delete_1: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1316,6 +1222,52 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **remove_annotation**
+> remove_annotation()
+
+delete
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+
+try:
+    # delete
+    api_instance.remove_annotation()
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->remove_annotation: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **render_pdf**
 > str render_pdf(id)
 
@@ -1500,58 +1452,6 @@ try:
     api_instance.update_annotation(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->update_annotation: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Annotation**](Annotation.md)|  | 
- **id** | **str**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_annotation_0**
-> update_annotation_0(body, id)
-
-updateAnnotations
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-body = layar_api.Annotation() # Annotation | 
-id = 'id_example' # str | 
-
-try:
-    # updateAnnotations
-    api_instance.update_annotation_0(body, id)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->update_annotation_0: %s\n" % e)
 ```
 
 ### Parameters
