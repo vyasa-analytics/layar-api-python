@@ -126,6 +126,7 @@ from layar_api.models.source_document_type import SourceDocumentType
 from layar_api.models.source_document_viewer import SourceDocumentViewer
 from layar_api.models.source_documents_assignment import SourceDocumentsAssignment
 from layar_api.models.statement import Statement
+from layar_api.models.statement_named_entity_command import StatementNamedEntityCommand
 from layar_api.models.statement_search_command import StatementSearchCommand
 from layar_api.models.statement_similarity import StatementSimilarity
 from layar_api.models.stop_training import StopTraining

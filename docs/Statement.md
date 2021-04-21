@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **detected_types** | **list[str]** |  | [optional] 
 **document_id** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**named_entities** | [**list[NamedEntity]**](NamedEntity.md) |  | [optional] 
 **noun_phrases_json_string** | **str** |  | [optional] 
 **pos_metadata_json_string** | **str** |  | [optional] 
 **raw_text** | **str** |  | [optional] 

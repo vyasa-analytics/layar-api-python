@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
 *ModuleApi* | [**get**](docs/ModuleApi.md#get) | **GET** /module/{id} | module details
 *ModuleApi* | [**search**](docs/ModuleApi.md#search) | **GET** /module | search for modules
 *NamedEntityApi* | [**get_types**](docs/NamedEntityApi.md#get_types) | **GET** /namedEntity/types | A list of the available Named Entity Types
+*NamedEntityApi* | [**named_entity_tag**](docs/NamedEntityApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
 *NamedEntityApi* | [**tag**](docs/NamedEntityApi.md#tag) | **POST** /namedEntity/tag | 
 *ProjectApi* | [**add_input**](docs/ProjectApi.md#add_input) | **PUT** /project/{id}/addInput | addInput
 *ProjectApi* | [**create**](docs/ProjectApi.md#create) | **POST** /project | save
@@ -212,6 +213,7 @@ Class | Method | HTTP request | Description
 *StatementApi* | [**get**](docs/StatementApi.md#get) | **GET** /statement/{id} | statement details
 *StatementApi* | [**get_field_counts**](docs/StatementApi.md#get_field_counts) | **POST** /statement/{field}/counts | 
 *StatementApi* | [**get_relationship_evidence**](docs/StatementApi.md#get_relationship_evidence) | **GET** /statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2} | relationshipEvidence
+*StatementApi* | [**named_entity_tag**](docs/StatementApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
 *StatementApi* | [**search**](docs/StatementApi.md#search) | **POST** /statement/search | search for statements
 *StatementApi* | [**update**](docs/StatementApi.md#update) | **PUT** /statement/{id} | update
 *StatusApi* | [**get**](docs/StatusApi.md#get) | **GET** /app | 

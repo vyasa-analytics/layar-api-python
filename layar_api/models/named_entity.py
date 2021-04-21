@@ -28,24 +28,55 @@ class NamedEntity(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'column_key': 'str',
         'concept': 'str',
-        'pos': 'list[list[float]]'
+        'pos': 'list[list[float]]',
+        'type_id': 'str'
     }
 
     attribute_map = {
+        'column_key': 'columnKey',
         'concept': 'concept',
-        'pos': 'pos'
+        'pos': 'pos',
+        'type_id': 'typeId'
     }
 
-    def __init__(self, concept=None, pos=None):  # noqa: E501
+    def __init__(self, column_key=None, concept=None, pos=None, type_id=None):  # noqa: E501
         """NamedEntity - a model defined in Swagger"""  # noqa: E501
+        self._column_key = None
         self._concept = None
         self._pos = None
+        self._type_id = None
         self.discriminator = None
+        if column_key is not None:
+            self.column_key = column_key
         if concept is not None:
             self.concept = concept
         if pos is not None:
             self.pos = pos
+        if type_id is not None:
+            self.type_id = type_id
+
+    @property
+    def column_key(self):
+        """Gets the column_key of this NamedEntity.  # noqa: E501
+
+
+        :return: The column_key of this NamedEntity.  # noqa: E501
+        :rtype: str
+        """
+        return self._column_key
+
+    @column_key.setter
+    def column_key(self, column_key):
+        """Sets the column_key of this NamedEntity.
+
+
+        :param column_key: The column_key of this NamedEntity.  # noqa: E501
+        :type: str
+        """
+
+        self._column_key = column_key
 
     @property
     def concept(self):
@@ -88,6 +119,27 @@ class NamedEntity(object):
         """
 
         self._pos = pos
+
+    @property
+    def type_id(self):
+        """Gets the type_id of this NamedEntity.  # noqa: E501
+
+
+        :return: The type_id of this NamedEntity.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_id
+
+    @type_id.setter
+    def type_id(self, type_id):
+        """Sets the type_id of this NamedEntity.
+
+
+        :param type_id: The type_id of this NamedEntity.  # noqa: E501
+        :type: str
+        """
+
+        self._type_id = type_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

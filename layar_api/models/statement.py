@@ -37,6 +37,7 @@ class Statement(object):
         'detected_types': 'list[str]',
         'document_id': 'str',
         'id': 'str',
+        'named_entities': 'list[NamedEntity]',
         'noun_phrases_json_string': 'str',
         'pos_metadata_json_string': 'str',
         'raw_text': 'str',
@@ -59,6 +60,7 @@ class Statement(object):
         'detected_types': 'detectedTypes',
         'document_id': 'documentId',
         'id': 'id',
+        'named_entities': 'namedEntities',
         'noun_phrases_json_string': 'nounPhrasesJsonString',
         'pos_metadata_json_string': 'posMetadataJsonString',
         'raw_text': 'rawText',
@@ -71,7 +73,7 @@ class Statement(object):
         'type': 'type'
     }
 
-    def __init__(self, chem_ner_metadata=None, column_keys=None, columns=None, date_indexed=None, detected_concepts=None, detected_concepts_with_position=None, detected_types=None, document_id=None, id=None, noun_phrases_json_string=None, pos_metadata_json_string=None, raw_text=None, similarity=None, source=None, start_offset=None, tagged_concepts=None, tagged_relationships=None, tweet=None, type=None):  # noqa: E501
+    def __init__(self, chem_ner_metadata=None, column_keys=None, columns=None, date_indexed=None, detected_concepts=None, detected_concepts_with_position=None, detected_types=None, document_id=None, id=None, named_entities=None, noun_phrases_json_string=None, pos_metadata_json_string=None, raw_text=None, similarity=None, source=None, start_offset=None, tagged_concepts=None, tagged_relationships=None, tweet=None, type=None):  # noqa: E501
         """Statement - a model defined in Swagger"""  # noqa: E501
         self._chem_ner_metadata = None
         self._column_keys = None
@@ -82,6 +84,7 @@ class Statement(object):
         self._detected_types = None
         self._document_id = None
         self._id = None
+        self._named_entities = None
         self._noun_phrases_json_string = None
         self._pos_metadata_json_string = None
         self._raw_text = None
@@ -111,6 +114,8 @@ class Statement(object):
             self.document_id = document_id
         if id is not None:
             self.id = id
+        if named_entities is not None:
+            self.named_entities = named_entities
         if noun_phrases_json_string is not None:
             self.noun_phrases_json_string = noun_phrases_json_string
         if pos_metadata_json_string is not None:
@@ -320,6 +325,27 @@ class Statement(object):
         """
 
         self._id = id
+
+    @property
+    def named_entities(self):
+        """Gets the named_entities of this Statement.  # noqa: E501
+
+
+        :return: The named_entities of this Statement.  # noqa: E501
+        :rtype: list[NamedEntity]
+        """
+        return self._named_entities
+
+    @named_entities.setter
+    def named_entities(self, named_entities):
+        """Sets the named_entities of this Statement.
+
+
+        :param named_entities: The named_entities of this Statement.  # noqa: E501
+        :type: list[NamedEntity]
+        """
+
+        self._named_entities = named_entities
 
     @property
     def noun_phrases_json_string(self):
