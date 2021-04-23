@@ -30,20 +30,32 @@ class AnnotationSearch(object):
     swagger_types = {
         'key': 'str',
         'value_type': 'str',
-        'values': 'list[OneOfAnnotationSearchValuesItems]'
+        'values': 'list[OneOfAnnotationSearchValuesItems]',
+        'min_value': 'int',
+        'max_value': 'int',
+        'min_date_value': 'datetime',
+        'max_date_value': 'datetime'
     }
 
     attribute_map = {
         'key': 'key',
         'value_type': 'valueType',
-        'values': 'values'
+        'values': 'values',
+        'min_value': 'minValue',
+        'max_value': 'maxValue',
+        'min_date_value': 'minDateValue',
+        'max_date_value': 'maxDateValue'
     }
 
-    def __init__(self, key=None, value_type=None, values=None):  # noqa: E501
+    def __init__(self, key=None, value_type=None, values=None, min_value=None, max_value=None, min_date_value=None, max_date_value=None):  # noqa: E501
         """AnnotationSearch - a model defined in Swagger"""  # noqa: E501
         self._key = None
         self._value_type = None
         self._values = None
+        self._min_value = None
+        self._max_value = None
+        self._min_date_value = None
+        self._max_date_value = None
         self.discriminator = None
         if key is not None:
             self.key = key
@@ -51,6 +63,14 @@ class AnnotationSearch(object):
             self.value_type = value_type
         if values is not None:
             self.values = values
+        if min_value is not None:
+            self.min_value = min_value
+        if max_value is not None:
+            self.max_value = max_value
+        if min_date_value is not None:
+            self.min_date_value = min_date_value
+        if max_date_value is not None:
+            self.max_date_value = max_date_value
 
     @property
     def key(self):
@@ -120,6 +140,90 @@ class AnnotationSearch(object):
         """
 
         self._values = values
+
+    @property
+    def min_value(self):
+        """Gets the min_value of this AnnotationSearch.  # noqa: E501
+
+
+        :return: The min_value of this AnnotationSearch.  # noqa: E501
+        :rtype: int
+        """
+        return self._min_value
+
+    @min_value.setter
+    def min_value(self, min_value):
+        """Sets the min_value of this AnnotationSearch.
+
+
+        :param min_value: The min_value of this AnnotationSearch.  # noqa: E501
+        :type: int
+        """
+
+        self._min_value = min_value
+
+    @property
+    def max_value(self):
+        """Gets the max_value of this AnnotationSearch.  # noqa: E501
+
+
+        :return: The max_value of this AnnotationSearch.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_value
+
+    @max_value.setter
+    def max_value(self, max_value):
+        """Sets the max_value of this AnnotationSearch.
+
+
+        :param max_value: The max_value of this AnnotationSearch.  # noqa: E501
+        :type: int
+        """
+
+        self._max_value = max_value
+
+    @property
+    def min_date_value(self):
+        """Gets the min_date_value of this AnnotationSearch.  # noqa: E501
+
+
+        :return: The min_date_value of this AnnotationSearch.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._min_date_value
+
+    @min_date_value.setter
+    def min_date_value(self, min_date_value):
+        """Sets the min_date_value of this AnnotationSearch.
+
+
+        :param min_date_value: The min_date_value of this AnnotationSearch.  # noqa: E501
+        :type: datetime
+        """
+
+        self._min_date_value = min_date_value
+
+    @property
+    def max_date_value(self):
+        """Gets the max_date_value of this AnnotationSearch.  # noqa: E501
+
+
+        :return: The max_date_value of this AnnotationSearch.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._max_date_value
+
+    @max_date_value.setter
+    def max_date_value(self, max_date_value):
+        """Sets the max_date_value of this AnnotationSearch.
+
+
+        :param max_date_value: The max_date_value of this AnnotationSearch.  # noqa: E501
+        :type: datetime
+        """
+
+        self._max_date_value = max_date_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""
