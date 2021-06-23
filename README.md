@@ -118,7 +118,7 @@ Class | Method | HTTP request | Description
 *LiveSourceApi* | [**update**](docs/LiveSourceApi.md#update) | **PUT** /liveSource/{id} | update
 *LiveSourceApi* | [**update_job**](docs/LiveSourceApi.md#update_job) | **PUT** /liveSource/{id}/{jobAction} | jobAction
 *ModelApi* | [**download**](docs/ModelApi.md#download) | **GET** /model/{id}/download | download
-*ModelApi* | [**search_by_computation_id**](docs/ModelApi.md#search_by_computation_id) | **GET** /projectComputation/{computationId}/models | find deep learning models by project computation
+*ModelApi* | [**search_by_computation_id**](docs/ModelApi.md#search_by_computation_id) | **GET** /projectComputation/{id}/models | find deep learning models by project computation
 *ModelApi* | [**search_by_module_id**](docs/ModelApi.md#search_by_module_id) | **GET** /module/{moduleId}/models | find deep learning models by module
 *ModelApi* | [**search_by_project_id**](docs/ModelApi.md#search_by_project_id) | **GET** /project/{projectId}/models | find deep learning models by project
 *ModuleApi* | [**create**](docs/ModuleApi.md#create) | **POST** /module | save
@@ -139,12 +139,12 @@ Class | Method | HTTP request | Description
 *ProjectApi* | [**run**](docs/ProjectApi.md#run) | **POST** /project/{id}/run | run
 *ProjectApi* | [**search**](docs/ProjectApi.md#search) | **GET** /project | 
 *ProjectApi* | [**update**](docs/ProjectApi.md#update) | **PUT** /project/{id} | update
-*ProjectComputationApi* | [**cancel**](docs/ProjectComputationApi.md#cancel) | **POST** /projectComputation/{computationId}/cancel | cancel and shut down project computation without expecting any results back
-*ProjectComputationApi* | [**download_logs**](docs/ProjectComputationApi.md#download_logs) | **GET** /projectComputation/{computationId}/downloadLogs | download full logs for computation job
-*ProjectComputationApi* | [**download_results**](docs/ProjectComputationApi.md#download_results) | **GET** /projectComputation/{computationId}/downloadZipResults | download zip of documents created during computation
+*ProjectComputationApi* | [**cancel**](docs/ProjectComputationApi.md#cancel) | **POST** /projectComputation/{id}/cancel | cancel and shut down project computation without expecting any results back
+*ProjectComputationApi* | [**download_logs**](docs/ProjectComputationApi.md#download_logs) | **GET** /projectComputation/{id}/downloadLogs | download full logs for computation job
+*ProjectComputationApi* | [**download_results**](docs/ProjectComputationApi.md#download_results) | **GET** /projectComputation/{id}/downloadZipResults | download zip of documents created during computation
 *ProjectComputationApi* | [**get**](docs/ProjectComputationApi.md#get) | **GET** /projectComputation/{id} | project computation details
-*ProjectComputationApi* | [**get_logs**](docs/ProjectComputationApi.md#get_logs) | **GET** /projectComputation/{computationId}/logs | retrieve logs for computation job
-*ProjectComputationApi* | [**stop**](docs/ProjectComputationApi.md#stop) | **POST** /projectComputation/{computationId}/stopTraining | send computation job a stop message encouraging it to stop and send any results back
+*ProjectComputationApi* | [**get_logs**](docs/ProjectComputationApi.md#get_logs) | **GET** /projectComputation/{id}/logs | retrieve logs for computation job
+*ProjectComputationApi* | [**stop**](docs/ProjectComputationApi.md#stop) | **POST** /projectComputation/{id}/stopTraining | send computation job a stop message encouraging it to stop and send any results back
 *QuestionApi* | [**ask**](docs/QuestionApi.md#ask) | **POST** /question/ask | 
 *QuestionApi* | [**cancel_batch**](docs/QuestionApi.md#cancel_batch) | **PUT** /question/cancelBulkQuestionAnswerJob/{jobID} | cancel an existing request to ask a batch of questions
 *QuestionApi* | [**create**](docs/QuestionApi.md#create) | **POST** /question | save a new question

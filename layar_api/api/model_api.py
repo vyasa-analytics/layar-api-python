@@ -125,15 +125,16 @@ class ModelApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_by_computation_id(self, computation_id, **kwargs):  # noqa: E501
+    def search_by_computation_id(self, id, computation_id, **kwargs):  # noqa: E501
         """find deep learning models by project computation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_computation_id(computation_id, async_req=True)
+        >>> thread = api.search_by_computation_id(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :param int start: the start offset for the row
         :param int rows: the number of rows to return
@@ -144,20 +145,21 @@ class ModelApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_by_computation_id_with_http_info(computation_id, **kwargs)  # noqa: E501
+            return self.search_by_computation_id_with_http_info(id, computation_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_by_computation_id_with_http_info(computation_id, **kwargs)  # noqa: E501
+            (data) = self.search_by_computation_id_with_http_info(id, computation_id, **kwargs)  # noqa: E501
             return data
 
-    def search_by_computation_id_with_http_info(self, computation_id, **kwargs):  # noqa: E501
+    def search_by_computation_id_with_http_info(self, id, computation_id, **kwargs):  # noqa: E501
         """find deep learning models by project computation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_computation_id_with_http_info(computation_id, async_req=True)
+        >>> thread = api.search_by_computation_id_with_http_info(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :param int start: the start offset for the row
         :param int rows: the number of rows to return
@@ -167,7 +169,7 @@ class ModelApi(object):
                  returns the request thread.
         """
 
-        all_params = ['computation_id', 'start', 'rows', 'q']  # noqa: E501
+        all_params = ['id', 'computation_id', 'start', 'rows', 'q']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -182,6 +184,10 @@ class ModelApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `search_by_computation_id`")  # noqa: E501
         # verify the required parameter 'computation_id' is set
         if ('computation_id' not in params or
                 params['computation_id'] is None):
@@ -190,6 +196,8 @@ class ModelApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
         if 'computation_id' in params:
             path_params['computationId'] = params['computation_id']  # noqa: E501
 
@@ -215,7 +223,7 @@ class ModelApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{computationId}/models', 'GET',
+            '/projectComputation/{id}/models', 'GET',
             path_params,
             query_params,
             header_params,

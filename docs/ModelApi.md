@@ -5,7 +5,7 @@ All URIs are relative to *BASE_PATH*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**download**](ModelApi.md#download) | **GET** /model/{id}/download | download
-[**search_by_computation_id**](ModelApi.md#search_by_computation_id) | **GET** /projectComputation/{computationId}/models | find deep learning models by project computation
+[**search_by_computation_id**](ModelApi.md#search_by_computation_id) | **GET** /projectComputation/{id}/models | find deep learning models by project computation
 [**search_by_module_id**](ModelApi.md#search_by_module_id) | **GET** /module/{moduleId}/models | find deep learning models by module
 [**search_by_project_id**](ModelApi.md#search_by_project_id) | **GET** /project/{projectId}/models | find deep learning models by project
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_by_computation_id**
-> list[DeepLearningModel] search_by_computation_id(computation_id, start=start, rows=rows, q=q)
+> list[DeepLearningModel] search_by_computation_id(id, computation_id, start=start, rows=rows, q=q)
 
 find deep learning models by project computation
 
@@ -80,6 +80,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ModelApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
 computation_id = 'computation_id_example' # str | 
 start = 56 # int | the start offset for the row (optional)
 rows = 56 # int | the number of rows to return (optional)
@@ -87,7 +88,7 @@ q = 'q_example' # str | the query string to search for (optional)
 
 try:
     # find deep learning models by project computation
-    api_response = api_instance.search_by_computation_id(computation_id, start=start, rows=rows, q=q)
+    api_response = api_instance.search_by_computation_id(id, computation_id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelApi->search_by_computation_id: %s\n" % e)
@@ -97,6 +98,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
  **computation_id** | **str**|  | 
  **start** | **int**| the start offset for the row | [optional] 
  **rows** | **int**| the number of rows to return | [optional] 

@@ -32,41 +32,43 @@ class ProjectComputationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancel(self, **kwargs):  # noqa: E501
+    def cancel(self, id, **kwargs):  # noqa: E501
         """cancel and shut down project computation without expecting any results back  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel(async_req=True)
+        >>> thread = api.cancel(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: ProjectComputation
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cancel_with_http_info(**kwargs)  # noqa: E501
+            return self.cancel_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.cancel_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.cancel_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def cancel_with_http_info(self, **kwargs):  # noqa: E501
+    def cancel_with_http_info(self, id, **kwargs):  # noqa: E501
         """cancel and shut down project computation without expecting any results back  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_with_http_info(async_req=True)
+        >>> thread = api.cancel_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: ProjectComputation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -81,10 +83,16 @@ class ProjectComputationApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `cancel`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -102,7 +110,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{computationId}/cancel', 'POST',
+            '/projectComputation/{id}/cancel', 'POST',
             path_params,
             query_params,
             header_params,
@@ -117,15 +125,16 @@ class ProjectComputationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def download_logs(self, computation_id, **kwargs):  # noqa: E501
+    def download_logs(self, id, computation_id, **kwargs):  # noqa: E501
         """download full logs for computation job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_logs(computation_id, async_req=True)
+        >>> thread = api.download_logs(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :return: str
                  If the method is called asynchronously,
@@ -133,27 +142,28 @@ class ProjectComputationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.download_logs_with_http_info(computation_id, **kwargs)  # noqa: E501
+            return self.download_logs_with_http_info(id, computation_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.download_logs_with_http_info(computation_id, **kwargs)  # noqa: E501
+            (data) = self.download_logs_with_http_info(id, computation_id, **kwargs)  # noqa: E501
             return data
 
-    def download_logs_with_http_info(self, computation_id, **kwargs):  # noqa: E501
+    def download_logs_with_http_info(self, id, computation_id, **kwargs):  # noqa: E501
         """download full logs for computation job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_logs_with_http_info(computation_id, async_req=True)
+        >>> thread = api.download_logs_with_http_info(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['computation_id']  # noqa: E501
+        all_params = ['id', 'computation_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -168,6 +178,10 @@ class ProjectComputationApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `download_logs`")  # noqa: E501
         # verify the required parameter 'computation_id' is set
         if ('computation_id' not in params or
                 params['computation_id'] is None):
@@ -176,6 +190,8 @@ class ProjectComputationApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
         if 'computation_id' in params:
             path_params['computationId'] = params['computation_id']  # noqa: E501
 
@@ -195,7 +211,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{computationId}/downloadLogs', 'GET',
+            '/projectComputation/{id}/downloadLogs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -210,15 +226,16 @@ class ProjectComputationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def download_results(self, computation_id, **kwargs):  # noqa: E501
+    def download_results(self, id, computation_id, **kwargs):  # noqa: E501
         """download zip of documents created during computation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_results(computation_id, async_req=True)
+        >>> thread = api.download_results(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :return: str
                  If the method is called asynchronously,
@@ -226,27 +243,28 @@ class ProjectComputationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.download_results_with_http_info(computation_id, **kwargs)  # noqa: E501
+            return self.download_results_with_http_info(id, computation_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.download_results_with_http_info(computation_id, **kwargs)  # noqa: E501
+            (data) = self.download_results_with_http_info(id, computation_id, **kwargs)  # noqa: E501
             return data
 
-    def download_results_with_http_info(self, computation_id, **kwargs):  # noqa: E501
+    def download_results_with_http_info(self, id, computation_id, **kwargs):  # noqa: E501
         """download zip of documents created during computation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_results_with_http_info(computation_id, async_req=True)
+        >>> thread = api.download_results_with_http_info(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['computation_id']  # noqa: E501
+        all_params = ['id', 'computation_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -261,6 +279,10 @@ class ProjectComputationApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `download_results`")  # noqa: E501
         # verify the required parameter 'computation_id' is set
         if ('computation_id' not in params or
                 params['computation_id'] is None):
@@ -269,6 +291,8 @@ class ProjectComputationApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
         if 'computation_id' in params:
             path_params['computationId'] = params['computation_id']  # noqa: E501
 
@@ -288,7 +312,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{computationId}/downloadZipResults', 'GET',
+            '/projectComputation/{id}/downloadZipResults', 'GET',
             path_params,
             query_params,
             header_params,
@@ -303,41 +327,43 @@ class ProjectComputationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, **kwargs):  # noqa: E501
+    def get(self, id, **kwargs):  # noqa: E501
         """project computation details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(async_req=True)
+        >>> thread = api.get(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: ProjectComputation
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, **kwargs):  # noqa: E501
+    def get_with_http_info(self, id, **kwargs):  # noqa: E501
         """project computation details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(async_req=True)
+        >>> thread = api.get_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: ProjectComputation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -352,10 +378,16 @@ class ProjectComputationApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -388,15 +420,16 @@ class ProjectComputationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_logs(self, computation_id, **kwargs):  # noqa: E501
+    def get_logs(self, id, computation_id, **kwargs):  # noqa: E501
         """retrieve logs for computation job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_logs(computation_id, async_req=True)
+        >>> thread = api.get_logs(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :param int max_rows:
         :param str order:
@@ -406,20 +439,21 @@ class ProjectComputationApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_logs_with_http_info(computation_id, **kwargs)  # noqa: E501
+            return self.get_logs_with_http_info(id, computation_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_logs_with_http_info(computation_id, **kwargs)  # noqa: E501
+            (data) = self.get_logs_with_http_info(id, computation_id, **kwargs)  # noqa: E501
             return data
 
-    def get_logs_with_http_info(self, computation_id, **kwargs):  # noqa: E501
+    def get_logs_with_http_info(self, id, computation_id, **kwargs):  # noqa: E501
         """retrieve logs for computation job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_logs_with_http_info(computation_id, async_req=True)
+        >>> thread = api.get_logs_with_http_info(id, computation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str computation_id: (required)
         :param int max_rows:
         :param str order:
@@ -428,7 +462,7 @@ class ProjectComputationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['computation_id', 'max_rows', 'order']  # noqa: E501
+        all_params = ['id', 'computation_id', 'max_rows', 'order']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -443,6 +477,10 @@ class ProjectComputationApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get_logs`")  # noqa: E501
         # verify the required parameter 'computation_id' is set
         if ('computation_id' not in params or
                 params['computation_id'] is None):
@@ -451,6 +489,8 @@ class ProjectComputationApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
         if 'computation_id' in params:
             path_params['computationId'] = params['computation_id']  # noqa: E501
 
@@ -474,7 +514,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{computationId}/logs', 'GET',
+            '/projectComputation/{id}/logs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -489,41 +529,43 @@ class ProjectComputationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def stop(self, **kwargs):  # noqa: E501
+    def stop(self, id, **kwargs):  # noqa: E501
         """send computation job a stop message encouraging it to stop and send any results back  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.stop(async_req=True)
+        >>> thread = api.stop(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: StopTraining
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.stop_with_http_info(**kwargs)  # noqa: E501
+            return self.stop_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.stop_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.stop_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def stop_with_http_info(self, **kwargs):  # noqa: E501
+    def stop_with_http_info(self, id, **kwargs):  # noqa: E501
         """send computation job a stop message encouraging it to stop and send any results back  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.stop_with_http_info(async_req=True)
+        >>> thread = api.stop_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: StopTraining
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -538,10 +580,16 @@ class ProjectComputationApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `stop`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -559,7 +607,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{computationId}/stopTraining', 'POST',
+            '/projectComputation/{id}/stopTraining', 'POST',
             path_params,
             query_params,
             header_params,
