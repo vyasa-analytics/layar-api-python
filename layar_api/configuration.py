@@ -252,7 +252,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2.0\n"\
-               "SDK Package Version: v1.0.666".\
+               "SDK Package Version: development".\
                format(env=sys.platform, pyversion=sys.version)
 
     def fetch_access_token(self, client_id, client_secret):

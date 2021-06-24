@@ -44,7 +44,7 @@ class CompoundApi(object):
         :param str smiles_string: the SMILES string of the compound structure to render
         :param int height: the height in pixels of the rendered compound structure
         :param int width: the width in pixels of the rendered compound structure
-        :return: None
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -67,7 +67,7 @@ class CompoundApi(object):
         :param str smiles_string: the SMILES string of the compound structure to render
         :param int height: the height in pixels of the rendered compound structure
         :param int width: the width in pixels of the rendered compound structure
-        :return: None
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -106,6 +106,10 @@ class CompoundApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['image/svg+xml'])  # noqa: E501
+
         # Authentication setting
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
@@ -117,7 +121,7 @@ class CompoundApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

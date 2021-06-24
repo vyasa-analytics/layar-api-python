@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**render**](CompoundApi.md#render) | **GET** /compound/render | render
 
 # **render**
-> render(smiles_string=smiles_string, height=height, width=width)
+> str render(smiles_string=smiles_string, height=height, width=width)
 
 render
 
@@ -32,7 +32,8 @@ width = 56 # int | the width in pixels of the rendered compound structure (optio
 
 try:
     # render
-    api_instance.render(smiles_string=smiles_string, height=height, width=width)
+    api_response = api_instance.render(smiles_string=smiles_string, height=height, width=width)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompoundApi->render: %s\n" % e)
 ```
@@ -47,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -56,7 +57,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: image/svg+xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
