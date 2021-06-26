@@ -34,6 +34,7 @@ class QuestionSearchCommand(BaseSearchCommand):
         'data_providers': 'list[str]',
         'query_strings': 'list[str]',
         'question_ids': 'list[str]',
+        'assigned_user_ids': 'list[int]',
         'question_key': 'str',
         'search': 'ParagraphQuestionSearchCommand',
         'single_doc_question_document_id': 'str',
@@ -49,6 +50,7 @@ class QuestionSearchCommand(BaseSearchCommand):
         'data_providers': 'dataProviders',
         'query_strings': 'queryStrings',
         'question_ids': 'questionIds',
+        'assigned_user_ids': 'assignedUserIds',
         'question_key': 'questionKey',
         'search': 'search',
         'single_doc_question_document_id': 'singleDocQuestionDocumentId',
@@ -58,13 +60,14 @@ class QuestionSearchCommand(BaseSearchCommand):
     if hasattr(BaseSearchCommand, "attribute_map"):
         attribute_map.update(BaseSearchCommand.attribute_map)
 
-    def __init__(self, batch_grouping_key=None, complete=None, data_providers=None, query_strings=None, question_ids=None, question_key=None, search=None, single_doc_question_document_id=None, source_fields=None, type_of_search=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, batch_grouping_key=None, complete=None, data_providers=None, query_strings=None, question_ids=None, assigned_user_ids=None, question_key=None, search=None, single_doc_question_document_id=None, source_fields=None, type_of_search=None, *args, **kwargs):  # noqa: E501
         """QuestionSearchCommand - a model defined in Swagger"""  # noqa: E501
         self._batch_grouping_key = None
         self._complete = None
         self._data_providers = None
         self._query_strings = None
         self._question_ids = None
+        self._assigned_user_ids = None
         self._question_key = None
         self._search = None
         self._single_doc_question_document_id = None
@@ -81,6 +84,8 @@ class QuestionSearchCommand(BaseSearchCommand):
             self.query_strings = query_strings
         if question_ids is not None:
             self.question_ids = question_ids
+        if assigned_user_ids is not None:
+            self.assigned_user_ids = assigned_user_ids
         if question_key is not None:
             self.question_key = question_key
         if search is not None:
@@ -207,6 +212,29 @@ class QuestionSearchCommand(BaseSearchCommand):
         """
 
         self._question_ids = question_ids
+
+    @property
+    def assigned_user_ids(self):
+        """Gets the assigned_user_ids of this QuestionSearchCommand.  # noqa: E501
+
+        limit results to questions assigned to the given user ids  # noqa: E501
+
+        :return: The assigned_user_ids of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._assigned_user_ids
+
+    @assigned_user_ids.setter
+    def assigned_user_ids(self, assigned_user_ids):
+        """Sets the assigned_user_ids of this QuestionSearchCommand.
+
+        limit results to questions assigned to the given user ids  # noqa: E501
+
+        :param assigned_user_ids: The assigned_user_ids of this QuestionSearchCommand.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._assigned_user_ids = assigned_user_ids
 
     @property
     def question_key(self):
