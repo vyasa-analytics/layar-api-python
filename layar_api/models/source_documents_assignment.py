@@ -35,7 +35,7 @@ class SourceDocumentsAssignment(object):
     }
 
     attribute_map = {
-        'source_document_search_command': 'SourceDocumentSearchCommand',
+        'source_document_search_command': 'sourceDocumentSearchCommand',
         'user_id': 'userId',
         'list_id': 'listId',
         'document_names': 'documentNames'

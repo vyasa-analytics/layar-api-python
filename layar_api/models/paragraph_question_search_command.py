@@ -39,7 +39,7 @@ class ParagraphQuestionSearchCommand(BaseSearchCommand):
     attribute_map = {
         'paragraph_search_command': 'paragraphSearchCommand',
         'query_clauses': 'queryClauses',
-        'source_document_search_command': 'SourceDocumentSearchCommand'
+        'source_document_search_command': 'sourceDocumentSearchCommand'
     }
     if hasattr(BaseSearchCommand, "attribute_map"):
         attribute_map.update(BaseSearchCommand.attribute_map)
