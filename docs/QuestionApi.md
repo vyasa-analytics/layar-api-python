@@ -526,7 +526,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search**
-> Question search(body=body)
+> list[Question] search(body=body)
 
 search for questions
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Question**](Question.md)
+[**list[Question]**](Question.md)
 
 ### Authorization
 

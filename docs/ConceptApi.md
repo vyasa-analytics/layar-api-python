@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search**
-> Concept search(body=body)
+> list[Concept] search(body=body)
 
 search for concepts
 
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Concept**](Concept.md)
+[**list[Concept]**](Concept.md)
 
 ### Authorization
 

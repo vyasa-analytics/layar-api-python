@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search**
-> Answer search(body=body)
+> list[Answer] search(body=body)
 
 QA answer search
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Answer**](Answer.md)
+[**list[Answer]**](Answer.md)
 
 ### Authorization
 
