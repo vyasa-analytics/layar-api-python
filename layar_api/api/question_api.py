@@ -222,43 +222,45 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, body, **kwargs):  # noqa: E501
+    def create(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """save a new question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(body, async_req=True)
+        >>> thread = api.create(body, x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Question body: (required)
+        :param str x_vyasa_data_providers: remote data providers to query (required)
         :return: Question
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_with_http_info(body, x_vyasa_data_providers, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_with_http_info(body, x_vyasa_data_providers, **kwargs)  # noqa: E501
             return data
 
-    def create_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_with_http_info(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """save a new question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(body, async_req=True)
+        >>> thread = api.create_with_http_info(body, x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Question body: (required)
+        :param str x_vyasa_data_providers: remote data providers to query (required)
         :return: Question
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['body', 'x_vyasa_data_providers']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -277,6 +279,10 @@ class QuestionApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
+        # verify the required parameter 'x_vyasa_data_providers' is set
+        if ('x_vyasa_data_providers' not in params or
+                params['x_vyasa_data_providers'] is None):
+            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `create`")  # noqa: E501
 
         collection_formats = {}
 
@@ -285,6 +291,8 @@ class QuestionApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_vyasa_data_providers' in params:
+            header_params['X-Vyasa-Data-Providers'] = params['x_vyasa_data_providers']  # noqa: E501
 
         form_params = []
         local_var_files = {}

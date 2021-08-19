@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
-> Question create(body)
+> Question create(body, x_vyasa_data_providers)
 
 save a new question
 
@@ -140,10 +140,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.Question() # Question | 
+x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
 
 try:
     # save a new question
-    api_response = api_instance.create(body)
+    api_response = api_instance.create(body, x_vyasa_data_providers)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QuestionApi->create: %s\n" % e)
@@ -154,6 +155,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Question**](Question.md)|  | 
+ **x_vyasa_data_providers** | **str**| remote data providers to query | 
 
 ### Return type
 
