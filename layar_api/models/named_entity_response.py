@@ -28,7 +28,7 @@ class NamedEntityResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'named_entities': 'NamedEntityResponseNamedEntities',
+        'named_entities': 'list[NamedEntityResponseNamedEntities]',
         'types': 'list[str]'
     }
 
@@ -53,7 +53,7 @@ class NamedEntityResponse(object):
 
 
         :return: The named_entities of this NamedEntityResponse.  # noqa: E501
-        :rtype: NamedEntityResponseNamedEntities
+        :rtype: list[NamedEntityResponseNamedEntities]
         """
         return self._named_entities
 
@@ -63,7 +63,7 @@ class NamedEntityResponse(object):
 
 
         :param named_entities: The named_entities of this NamedEntityResponse.  # noqa: E501
-        :type: NamedEntityResponseNamedEntities
+        :type: list[NamedEntityResponseNamedEntities]
         """
 
         self._named_entities = named_entities
