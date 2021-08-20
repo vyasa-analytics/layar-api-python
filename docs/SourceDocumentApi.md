@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get**
-> SourceDocument get(id, x_vyasa_data_providers)
+> SourceDocument get(id, x_vyasa_data_providers=x_vyasa_data_providers)
 
 source document details
 
@@ -628,11 +628,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
-x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
+x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
     # source document details
-    api_response = api_instance.get(id, x_vyasa_data_providers)
+    api_response = api_instance.get(id, x_vyasa_data_providers=x_vyasa_data_providers)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->get: %s\n" % e)
@@ -643,7 +643,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **x_vyasa_data_providers** | **str**| remote data providers to query | 
+ **x_vyasa_data_providers** | **str**| remote data providers to query | [optional] 
 
 ### Return type
 

@@ -1127,39 +1127,39 @@ class SourceDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, id, x_vyasa_data_providers, **kwargs):  # noqa: E501
+    def get(self, id, **kwargs):  # noqa: E501
         """source document details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, x_vyasa_data_providers, async_req=True)
+        >>> thread = api.get(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str id: (required)
-        :param str x_vyasa_data_providers: remote data providers to query (required)
+        :param str x_vyasa_data_providers: remote data providers to query
         :return: SourceDocument
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, x_vyasa_data_providers, **kwargs)  # noqa: E501
+            return self.get_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, x_vyasa_data_providers, **kwargs)  # noqa: E501
+            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, x_vyasa_data_providers, **kwargs):  # noqa: E501
+    def get_with_http_info(self, id, **kwargs):  # noqa: E501
         """source document details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, x_vyasa_data_providers, async_req=True)
+        >>> thread = api.get_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str id: (required)
-        :param str x_vyasa_data_providers: remote data providers to query (required)
+        :param str x_vyasa_data_providers: remote data providers to query
         :return: SourceDocument
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1184,10 +1184,6 @@ class SourceDocumentApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
-        # verify the required parameter 'x_vyasa_data_providers' is set
-        if ('x_vyasa_data_providers' not in params or
-                params['x_vyasa_data_providers'] is None):
-            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get`")  # noqa: E501
 
         collection_formats = {}
 
