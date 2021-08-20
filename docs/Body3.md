@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | **str** |  | [optional] 
+**file** | [**file**](file.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **cortex_document_type** | **str** |  | [optional] 
 

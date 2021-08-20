@@ -261,7 +261,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
-file = 'file_example' # str |  (optional)
+file = '/path/to/file' # file |  (optional)
 name = 'name_example' # str |  (optional)
 cortex_document_type = 'cortex_document_type_example' # str |  (optional)
 
@@ -278,7 +278,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **x_vyasa_data_providers** | **str**| remote data providers to query | 
- **file** | **str**|  | [optional] 
+ **file** | [**file**](.md)|  | [optional] 
  **name** | **str**|  | [optional] 
  **cortex_document_type** | **str**|  | [optional] 
 
