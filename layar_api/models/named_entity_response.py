@@ -33,7 +33,7 @@ class NamedEntityResponse(object):
     }
 
     attribute_map = {
-        'named_entities': 'named_entities',
+        'named_entities': 'namedEntities',
         'types': 'types'
     }
 
