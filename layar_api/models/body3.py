@@ -28,7 +28,7 @@ class Body3(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file': 'file',
+        'file': 'str',
         'name': 'str',
         'cortex_document_type': 'str'
     }
@@ -58,7 +58,7 @@ class Body3(object):
 
 
         :return: The file of this Body3.  # noqa: E501
-        :rtype: file
+        :rtype: str
         """
         return self._file
 
@@ -68,7 +68,7 @@ class Body3(object):
 
 
         :param file: The file of this Body3.  # noqa: E501
-        :type: file
+        :type: str
         """
 
         self._file = file

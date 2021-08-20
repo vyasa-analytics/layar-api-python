@@ -438,7 +438,7 @@ class SourceDocumentApi(object):
 
         :param async_req bool
         :param str x_vyasa_data_providers: remote data providers to query (required)
-        :param file file:
+        :param str file:
         :param str name:
         :param str cortex_document_type:
         :return: SourceDocument
@@ -462,7 +462,7 @@ class SourceDocumentApi(object):
 
         :param async_req bool
         :param str x_vyasa_data_providers: remote data providers to query (required)
-        :param file file:
+        :param str file:
         :param str name:
         :param str cortex_document_type:
         :return: SourceDocument
@@ -503,7 +503,7 @@ class SourceDocumentApi(object):
         form_params = []
         local_var_files = {}
         if 'file' in params:
-            form_params.append(('file', params['file']))  # noqa: E501
+            local_var_files['file'] = params['file']  # noqa: E501
         if 'name' in params:
             form_params.append(('name', params['name']))  # noqa: E501
         if 'cortex_document_type' in params:
