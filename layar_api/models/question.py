@@ -34,19 +34,13 @@ class Question(DomainObject):
         'concept_types': 'list[str]',
         'data_providers': 'str',
         'number_of_best_answers': 'int',
-        'ontology_ids': 'list[str]',
         'query_string': 'str',
         'question_key': 'str',
         'search': 'ParagraphQuestionSearchCommand',
         'search_command_json_string': 'str',
         'single_doc_question_document_id': 'str',
-        'type_of_search': 'str',
-        'document_id': 'str',
         'template': 'str',
-        'terms': 'list[str]',
-        'values': 'Answer',
-        'rejected_values': 'list[str]',
-        'number_of_highlight_fragments': 'int'
+        'type_of_search': 'str'
     }
     if hasattr(DomainObject, "swagger_types"):
         swagger_types.update(DomainObject.swagger_types)
@@ -57,43 +51,31 @@ class Question(DomainObject):
         'concept_types': 'conceptTypes',
         'data_providers': 'dataProviders',
         'number_of_best_answers': 'numberOfBestAnswers',
-        'ontology_ids': 'ontologyIds',
         'query_string': 'queryString',
         'question_key': 'questionKey',
         'search': 'search',
         'search_command_json_string': 'searchCommandJsonString',
         'single_doc_question_document_id': 'singleDocQuestionDocumentId',
-        'type_of_search': 'typeOfSearch',
-        'document_id': 'documentId',
         'template': 'template',
-        'terms': 'terms',
-        'values': 'values',
-        'rejected_values': 'rejectedValues',
-        'number_of_highlight_fragments': 'numberOfHighlightFragments'
+        'type_of_search': 'typeOfSearch'
     }
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, data_providers=None, number_of_best_answers=None, ontology_ids=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, type_of_search=None, document_id=None, template=None, terms=None, values=None, rejected_values=None, number_of_highlight_fragments=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, data_providers=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, template=None, type_of_search=None, *args, **kwargs):  # noqa: E501
         """Question - a model defined in Swagger"""  # noqa: E501
         self._batch_grouping_key = None
         self._complete = None
         self._concept_types = None
         self._data_providers = None
         self._number_of_best_answers = None
-        self._ontology_ids = None
         self._query_string = None
         self._question_key = None
         self._search = None
         self._search_command_json_string = None
         self._single_doc_question_document_id = None
-        self._type_of_search = None
-        self._document_id = None
         self._template = None
-        self._terms = None
-        self._values = None
-        self._rejected_values = None
-        self._number_of_highlight_fragments = None
+        self._type_of_search = None
         self.discriminator = None
         if batch_grouping_key is not None:
             self.batch_grouping_key = batch_grouping_key
@@ -105,8 +87,6 @@ class Question(DomainObject):
             self.data_providers = data_providers
         if number_of_best_answers is not None:
             self.number_of_best_answers = number_of_best_answers
-        if ontology_ids is not None:
-            self.ontology_ids = ontology_ids
         if query_string is not None:
             self.query_string = query_string
         if question_key is not None:
@@ -117,20 +97,10 @@ class Question(DomainObject):
             self.search_command_json_string = search_command_json_string
         if single_doc_question_document_id is not None:
             self.single_doc_question_document_id = single_doc_question_document_id
-        if type_of_search is not None:
-            self.type_of_search = type_of_search
-        if document_id is not None:
-            self.document_id = document_id
         if template is not None:
             self.template = template
-        if terms is not None:
-            self.terms = terms
-        if values is not None:
-            self.values = values
-        if rejected_values is not None:
-            self.rejected_values = rejected_values
-        if number_of_highlight_fragments is not None:
-            self.number_of_highlight_fragments = number_of_highlight_fragments
+        if type_of_search is not None:
+            self.type_of_search = type_of_search
         DomainObject.__init__(self, *args, **kwargs)
 
     @property
@@ -239,27 +209,6 @@ class Question(DomainObject):
         self._number_of_best_answers = number_of_best_answers
 
     @property
-    def ontology_ids(self):
-        """Gets the ontology_ids of this Question.  # noqa: E501
-
-
-        :return: The ontology_ids of this Question.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._ontology_ids
-
-    @ontology_ids.setter
-    def ontology_ids(self, ontology_ids):
-        """Sets the ontology_ids of this Question.
-
-
-        :param ontology_ids: The ontology_ids of this Question.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._ontology_ids = ontology_ids
-
-    @property
     def query_string(self):
         """Gets the query_string of this Question.  # noqa: E501
 
@@ -365,6 +314,27 @@ class Question(DomainObject):
         self._single_doc_question_document_id = single_doc_question_document_id
 
     @property
+    def template(self):
+        """Gets the template of this Question.  # noqa: E501
+
+
+        :return: The template of this Question.  # noqa: E501
+        :rtype: str
+        """
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        """Sets the template of this Question.
+
+
+        :param template: The template of this Question.  # noqa: E501
+        :type: str
+        """
+
+        self._template = template
+
+    @property
     def type_of_search(self):
         """Gets the type_of_search of this Question.  # noqa: E501
 
@@ -390,132 +360,6 @@ class Question(DomainObject):
             )
 
         self._type_of_search = type_of_search
-
-    @property
-    def document_id(self):
-        """Gets the document_id of this Question.  # noqa: E501
-
-
-        :return: The document_id of this Question.  # noqa: E501
-        :rtype: str
-        """
-        return self._document_id
-
-    @document_id.setter
-    def document_id(self, document_id):
-        """Sets the document_id of this Question.
-
-
-        :param document_id: The document_id of this Question.  # noqa: E501
-        :type: str
-        """
-
-        self._document_id = document_id
-
-    @property
-    def template(self):
-        """Gets the template of this Question.  # noqa: E501
-
-
-        :return: The template of this Question.  # noqa: E501
-        :rtype: str
-        """
-        return self._template
-
-    @template.setter
-    def template(self, template):
-        """Sets the template of this Question.
-
-
-        :param template: The template of this Question.  # noqa: E501
-        :type: str
-        """
-
-        self._template = template
-
-    @property
-    def terms(self):
-        """Gets the terms of this Question.  # noqa: E501
-
-
-        :return: The terms of this Question.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._terms
-
-    @terms.setter
-    def terms(self, terms):
-        """Sets the terms of this Question.
-
-
-        :param terms: The terms of this Question.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._terms = terms
-
-    @property
-    def values(self):
-        """Gets the values of this Question.  # noqa: E501
-
-
-        :return: The values of this Question.  # noqa: E501
-        :rtype: Answer
-        """
-        return self._values
-
-    @values.setter
-    def values(self, values):
-        """Sets the values of this Question.
-
-
-        :param values: The values of this Question.  # noqa: E501
-        :type: Answer
-        """
-
-        self._values = values
-
-    @property
-    def rejected_values(self):
-        """Gets the rejected_values of this Question.  # noqa: E501
-
-
-        :return: The rejected_values of this Question.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._rejected_values
-
-    @rejected_values.setter
-    def rejected_values(self, rejected_values):
-        """Sets the rejected_values of this Question.
-
-
-        :param rejected_values: The rejected_values of this Question.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._rejected_values = rejected_values
-
-    @property
-    def number_of_highlight_fragments(self):
-        """Gets the number_of_highlight_fragments of this Question.  # noqa: E501
-
-
-        :return: The number_of_highlight_fragments of this Question.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_highlight_fragments
-
-    @number_of_highlight_fragments.setter
-    def number_of_highlight_fragments(self, number_of_highlight_fragments):
-        """Sets the number_of_highlight_fragments of this Question.
-
-
-        :param number_of_highlight_fragments: The number_of_highlight_fragments of this Question.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_highlight_fragments = number_of_highlight_fragments
 
     def to_dict(self):
         """Returns the model properties as a dict"""

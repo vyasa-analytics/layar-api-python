@@ -29,29 +29,24 @@ class BulkQuestion(object):
     """
     swagger_types = {
         'concept_types': 'list[str]',
-        'ontology_ids': 'list[str]',
         'question_key': 'str',
         'question_string_variations': 'list[str]'
     }
 
     attribute_map = {
         'concept_types': 'conceptTypes',
-        'ontology_ids': 'ontologyIds',
         'question_key': 'questionKey',
         'question_string_variations': 'questionStringVariations'
     }
 
-    def __init__(self, concept_types=None, ontology_ids=None, question_key=None, question_string_variations=None):  # noqa: E501
+    def __init__(self, concept_types=None, question_key=None, question_string_variations=None):  # noqa: E501
         """BulkQuestion - a model defined in Swagger"""  # noqa: E501
         self._concept_types = None
-        self._ontology_ids = None
         self._question_key = None
         self._question_string_variations = None
         self.discriminator = None
         if concept_types is not None:
             self.concept_types = concept_types
-        if ontology_ids is not None:
-            self.ontology_ids = ontology_ids
         if question_key is not None:
             self.question_key = question_key
         if question_string_variations is not None:
@@ -77,27 +72,6 @@ class BulkQuestion(object):
         """
 
         self._concept_types = concept_types
-
-    @property
-    def ontology_ids(self):
-        """Gets the ontology_ids of this BulkQuestion.  # noqa: E501
-
-
-        :return: The ontology_ids of this BulkQuestion.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._ontology_ids
-
-    @ontology_ids.setter
-    def ontology_ids(self, ontology_ids):
-        """Sets the ontology_ids of this BulkQuestion.
-
-
-        :param ontology_ids: The ontology_ids of this BulkQuestion.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._ontology_ids = ontology_ids
 
     @property
     def question_key(self):

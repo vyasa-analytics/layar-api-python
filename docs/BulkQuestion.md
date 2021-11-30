@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **concept_types** | **list[str]** |  | [optional] 
-**ontology_ids** | **list[str]** |  | [optional] 
 **question_key** | **str** |  | [optional] 
 **question_string_variations** | **list[str]** |  | [optional] 
 
