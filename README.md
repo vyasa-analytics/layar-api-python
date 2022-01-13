@@ -30,16 +30,19 @@ from pprint import pprint
 
 # configure oauth access token for authorization
 configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
+configuration.host = 'HOST_NAME'  # for example: 'https://yourhost.vyasa.com/layar'
 configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 body = layar_api.SourceDocumentSearchCommand() 
-x_vyasa_data_providers = 'x_vyasa_data_providers_example' 
+
+# comma delimited list of provider host names. 
+data_providers = 'x_vyasa_data_providers_example'
+# for example: 'yourhost.vyasa.com,master-pubmed.vyasa.com'
 
 try:
-    api_response = api_instance.search(body, x_vyasa_data_providers)
+    api_response = api_instance.search(body=body, x_vyasa_data_providers=data_providers)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->search: %s\n" % e)
