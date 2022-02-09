@@ -25,6 +25,7 @@ class QuestionAnswerTypeOfSearch(object):
     allowed enum values
     """
     DOCUMENT = "DOCUMENT"
+    DOCUMENT_AS_PARAGRAPHS = "DOCUMENT_AS_PARAGRAPHS"
     PARAGRAPH = "PARAGRAPH"
     """
     Attributes:
