@@ -40,7 +40,7 @@ class Question(DomainObject):
         'search_command_json_string': 'str',
         'single_doc_question_document_id': 'str',
         'template': 'str',
-        'type_of_search': 'str'
+        'type_of_search': 'QuestionAnswerTypeOfSearch'
     }
     if hasattr(DomainObject, "swagger_types"):
         swagger_types.update(DomainObject.swagger_types)
@@ -340,7 +340,7 @@ class Question(DomainObject):
 
 
         :return: The type_of_search of this Question.  # noqa: E501
-        :rtype: str
+        :rtype: QuestionAnswerTypeOfSearch
         """
         return self._type_of_search
 
@@ -350,14 +350,8 @@ class Question(DomainObject):
 
 
         :param type_of_search: The type_of_search of this Question.  # noqa: E501
-        :type: str
+        :type: QuestionAnswerTypeOfSearch
         """
-        allowed_values = ["DOCUMENT", "PARAGRAPH"]  # noqa: E501
-        if type_of_search not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type_of_search` ({0}), must be one of {1}"  # noqa: E501
-                .format(type_of_search, allowed_values)
-            )
 
         self._type_of_search = type_of_search
 

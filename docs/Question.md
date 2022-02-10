@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **search_command_json_string** | **str** |  | [optional] 
 **single_doc_question_document_id** | **str** |  | [optional] 
 **template** | **str** |  | [optional] 
-**type_of_search** | **str** |  | [optional] 
+**type_of_search** | [**QuestionAnswerTypeOfSearch**](QuestionAnswerTypeOfSearch.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

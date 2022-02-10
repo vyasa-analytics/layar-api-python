@@ -34,12 +34,14 @@ class SourceDocument(object):
         'cortex_document_type': 'SourceDocumentType',
         'created_by_user': 'int',
         'date_indexed': 'datetime',
+        'date_published': 'datetime',
         'document_uri': 'str',
         'entity_count': 'int',
         'external_ids': 'object',
         'trial_data': 'object',
         'file': 'str',
         'id': 'str',
+        'provider': 'str',
         'live_source': 'LiveSource',
         'metadata': 'object',
         'mime_type': 'str',
@@ -67,12 +69,14 @@ class SourceDocument(object):
         'cortex_document_type': 'cortexDocumentType',
         'created_by_user': 'createdByUser',
         'date_indexed': 'dateIndexed',
+        'date_published': 'datePublished',
         'document_uri': 'documentURI',
         'entity_count': 'entityCount',
         'external_ids': 'externalIds',
         'trial_data': 'trialData',
         'file': 'file',
         'id': 'id',
+        'provider': 'provider',
         'live_source': 'liveSource',
         'metadata': 'metadata',
         'mime_type': 'mimeType',
@@ -93,7 +97,7 @@ class SourceDocument(object):
         'highlighted_text': 'highlightedText'
     }
 
-    def __init__(self, append_to_existing=None, column_definitions=None, annotations=None, cortex_document_type=None, created_by_user=None, date_indexed=None, document_uri=None, entity_count=None, external_ids=None, trial_data=None, file=None, id=None, live_source=None, metadata=None, mime_type=None, name=None, object_key=None, parent_source_document_id=None, project_computation_id=None, projects=None, raw_text=None, statement_count=None, suggested_category_id=None, suggested_category_ids=None, suggested_category_rankings=None, summary=None, tabular_based_on_file_name=None, url=None, has_vector=None, highlighted_text=None):  # noqa: E501
+    def __init__(self, append_to_existing=None, column_definitions=None, annotations=None, cortex_document_type=None, created_by_user=None, date_indexed=None, date_published=None, document_uri=None, entity_count=None, external_ids=None, trial_data=None, file=None, id=None, provider=None, live_source=None, metadata=None, mime_type=None, name=None, object_key=None, parent_source_document_id=None, project_computation_id=None, projects=None, raw_text=None, statement_count=None, suggested_category_id=None, suggested_category_ids=None, suggested_category_rankings=None, summary=None, tabular_based_on_file_name=None, url=None, has_vector=None, highlighted_text=None):  # noqa: E501
         """SourceDocument - a model defined in Swagger"""  # noqa: E501
         self._append_to_existing = None
         self._column_definitions = None
@@ -101,12 +105,14 @@ class SourceDocument(object):
         self._cortex_document_type = None
         self._created_by_user = None
         self._date_indexed = None
+        self._date_published = None
         self._document_uri = None
         self._entity_count = None
         self._external_ids = None
         self._trial_data = None
         self._file = None
         self._id = None
+        self._provider = None
         self._live_source = None
         self._metadata = None
         self._mime_type = None
@@ -138,6 +144,8 @@ class SourceDocument(object):
             self.created_by_user = created_by_user
         if date_indexed is not None:
             self.date_indexed = date_indexed
+        if date_published is not None:
+            self.date_published = date_published
         if document_uri is not None:
             self.document_uri = document_uri
         if entity_count is not None:
@@ -150,6 +158,8 @@ class SourceDocument(object):
             self.file = file
         if id is not None:
             self.id = id
+        if provider is not None:
+            self.provider = provider
         if live_source is not None:
             self.live_source = live_source
         if metadata is not None:
@@ -314,6 +324,27 @@ class SourceDocument(object):
         self._date_indexed = date_indexed
 
     @property
+    def date_published(self):
+        """Gets the date_published of this SourceDocument.  # noqa: E501
+
+
+        :return: The date_published of this SourceDocument.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_published
+
+    @date_published.setter
+    def date_published(self, date_published):
+        """Sets the date_published of this SourceDocument.
+
+
+        :param date_published: The date_published of this SourceDocument.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_published = date_published
+
+    @property
     def document_uri(self):
         """Gets the document_uri of this SourceDocument.  # noqa: E501
 
@@ -438,6 +469,27 @@ class SourceDocument(object):
         """
 
         self._id = id
+
+    @property
+    def provider(self):
+        """Gets the provider of this SourceDocument.  # noqa: E501
+
+
+        :return: The provider of this SourceDocument.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this SourceDocument.
+
+
+        :param provider: The provider of this SourceDocument.  # noqa: E501
+        :type: str
+        """
+
+        self._provider = provider
 
     @property
     def live_source(self):

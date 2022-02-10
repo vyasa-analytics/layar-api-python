@@ -152,6 +152,7 @@ Class | Method | HTTP request | Description
 *QuestionApi* | [**delete_many**](docs/QuestionApi.md#delete_many) | **DELETE** /question/deleteMany | delete all the records with the given IDs
 *QuestionApi* | [**find_more_answers**](docs/QuestionApi.md#find_more_answers) | **POST** /question/{id}/answers/more | look for more answers to this question
 *QuestionApi* | [**get**](docs/QuestionApi.md#get) | **GET** /question/{id} | question details
+*QuestionApi* | [**get_field_counts**](docs/QuestionApi.md#get_field_counts) | **POST** /question/{field}/counts | 
 *QuestionApi* | [**patch**](docs/QuestionApi.md#patch) | **PATCH** /question/{id} | patch
 *QuestionApi* | [**query_expansion**](docs/QuestionApi.md#query_expansion) | **POST** /question/queryExpansion | 
 *QuestionApi* | [**refresh_answers**](docs/QuestionApi.md#refresh_answers) | **POST** /question/{id}/answers/refresh | look for answers in new documents

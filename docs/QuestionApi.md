@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**delete_many**](QuestionApi.md#delete_many) | **DELETE** /question/deleteMany | delete all the records with the given IDs
 [**find_more_answers**](QuestionApi.md#find_more_answers) | **POST** /question/{id}/answers/more | look for more answers to this question
 [**get**](QuestionApi.md#get) | **GET** /question/{id} | question details
+[**get_field_counts**](QuestionApi.md#get_field_counts) | **POST** /question/{field}/counts | 
 [**patch**](QuestionApi.md#patch) | **PATCH** /question/{id} | patch
 [**query_expansion**](QuestionApi.md#query_expansion) | **POST** /question/queryExpansion | 
 [**refresh_answers**](QuestionApi.md#refresh_answers) | **POST** /question/{id}/answers/refresh | look for answers in new documents
@@ -369,6 +370,58 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_field_counts**
+> list[FieldCount] get_field_counts(body, field)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
+body = layar_api.QuestionSearchCommand() # QuestionSearchCommand | 
+field = 'field_example' # str | 
+
+try:
+    api_response = api_instance.get_field_counts(body, field)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QuestionApi->get_field_counts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**QuestionSearchCommand**](QuestionSearchCommand.md)|  | 
+ **field** | **str**|  | 
+
+### Return type
+
+[**list[FieldCount]**](FieldCount.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
