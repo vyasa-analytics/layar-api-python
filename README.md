@@ -102,6 +102,8 @@ Class | Method | HTTP request | Description
 *ConnectorApi* | [**patch**](docs/ConnectorApi.md#patch) | **PATCH** /connector/{id} | patch
 *ConnectorApi* | [**search**](docs/ConnectorApi.md#search) | **GET** /connector | 
 *ConnectorApi* | [**update**](docs/ConnectorApi.md#update) | **PUT** /connector/{id} | update
+*DefaultApi* | [**ontology_term_search_get**](docs/DefaultApi.md#ontology_term_search_get) | **GET** /ontologyTerm/search | 
+*DefaultApi* | [**paragraph_search_get**](docs/DefaultApi.md#paragraph_search_get) | **GET** /paragraph/search | 
 *EventApi* | [**get**](docs/EventApi.md#get) | **GET** /event/{id} | event details
 *EventApi* | [**search**](docs/EventApi.md#search) | **GET** /event | search for events
 *GroupApi* | [**group_terms**](docs/GroupApi.md#group_terms) | **POST** /group/terms | group similar terms (eg, &#x27;Vyasa Analytics&#x27; and &#x27;Vyasa Analytics, LLC&#x27;)
@@ -127,6 +129,15 @@ Class | Method | HTTP request | Description
 *NamedEntityApi* | [**get_types**](docs/NamedEntityApi.md#get_types) | **GET** /namedEntity/types | A list of the available Named Entity Types
 *NamedEntityApi* | [**named_entity_tag**](docs/NamedEntityApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
 *NamedEntityApi* | [**tag**](docs/NamedEntityApi.md#tag) | **POST** /namedEntity/tag | 
+*OntologyTermApi* | [**ontology_term_get**](docs/OntologyTermApi.md#ontology_term_get) | **GET** /ontologyTerm | search for ontology terms
+*OntologyTermApi* | [**ontology_term_id_delete**](docs/OntologyTermApi.md#ontology_term_id_delete) | **DELETE** /ontologyTerm/{id} | delete
+*OntologyTermApi* | [**ontology_term_id_get**](docs/OntologyTermApi.md#ontology_term_id_get) | **GET** /ontologyTerm/{id} | ontologyTerm details
+*OntologyTermApi* | [**ontology_term_id_put**](docs/OntologyTermApi.md#ontology_term_id_put) | **PUT** /ontologyTerm/{id} | update
+*OntologyTermApi* | [**ontology_term_post**](docs/OntologyTermApi.md#ontology_term_post) | **POST** /ontologyTerm | save a new ontology term
+*OntologyTermApi* | [**ontology_term_search_post**](docs/OntologyTermApi.md#ontology_term_search_post) | **POST** /ontologyTerm/search | search for ontologyTerms
+*ParagraphApi* | [**paragraph_get**](docs/ParagraphApi.md#paragraph_get) | **GET** /paragraph | search for paragraphs
+*ParagraphApi* | [**paragraph_id_get**](docs/ParagraphApi.md#paragraph_id_get) | **GET** /paragraph/{id} | paragraph details
+*ParagraphApi* | [**paragraph_search_post**](docs/ParagraphApi.md#paragraph_search_post) | **POST** /paragraph/search | search for paragraphs
 *ProjectApi* | [**add_input**](docs/ProjectApi.md#add_input) | **PUT** /project/{id}/addInput | addInput
 *ProjectApi* | [**create**](docs/ProjectApi.md#create) | **POST** /project | save
 *ProjectApi* | [**delete**](docs/ProjectApi.md#delete) | **DELETE** /project/{id} | delete

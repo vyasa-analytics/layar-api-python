@@ -95,7 +95,9 @@ from layar_api.models.named_entity_response import NamedEntityResponse
 from layar_api.models.named_entity_response_named_entities import NamedEntityResponseNamedEntities
 from layar_api.models.one_of_annotation_search_values_items import OneOfAnnotationSearchValuesItems
 from layar_api.models.one_ofinline_response2001 import OneOfinlineResponse2001
+from layar_api.models.ontology_search_command import OntologySearchCommand
 from layar_api.models.ontology_term import OntologyTerm
+from layar_api.models.paragraph import Paragraph
 from layar_api.models.paragraph_question_search_command import ParagraphQuestionSearchCommand
 from layar_api.models.paragraph_search_command import ParagraphSearchCommand
 from layar_api.models.patch_command import PatchCommand
