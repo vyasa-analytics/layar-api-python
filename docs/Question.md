@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **single_doc_question_document_id** | **str** |  | [optional] 
 **template** | **str** |  | [optional] 
 **type_of_search** | [**QuestionAnswerTypeOfSearch**](QuestionAnswerTypeOfSearch.md) |  | [optional] 
+**advanced_params** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -40,7 +40,8 @@ class Question(DomainObject):
         'search_command_json_string': 'str',
         'single_doc_question_document_id': 'str',
         'template': 'str',
-        'type_of_search': 'QuestionAnswerTypeOfSearch'
+        'type_of_search': 'QuestionAnswerTypeOfSearch',
+        'advanced_params': 'object'
     }
     if hasattr(DomainObject, "swagger_types"):
         swagger_types.update(DomainObject.swagger_types)
@@ -57,12 +58,13 @@ class Question(DomainObject):
         'search_command_json_string': 'searchCommandJsonString',
         'single_doc_question_document_id': 'singleDocQuestionDocumentId',
         'template': 'template',
-        'type_of_search': 'typeOfSearch'
+        'type_of_search': 'typeOfSearch',
+        'advanced_params': 'advancedParams'
     }
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, data_providers=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, template=None, type_of_search=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, data_providers=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, template=None, type_of_search=None, advanced_params=None, *args, **kwargs):  # noqa: E501
         """Question - a model defined in Swagger"""  # noqa: E501
         self._batch_grouping_key = None
         self._complete = None
@@ -76,6 +78,7 @@ class Question(DomainObject):
         self._single_doc_question_document_id = None
         self._template = None
         self._type_of_search = None
+        self._advanced_params = None
         self.discriminator = None
         if batch_grouping_key is not None:
             self.batch_grouping_key = batch_grouping_key
@@ -101,6 +104,8 @@ class Question(DomainObject):
             self.template = template
         if type_of_search is not None:
             self.type_of_search = type_of_search
+        if advanced_params is not None:
+            self.advanced_params = advanced_params
         DomainObject.__init__(self, *args, **kwargs)
 
     @property
@@ -354,6 +359,27 @@ class Question(DomainObject):
         """
 
         self._type_of_search = type_of_search
+
+    @property
+    def advanced_params(self):
+        """Gets the advanced_params of this Question.  # noqa: E501
+
+
+        :return: The advanced_params of this Question.  # noqa: E501
+        :rtype: object
+        """
+        return self._advanced_params
+
+    @advanced_params.setter
+    def advanced_params(self, advanced_params):
+        """Sets the advanced_params of this Question.
+
+
+        :param advanced_params: The advanced_params of this Question.  # noqa: E501
+        :type: object
+        """
+
+        self._advanced_params = advanced_params
 
     def to_dict(self):
         """Returns the model properties as a dict"""
