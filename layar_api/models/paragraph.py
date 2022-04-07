@@ -29,142 +29,64 @@ class Paragraph(DomainObject):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'attributes': 'object',
-        'db_alt_ids': 'list[str]',
-        'db_id': 'str',
         'document_id': 'str',
-        'id_path': 'str',
-        'name_path': 'str',
-        'namespace': 'str',
-        'obsolete': 'bool',
-        'sem_type_id_path': 'str',
-        'sem_type_name_path': 'str',
-        'synonyms': 'list[str]',
-        'xrefs': 'list[str]'
+        'raw_text': 'str',
+        'source': 'str',
+        'provider': 'str',
+        'paragraph_number': 'int',
+        'starts_onpage_number': 'int',
+        'belongs_to_section_heading': 'str',
+        'paragraph_indexing_version': 'list[str]',
+        'highlighted_text': 'list[str]'
     }
     if hasattr(DomainObject, "swagger_types"):
         swagger_types.update(DomainObject.swagger_types)
 
     attribute_map = {
-        'attributes': 'attributes',
-        'db_alt_ids': 'dbAltIds',
-        'db_id': 'dbId',
         'document_id': 'documentId',
-        'id_path': 'idPath',
-        'name_path': 'namePath',
-        'namespace': 'namespace',
-        'obsolete': 'obsolete',
-        'sem_type_id_path': 'semTypeIdPath',
-        'sem_type_name_path': 'semTypeNamePath',
-        'synonyms': 'synonyms',
-        'xrefs': 'xrefs'
+        'raw_text': 'rawText',
+        'source': 'source',
+        'provider': 'provider',
+        'paragraph_number': 'paragraphNumber',
+        'starts_onpage_number': 'startsOnpageNumber',
+        'belongs_to_section_heading': 'belongsToSectionHeading',
+        'paragraph_indexing_version': 'paragraphIndexingVersion',
+        'highlighted_text': 'highlightedText'
     }
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, attributes=None, db_alt_ids=None, db_id=None, document_id=None, id_path=None, name_path=None, namespace=None, obsolete=None, sem_type_id_path=None, sem_type_name_path=None, synonyms=None, xrefs=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, document_id=None, raw_text=None, source=None, provider=None, paragraph_number=None, starts_onpage_number=None, belongs_to_section_heading=None, paragraph_indexing_version=None, highlighted_text=None, *args, **kwargs):  # noqa: E501
         """Paragraph - a model defined in Swagger"""  # noqa: E501
-        self._attributes = None
-        self._db_alt_ids = None
-        self._db_id = None
         self._document_id = None
-        self._id_path = None
-        self._name_path = None
-        self._namespace = None
-        self._obsolete = None
-        self._sem_type_id_path = None
-        self._sem_type_name_path = None
-        self._synonyms = None
-        self._xrefs = None
+        self._raw_text = None
+        self._source = None
+        self._provider = None
+        self._paragraph_number = None
+        self._starts_onpage_number = None
+        self._belongs_to_section_heading = None
+        self._paragraph_indexing_version = None
+        self._highlighted_text = None
         self.discriminator = None
-        if attributes is not None:
-            self.attributes = attributes
-        if db_alt_ids is not None:
-            self.db_alt_ids = db_alt_ids
-        if db_id is not None:
-            self.db_id = db_id
         if document_id is not None:
             self.document_id = document_id
-        if id_path is not None:
-            self.id_path = id_path
-        if name_path is not None:
-            self.name_path = name_path
-        if namespace is not None:
-            self.namespace = namespace
-        if obsolete is not None:
-            self.obsolete = obsolete
-        if sem_type_id_path is not None:
-            self.sem_type_id_path = sem_type_id_path
-        if sem_type_name_path is not None:
-            self.sem_type_name_path = sem_type_name_path
-        if synonyms is not None:
-            self.synonyms = synonyms
-        if xrefs is not None:
-            self.xrefs = xrefs
+        if raw_text is not None:
+            self.raw_text = raw_text
+        if source is not None:
+            self.source = source
+        if provider is not None:
+            self.provider = provider
+        if paragraph_number is not None:
+            self.paragraph_number = paragraph_number
+        if starts_onpage_number is not None:
+            self.starts_onpage_number = starts_onpage_number
+        if belongs_to_section_heading is not None:
+            self.belongs_to_section_heading = belongs_to_section_heading
+        if paragraph_indexing_version is not None:
+            self.paragraph_indexing_version = paragraph_indexing_version
+        if highlighted_text is not None:
+            self.highlighted_text = highlighted_text
         DomainObject.__init__(self, *args, **kwargs)
-
-    @property
-    def attributes(self):
-        """Gets the attributes of this Paragraph.  # noqa: E501
-
-
-        :return: The attributes of this Paragraph.  # noqa: E501
-        :rtype: object
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """Sets the attributes of this Paragraph.
-
-
-        :param attributes: The attributes of this Paragraph.  # noqa: E501
-        :type: object
-        """
-
-        self._attributes = attributes
-
-    @property
-    def db_alt_ids(self):
-        """Gets the db_alt_ids of this Paragraph.  # noqa: E501
-
-
-        :return: The db_alt_ids of this Paragraph.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._db_alt_ids
-
-    @db_alt_ids.setter
-    def db_alt_ids(self, db_alt_ids):
-        """Sets the db_alt_ids of this Paragraph.
-
-
-        :param db_alt_ids: The db_alt_ids of this Paragraph.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._db_alt_ids = db_alt_ids
-
-    @property
-    def db_id(self):
-        """Gets the db_id of this Paragraph.  # noqa: E501
-
-
-        :return: The db_id of this Paragraph.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_id
-
-    @db_id.setter
-    def db_id(self, db_id):
-        """Sets the db_id of this Paragraph.
-
-
-        :param db_id: The db_id of this Paragraph.  # noqa: E501
-        :type: str
-        """
-
-        self._db_id = db_id
 
     @property
     def document_id(self):
@@ -188,180 +110,172 @@ class Paragraph(DomainObject):
         self._document_id = document_id
 
     @property
-    def id_path(self):
-        """Gets the id_path of this Paragraph.  # noqa: E501
+    def raw_text(self):
+        """Gets the raw_text of this Paragraph.  # noqa: E501
 
-        slash-separated list of the ID path hierarchy  # noqa: E501
 
-        :return: The id_path of this Paragraph.  # noqa: E501
+        :return: The raw_text of this Paragraph.  # noqa: E501
         :rtype: str
         """
-        return self._id_path
+        return self._raw_text
 
-    @id_path.setter
-    def id_path(self, id_path):
-        """Sets the id_path of this Paragraph.
+    @raw_text.setter
+    def raw_text(self, raw_text):
+        """Sets the raw_text of this Paragraph.
 
-        slash-separated list of the ID path hierarchy  # noqa: E501
 
-        :param id_path: The id_path of this Paragraph.  # noqa: E501
+        :param raw_text: The raw_text of this Paragraph.  # noqa: E501
         :type: str
         """
 
-        self._id_path = id_path
+        self._raw_text = raw_text
 
     @property
-    def name_path(self):
-        """Gets the name_path of this Paragraph.  # noqa: E501
+    def source(self):
+        """Gets the source of this Paragraph.  # noqa: E501
 
-        slash-separated list of the name path hierarchy  # noqa: E501
 
-        :return: The name_path of this Paragraph.  # noqa: E501
+        :return: The source of this Paragraph.  # noqa: E501
         :rtype: str
         """
-        return self._name_path
+        return self._source
 
-    @name_path.setter
-    def name_path(self, name_path):
-        """Sets the name_path of this Paragraph.
+    @source.setter
+    def source(self, source):
+        """Sets the source of this Paragraph.
 
-        slash-separated list of the name path hierarchy  # noqa: E501
 
-        :param name_path: The name_path of this Paragraph.  # noqa: E501
+        :param source: The source of this Paragraph.  # noqa: E501
         :type: str
         """
 
-        self._name_path = name_path
+        self._source = source
 
     @property
-    def namespace(self):
-        """Gets the namespace of this Paragraph.  # noqa: E501
+    def provider(self):
+        """Gets the provider of this Paragraph.  # noqa: E501
 
 
-        :return: The namespace of this Paragraph.  # noqa: E501
+        :return: The provider of this Paragraph.  # noqa: E501
         :rtype: str
         """
-        return self._namespace
+        return self._provider
 
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this Paragraph.
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this Paragraph.
 
 
-        :param namespace: The namespace of this Paragraph.  # noqa: E501
+        :param provider: The provider of this Paragraph.  # noqa: E501
         :type: str
         """
 
-        self._namespace = namespace
+        self._provider = provider
 
     @property
-    def obsolete(self):
-        """Gets the obsolete of this Paragraph.  # noqa: E501
+    def paragraph_number(self):
+        """Gets the paragraph_number of this Paragraph.  # noqa: E501
 
 
-        :return: The obsolete of this Paragraph.  # noqa: E501
-        :rtype: bool
+        :return: The paragraph_number of this Paragraph.  # noqa: E501
+        :rtype: int
         """
-        return self._obsolete
+        return self._paragraph_number
 
-    @obsolete.setter
-    def obsolete(self, obsolete):
-        """Sets the obsolete of this Paragraph.
+    @paragraph_number.setter
+    def paragraph_number(self, paragraph_number):
+        """Sets the paragraph_number of this Paragraph.
 
 
-        :param obsolete: The obsolete of this Paragraph.  # noqa: E501
-        :type: bool
+        :param paragraph_number: The paragraph_number of this Paragraph.  # noqa: E501
+        :type: int
         """
 
-        self._obsolete = obsolete
+        self._paragraph_number = paragraph_number
 
     @property
-    def sem_type_id_path(self):
-        """Gets the sem_type_id_path of this Paragraph.  # noqa: E501
+    def starts_onpage_number(self):
+        """Gets the starts_onpage_number of this Paragraph.  # noqa: E501
 
-        slash-separated list of the semantic type ID path hierarchy  # noqa: E501
 
-        :return: The sem_type_id_path of this Paragraph.  # noqa: E501
+        :return: The starts_onpage_number of this Paragraph.  # noqa: E501
+        :rtype: int
+        """
+        return self._starts_onpage_number
+
+    @starts_onpage_number.setter
+    def starts_onpage_number(self, starts_onpage_number):
+        """Sets the starts_onpage_number of this Paragraph.
+
+
+        :param starts_onpage_number: The starts_onpage_number of this Paragraph.  # noqa: E501
+        :type: int
+        """
+
+        self._starts_onpage_number = starts_onpage_number
+
+    @property
+    def belongs_to_section_heading(self):
+        """Gets the belongs_to_section_heading of this Paragraph.  # noqa: E501
+
+
+        :return: The belongs_to_section_heading of this Paragraph.  # noqa: E501
         :rtype: str
         """
-        return self._sem_type_id_path
+        return self._belongs_to_section_heading
 
-    @sem_type_id_path.setter
-    def sem_type_id_path(self, sem_type_id_path):
-        """Sets the sem_type_id_path of this Paragraph.
+    @belongs_to_section_heading.setter
+    def belongs_to_section_heading(self, belongs_to_section_heading):
+        """Sets the belongs_to_section_heading of this Paragraph.
 
-        slash-separated list of the semantic type ID path hierarchy  # noqa: E501
 
-        :param sem_type_id_path: The sem_type_id_path of this Paragraph.  # noqa: E501
+        :param belongs_to_section_heading: The belongs_to_section_heading of this Paragraph.  # noqa: E501
         :type: str
         """
 
-        self._sem_type_id_path = sem_type_id_path
+        self._belongs_to_section_heading = belongs_to_section_heading
 
     @property
-    def sem_type_name_path(self):
-        """Gets the sem_type_name_path of this Paragraph.  # noqa: E501
-
-        slash-separated list of the semantic type name path hierarchy  # noqa: E501
-
-        :return: The sem_type_name_path of this Paragraph.  # noqa: E501
-        :rtype: str
-        """
-        return self._sem_type_name_path
-
-    @sem_type_name_path.setter
-    def sem_type_name_path(self, sem_type_name_path):
-        """Sets the sem_type_name_path of this Paragraph.
-
-        slash-separated list of the semantic type name path hierarchy  # noqa: E501
-
-        :param sem_type_name_path: The sem_type_name_path of this Paragraph.  # noqa: E501
-        :type: str
-        """
-
-        self._sem_type_name_path = sem_type_name_path
-
-    @property
-    def synonyms(self):
-        """Gets the synonyms of this Paragraph.  # noqa: E501
+    def paragraph_indexing_version(self):
+        """Gets the paragraph_indexing_version of this Paragraph.  # noqa: E501
 
 
-        :return: The synonyms of this Paragraph.  # noqa: E501
+        :return: The paragraph_indexing_version of this Paragraph.  # noqa: E501
         :rtype: list[str]
         """
-        return self._synonyms
+        return self._paragraph_indexing_version
 
-    @synonyms.setter
-    def synonyms(self, synonyms):
-        """Sets the synonyms of this Paragraph.
+    @paragraph_indexing_version.setter
+    def paragraph_indexing_version(self, paragraph_indexing_version):
+        """Sets the paragraph_indexing_version of this Paragraph.
 
 
-        :param synonyms: The synonyms of this Paragraph.  # noqa: E501
+        :param paragraph_indexing_version: The paragraph_indexing_version of this Paragraph.  # noqa: E501
         :type: list[str]
         """
 
-        self._synonyms = synonyms
+        self._paragraph_indexing_version = paragraph_indexing_version
 
     @property
-    def xrefs(self):
-        """Gets the xrefs of this Paragraph.  # noqa: E501
+    def highlighted_text(self):
+        """Gets the highlighted_text of this Paragraph.  # noqa: E501
 
 
-        :return: The xrefs of this Paragraph.  # noqa: E501
+        :return: The highlighted_text of this Paragraph.  # noqa: E501
         :rtype: list[str]
         """
-        return self._xrefs
+        return self._highlighted_text
 
-    @xrefs.setter
-    def xrefs(self, xrefs):
-        """Sets the xrefs of this Paragraph.
+    @highlighted_text.setter
+    def highlighted_text(self, highlighted_text):
+        """Sets the highlighted_text of this Paragraph.
 
 
-        :param xrefs: The xrefs of this Paragraph.  # noqa: E501
+        :param highlighted_text: The highlighted_text of this Paragraph.  # noqa: E501
         :type: list[str]
         """
 
-        self._xrefs = xrefs
+        self._highlighted_text = highlighted_text
 
     def to_dict(self):
         """Returns the model properties as a dict"""
