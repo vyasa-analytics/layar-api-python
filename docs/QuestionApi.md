@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**update**](QuestionApi.md#update) | **PUT** /question/{id} | update
 
 # **ask**
-> AskQuestionResponse ask(body)
+> AskQuestionResponse ask(body, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
 
 
 
@@ -40,9 +40,10 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.AskQuestionCommand() # AskQuestionCommand | 
+x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for advanced users and debugging.  A JSON structure overriding default Question Answering parameters (optional)
 
 try:
-    api_response = api_instance.ask(body)
+    api_response = api_instance.ask(body, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QuestionApi->ask: %s\n" % e)
@@ -53,6 +54,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**AskQuestionCommand**](AskQuestionCommand.md)|  | 
+ **x_vyasa_advanced_parameters** | **str**| for advanced users and debugging.  A JSON structure overriding default Question Answering parameters | [optional] 
 
 ### Return type
 
@@ -121,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
-> Question create(body, x_vyasa_data_providers)
+> Question create(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
 
 save a new question
 
@@ -142,10 +144,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.Question() # Question | 
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
+x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for advanced users and debugging.  A JSON structure overriding default Question Answering parameters (optional)
 
 try:
     # save a new question
-    api_response = api_instance.create(body, x_vyasa_data_providers)
+    api_response = api_instance.create(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QuestionApi->create: %s\n" % e)
@@ -157,6 +160,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Question**](Question.md)|  | 
  **x_vyasa_data_providers** | **str**| remote data providers to query | 
+ **x_vyasa_advanced_parameters** | **str**| for advanced users and debugging.  A JSON structure overriding default Question Answering parameters | [optional] 
 
 ### Return type
 
