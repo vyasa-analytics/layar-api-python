@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "layar-api"
-VERSION = "v1.0.740"
+VERSION = "v1.0.741"
 # To install the library, run the following
 #
 # python setup.py install
