@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**update**](SavedListApi.md#update) | **PUT** /savedList/{id} | update
 
 # **add_items**
-> add_items(body, id)
+> add_items(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 
 addItem
 
@@ -37,10 +37,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
 body = layar_api.ListOfItemIds() # ListOfItemIds | 
 id = 'id_example' # str | 
+x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
     # addItem
-    api_instance.add_items(body, id)
+    api_instance.add_items(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 except ApiException as e:
     print("Exception when calling SavedListApi->add_items: %s\n" % e)
 ```
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**ListOfItemIds**](ListOfItemIds.md)|  | 
  **id** | **str**|  | 
+ **x_vyasa_data_providers** | **str**| remote data providers to query | [optional] 
 
 ### Return type
 
@@ -68,7 +70,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_items_by_search**
-> add_items_by_search(body, id)
+> add_items_by_search(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 
 addItem
 
@@ -89,10 +91,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
 body = layar_api.DistributedSourceDocumentSearchCommand() # DistributedSourceDocumentSearchCommand | 
 id = 'id_example' # str | 
+x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
     # addItem
-    api_instance.add_items_by_search(body, id)
+    api_instance.add_items_by_search(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 except ApiException as e:
     print("Exception when calling SavedListApi->add_items_by_search: %s\n" % e)
 ```
@@ -103,6 +106,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**DistributedSourceDocumentSearchCommand**](DistributedSourceDocumentSearchCommand.md)|  | 
  **id** | **str**|  | 
+ **x_vyasa_data_providers** | **str**| remote data providers to query | [optional] 
 
 ### Return type
 

@@ -43,6 +43,7 @@ class SavedListApi(object):
         :param async_req bool
         :param ListOfItemIds body: (required)
         :param str id: (required)
+        :param str x_vyasa_data_providers: remote data providers to query
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,12 +66,13 @@ class SavedListApi(object):
         :param async_req bool
         :param ListOfItemIds body: (required)
         :param str id: (required)
+        :param str x_vyasa_data_providers: remote data providers to query
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'id']  # noqa: E501
+        all_params = ['body', 'id', 'x_vyasa_data_providers']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -103,6 +105,8 @@ class SavedListApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_vyasa_data_providers' in params:
+            header_params['X-Vyasa-Data-Providers'] = params['x_vyasa_data_providers']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -148,6 +152,7 @@ class SavedListApi(object):
         :param async_req bool
         :param DistributedSourceDocumentSearchCommand body: (required)
         :param str id: (required)
+        :param str x_vyasa_data_providers: remote data providers to query
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -170,12 +175,13 @@ class SavedListApi(object):
         :param async_req bool
         :param DistributedSourceDocumentSearchCommand body: (required)
         :param str id: (required)
+        :param str x_vyasa_data_providers: remote data providers to query
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'id']  # noqa: E501
+        all_params = ['body', 'id', 'x_vyasa_data_providers']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -208,6 +214,8 @@ class SavedListApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_vyasa_data_providers' in params:
+            header_params['X-Vyasa-Data-Providers'] = params['x_vyasa_data_providers']  # noqa: E501
 
         form_params = []
         local_var_files = {}
