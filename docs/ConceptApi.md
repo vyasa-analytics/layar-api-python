@@ -4,7 +4,6 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_from_column**](ConceptApi.md#assign_from_column) | **POST** /concept/assign | start an async process to create concepts from a column in an uploaded spreadsheet
 [**assign_from_term**](ConceptApi.md#assign_from_term) | **POST** /concept/assignTerm | create a concept from an arbitrary text string
 [**create**](ConceptApi.md#create) | **POST** /concept | save a new concept
 [**delete**](ConceptApi.md#delete) | **DELETE** /concept/{id} | delete
@@ -20,57 +19,6 @@ Method | HTTP request | Description
 [**remove_synonym**](ConceptApi.md#remove_synonym) | **DELETE** /concept/{id}/removeAsSynonym | Remove As Synonym
 [**search**](ConceptApi.md#search) | **POST** /concept/search | search for concepts
 [**update**](ConceptApi.md#update) | **PUT** /concept/{id} | update
-
-# **assign_from_column**
-> ConceptAssignment assign_from_column(body)
-
-start an async process to create concepts from a column in an uploaded spreadsheet
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
-body = layar_api.ConceptAssignment() # ConceptAssignment | 
-
-try:
-    # start an async process to create concepts from a column in an uploaded spreadsheet
-    api_response = api_instance.assign_from_column(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConceptApi->assign_from_column: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ConceptAssignment**](ConceptAssignment.md)|  | 
-
-### Return type
-
-[**ConceptAssignment**](ConceptAssignment.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assign_from_term**
 > list[Concept] assign_from_term(body)

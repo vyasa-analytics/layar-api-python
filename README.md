@@ -71,7 +71,6 @@ Class | Method | HTTP request | Description
 *ClusteredStatementsApi* | [**get**](docs/ClusteredStatementsApi.md#get) | **GET** /clusteredStatements/{id} | clustered statements details
 *ClusteredStatementsApi* | [**get_statements**](docs/ClusteredStatementsApi.md#get_statements) | **GET** /clusteredStatements/{clusteredStatementsId}/statements | statements
 *CompoundApi* | [**render**](docs/CompoundApi.md#render) | **GET** /compound/render | render
-*ConceptApi* | [**assign_from_column**](docs/ConceptApi.md#assign_from_column) | **POST** /concept/assign | start an async process to create concepts from a column in an uploaded spreadsheet
 *ConceptApi* | [**assign_from_term**](docs/ConceptApi.md#assign_from_term) | **POST** /concept/assignTerm | create a concept from an arbitrary text string
 *ConceptApi* | [**create**](docs/ConceptApi.md#create) | **POST** /concept | save a new concept
 *ConceptApi* | [**delete**](docs/ConceptApi.md#delete) | **DELETE** /concept/{id} | delete
