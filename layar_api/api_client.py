@@ -72,7 +72,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/v1.0.752/python'
+        self.user_agent = 'Swagger-Codegen/v1.0.753/python'
 
     def __del__(self):
         self.pool.close()
