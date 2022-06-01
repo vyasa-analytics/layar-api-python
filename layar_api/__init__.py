@@ -135,6 +135,9 @@ from layar_api.models.ontology_term import OntologyTerm
 from layar_api.models.paragraph import Paragraph
 from layar_api.models.paragraph_question_search_command import ParagraphQuestionSearchCommand
 from layar_api.models.paragraph_search_command import ParagraphSearchCommand
+from layar_api.models.part_of_speech_command import PartOfSpeechCommand
+from layar_api.models.part_of_speech_response import PartOfSpeechResponse
+from layar_api.models.part_of_speech_token import PartOfSpeechToken
 from layar_api.models.patch_command import PatchCommand
 from layar_api.models.project import Project
 from layar_api.models.project_computation import ProjectComputation

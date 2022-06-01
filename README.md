@@ -137,6 +137,7 @@ Class | Method | HTTP request | Description
 *ParagraphApi* | [**paragraph_get**](docs/ParagraphApi.md#paragraph_get) | **GET** /paragraph | search for paragraphs
 *ParagraphApi* | [**paragraph_id_get**](docs/ParagraphApi.md#paragraph_id_get) | **GET** /paragraph/{id} | paragraph details
 *ParagraphApi* | [**paragraph_search_post**](docs/ParagraphApi.md#paragraph_search_post) | **POST** /paragraph/search | search for paragraphs
+*ParagraphApi* | [**part_of_speech_parse_text_post**](docs/ParagraphApi.md#part_of_speech_parse_text_post) | **POST** /partOfSpeech/parseText | parse text into part of speech components
 *ProjectApi* | [**add_input**](docs/ProjectApi.md#add_input) | **PUT** /project/{id}/addInput | addInput
 *ProjectApi* | [**create**](docs/ProjectApi.md#create) | **POST** /project | save
 *ProjectApi* | [**delete**](docs/ProjectApi.md#delete) | **DELETE** /project/{id} | delete
