@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **part_of_speech_parse_text_post**
-> list[PartOfSpeechResponse] part_of_speech_parse_text_post(body=body)
+> PartOfSpeechResponse part_of_speech_parse_text_post(body=body)
 
 parse text into part of speech components
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PartOfSpeechResponse]**](PartOfSpeechResponse.md)
+[**PartOfSpeechResponse**](PartOfSpeechResponse.md)
 
 ### Authorization
 
