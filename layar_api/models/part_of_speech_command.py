@@ -46,6 +46,7 @@ class PartOfSpeechCommand(object):
     def text(self):
         """Gets the text of this PartOfSpeechCommand.  # noqa: E501
 
+        The text block to run the query against  # noqa: E501
 
         :return: The text of this PartOfSpeechCommand.  # noqa: E501
         :rtype: str
@@ -56,6 +57,7 @@ class PartOfSpeechCommand(object):
     def text(self, text):
         """Sets the text of this PartOfSpeechCommand.
 
+        The text block to run the query against  # noqa: E501
 
         :param text: The text of this PartOfSpeechCommand.  # noqa: E501
         :type: str
