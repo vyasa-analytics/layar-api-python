@@ -36,7 +36,6 @@ class LiveSource(object):
         'manifold_id': 'str',
         'name': 'str',
         'run_mode': 'str',
-        'source_documents': 'list[SourceDocument]',
         'url': 'str'
     }
 
@@ -49,11 +48,10 @@ class LiveSource(object):
         'manifold_id': 'manifoldId',
         'name': 'name',
         'run_mode': 'runMode',
-        'source_documents': 'sourceDocuments',
         'url': 'url'
     }
 
-    def __init__(self, created_by_user=None, date_indexed=None, description=None, id=None, live_source_type=None, manifold_id=None, name=None, run_mode=None, source_documents=None, url=None):  # noqa: E501
+    def __init__(self, created_by_user=None, date_indexed=None, description=None, id=None, live_source_type=None, manifold_id=None, name=None, run_mode=None, url=None):  # noqa: E501
         """LiveSource - a model defined in Swagger"""  # noqa: E501
         self._created_by_user = None
         self._date_indexed = None
@@ -63,7 +61,6 @@ class LiveSource(object):
         self._manifold_id = None
         self._name = None
         self._run_mode = None
-        self._source_documents = None
         self._url = None
         self.discriminator = None
         if created_by_user is not None:
@@ -82,8 +79,6 @@ class LiveSource(object):
             self.name = name
         if run_mode is not None:
             self.run_mode = run_mode
-        if source_documents is not None:
-            self.source_documents = source_documents
         if url is not None:
             self.url = url
 
@@ -266,27 +261,6 @@ class LiveSource(object):
             )
 
         self._run_mode = run_mode
-
-    @property
-    def source_documents(self):
-        """Gets the source_documents of this LiveSource.  # noqa: E501
-
-
-        :return: The source_documents of this LiveSource.  # noqa: E501
-        :rtype: list[SourceDocument]
-        """
-        return self._source_documents
-
-    @source_documents.setter
-    def source_documents(self, source_documents):
-        """Sets the source_documents of this LiveSource.
-
-
-        :param source_documents: The source_documents of this LiveSource.  # noqa: E501
-        :type: list[SourceDocument]
-        """
-
-        self._source_documents = source_documents
 
     @property
     def url(self):

@@ -4,11 +4,11 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ontology_term_search_get**](DefaultApi.md#ontology_term_search_get) | **GET** /ontologyTerm/search | 
-[**paragraph_search_get**](DefaultApi.md#paragraph_search_get) | **GET** /paragraph/search | 
+[**search_paragraph**](DefaultApi.md#search_paragraph) | **POST** /paragraph/search | 
+[**search_term**](DefaultApi.md#search_term) | **POST** /ontologyTerm/search | 
 
-# **ontology_term_search_get**
-> ontology_term_search_get()
+# **search_paragraph**
+> list[Paragraph] search_paragraph(body=body)
 
 
 
@@ -27,19 +27,24 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.DefaultApi(layar_api.ApiClient(configuration))
+body = layar_api.ParagraphSearchCommand() # ParagraphSearchCommand |  (optional)
 
 try:
-    api_instance.ontology_term_search_get()
+    api_response = api_instance.search_paragraph(body=body)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->ontology_term_search_get: %s\n" % e)
+    print("Exception when calling DefaultApi->search_paragraph: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ParagraphSearchCommand**](ParagraphSearchCommand.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**list[Paragraph]**](Paragraph.md)
 
 ### Authorization
 
@@ -47,13 +52,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **paragraph_search_get**
-> paragraph_search_get()
+# **search_term**
+> list[OntologyTerm] search_term(body=body)
 
 
 
@@ -72,19 +77,24 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.DefaultApi(layar_api.ApiClient(configuration))
+body = layar_api.OntologySearchCommand() # OntologySearchCommand |  (optional)
 
 try:
-    api_instance.paragraph_search_get()
+    api_response = api_instance.search_term(body=body)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->paragraph_search_get: %s\n" % e)
+    print("Exception when calling DefaultApi->search_term: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OntologySearchCommand**](OntologySearchCommand.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**list[OntologyTerm]**](OntologyTerm.md)
 
 ### Authorization
 
@@ -92,8 +102,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

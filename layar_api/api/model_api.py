@@ -32,12 +32,12 @@ class ModelApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def download(self, id, **kwargs):  # noqa: E501
-        """download  # noqa: E501
+    def download_model(self, id, **kwargs):  # noqa: E501
+        """Download a learning model by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download(id, async_req=True)
+        >>> thread = api.download_model(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class ModelApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.download_with_http_info(id, **kwargs)  # noqa: E501
+            return self.download_model_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.download_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.download_model_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def download_with_http_info(self, id, **kwargs):  # noqa: E501
-        """download  # noqa: E501
+    def download_model_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Download a learning model by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_with_http_info(id, async_req=True)
+        >>> thread = api.download_model_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class ModelApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method download" % key
+                    " to method download_model" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `download`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `download_model`")  # noqa: E501
 
         collection_formats = {}
 
@@ -125,17 +125,16 @@ class ModelApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_by_computation_id(self, id, computation_id, **kwargs):  # noqa: E501
+    def search_models_by_computation_id(self, id, **kwargs):  # noqa: E501
         """find deep learning models by project computation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_computation_id(id, computation_id, async_req=True)
+        >>> thread = api.search_models_by_computation_id(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str id: (required)
-        :param str computation_id: (required)
         :param int start: the start offset for the row
         :param int rows: the number of rows to return
         :param str q: the query string to search for
@@ -145,22 +144,21 @@ class ModelApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_by_computation_id_with_http_info(id, computation_id, **kwargs)  # noqa: E501
+            return self.search_models_by_computation_id_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_by_computation_id_with_http_info(id, computation_id, **kwargs)  # noqa: E501
+            (data) = self.search_models_by_computation_id_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def search_by_computation_id_with_http_info(self, id, computation_id, **kwargs):  # noqa: E501
+    def search_models_by_computation_id_with_http_info(self, id, **kwargs):  # noqa: E501
         """find deep learning models by project computation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_computation_id_with_http_info(id, computation_id, async_req=True)
+        >>> thread = api.search_models_by_computation_id_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str id: (required)
-        :param str computation_id: (required)
         :param int start: the start offset for the row
         :param int rows: the number of rows to return
         :param str q: the query string to search for
@@ -169,7 +167,7 @@ class ModelApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'computation_id', 'start', 'rows', 'q']  # noqa: E501
+        all_params = ['id', 'start', 'rows', 'q']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -180,26 +178,20 @@ class ModelApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_by_computation_id" % key
+                    " to method search_models_by_computation_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `search_by_computation_id`")  # noqa: E501
-        # verify the required parameter 'computation_id' is set
-        if ('computation_id' not in params or
-                params['computation_id'] is None):
-            raise ValueError("Missing the required parameter `computation_id` when calling `search_by_computation_id`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `search_models_by_computation_id`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']  # noqa: E501
-        if 'computation_id' in params:
-            path_params['computationId'] = params['computation_id']  # noqa: E501
 
         query_params = []
         if 'start' in params:
@@ -238,12 +230,12 @@ class ModelApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_by_module_id(self, module_id, **kwargs):  # noqa: E501
-        """find deep learning models by module  # noqa: E501
+    def search_models_by_module_id(self, module_id, **kwargs):  # noqa: E501
+        """Find deep learning models by module  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_module_id(module_id, async_req=True)
+        >>> thread = api.search_models_by_module_id(module_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -257,17 +249,17 @@ class ModelApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_by_module_id_with_http_info(module_id, **kwargs)  # noqa: E501
+            return self.search_models_by_module_id_with_http_info(module_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_by_module_id_with_http_info(module_id, **kwargs)  # noqa: E501
+            (data) = self.search_models_by_module_id_with_http_info(module_id, **kwargs)  # noqa: E501
             return data
 
-    def search_by_module_id_with_http_info(self, module_id, **kwargs):  # noqa: E501
-        """find deep learning models by module  # noqa: E501
+    def search_models_by_module_id_with_http_info(self, module_id, **kwargs):  # noqa: E501
+        """Find deep learning models by module  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_module_id_with_http_info(module_id, async_req=True)
+        >>> thread = api.search_models_by_module_id_with_http_info(module_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -291,14 +283,14 @@ class ModelApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_by_module_id" % key
+                    " to method search_models_by_module_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'module_id' is set
         if ('module_id' not in params or
                 params['module_id'] is None):
-            raise ValueError("Missing the required parameter `module_id` when calling `search_by_module_id`")  # noqa: E501
+            raise ValueError("Missing the required parameter `module_id` when calling `search_models_by_module_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -343,12 +335,12 @@ class ModelApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_by_project_id(self, project_id, **kwargs):  # noqa: E501
+    def search_models_by_project_id(self, project_id, **kwargs):  # noqa: E501
         """find deep learning models by project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_project_id(project_id, async_req=True)
+        >>> thread = api.search_models_by_project_id(project_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -362,17 +354,17 @@ class ModelApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_by_project_id_with_http_info(project_id, **kwargs)  # noqa: E501
+            return self.search_models_by_project_id_with_http_info(project_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_by_project_id_with_http_info(project_id, **kwargs)  # noqa: E501
+            (data) = self.search_models_by_project_id_with_http_info(project_id, **kwargs)  # noqa: E501
             return data
 
-    def search_by_project_id_with_http_info(self, project_id, **kwargs):  # noqa: E501
+    def search_models_by_project_id_with_http_info(self, project_id, **kwargs):  # noqa: E501
         """find deep learning models by project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_by_project_id_with_http_info(project_id, async_req=True)
+        >>> thread = api.search_models_by_project_id_with_http_info(project_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -396,14 +388,14 @@ class ModelApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_by_project_id" % key
+                    " to method search_models_by_project_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'project_id' is set
         if ('project_id' not in params or
                 params['project_id'] is None):
-            raise ValueError("Missing the required parameter `project_id` when calling `search_by_project_id`")  # noqa: E501
+            raise ValueError("Missing the required parameter `project_id` when calling `search_models_by_project_id`")  # noqa: E501
 
         collection_formats = {}
 

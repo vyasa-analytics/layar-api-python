@@ -4,10 +4,10 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](StatusApi.md#get) | **GET** /app | 
+[**get_app_status**](StatusApi.md#get_app_status) | **GET** /app | 
 
-# **get**
-> InlineResponse200 get()
+# **get_app_status**
+> InlineResponse200 get_app_status()
 
 
 
@@ -28,10 +28,10 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.StatusApi(layar_api.ApiClient(configuration))
 
 try:
-    api_response = api_instance.get()
+    api_response = api_instance.get_app_status()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StatusApi->get: %s\n" % e)
+    print("Exception when calling StatusApi->get_app_status: %s\n" % e)
 ```
 
 ### Parameters

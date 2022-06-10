@@ -30,52 +30,90 @@ class QuestionSearchCommand(BaseSearchCommand):
     """
     swagger_types = {
         'batch_grouping_key': 'str',
+        'batch_grouping_keys': 'list[str]',
         'complete': 'list[str]',
         'data_providers': 'list[str]',
         'query_strings': 'list[str]',
         'question_ids': 'list[str]',
         'assigned_user_ids': 'list[int]',
+        'moderator_user_ids': 'list[int]',
         'question_key': 'str',
+        'question_keys': 'list[str]',
         'search': 'ParagraphQuestionSearchCommand',
         'single_doc_question_document_id': 'str',
+        'single_doc_question_document_ids': 'list[str]',
         'source_fields': 'object',
-        'type_of_search': 'QuestionAnswerTypeOfSearch'
+        'type_of_search': 'QuestionAnswerTypeOfSearch',
+        'curation_complete': 'list[str]',
+        'curation_discord': 'list[str]',
+        'moderated': 'list[str]',
+        'has_assigned_users': 'list[str]',
+        'has_moderator_users': 'list[str]',
+        'has_user_curations': 'list[str]',
+        'curation_complete_for_assigned_user_ids': 'list[str]',
+        'has_answers': 'list[str]'
     }
     if hasattr(BaseSearchCommand, "swagger_types"):
         swagger_types.update(BaseSearchCommand.swagger_types)
 
     attribute_map = {
         'batch_grouping_key': 'batchGroupingKey',
+        'batch_grouping_keys': 'batchGroupingKeys',
         'complete': 'complete',
         'data_providers': 'dataProviders',
         'query_strings': 'queryStrings',
         'question_ids': 'questionIds',
         'assigned_user_ids': 'assignedUserIds',
+        'moderator_user_ids': 'moderatorUserIds',
         'question_key': 'questionKey',
+        'question_keys': 'questionKeys',
         'search': 'search',
         'single_doc_question_document_id': 'singleDocQuestionDocumentId',
+        'single_doc_question_document_ids': 'singleDocQuestionDocumentIds',
         'source_fields': 'sourceFields',
-        'type_of_search': 'typeOfSearch'
+        'type_of_search': 'typeOfSearch',
+        'curation_complete': 'curationComplete',
+        'curation_discord': 'curationDiscord',
+        'moderated': 'moderated',
+        'has_assigned_users': 'hasAssignedUsers',
+        'has_moderator_users': 'hasModeratorUsers',
+        'has_user_curations': 'hasUserCurations',
+        'curation_complete_for_assigned_user_ids': 'curationCompleteForAssignedUserIds',
+        'has_answers': 'hasAnswers'
     }
     if hasattr(BaseSearchCommand, "attribute_map"):
         attribute_map.update(BaseSearchCommand.attribute_map)
 
-    def __init__(self, batch_grouping_key=None, complete=None, data_providers=None, query_strings=None, question_ids=None, assigned_user_ids=None, question_key=None, search=None, single_doc_question_document_id=None, source_fields=None, type_of_search=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, batch_grouping_key=None, batch_grouping_keys=None, complete=None, data_providers=None, query_strings=None, question_ids=None, assigned_user_ids=None, moderator_user_ids=None, question_key=None, question_keys=None, search=None, single_doc_question_document_id=None, single_doc_question_document_ids=None, source_fields=None, type_of_search=None, curation_complete=None, curation_discord=None, moderated=None, has_assigned_users=None, has_moderator_users=None, has_user_curations=None, curation_complete_for_assigned_user_ids=None, has_answers=None, *args, **kwargs):  # noqa: E501
         """QuestionSearchCommand - a model defined in Swagger"""  # noqa: E501
         self._batch_grouping_key = None
+        self._batch_grouping_keys = None
         self._complete = None
         self._data_providers = None
         self._query_strings = None
         self._question_ids = None
         self._assigned_user_ids = None
+        self._moderator_user_ids = None
         self._question_key = None
+        self._question_keys = None
         self._search = None
         self._single_doc_question_document_id = None
+        self._single_doc_question_document_ids = None
         self._source_fields = None
         self._type_of_search = None
+        self._curation_complete = None
+        self._curation_discord = None
+        self._moderated = None
+        self._has_assigned_users = None
+        self._has_moderator_users = None
+        self._has_user_curations = None
+        self._curation_complete_for_assigned_user_ids = None
+        self._has_answers = None
         self.discriminator = None
         if batch_grouping_key is not None:
             self.batch_grouping_key = batch_grouping_key
+        if batch_grouping_keys is not None:
+            self.batch_grouping_keys = batch_grouping_keys
         if complete is not None:
             self.complete = complete
         if data_providers is not None:
@@ -86,16 +124,38 @@ class QuestionSearchCommand(BaseSearchCommand):
             self.question_ids = question_ids
         if assigned_user_ids is not None:
             self.assigned_user_ids = assigned_user_ids
+        if moderator_user_ids is not None:
+            self.moderator_user_ids = moderator_user_ids
         if question_key is not None:
             self.question_key = question_key
+        if question_keys is not None:
+            self.question_keys = question_keys
         if search is not None:
             self.search = search
         if single_doc_question_document_id is not None:
             self.single_doc_question_document_id = single_doc_question_document_id
+        if single_doc_question_document_ids is not None:
+            self.single_doc_question_document_ids = single_doc_question_document_ids
         if source_fields is not None:
             self.source_fields = source_fields
         if type_of_search is not None:
             self.type_of_search = type_of_search
+        if curation_complete is not None:
+            self.curation_complete = curation_complete
+        if curation_discord is not None:
+            self.curation_discord = curation_discord
+        if moderated is not None:
+            self.moderated = moderated
+        if has_assigned_users is not None:
+            self.has_assigned_users = has_assigned_users
+        if has_moderator_users is not None:
+            self.has_moderator_users = has_moderator_users
+        if has_user_curations is not None:
+            self.has_user_curations = has_user_curations
+        if curation_complete_for_assigned_user_ids is not None:
+            self.curation_complete_for_assigned_user_ids = curation_complete_for_assigned_user_ids
+        if has_answers is not None:
+            self.has_answers = has_answers
         BaseSearchCommand.__init__(self, *args, **kwargs)
 
     @property
@@ -120,6 +180,29 @@ class QuestionSearchCommand(BaseSearchCommand):
         """
 
         self._batch_grouping_key = batch_grouping_key
+
+    @property
+    def batch_grouping_keys(self):
+        """Gets the batch_grouping_keys of this QuestionSearchCommand.  # noqa: E501
+
+        limit results to answers from a list of batch queries  # noqa: E501
+
+        :return: The batch_grouping_keys of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._batch_grouping_keys
+
+    @batch_grouping_keys.setter
+    def batch_grouping_keys(self, batch_grouping_keys):
+        """Sets the batch_grouping_keys of this QuestionSearchCommand.
+
+        limit results to answers from a list of batch queries  # noqa: E501
+
+        :param batch_grouping_keys: The batch_grouping_keys of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._batch_grouping_keys = batch_grouping_keys
 
     @property
     def complete(self):
@@ -194,7 +277,7 @@ class QuestionSearchCommand(BaseSearchCommand):
     def question_ids(self):
         """Gets the question_ids of this QuestionSearchCommand.  # noqa: E501
 
-        limit results to questions that have specifified identifiers  # noqa: E501
+        limit results to questions that have specified identifiers  # noqa: E501
 
         :return: The question_ids of this QuestionSearchCommand.  # noqa: E501
         :rtype: list[str]
@@ -205,7 +288,7 @@ class QuestionSearchCommand(BaseSearchCommand):
     def question_ids(self, question_ids):
         """Sets the question_ids of this QuestionSearchCommand.
 
-        limit results to questions that have specifified identifiers  # noqa: E501
+        limit results to questions that have specified identifiers  # noqa: E501
 
         :param question_ids: The question_ids of this QuestionSearchCommand.  # noqa: E501
         :type: list[str]
@@ -237,6 +320,29 @@ class QuestionSearchCommand(BaseSearchCommand):
         self._assigned_user_ids = assigned_user_ids
 
     @property
+    def moderator_user_ids(self):
+        """Gets the moderator_user_ids of this QuestionSearchCommand.  # noqa: E501
+
+        limit results to questions assigned to user IDs with the moderator curation role  # noqa: E501
+
+        :return: The moderator_user_ids of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._moderator_user_ids
+
+    @moderator_user_ids.setter
+    def moderator_user_ids(self, moderator_user_ids):
+        """Sets the moderator_user_ids of this QuestionSearchCommand.
+
+        limit results to questions assigned to user IDs with the moderator curation role  # noqa: E501
+
+        :param moderator_user_ids: The moderator_user_ids of this QuestionSearchCommand.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._moderator_user_ids = moderator_user_ids
+
+    @property
     def question_key(self):
         """Gets the question_key of this QuestionSearchCommand.  # noqa: E501
 
@@ -258,6 +364,29 @@ class QuestionSearchCommand(BaseSearchCommand):
         """
 
         self._question_key = question_key
+
+    @property
+    def question_keys(self):
+        """Gets the question_keys of this QuestionSearchCommand.  # noqa: E501
+
+        limit results to answers from a list of question keys  # noqa: E501
+
+        :return: The question_keys of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._question_keys
+
+    @question_keys.setter
+    def question_keys(self, question_keys):
+        """Sets the question_keys of this QuestionSearchCommand.
+
+        limit results to answers from a list of question keys  # noqa: E501
+
+        :param question_keys: The question_keys of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._question_keys = question_keys
 
     @property
     def search(self):
@@ -304,6 +433,29 @@ class QuestionSearchCommand(BaseSearchCommand):
         self._single_doc_question_document_id = single_doc_question_document_id
 
     @property
+    def single_doc_question_document_ids(self):
+        """Gets the single_doc_question_document_ids of this QuestionSearchCommand.  # noqa: E501
+
+        include answers that were asked from a list of documents  # noqa: E501
+
+        :return: The single_doc_question_document_ids of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._single_doc_question_document_ids
+
+    @single_doc_question_document_ids.setter
+    def single_doc_question_document_ids(self, single_doc_question_document_ids):
+        """Sets the single_doc_question_document_ids of this QuestionSearchCommand.
+
+        include answers that were asked from a list of documents  # noqa: E501
+
+        :param single_doc_question_document_ids: The single_doc_question_document_ids of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._single_doc_question_document_ids = single_doc_question_document_ids
+
+    @property
     def source_fields(self):
         """Gets the source_fields of this QuestionSearchCommand.  # noqa: E501
 
@@ -344,6 +496,190 @@ class QuestionSearchCommand(BaseSearchCommand):
         """
 
         self._type_of_search = type_of_search
+
+    @property
+    def curation_complete(self):
+        """Gets the curation_complete of this QuestionSearchCommand.  # noqa: E501
+
+        determine whether every user has (not) provided an answer for a given document curation  # noqa: E501
+
+        :return: The curation_complete of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._curation_complete
+
+    @curation_complete.setter
+    def curation_complete(self, curation_complete):
+        """Sets the curation_complete of this QuestionSearchCommand.
+
+        determine whether every user has (not) provided an answer for a given document curation  # noqa: E501
+
+        :param curation_complete: The curation_complete of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._curation_complete = curation_complete
+
+    @property
+    def curation_discord(self):
+        """Gets the curation_discord of this QuestionSearchCommand.  # noqa: E501
+
+        determine whether there is (not) a discrepancy between users' answers for a given document curation  # noqa: E501
+
+        :return: The curation_discord of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._curation_discord
+
+    @curation_discord.setter
+    def curation_discord(self, curation_discord):
+        """Sets the curation_discord of this QuestionSearchCommand.
+
+        determine whether there is (not) a discrepancy between users' answers for a given document curation  # noqa: E501
+
+        :param curation_discord: The curation_discord of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._curation_discord = curation_discord
+
+    @property
+    def moderated(self):
+        """Gets the moderated of this QuestionSearchCommand.  # noqa: E501
+
+        determine whether a user with the moderator curation role has (not) added a curated answer  # noqa: E501
+
+        :return: The moderated of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._moderated
+
+    @moderated.setter
+    def moderated(self, moderated):
+        """Sets the moderated of this QuestionSearchCommand.
+
+        determine whether a user with the moderator curation role has (not) added a curated answer  # noqa: E501
+
+        :param moderated: The moderated of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._moderated = moderated
+
+    @property
+    def has_assigned_users(self):
+        """Gets the has_assigned_users of this QuestionSearchCommand.  # noqa: E501
+
+        a question has (doesn't have) assignedUserIds  # noqa: E501
+
+        :return: The has_assigned_users of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._has_assigned_users
+
+    @has_assigned_users.setter
+    def has_assigned_users(self, has_assigned_users):
+        """Sets the has_assigned_users of this QuestionSearchCommand.
+
+        a question has (doesn't have) assignedUserIds  # noqa: E501
+
+        :param has_assigned_users: The has_assigned_users of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._has_assigned_users = has_assigned_users
+
+    @property
+    def has_moderator_users(self):
+        """Gets the has_moderator_users of this QuestionSearchCommand.  # noqa: E501
+
+        a question has (doesn't have) moderatorUserIds  # noqa: E501
+
+        :return: The has_moderator_users of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._has_moderator_users
+
+    @has_moderator_users.setter
+    def has_moderator_users(self, has_moderator_users):
+        """Sets the has_moderator_users of this QuestionSearchCommand.
+
+        a question has (doesn't have) moderatorUserIds  # noqa: E501
+
+        :param has_moderator_users: The has_moderator_users of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._has_moderator_users = has_moderator_users
+
+    @property
+    def has_user_curations(self):
+        """Gets the has_user_curations of this QuestionSearchCommand.  # noqa: E501
+
+        a question has (doesn't have) any user provided curations  # noqa: E501
+
+        :return: The has_user_curations of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._has_user_curations
+
+    @has_user_curations.setter
+    def has_user_curations(self, has_user_curations):
+        """Sets the has_user_curations of this QuestionSearchCommand.
+
+        a question has (doesn't have) any user provided curations  # noqa: E501
+
+        :param has_user_curations: The has_user_curations of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._has_user_curations = has_user_curations
+
+    @property
+    def curation_complete_for_assigned_user_ids(self):
+        """Gets the curation_complete_for_assigned_user_ids of this QuestionSearchCommand.  # noqa: E501
+
+        a question has (doesn't have) all assigned user provided curations  # noqa: E501
+
+        :return: The curation_complete_for_assigned_user_ids of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._curation_complete_for_assigned_user_ids
+
+    @curation_complete_for_assigned_user_ids.setter
+    def curation_complete_for_assigned_user_ids(self, curation_complete_for_assigned_user_ids):
+        """Sets the curation_complete_for_assigned_user_ids of this QuestionSearchCommand.
+
+        a question has (doesn't have) all assigned user provided curations  # noqa: E501
+
+        :param curation_complete_for_assigned_user_ids: The curation_complete_for_assigned_user_ids of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._curation_complete_for_assigned_user_ids = curation_complete_for_assigned_user_ids
+
+    @property
+    def has_answers(self):
+        """Gets the has_answers of this QuestionSearchCommand.  # noqa: E501
+
+        a question has a model generated answer  # noqa: E501
+
+        :return: The has_answers of this QuestionSearchCommand.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._has_answers
+
+    @has_answers.setter
+    def has_answers(self, has_answers):
+        """Sets the has_answers of this QuestionSearchCommand.
+
+        a question has a model generated answer  # noqa: E501
+
+        :param has_answers: The has_answers of this QuestionSearchCommand.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._has_answers = has_answers
 
     def to_dict(self):
         """Returns the model properties as a dict"""

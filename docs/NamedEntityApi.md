@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_types**](NamedEntityApi.md#get_types) | **GET** /namedEntity/types | A list of the available Named Entity Types
 [**named_entity_tag**](NamedEntityApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
-[**tag**](NamedEntityApi.md#tag) | **POST** /namedEntity/tag | 
+[**tag_ner**](NamedEntityApi.md#tag_ner) | **POST** /namedEntity/tag | Find named entity tags by query term or list of types
 
 # **get_types**
 > list[str] get_types()
@@ -108,10 +108,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tag**
-> NamedEntityResponse tag(body)
+# **tag_ner**
+> NamedEntityResponse tag_ner(body)
 
-
+Find named entity tags by query term or list of types
 
 ### Example
 ```python
@@ -131,10 +131,11 @@ api_instance = layar_api.NamedEntityApi(layar_api.ApiClient(configuration))
 body = layar_api.NamedEntityRequest() # NamedEntityRequest | 
 
 try:
-    api_response = api_instance.tag(body)
+    # Find named entity tags by query term or list of types
+    api_response = api_instance.tag_ner(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NamedEntityApi->tag: %s\n" % e)
+    print("Exception when calling NamedEntityApi->tag_ner: %s\n" % e)
 ```
 
 ### Parameters

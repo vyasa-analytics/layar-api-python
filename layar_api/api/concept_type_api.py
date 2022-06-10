@@ -32,12 +32,12 @@ class ConceptTypeApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_concept_type(self, body, **kwargs):  # noqa: E501
+        """Save new concept types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(body, async_req=True)
+        >>> thread = api.create_concept_type(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class ConceptTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_concept_type_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_concept_type_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_with_http_info(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_concept_type_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Save new concept types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(body, async_req=True)
+        >>> thread = api.create_concept_type_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class ConceptTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method create_concept_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_concept_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -129,12 +129,12 @@ class ConceptTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_concept_type(self, id, **kwargs):  # noqa: E501
+        """Delete a single concept type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(id, async_req=True)
+        >>> thread = api.delete_concept_type(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -145,17 +145,17 @@ class ConceptTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_concept_type_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_concept_type_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_concept_type_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete a single concept type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_concept_type_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -176,14 +176,14 @@ class ConceptTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method delete_concept_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_concept_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -218,43 +218,41 @@ class ConceptTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_many(self, body, **kwargs):  # noqa: E501
-        """delete all the records with the given IDs  # noqa: E501
+    def delete_concept_types(self, **kwargs):  # noqa: E501
+        """Delete all the records with the given IDs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many(body, async_req=True)
+        >>> thread = api.delete_concept_types(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_concept_types_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_concept_types_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_many_with_http_info(self, body, **kwargs):  # noqa: E501
-        """delete all the records with the given IDs  # noqa: E501
+    def delete_concept_types_with_http_info(self, **kwargs):  # noqa: E501
+        """Delete all the records with the given IDs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many_with_http_info(body, async_req=True)
+        >>> thread = api.delete_concept_types_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -265,14 +263,10 @@ class ConceptTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_many" % key
+                    " to method delete_concept_types" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_many`")  # noqa: E501
 
         collection_formats = {}
 
@@ -286,14 +280,8 @@ class ConceptTypeApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -315,12 +303,12 @@ class ConceptTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, id, **kwargs):  # noqa: E501
-        """concept type details  # noqa: E501
+    def get_concept_type(self, id, **kwargs):  # noqa: E501
+        """Concept type details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, async_req=True)
+        >>> thread = api.get_concept_type(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -331,17 +319,17 @@ class ConceptTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_concept_type_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_concept_type_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """concept type details  # noqa: E501
+    def get_concept_type_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Concept type details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, async_req=True)
+        >>> thread = api.get_concept_type_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -362,14 +350,14 @@ class ConceptTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_concept_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_concept_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -409,7 +397,7 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def get_counts(self, **kwargs):  # noqa: E501
-        """get counts concepts broken down by concept type  # noqa: E501
+        """Get result counts by concept type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -417,7 +405,7 @@ class ConceptTypeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: MapC2ABstring2CobjectC2BB
+        :return: MapStringObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -429,7 +417,7 @@ class ConceptTypeApi(object):
             return data
 
     def get_counts_with_http_info(self, **kwargs):  # noqa: E501
-        """get counts concepts broken down by concept type  # noqa: E501
+        """Get result counts by concept type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -437,7 +425,7 @@ class ConceptTypeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: MapC2ABstring2CobjectC2BB
+        :return: MapStringObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -485,7 +473,7 @@ class ConceptTypeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MapC2ABstring2CobjectC2BB',  # noqa: E501
+            response_type='MapStringObject',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -578,12 +566,12 @@ class ConceptTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """search for concept types  # noqa: E501
+    def search_concept_types(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+        """Search for concept types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(x_vyasa_data_providers, async_req=True)
+        >>> thread = api.search_concept_types(x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -596,17 +584,17 @@ class ConceptTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            return self.search_concept_types_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            (data) = self.search_concept_types_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """search for concept types  # noqa: E501
+    def search_concept_types_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+        """Search for concept types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(x_vyasa_data_providers, async_req=True)
+        >>> thread = api.search_concept_types_with_http_info(x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -629,14 +617,14 @@ class ConceptTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_concept_types" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'x_vyasa_data_providers' is set
         if ('x_vyasa_data_providers' not in params or
                 params['x_vyasa_data_providers'] is None):
-            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `search`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `search_concept_types`")  # noqa: E501
 
         collection_formats = {}
 
@@ -679,12 +667,12 @@ class ConceptTypeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_concept_type(self, body, id, **kwargs):  # noqa: E501
+        """Update a single concept type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(body, id, async_req=True)
+        >>> thread = api.update_concept_type(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -696,17 +684,17 @@ class ConceptTypeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_concept_type_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_concept_type_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_concept_type_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Update a single concept type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_concept_type_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -728,18 +716,18 @@ class ConceptTypeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method update_concept_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_concept_type`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_concept_type`")  # noqa: E501
 
         collection_formats = {}
 

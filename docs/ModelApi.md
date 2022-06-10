@@ -4,15 +4,15 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**download**](ModelApi.md#download) | **GET** /model/{id}/download | download
-[**search_by_computation_id**](ModelApi.md#search_by_computation_id) | **GET** /projectComputation/{id}/models | find deep learning models by project computation
-[**search_by_module_id**](ModelApi.md#search_by_module_id) | **GET** /module/{moduleId}/models | find deep learning models by module
-[**search_by_project_id**](ModelApi.md#search_by_project_id) | **GET** /project/{projectId}/models | find deep learning models by project
+[**download_model**](ModelApi.md#download_model) | **GET** /model/{id}/download | Download a learning model by ID
+[**search_models_by_computation_id**](ModelApi.md#search_models_by_computation_id) | **GET** /projectComputation/{id}/models | find deep learning models by project computation
+[**search_models_by_module_id**](ModelApi.md#search_models_by_module_id) | **GET** /module/{moduleId}/models | Find deep learning models by module
+[**search_models_by_project_id**](ModelApi.md#search_models_by_project_id) | **GET** /project/{projectId}/models | find deep learning models by project
 
-# **download**
-> str download(id)
+# **download_model**
+> str download_model(id)
 
-download
+Download a learning model by ID
 
 ### Example
 ```python
@@ -32,11 +32,11 @@ api_instance = layar_api.ModelApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # download
-    api_response = api_instance.download(id)
+    # Download a learning model by ID
+    api_response = api_instance.download_model(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelApi->download: %s\n" % e)
+    print("Exception when calling ModelApi->download_model: %s\n" % e)
 ```
 
 ### Parameters
@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_by_computation_id**
-> list[DeepLearningModel] search_by_computation_id(id, computation_id, start=start, rows=rows, q=q)
+# **search_models_by_computation_id**
+> list[DeepLearningModel] search_models_by_computation_id(id, start=start, rows=rows, q=q)
 
 find deep learning models by project computation
 
@@ -81,17 +81,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.ModelApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
-computation_id = 'computation_id_example' # str | 
 start = 56 # int | the start offset for the row (optional)
 rows = 56 # int | the number of rows to return (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
     # find deep learning models by project computation
-    api_response = api_instance.search_by_computation_id(id, computation_id, start=start, rows=rows, q=q)
+    api_response = api_instance.search_models_by_computation_id(id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelApi->search_by_computation_id: %s\n" % e)
+    print("Exception when calling ModelApi->search_models_by_computation_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,7 +98,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **computation_id** | **str**|  | 
  **start** | **int**| the start offset for the row | [optional] 
  **rows** | **int**| the number of rows to return | [optional] 
  **q** | **str**| the query string to search for | [optional] 
@@ -119,10 +117,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_by_module_id**
-> list[DeepLearningModel] search_by_module_id(module_id, start=start, rows=rows, q=q)
+# **search_models_by_module_id**
+> list[DeepLearningModel] search_models_by_module_id(module_id, start=start, rows=rows, q=q)
 
-find deep learning models by module
+Find deep learning models by module
 
 ### Example
 ```python
@@ -145,11 +143,11 @@ rows = 56 # int | the number of rows to return (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # find deep learning models by module
-    api_response = api_instance.search_by_module_id(module_id, start=start, rows=rows, q=q)
+    # Find deep learning models by module
+    api_response = api_instance.search_models_by_module_id(module_id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelApi->search_by_module_id: %s\n" % e)
+    print("Exception when calling ModelApi->search_models_by_module_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -176,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_by_project_id**
-> list[DeepLearningModel] search_by_project_id(project_id, start=start, rows=rows, q=q)
+# **search_models_by_project_id**
+> list[DeepLearningModel] search_models_by_project_id(project_id, start=start, rows=rows, q=q)
 
 find deep learning models by project
 
@@ -203,10 +201,10 @@ q = 'q_example' # str | the query string to search for (optional)
 
 try:
     # find deep learning models by project
-    api_response = api_instance.search_by_project_id(project_id, start=start, rows=rows, q=q)
+    api_response = api_instance.search_models_by_project_id(project_id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelApi->search_by_project_id: %s\n" % e)
+    print("Exception when calling ModelApi->search_models_by_project_id: %s\n" % e)
 ```
 
 ### Parameters

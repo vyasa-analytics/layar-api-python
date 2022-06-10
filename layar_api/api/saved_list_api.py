@@ -33,7 +33,7 @@ class SavedListApi(object):
         self.api_client = api_client
 
     def add_items(self, body, id, **kwargs):  # noqa: E501
-        """addItem  # noqa: E501
+        """Add items to a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -56,7 +56,7 @@ class SavedListApi(object):
             return data
 
     def add_items_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """addItem  # noqa: E501
+        """Add items to a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -142,7 +142,7 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def add_items_by_search(self, body, id, **kwargs):  # noqa: E501
-        """addItem  # noqa: E501
+        """Add items to a saved list from a search  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -165,7 +165,7 @@ class SavedListApi(object):
             return data
 
     def add_items_by_search_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """addItem  # noqa: E501
+        """Add items to a saved list from a search  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -250,43 +250,45 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_saved_list(self, body, **kwargs):  # noqa: E501
+        """Create a new saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(body, async_req=True)
+        >>> thread = api.create_saved_list(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param SavedList body: (required)
+        :param str x_vyasa_client_hint: intended client application UI
         :return: SavedList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_saved_list_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_saved_list_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_with_http_info(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_saved_list_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Create a new saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(body, async_req=True)
+        >>> thread = api.create_saved_list_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param SavedList body: (required)
+        :param str x_vyasa_client_hint: intended client application UI
         :return: SavedList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['body', 'x_vyasa_client_hint']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -297,14 +299,14 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method create_saved_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_saved_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -313,6 +315,8 @@ class SavedListApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_vyasa_client_hint' in params:
+            header_params['X-Vyasa-Client-Hint'] = params['x_vyasa_client_hint']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -347,12 +351,12 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_saved_list(self, id, **kwargs):  # noqa: E501
+        """Delete a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(id, async_req=True)
+        >>> thread = api.delete_saved_list(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -363,17 +367,17 @@ class SavedListApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_saved_list_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_saved_list_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_saved_list_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_saved_list_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -394,14 +398,14 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method delete_saved_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_saved_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -440,43 +444,41 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_many(self, body, **kwargs):  # noqa: E501
+    def delete_saved_lists(self, **kwargs):  # noqa: E501
         """delete all the given ids  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many(body, async_req=True)
+        >>> thread = api.delete_saved_lists(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_saved_lists_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_saved_lists_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_many_with_http_info(self, body, **kwargs):  # noqa: E501
+    def delete_saved_lists_with_http_info(self, **kwargs):  # noqa: E501
         """delete all the given ids  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many_with_http_info(body, async_req=True)
+        >>> thread = api.delete_saved_lists_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -487,14 +489,10 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_many" % key
+                    " to method delete_saved_lists" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_many`")  # noqa: E501
 
         collection_formats = {}
 
@@ -508,14 +506,8 @@ class SavedListApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -537,12 +529,12 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def download_csv(self, id, **kwargs):  # noqa: E501
-        """downloadCsv  # noqa: E501
+    def download_saved_list(self, id, **kwargs):  # noqa: E501
+        """Download the contents of a savedc list as a csv file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_csv(id, async_req=True)
+        >>> thread = api.download_saved_list(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -553,17 +545,17 @@ class SavedListApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.download_csv_with_http_info(id, **kwargs)  # noqa: E501
+            return self.download_saved_list_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.download_csv_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.download_saved_list_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def download_csv_with_http_info(self, id, **kwargs):  # noqa: E501
-        """downloadCsv  # noqa: E501
+    def download_saved_list_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Download the contents of a savedc list as a csv file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_csv_with_http_info(id, async_req=True)
+        >>> thread = api.download_saved_list_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -584,14 +576,14 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method download_csv" % key
+                    " to method download_saved_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `download_csv`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `download_saved_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -630,12 +622,12 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, id, **kwargs):  # noqa: E501
+    def get_saved_list(self, id, **kwargs):  # noqa: E501
         """saved list details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, async_req=True)
+        >>> thread = api.get_saved_list(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -646,17 +638,17 @@ class SavedListApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_saved_list_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_saved_list_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_saved_list_with_http_info(self, id, **kwargs):  # noqa: E501
         """saved list details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, async_req=True)
+        >>> thread = api.get_saved_list_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -677,14 +669,14 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_saved_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_saved_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -723,16 +715,15 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_items(self, body, id, **kwargs):  # noqa: E501
-        """removeItem  # noqa: E501
+    def remove_items(self, id, **kwargs):  # noqa: E501
+        """Remove items from a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_items(body, id, async_req=True)
+        >>> thread = api.remove_items(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfItemIds body: (required)
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -740,28 +731,27 @@ class SavedListApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.remove_items_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.remove_items_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.remove_items_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.remove_items_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def remove_items_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """removeItem  # noqa: E501
+    def remove_items_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Remove items from a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_items_with_http_info(body, id, async_req=True)
+        >>> thread = api.remove_items_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfItemIds body: (required)
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'id']  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -776,10 +766,6 @@ class SavedListApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `remove_items`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
@@ -799,14 +785,8 @@ class SavedListApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -828,12 +808,12 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_saved_list(self, **kwargs):  # noqa: E501
+        """Search for saved lists  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_saved_list(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -846,17 +826,17 @@ class SavedListApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_saved_list_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_saved_list_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_saved_list_with_http_info(self, **kwargs):  # noqa: E501
+        """Search for saved lists  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_saved_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -879,7 +859,7 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_saved_list" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -925,12 +905,12 @@ class SavedListApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_saved_list(self, body, id, **kwargs):  # noqa: E501
+        """Update a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(body, id, async_req=True)
+        >>> thread = api.update_saved_list(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -942,17 +922,17 @@ class SavedListApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_saved_list_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_saved_list_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_saved_list_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Update a saved list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_saved_list_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -974,18 +954,18 @@ class SavedListApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method update_saved_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_saved_list`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_saved_list`")  # noqa: E501
 
         collection_formats = {}
 

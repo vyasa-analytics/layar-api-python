@@ -4,10 +4,10 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search**](AllApi.md#search) | **GET** /all | 
+[**search_all**](AllApi.md#search_all) | **GET** /all | 
 
-# **search**
-> AllSearchResponse search(q=q, start=start, rows=rows, concept_id=concept_id, type_filter=type_filter)
+# **search_all**
+> AllSearchResponse search_all(q=q, start=start, rows=rows, concept_id=concept_id, type_filter=type_filter)
 
 
 
@@ -33,10 +33,10 @@ concept_id = 'concept_id_example' # str | limit results to those tagged with the
 type_filter = 'type_filter_example' # str |  (optional)
 
 try:
-    api_response = api_instance.search(q=q, start=start, rows=rows, concept_id=concept_id, type_filter=type_filter)
+    api_response = api_instance.search_all(q=q, start=start, rows=rows, concept_id=concept_id, type_filter=type_filter)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AllApi->search: %s\n" % e)
+    print("Exception when calling AllApi->search_all: %s\n" % e)
 ```
 
 ### Parameters

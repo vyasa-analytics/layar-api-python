@@ -32,12 +32,12 @@ class StatusApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get(self, **kwargs):  # noqa: E501
-        """get  # noqa: E501
+    def get_app_status(self, **kwargs):  # noqa: E501
+        """get_app_status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(async_req=True)
+        >>> thread = api.get_app_status(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -47,17 +47,17 @@ class StatusApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_app_status_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_app_status_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, **kwargs):  # noqa: E501
-        """get  # noqa: E501
+    def get_app_status_with_http_info(self, **kwargs):  # noqa: E501
+        """get_app_status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(async_req=True)
+        >>> thread = api.get_app_status_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -77,7 +77,7 @@ class StatusApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_app_status" % key
                 )
             params[key] = val
         del params['kwargs']

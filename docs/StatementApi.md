@@ -4,20 +4,20 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](StatementApi.md#create) | **POST** /statement | save
-[**delete**](StatementApi.md#delete) | **DELETE** /statement/{id} | delete
-[**delete_many**](StatementApi.md#delete_many) | **DELETE** /statement/deleteMany | deleteMany
-[**get**](StatementApi.md#get) | **GET** /statement/{id} | statement details
-[**get_field_counts**](StatementApi.md#get_field_counts) | **POST** /statement/{field}/counts | 
-[**get_relationship_evidence**](StatementApi.md#get_relationship_evidence) | **GET** /statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2} | relationshipEvidence
+[**create_statement**](StatementApi.md#create_statement) | **POST** /statement | Create a new statement
+[**delete_statement**](StatementApi.md#delete_statement) | **DELETE** /statement/{id} | Delete a statement by ID
+[**delete_statements**](StatementApi.md#delete_statements) | **DELETE** /statement/deleteMany | Delete all the statements in an array
+[**get_relationship_evidence**](StatementApi.md#get_relationship_evidence) | **GET** /statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2} | Get the relationship evidence between two given concepts
+[**get_statement**](StatementApi.md#get_statement) | **GET** /statement/{id} | Get statement details by ID
+[**get_statement_field_counts**](StatementApi.md#get_statement_field_counts) | **POST** /statement/{field}/counts | Get statement counts by table column
 [**named_entity_tag**](StatementApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
-[**search**](StatementApi.md#search) | **POST** /statement/search | search for statements
-[**update**](StatementApi.md#update) | **PUT** /statement/{id} | update
+[**search_statements**](StatementApi.md#search_statements) | **POST** /statement/search | search for statements
+[**update_statement**](StatementApi.md#update_statement) | **PUT** /statement/{id} | Update a statement by ID
 
-# **create**
-> Statement create(body)
+# **create_statement**
+> Statement create_statement(body)
 
-save
+Create a new statement
 
 ### Example
 ```python
@@ -37,11 +37,11 @@ api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
 body = layar_api.Statement() # Statement | 
 
 try:
-    # save
-    api_response = api_instance.create(body)
+    # Create a new statement
+    api_response = api_instance.create_statement(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StatementApi->create: %s\n" % e)
+    print("Exception when calling StatementApi->create_statement: %s\n" % e)
 ```
 
 ### Parameters
@@ -65,10 +65,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_statement**
+> delete_statement(id)
 
-delete
+Delete a statement by ID
 
 ### Example
 ```python
@@ -88,10 +88,10 @@ api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a statement by ID
+    api_instance.delete_statement(id)
 except ApiException as e:
-    print("Exception when calling StatementApi->delete: %s\n" % e)
+    print("Exception when calling StatementApi->delete_statement: %s\n" % e)
 ```
 
 ### Parameters
@@ -115,10 +115,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_statements**
+> delete_statements()
 
-deleteMany
+Delete all the statements in an array
 
 ### Example
 ```python
@@ -135,20 +135,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
-    # deleteMany
-    api_instance.delete_many(body)
+    # Delete all the statements in an array
+    api_instance.delete_statements()
 except ApiException as e:
-    print("Exception when calling StatementApi->delete_many: %s\n" % e)
+    print("Exception when calling StatementApi->delete_statements: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -160,110 +156,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get**
-> Statement get(id)
-
-statement details
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # statement details
-    api_response = api_instance.get(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling StatementApi->get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**Statement**](Statement.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_field_counts**
-> list[FieldCount] get_field_counts(body, field)
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
-body = layar_api.StatementSearchCommand() # StatementSearchCommand | 
-field = 'field_example' # str | 
-
-try:
-    api_response = api_instance.get_field_counts(body, field)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling StatementApi->get_field_counts: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**StatementSearchCommand**](StatementSearchCommand.md)|  | 
- **field** | **str**|  | 
-
-### Return type
-
-[**list[FieldCount]**](FieldCount.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -271,7 +164,7 @@ Name | Type | Description  | Notes
 # **get_relationship_evidence**
 > list[Statement] get_relationship_evidence(concept_id1, relationship, concept_id2)
 
-relationshipEvidence
+Get the relationship evidence between two given concepts
 
 ### Example
 ```python
@@ -293,7 +186,7 @@ relationship = 'relationship_example' # str |
 concept_id2 = 'concept_id2_example' # str | 
 
 try:
-    # relationshipEvidence
+    # Get the relationship evidence between two given concepts
     api_response = api_instance.get_relationship_evidence(concept_id1, relationship, concept_id2)
     pprint(api_response)
 except ApiException as e:
@@ -319,6 +212,110 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_statement**
+> Statement get_statement(id)
+
+Get statement details by ID
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Get statement details by ID
+    api_response = api_instance.get_statement(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatementApi->get_statement: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**Statement**](Statement.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_statement_field_counts**
+> list[FieldCount] get_statement_field_counts(body, field)
+
+Get statement counts by table column
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
+body = layar_api.StatementSearchCommand() # StatementSearchCommand | 
+field = 'field_example' # str | 
+
+try:
+    # Get statement counts by table column
+    api_response = api_instance.get_statement_field_counts(body, field)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatementApi->get_statement_field_counts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**StatementSearchCommand**](StatementSearchCommand.md)|  | 
+ **field** | **str**|  | 
+
+### Return type
+
+[**list[FieldCount]**](FieldCount.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -376,8 +373,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[Statement] search(body=body)
+# **search_statements**
+> list[Statement] search_statements(body=body)
 
 search for statements
 
@@ -400,10 +397,10 @@ body = layar_api.StatementSearchCommand() # StatementSearchCommand |  (optional)
 
 try:
     # search for statements
-    api_response = api_instance.search(body=body)
+    api_response = api_instance.search_statements(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StatementApi->search: %s\n" % e)
+    print("Exception when calling StatementApi->search_statements: %s\n" % e)
 ```
 
 ### Parameters
@@ -427,10 +424,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> Statement update(body, id)
+# **update_statement**
+> Statement update_statement(body, id)
 
-update
+Update a statement by ID
 
 ### Example
 ```python
@@ -451,11 +448,11 @@ body = layar_api.Statement() # Statement |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update(body, id)
+    # Update a statement by ID
+    api_response = api_instance.update_statement(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StatementApi->update: %s\n" % e)
+    print("Exception when calling StatementApi->update_statement: %s\n" % e)
 ```
 
 ### Parameters

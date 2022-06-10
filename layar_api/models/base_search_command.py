@@ -76,6 +76,7 @@ class BaseSearchCommand(object):
     def from_date(self):
         """Gets the from_date of this BaseSearchCommand.  # noqa: E501
 
+        Starting date formatted as YYYY-MM-DD  # noqa: E501
 
         :return: The from_date of this BaseSearchCommand.  # noqa: E501
         :rtype: datetime
@@ -86,6 +87,7 @@ class BaseSearchCommand(object):
     def from_date(self, from_date):
         """Sets the from_date of this BaseSearchCommand.
 
+        Starting date formatted as YYYY-MM-DD  # noqa: E501
 
         :param from_date: The from_date of this BaseSearchCommand.  # noqa: E501
         :type: datetime
@@ -97,6 +99,7 @@ class BaseSearchCommand(object):
     def q(self):
         """Gets the q of this BaseSearchCommand.  # noqa: E501
 
+        The query string to search for  # noqa: E501
 
         :return: The q of this BaseSearchCommand.  # noqa: E501
         :rtype: str
@@ -107,6 +110,7 @@ class BaseSearchCommand(object):
     def q(self, q):
         """Sets the q of this BaseSearchCommand.
 
+        The query string to search for  # noqa: E501
 
         :param q: The q of this BaseSearchCommand.  # noqa: E501
         :type: str
@@ -118,6 +122,7 @@ class BaseSearchCommand(object):
     def rows(self):
         """Gets the rows of this BaseSearchCommand.  # noqa: E501
 
+        The number of results to return  # noqa: E501
 
         :return: The rows of this BaseSearchCommand.  # noqa: E501
         :rtype: int
@@ -128,6 +133,7 @@ class BaseSearchCommand(object):
     def rows(self, rows):
         """Sets the rows of this BaseSearchCommand.
 
+        The number of results to return  # noqa: E501
 
         :param rows: The rows of this BaseSearchCommand.  # noqa: E501
         :type: int
@@ -139,6 +145,7 @@ class BaseSearchCommand(object):
     def sort(self):
         """Gets the sort of this BaseSearchCommand.  # noqa: E501
 
+        The result value to sort by  # noqa: E501
 
         :return: The sort of this BaseSearchCommand.  # noqa: E501
         :rtype: str
@@ -149,6 +156,7 @@ class BaseSearchCommand(object):
     def sort(self, sort):
         """Sets the sort of this BaseSearchCommand.
 
+        The result value to sort by  # noqa: E501
 
         :param sort: The sort of this BaseSearchCommand.  # noqa: E501
         :type: str
@@ -160,6 +168,7 @@ class BaseSearchCommand(object):
     def sort_order(self):
         """Gets the sort_order of this BaseSearchCommand.  # noqa: E501
 
+        The order to sort by (ex- 'ASC' or 'DESC')  # noqa: E501
 
         :return: The sort_order of this BaseSearchCommand.  # noqa: E501
         :rtype: str
@@ -170,6 +179,7 @@ class BaseSearchCommand(object):
     def sort_order(self, sort_order):
         """Sets the sort_order of this BaseSearchCommand.
 
+        The order to sort by (ex- 'ASC' or 'DESC')  # noqa: E501
 
         :param sort_order: The sort_order of this BaseSearchCommand.  # noqa: E501
         :type: str
@@ -181,6 +191,7 @@ class BaseSearchCommand(object):
     def start(self):
         """Gets the start of this BaseSearchCommand.  # noqa: E501
 
+        The index of the row to start returning values from  # noqa: E501
 
         :return: The start of this BaseSearchCommand.  # noqa: E501
         :rtype: int
@@ -191,6 +202,7 @@ class BaseSearchCommand(object):
     def start(self, start):
         """Sets the start of this BaseSearchCommand.
 
+        The index of the row to start returning values from  # noqa: E501
 
         :param start: The start of this BaseSearchCommand.  # noqa: E501
         :type: int
@@ -202,6 +214,7 @@ class BaseSearchCommand(object):
     def to_date(self):
         """Gets the to_date of this BaseSearchCommand.  # noqa: E501
 
+        Ending date formatted as YYYY-MM-DD  # noqa: E501
 
         :return: The to_date of this BaseSearchCommand.  # noqa: E501
         :rtype: datetime
@@ -212,6 +225,7 @@ class BaseSearchCommand(object):
     def to_date(self, to_date):
         """Sets the to_date of this BaseSearchCommand.
 
+        Ending date formatted as YYYY-MM-DD  # noqa: E501
 
         :param to_date: The to_date of this BaseSearchCommand.  # noqa: E501
         :type: datetime

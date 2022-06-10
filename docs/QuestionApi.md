@@ -4,25 +4,25 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ask**](QuestionApi.md#ask) | **POST** /question/ask | 
+[**ask**](QuestionApi.md#ask) | **POST** /question/ask | Create and ask a new question in the QA model
 [**cancel_batch**](QuestionApi.md#cancel_batch) | **PUT** /question/cancelBulkQuestionAnswerJob/{jobID} | cancel an existing request to ask a batch of questions
-[**create**](QuestionApi.md#create) | **POST** /question | save a new question
-[**delete**](QuestionApi.md#delete) | **DELETE** /question/{id} | delete
-[**delete_many**](QuestionApi.md#delete_many) | **DELETE** /question/deleteMany | delete all the records with the given IDs
+[**create_question**](QuestionApi.md#create_question) | **POST** /question | save a new question
+[**delete_question**](QuestionApi.md#delete_question) | **DELETE** /question/{id} | Delete a saved question
+[**delete_questions**](QuestionApi.md#delete_questions) | **DELETE** /question/deleteMany | delete all the records with the given IDs
 [**find_more_answers**](QuestionApi.md#find_more_answers) | **POST** /question/{id}/answers/more | look for more answers to this question
-[**get**](QuestionApi.md#get) | **GET** /question/{id} | question details
-[**get_field_counts**](QuestionApi.md#get_field_counts) | **POST** /question/{field}/counts | 
-[**patch**](QuestionApi.md#patch) | **PATCH** /question/{id} | patch
-[**query_expansion**](QuestionApi.md#query_expansion) | **POST** /question/queryExpansion | 
+[**get_question**](QuestionApi.md#get_question) | **GET** /question/{id} | Get question details
+[**get_question_field_counts**](QuestionApi.md#get_question_field_counts) | **POST** /question/{field}/counts | Get curation counts or progress by field for a QA job
+[**patch_question**](QuestionApi.md#patch_question) | **PATCH** /question/{id} | patch
+[**query_expansion**](QuestionApi.md#query_expansion) | **POST** /question/queryExpansion | Expand the scope of a particular question
 [**refresh_answers**](QuestionApi.md#refresh_answers) | **POST** /question/{id}/answers/refresh | look for answers in new documents
-[**search**](QuestionApi.md#search) | **POST** /question/search | search for questions
+[**search_questions**](QuestionApi.md#search_questions) | **POST** /question/search | search for questions
 [**start_batch**](QuestionApi.md#start_batch) | **POST** /question/startBulkQuestionAnswerJob | submit a request to ask a batch of questions
-[**update**](QuestionApi.md#update) | **PUT** /question/{id} | update
+[**update_question**](QuestionApi.md#update_question) | **PUT** /question/{id} | Update a saved question
 
 # **ask**
 > AskQuestionResponse ask(body, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
 
-
+Create and ask a new question in the QA model
 
 ### Example
 ```python
@@ -43,6 +43,7 @@ body = layar_api.AskQuestionCommand() # AskQuestionCommand |
 x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for advanced users and debugging.  A JSON structure overriding default Question Answering parameters (optional)
 
 try:
+    # Create and ask a new question in the QA model
     api_response = api_instance.ask(body, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
     pprint(api_response)
 except ApiException as e:
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch**
-> InlineResponse2002 cancel_batch(job_id)
+> InlineResponse2001 cancel_batch(job_id)
 
 cancel an existing request to ask a batch of questions
 
@@ -109,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -122,8 +123,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> Question create(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
+# **create_question**
+> Question create_question(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
 
 save a new question
 
@@ -148,10 +149,10 @@ x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for 
 
 try:
     # save a new question
-    api_response = api_instance.create(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
+    api_response = api_instance.create_question(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuestionApi->create: %s\n" % e)
+    print("Exception when calling QuestionApi->create_question: %s\n" % e)
 ```
 
 ### Parameters
@@ -177,10 +178,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_question**
+> delete_question(id)
 
-delete
+Delete a saved question
 
 ### Example
 ```python
@@ -200,10 +201,10 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a saved question
+    api_instance.delete_question(id)
 except ApiException as e:
-    print("Exception when calling QuestionApi->delete: %s\n" % e)
+    print("Exception when calling QuestionApi->delete_question: %s\n" % e)
 ```
 
 ### Parameters
@@ -227,8 +228,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_questions**
+> delete_questions()
 
 delete all the records with the given IDs
 
@@ -247,20 +248,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
     # delete all the records with the given IDs
-    api_instance.delete_many(body)
+    api_instance.delete_questions()
 except ApiException as e:
-    print("Exception when calling QuestionApi->delete_many: %s\n" % e)
+    print("Exception when calling QuestionApi->delete_questions: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -272,7 +269,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -327,10 +324,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> Question get(id)
+# **get_question**
+> Question get_question(id)
 
-question details
+Get question details
 
 ### Example
 ```python
@@ -350,11 +347,11 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # question details
-    api_response = api_instance.get(id)
+    # Get question details
+    api_response = api_instance.get_question(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuestionApi->get: %s\n" % e)
+    print("Exception when calling QuestionApi->get_question: %s\n" % e)
 ```
 
 ### Parameters
@@ -378,10 +375,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_field_counts**
-> list[FieldCount] get_field_counts(body, field)
+# **get_question_field_counts**
+> list[FieldCount] get_question_field_counts(body, field)
 
-
+Get curation counts or progress by field for a QA job
 
 ### Example
 ```python
@@ -402,10 +399,11 @@ body = layar_api.QuestionSearchCommand() # QuestionSearchCommand |
 field = 'field_example' # str | 
 
 try:
-    api_response = api_instance.get_field_counts(body, field)
+    # Get curation counts or progress by field for a QA job
+    api_response = api_instance.get_question_field_counts(body, field)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuestionApi->get_field_counts: %s\n" % e)
+    print("Exception when calling QuestionApi->get_question_field_counts: %s\n" % e)
 ```
 
 ### Parameters
@@ -430,8 +428,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch**
-> patch(body, id)
+# **patch_question**
+> patch_question(body, id)
 
 patch
 
@@ -455,9 +453,9 @@ id = 'id_example' # str |
 
 try:
     # patch
-    api_instance.patch(body, id)
+    api_instance.patch_question(body, id)
 except ApiException as e:
-    print("Exception when calling QuestionApi->patch: %s\n" % e)
+    print("Exception when calling QuestionApi->patch_question: %s\n" % e)
 ```
 
 ### Parameters
@@ -485,7 +483,7 @@ void (empty response body)
 # **query_expansion**
 > QueryExpansionResponse query_expansion(body)
 
-
+Expand the scope of a particular question
 
 ### Example
 ```python
@@ -505,6 +503,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.QueryExpansionRequest() # QueryExpansionRequest | 
 
 try:
+    # Expand the scope of a particular question
     api_response = api_instance.query_expansion(body)
     pprint(api_response)
 except ApiException as e:
@@ -584,8 +583,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[Question] search(body=body)
+# **search_questions**
+> list[Question] search_questions(body=body)
 
 search for questions
 
@@ -608,10 +607,10 @@ body = layar_api.QuestionSearchCommand() # QuestionSearchCommand |  (optional)
 
 try:
     # search for questions
-    api_response = api_instance.search(body=body)
+    api_response = api_instance.search_questions(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuestionApi->search: %s\n" % e)
+    print("Exception when calling QuestionApi->search_questions: %s\n" % e)
 ```
 
 ### Parameters
@@ -636,7 +635,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **start_batch**
-> InlineResponse2003 start_batch(body=body)
+> InlineResponse2002 start_batch(body=body)
 
 submit a request to ask a batch of questions
 
@@ -673,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -686,10 +685,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> Question update(body, id)
+# **update_question**
+> Question update_question(body, id)
 
-update
+Update a saved question
 
 ### Example
 ```python
@@ -710,11 +709,11 @@ body = layar_api.Question() # Question |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update(body, id)
+    # Update a saved question
+    api_response = api_instance.update_question(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuestionApi->update: %s\n" % e)
+    print("Exception when calling QuestionApi->update_question: %s\n" % e)
 ```
 
 ### Parameters

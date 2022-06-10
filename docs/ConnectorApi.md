@@ -4,18 +4,18 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ConnectorApi.md#create) | **POST** /connector | save
-[**delete**](ConnectorApi.md#delete) | **DELETE** /connector/{id} | delete
-[**delete_many**](ConnectorApi.md#delete_many) | **DELETE** /connector/deleteMany | delete all the records with the given IDs
-[**get**](ConnectorApi.md#get) | **GET** /connector/{id} | connector details
-[**patch**](ConnectorApi.md#patch) | **PATCH** /connector/{id} | patch
-[**search**](ConnectorApi.md#search) | **GET** /connector | 
-[**update**](ConnectorApi.md#update) | **PUT** /connector/{id} | update
+[**create_connector**](ConnectorApi.md#create_connector) | **POST** /connector | Add a new Layar connector
+[**delete_connector**](ConnectorApi.md#delete_connector) | **DELETE** /connector/{id} | Delete a single Layar connector
+[**delete_connectors**](ConnectorApi.md#delete_connectors) | **DELETE** /connector/deleteMany | delete all the records with the given IDs
+[**get_connector**](ConnectorApi.md#get_connector) | **GET** /connector/{id} | Get the details for a single Layar connector
+[**patch_connector**](ConnectorApi.md#patch_connector) | **PATCH** /connector/{id} | patch
+[**search_connectors**](ConnectorApi.md#search_connectors) | **GET** /connector | Get the details for a given Layar connector
+[**update_connector**](ConnectorApi.md#update_connector) | **PUT** /connector/{id} | Update the details for a single Layar connector
 
-# **create**
-> list[Connector] create(body)
+# **create_connector**
+> list[Connector] create_connector(body)
 
-save
+Add a new Layar connector
 
 ### Example
 ```python
@@ -35,11 +35,11 @@ api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 body = layar_api.Connector() # Connector | 
 
 try:
-    # save
-    api_response = api_instance.create(body)
+    # Add a new Layar connector
+    api_response = api_instance.create_connector(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConnectorApi->create: %s\n" % e)
+    print("Exception when calling ConnectorApi->create_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -63,10 +63,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_connector**
+> delete_connector(id)
 
-delete
+Delete a single Layar connector
 
 ### Example
 ```python
@@ -86,10 +86,10 @@ api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a single Layar connector
+    api_instance.delete_connector(id)
 except ApiException as e:
-    print("Exception when calling ConnectorApi->delete: %s\n" % e)
+    print("Exception when calling ConnectorApi->delete_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -113,8 +113,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_connectors**
+> delete_connectors()
 
 delete all the records with the given IDs
 
@@ -133,20 +133,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
     # delete all the records with the given IDs
-    api_instance.delete_many(body)
+    api_instance.delete_connectors()
 except ApiException as e:
-    print("Exception when calling ConnectorApi->delete_many: %s\n" % e)
+    print("Exception when calling ConnectorApi->delete_connectors: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -158,15 +154,15 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> Connector get(id)
+# **get_connector**
+> Connector get_connector(id)
 
-connector details
+Get the details for a single Layar connector
 
 ### Example
 ```python
@@ -186,11 +182,11 @@ api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # connector details
-    api_response = api_instance.get(id)
+    # Get the details for a single Layar connector
+    api_response = api_instance.get_connector(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConnectorApi->get: %s\n" % e)
+    print("Exception when calling ConnectorApi->get_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -214,8 +210,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch**
-> patch(body, id)
+# **patch_connector**
+> patch_connector(body, id)
 
 patch
 
@@ -239,9 +235,9 @@ id = 'id_example' # str |
 
 try:
     # patch
-    api_instance.patch(body, id)
+    api_instance.patch_connector(body, id)
 except ApiException as e:
-    print("Exception when calling ConnectorApi->patch: %s\n" % e)
+    print("Exception when calling ConnectorApi->patch_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -266,10 +262,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[Connector] search()
+# **search_connectors**
+> list[Connector] search_connectors()
 
-
+Get the details for a given Layar connector
 
 ### Example
 ```python
@@ -288,10 +284,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 
 try:
-    api_response = api_instance.search()
+    # Get the details for a given Layar connector
+    api_response = api_instance.search_connectors()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConnectorApi->search: %s\n" % e)
+    print("Exception when calling ConnectorApi->search_connectors: %s\n" % e)
 ```
 
 ### Parameters
@@ -312,10 +309,10 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> list[Connector] update(body, id)
+# **update_connector**
+> list[Connector] update_connector(body, id)
 
-update
+Update the details for a single Layar connector
 
 ### Example
 ```python
@@ -336,11 +333,11 @@ body = layar_api.Connector() # Connector |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update(body, id)
+    # Update the details for a single Layar connector
+    api_response = api_instance.update_connector(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConnectorApi->update: %s\n" % e)
+    print("Exception when calling ConnectorApi->update_connector: %s\n" % e)
 ```
 
 ### Parameters

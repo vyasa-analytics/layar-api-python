@@ -32,12 +32,12 @@ class SmilesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_tox21_csv(self, body, **kwargs):  # noqa: E501
+    def create_tox_csv(self, body, **kwargs):  # noqa: E501
         """Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_tox21_csv(body, async_req=True)
+        >>> thread = api.create_tox_csv(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class SmilesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_tox21_csv_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_tox_csv_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_tox21_csv_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_tox_csv_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_tox21_csv_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_tox_csv_with_http_info(self, body, **kwargs):  # noqa: E501
         """Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_tox21_csv_with_http_info(body, async_req=True)
+        >>> thread = api.create_tox_csv_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class SmilesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_tox21_csv" % key
+                    " to method create_tox_csv" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_tox21_csv`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_tox_csv`")  # noqa: E501
 
         collection_formats = {}
 
@@ -125,12 +125,12 @@ class SmilesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_tox21_som(self, body, **kwargs):  # noqa: E501
+    def create_tox_som(self, body, **kwargs):  # noqa: E501
         """Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_tox21_som(body, async_req=True)
+        >>> thread = api.create_tox_som(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -141,17 +141,17 @@ class SmilesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_tox21_som_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_tox_som_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_tox21_som_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_tox_som_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_tox21_som_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_tox_som_with_http_info(self, body, **kwargs):  # noqa: E501
         """Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_tox21_som_with_http_info(body, async_req=True)
+        >>> thread = api.create_tox_som_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -172,14 +172,14 @@ class SmilesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_tox21_som" % key
+                    " to method create_tox_som" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_tox21_som`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_tox_som`")  # noqa: E501
 
         collection_formats = {}
 

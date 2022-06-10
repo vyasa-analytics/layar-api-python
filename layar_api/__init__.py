@@ -18,9 +18,6 @@ from __future__ import absolute_import
 from layar_api.api.all_api import AllApi
 from layar_api.api.answer_api import AnswerApi
 from layar_api.api.autocomplete_api import AutocompleteApi
-from layar_api.api.clustered_concepts_api import ClusteredConceptsApi
-from layar_api.api.clustered_query_api import ClusteredQueryApi
-from layar_api.api.clustered_statements_api import ClusteredStatementsApi
 from layar_api.api.compound_api import CompoundApi
 from layar_api.api.concept_api import ConceptApi
 from layar_api.api.concept_type_api import ConceptTypeApi
@@ -39,7 +36,6 @@ from layar_api.api.project_computation_api import ProjectComputationApi
 from layar_api.api.question_api import QuestionApi
 from layar_api.api.radar_api import RadarApi
 from layar_api.api.saved_list_api import SavedListApi
-from layar_api.api.set_analytics_api import SetAnalyticsApi
 from layar_api.api.smiles_api import SmilesApi
 from layar_api.api.source_document_api import SourceDocumentApi
 from layar_api.api.statement_api import StatementApi
@@ -57,6 +53,7 @@ from layar_api.models.annotation_search import AnnotationSearch
 from layar_api.models.answer import Answer
 from layar_api.models.answer_array import AnswerArray
 from layar_api.models.answer_evidence import AnswerEvidence
+from layar_api.models.answer_exclude_search_command import AnswerExcludeSearchCommand
 from layar_api.models.answer_search_command import AnswerSearchCommand
 from layar_api.models.ask_question_command import AskQuestionCommand
 from layar_api.models.ask_question_response import AskQuestionResponse
@@ -71,9 +68,6 @@ from layar_api.models.body2 import Body2
 from layar_api.models.body3 import Body3
 from layar_api.models.bulk_question import BulkQuestion
 from layar_api.models.bulk_question_command import BulkQuestionCommand
-from layar_api.models.clustered_concepts import ClusteredConcepts
-from layar_api.models.clustered_query import ClusteredQuery
-from layar_api.models.clustered_statements import ClusteredStatements
 from layar_api.models.column_definition import ColumnDefinition
 from layar_api.models.column_filter import ColumnFilter
 from layar_api.models.column_filter_condition import ColumnFilterCondition
@@ -112,7 +106,6 @@ from layar_api.models.inline_response2001 import InlineResponse2001
 from layar_api.models.inline_response2002 import InlineResponse2002
 from layar_api.models.inline_response2003 import InlineResponse2003
 from layar_api.models.inline_response2004 import InlineResponse2004
-from layar_api.models.inline_response2005 import InlineResponse2005
 from layar_api.models.list_of_annotations import ListOfAnnotations
 from layar_api.models.list_of_ids import ListOfIds
 from layar_api.models.list_of_item_ids import ListOfItemIds
@@ -122,17 +115,17 @@ from layar_api.models.live_source_import_status import LiveSourceImportStatus
 from layar_api.models.live_source_job_status import LiveSourceJobStatus
 from layar_api.models.live_source_type import LiveSourceType
 from layar_api.models.log_stash import LogStash
-from layar_api.models.mapstringobject import Mapstringobject
+from layar_api.models.map_string_object import MapStringObject
 from layar_api.models.module import Module
 from layar_api.models.named_entity import NamedEntity
 from layar_api.models.named_entity_request import NamedEntityRequest
 from layar_api.models.named_entity_response import NamedEntityResponse
 from layar_api.models.named_entity_response_named_entities import NamedEntityResponseNamedEntities
 from layar_api.models.one_of_annotation_search_values_items import OneOfAnnotationSearchValuesItems
-from layar_api.models.one_ofinline_response2001 import OneOfinlineResponse2001
 from layar_api.models.ontology_search_command import OntologySearchCommand
 from layar_api.models.ontology_term import OntologyTerm
 from layar_api.models.paragraph import Paragraph
+from layar_api.models.paragraph_exclude_search_command import ParagraphExcludeSearchCommand
 from layar_api.models.paragraph_question_search_command import ParagraphQuestionSearchCommand
 from layar_api.models.paragraph_search_command import ParagraphSearchCommand
 from layar_api.models.part_of_speech_command import PartOfSpeechCommand
@@ -151,13 +144,10 @@ from layar_api.models.question_answer_type_of_search import QuestionAnswerTypeOf
 from layar_api.models.question_search_command import QuestionSearchCommand
 from layar_api.models.radar import Radar
 from layar_api.models.radar_exclude_search_command import RadarExcludeSearchCommand
-from layar_api.models.relationship_query import RelationshipQuery
 from layar_api.models.restart_services_request import RestartServicesRequest
 from layar_api.models.som_request import SOMRequest
 from layar_api.models.saved_list import SavedList
 from layar_api.models.section_search import SectionSearch
-from layar_api.models.set_analytics_query import SetAnalyticsQuery
-from layar_api.models.set_analytics_summary import SetAnalyticsSummary
 from layar_api.models.source_document import SourceDocument
 from layar_api.models.source_document_exclude_search_command import SourceDocumentExcludeSearchCommand
 from layar_api.models.source_document_import_status import SourceDocumentImportStatus

@@ -4,11 +4,11 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tox21_csv**](SmilesApi.md#create_tox21_csv) | **POST** /smiles/createTox21CSV | Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.
-[**create_tox21_som**](SmilesApi.md#create_tox21_som) | **POST** /smiles/createTox21SOM | Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)
+[**create_tox_csv**](SmilesApi.md#create_tox_csv) | **POST** /smiles/createTox21CSV | Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.
+[**create_tox_som**](SmilesApi.md#create_tox_som) | **POST** /smiles/createTox21SOM | Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)
 
-# **create_tox21_csv**
-> create_tox21_csv(body)
+# **create_tox_csv**
+> create_tox_csv(body)
 
 Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.
 
@@ -31,9 +31,9 @@ body = layar_api.SOMRequest() # SOMRequest |
 
 try:
     # Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.
-    api_instance.create_tox21_csv(body)
+    api_instance.create_tox_csv(body)
 except ApiException as e:
-    print("Exception when calling SmilesApi->create_tox21_csv: %s\n" % e)
+    print("Exception when calling SmilesApi->create_tox_csv: %s\n" % e)
 ```
 
 ### Parameters
@@ -57,8 +57,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_tox21_som**
-> create_tox21_som(body)
+# **create_tox_som**
+> create_tox_som(body)
 
 Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)
 
@@ -81,9 +81,9 @@ body = layar_api.SOMRequest() # SOMRequest |
 
 try:
     # Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)
-    api_instance.create_tox21_som(body)
+    api_instance.create_tox_som(body)
 except ApiException as e:
-    print("Exception when calling SmilesApi->create_tox21_som: %s\n" % e)
+    print("Exception when calling SmilesApi->create_tox_som: %s\n" % e)
 ```
 
 ### Parameters

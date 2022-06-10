@@ -56,6 +56,7 @@ class BulkQuestionCommand(object):
     def bulk_questions(self):
         """Gets the bulk_questions of this BulkQuestionCommand.  # noqa: E501
 
+        A list of bulk question IDs to be asked  # noqa: E501
 
         :return: The bulk_questions of this BulkQuestionCommand.  # noqa: E501
         :rtype: list[BulkQuestion]
@@ -66,6 +67,7 @@ class BulkQuestionCommand(object):
     def bulk_questions(self, bulk_questions):
         """Sets the bulk_questions of this BulkQuestionCommand.
 
+        A list of bulk question IDs to be asked  # noqa: E501
 
         :param bulk_questions: The bulk_questions of this BulkQuestionCommand.  # noqa: E501
         :type: list[BulkQuestion]
@@ -98,6 +100,7 @@ class BulkQuestionCommand(object):
     def question_grouping_key(self):
         """Gets the question_grouping_key of this BulkQuestionCommand.  # noqa: E501
 
+        The grouping ID for this bulk question record  # noqa: E501
 
         :return: The question_grouping_key of this BulkQuestionCommand.  # noqa: E501
         :rtype: str
@@ -108,6 +111,7 @@ class BulkQuestionCommand(object):
     def question_grouping_key(self, question_grouping_key):
         """Sets the question_grouping_key of this BulkQuestionCommand.
 
+        The grouping ID for this bulk question record  # noqa: E501
 
         :param question_grouping_key: The question_grouping_key of this BulkQuestionCommand.  # noqa: E501
         :type: str

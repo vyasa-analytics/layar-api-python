@@ -32,12 +32,12 @@ class AnswerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get(self, id, **kwargs):  # noqa: E501
-        """QA answer details  # noqa: E501
+    def get_answer(self, id, **kwargs):  # noqa: E501
+        """Get details for a QA Answer in your Layar instance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, async_req=True)
+        >>> thread = api.get_answer(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class AnswerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_answer_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_answer_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """QA answer details  # noqa: E501
+    def get_answer_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get details for a QA Answer in your Layar instance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, async_req=True)
+        >>> thread = api.get_answer_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class AnswerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_answer" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_answer`")  # noqa: E501
 
         collection_formats = {}
 
@@ -125,12 +125,12 @@ class AnswerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
-        """QA answer search  # noqa: E501
+    def search_answer(self, **kwargs):  # noqa: E501
+        """Search for previously found QA answers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_answer(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -141,17 +141,17 @@ class AnswerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_answer_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_answer_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
-        """QA answer search  # noqa: E501
+    def search_answer_with_http_info(self, **kwargs):  # noqa: E501
+        """Search for previously found QA answers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_answer_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -172,7 +172,7 @@ class AnswerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_answer" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -218,12 +218,13 @@ class AnswerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, body, id, **kwargs):  # noqa: E501
-        """QA answer update  # noqa: E501
+    def update_answer(self, body, id, **kwargs):  # noqa: E501
+        """Update answer details  # noqa: E501
 
+        An Answer object containing only the data you wish to change.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(body, id, async_req=True)
+        >>> thread = api.update_answer(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -235,17 +236,18 @@ class AnswerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_answer_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_answer_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """QA answer update  # noqa: E501
+    def update_answer_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Update answer details  # noqa: E501
 
+        An Answer object containing only the data you wish to change.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_answer_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -267,18 +269,18 @@ class AnswerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method update_answer" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_answer`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_answer`")  # noqa: E501
 
         collection_formats = {}
 

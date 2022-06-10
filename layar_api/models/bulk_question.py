@@ -56,6 +56,7 @@ class BulkQuestion(object):
     def concept_types(self):
         """Gets the concept_types of this BulkQuestion.  # noqa: E501
 
+        A list of concept type IDs  # noqa: E501
 
         :return: The concept_types of this BulkQuestion.  # noqa: E501
         :rtype: list[str]
@@ -66,6 +67,7 @@ class BulkQuestion(object):
     def concept_types(self, concept_types):
         """Sets the concept_types of this BulkQuestion.
 
+        A list of concept type IDs  # noqa: E501
 
         :param concept_types: The concept_types of this BulkQuestion.  # noqa: E501
         :type: list[str]
@@ -77,6 +79,7 @@ class BulkQuestion(object):
     def question_key(self):
         """Gets the question_key of this BulkQuestion.  # noqa: E501
 
+        The main question to run  # noqa: E501
 
         :return: The question_key of this BulkQuestion.  # noqa: E501
         :rtype: str
@@ -87,6 +90,7 @@ class BulkQuestion(object):
     def question_key(self, question_key):
         """Sets the question_key of this BulkQuestion.
 
+        The main question to run  # noqa: E501
 
         :param question_key: The question_key of this BulkQuestion.  # noqa: E501
         :type: str
@@ -98,6 +102,7 @@ class BulkQuestion(object):
     def question_string_variations(self):
         """Gets the question_string_variations of this BulkQuestion.  # noqa: E501
 
+        A list of variations in the phrasing of the question to ensure accurate results  # noqa: E501
 
         :return: The question_string_variations of this BulkQuestion.  # noqa: E501
         :rtype: list[str]
@@ -108,6 +113,7 @@ class BulkQuestion(object):
     def question_string_variations(self, question_string_variations):
         """Sets the question_string_variations of this BulkQuestion.
 
+        A list of variations in the phrasing of the question to ensure accurate results  # noqa: E501
 
         :param question_string_variations: The question_string_variations of this BulkQuestion.  # noqa: E501
         :type: list[str]

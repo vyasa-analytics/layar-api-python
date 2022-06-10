@@ -32,12 +32,109 @@ class RadarApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """get  # noqa: E501
+    def get_nearest_neighbor_count(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+        """count of nearest neighbor terms that match the term in the query string  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(x_vyasa_data_providers, async_req=True)
+        >>> thread = api.get_nearest_neighbor_count(x_vyasa_data_providers, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str x_vyasa_data_providers: remote data providers to query (required)
+        :param str terms:
+        :return: InlineResponse2003
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_nearest_neighbor_count_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_nearest_neighbor_count_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            return data
+
+    def get_nearest_neighbor_count_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+        """count of nearest neighbor terms that match the term in the query string  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_nearest_neighbor_count_with_http_info(x_vyasa_data_providers, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str x_vyasa_data_providers: remote data providers to query (required)
+        :param str terms:
+        :return: InlineResponse2003
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['x_vyasa_data_providers', 'terms']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_nearest_neighbor_count" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'x_vyasa_data_providers' is set
+        if ('x_vyasa_data_providers' not in params or
+                params['x_vyasa_data_providers'] is None):
+            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get_nearest_neighbor_count`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'terms' in params:
+            query_params.append(('terms', params['terms']))  # noqa: E501
+
+        header_params = {}
+        if 'x_vyasa_data_providers' in params:
+            header_params['X-Vyasa-Data-Providers'] = params['x_vyasa_data_providers']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/radar/count', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse2003',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_radar(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+        """Get Radar results  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_radar(x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -61,17 +158,17 @@ class RadarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            return self.get_radar_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            (data) = self.get_radar_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """get  # noqa: E501
+    def get_radar_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+        """Get Radar results  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(x_vyasa_data_providers, async_req=True)
+        >>> thread = api.get_radar_with_http_info(x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -105,14 +202,14 @@ class RadarApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_radar" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'x_vyasa_data_providers' is set
         if ('x_vyasa_data_providers' not in params or
                 params['x_vyasa_data_providers'] is None):
-            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get_radar`")  # noqa: E501
 
         collection_formats = {}
 
@@ -181,12 +278,12 @@ class RadarApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_by_concept_id(self, **kwargs):  # noqa: E501
+    def get_radar_by_concept_id(self, **kwargs):  # noqa: E501
         """find semantically similar terms  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_by_concept_id(async_req=True)
+        >>> thread = api.get_radar_by_concept_id(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -200,17 +297,17 @@ class RadarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_by_concept_id_with_http_info(**kwargs)  # noqa: E501
+            return self.get_radar_by_concept_id_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_by_concept_id_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_radar_by_concept_id_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_by_concept_id_with_http_info(self, **kwargs):  # noqa: E501
+    def get_radar_by_concept_id_with_http_info(self, **kwargs):  # noqa: E501
         """find semantically similar terms  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_by_concept_id_with_http_info(async_req=True)
+        >>> thread = api.get_radar_by_concept_id_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -234,7 +331,7 @@ class RadarApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_by_concept_id" % key
+                    " to method get_radar_by_concept_id" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -282,12 +379,12 @@ class RadarApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_by_query_string(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+    def get_radar_by_query_string(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """find semantically similar terms  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_by_query_string(x_vyasa_data_providers, async_req=True)
+        >>> thread = api.get_radar_by_query_string(x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -302,17 +399,17 @@ class RadarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_by_query_string_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            return self.get_radar_by_query_string_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_by_query_string_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
+            (data) = self.get_radar_by_query_string_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
             return data
 
-    def get_by_query_string_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
+    def get_radar_by_query_string_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """find semantically similar terms  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_by_query_string_with_http_info(x_vyasa_data_providers, async_req=True)
+        >>> thread = api.get_radar_by_query_string_with_http_info(x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -337,14 +434,14 @@ class RadarApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_by_query_string" % key
+                    " to method get_radar_by_query_string" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'x_vyasa_data_providers' is set
         if ('x_vyasa_data_providers' not in params or
                 params['x_vyasa_data_providers'] is None):
-            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get_by_query_string`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get_radar_by_query_string`")  # noqa: E501
 
         collection_formats = {}
 
@@ -384,103 +481,6 @@ class RadarApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[Radar]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_count(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """count of nearest neighbor terms that match the term in the query string  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_count(x_vyasa_data_providers, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str x_vyasa_data_providers: remote data providers to query (required)
-        :param str terms:
-        :return: InlineResponse2004
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_count_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_count_with_http_info(x_vyasa_data_providers, **kwargs)  # noqa: E501
-            return data
-
-    def get_count_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """count of nearest neighbor terms that match the term in the query string  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_count_with_http_info(x_vyasa_data_providers, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str x_vyasa_data_providers: remote data providers to query (required)
-        :param str terms:
-        :return: InlineResponse2004
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['x_vyasa_data_providers', 'terms']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_count" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'x_vyasa_data_providers' is set
-        if ('x_vyasa_data_providers' not in params or
-                params['x_vyasa_data_providers'] is None):
-            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `get_count`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'terms' in params:
-            query_params.append(('terms', params['terms']))  # noqa: E501
-
-        header_params = {}
-        if 'x_vyasa_data_providers' in params:
-            header_params['X-Vyasa-Data-Providers'] = params['x_vyasa_data_providers']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/radar/count', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InlineResponse2004',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

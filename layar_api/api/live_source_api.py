@@ -32,12 +32,12 @@ class LiveSourceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_feeds(self, body, **kwargs):  # noqa: E501
+        """Create a new live source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(body, async_req=True)
+        >>> thread = api.create_feeds(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class LiveSourceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_feeds_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_feeds_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_with_http_info(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_feeds_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Create a new live source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(body, async_req=True)
+        >>> thread = api.create_feeds_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method create_feeds" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_feeds`")  # noqa: E501
 
         collection_formats = {}
 
@@ -218,12 +218,12 @@ class LiveSourceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_feed(self, id, **kwargs):  # noqa: E501
+        """Delete a live source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(id, async_req=True)
+        >>> thread = api.delete_feed(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -234,17 +234,17 @@ class LiveSourceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_feed_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_feed_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_feed_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete a live source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_feed_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -265,14 +265,14 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method delete_feed" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_feed`")  # noqa: E501
 
         collection_formats = {}
 
@@ -311,43 +311,41 @@ class LiveSourceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_many(self, body, **kwargs):  # noqa: E501
-        """delete the set of ids  # noqa: E501
+    def delete_feeds(self, **kwargs):  # noqa: E501
+        """delete the set of live source ids  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many(body, async_req=True)
+        >>> thread = api.delete_feeds(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_feeds_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_feeds_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_many_with_http_info(self, body, **kwargs):  # noqa: E501
-        """delete the set of ids  # noqa: E501
+    def delete_feeds_with_http_info(self, **kwargs):  # noqa: E501
+        """delete the set of live source ids  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many_with_http_info(body, async_req=True)
+        >>> thread = api.delete_feeds_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -358,14 +356,10 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_many" % key
+                    " to method delete_feeds" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_many`")  # noqa: E501
 
         collection_formats = {}
 
@@ -379,14 +373,8 @@ class LiveSourceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -408,12 +396,12 @@ class LiveSourceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, id, **kwargs):  # noqa: E501
-        """live source details  # noqa: E501
+    def get_feed(self, id, **kwargs):  # noqa: E501
+        """Get live source details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, async_req=True)
+        >>> thread = api.get_feed(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -424,17 +412,17 @@ class LiveSourceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_feed_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_feed_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """live source details  # noqa: E501
+    def get_feed_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get live source details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, async_req=True)
+        >>> thread = api.get_feed_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -455,14 +443,14 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_feed" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_feed`")  # noqa: E501
 
         collection_formats = {}
 
@@ -502,7 +490,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def get_import_status(self, id, **kwargs):  # noqa: E501
-        """percent completion information  # noqa: E501
+        """Returns the percent completed for a live source import  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -523,7 +511,7 @@ class LiveSourceApi(object):
             return data
 
     def get_import_status_with_http_info(self, id, **kwargs):  # noqa: E501
-        """percent completion information  # noqa: E501
+        """Returns the percent completed for a live source import  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -595,7 +583,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def get_job_status(self, id, **kwargs):  # noqa: E501
-        """jobStatus  # noqa: E501
+        """Get job status details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -616,7 +604,7 @@ class LiveSourceApi(object):
             return data
 
     def get_job_status_with_http_info(self, id, **kwargs):  # noqa: E501
-        """jobStatus  # noqa: E501
+        """Get job status details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -687,12 +675,12 @@ class LiveSourceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_source_documents(self, id, **kwargs):  # noqa: E501
-        """sourceDocuments  # noqa: E501
+    def get_source_document_url(self, id, **kwargs):  # noqa: E501
+        """Get the documents from a particular source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_source_documents(id, async_req=True)
+        >>> thread = api.get_source_document_url(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -705,17 +693,17 @@ class LiveSourceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_source_documents_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_source_document_url_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_source_documents_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_source_document_url_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_source_documents_with_http_info(self, id, **kwargs):  # noqa: E501
-        """sourceDocuments  # noqa: E501
+    def get_source_document_url_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get the documents from a particular source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_source_documents_with_http_info(id, async_req=True)
+        >>> thread = api.get_source_document_url_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -738,14 +726,14 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_source_documents" % key
+                    " to method get_source_document_url" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_source_documents`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_source_document_url`")  # noqa: E501
 
         collection_formats = {}
 
@@ -788,12 +776,12 @@ class LiveSourceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_feeds(self, **kwargs):  # noqa: E501
+        """Search for live sources  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_feeds(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -808,17 +796,17 @@ class LiveSourceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_feeds_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_feeds_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_feeds_with_http_info(self, **kwargs):  # noqa: E501
+        """Search for live sources  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_feeds_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -843,7 +831,7 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_feeds" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -894,7 +882,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def unschedule_job(self, id, **kwargs):  # noqa: E501
-        """unschedule  # noqa: E501
+        """Change a job status to 'Unscheduled'  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -915,7 +903,7 @@ class LiveSourceApi(object):
             return data
 
     def unschedule_job_with_http_info(self, id, **kwargs):  # noqa: E501
-        """unschedule  # noqa: E501
+        """Change a job status to 'Unscheduled'  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -986,12 +974,12 @@ class LiveSourceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_feed(self, body, id, **kwargs):  # noqa: E501
+        """Update a live source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(body, id, async_req=True)
+        >>> thread = api.update_feed(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1003,17 +991,17 @@ class LiveSourceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_feed_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_feed_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_feed_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Update a live source  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_feed_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1035,18 +1023,18 @@ class LiveSourceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method update_feed" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_feed`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_feed`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1092,7 +1080,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def update_job(self, id, job_action, **kwargs):  # noqa: E501
-        """jobAction  # noqa: E501
+        """Update a job with a new action  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1114,7 +1102,7 @@ class LiveSourceApi(object):
             return data
 
     def update_job_with_http_info(self, id, job_action, **kwargs):  # noqa: E501
-        """jobAction  # noqa: E501
+        """Update a job with a new action  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

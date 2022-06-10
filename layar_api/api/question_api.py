@@ -33,7 +33,7 @@ class QuestionApi(object):
         self.api_client = api_client
 
     def ask(self, body, **kwargs):  # noqa: E501
-        """ask  # noqa: E501
+        """Create and ask a new question in the QA model  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -55,7 +55,7 @@ class QuestionApi(object):
             return data
 
     def ask_with_http_info(self, body, **kwargs):  # noqa: E501
-        """ask  # noqa: E501
+        """Create and ask a new question in the QA model  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -143,7 +143,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param str job_id: (required)
-        :return: InlineResponse2002
+        :return: InlineResponse2001
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -164,7 +164,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param str job_id: (required)
-        :return: InlineResponse2002
+        :return: InlineResponse2001
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -218,7 +218,7 @@ class QuestionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2002',  # noqa: E501
+            response_type='InlineResponse2001',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -226,12 +226,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
+    def create_question(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """save a new question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(body, x_vyasa_data_providers, async_req=True)
+        >>> thread = api.create_question(body, x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -244,17 +244,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_with_http_info(body, x_vyasa_data_providers, **kwargs)  # noqa: E501
+            return self.create_question_with_http_info(body, x_vyasa_data_providers, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_with_http_info(body, x_vyasa_data_providers, **kwargs)  # noqa: E501
+            (data) = self.create_question_with_http_info(body, x_vyasa_data_providers, **kwargs)  # noqa: E501
             return data
 
-    def create_with_http_info(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
+    def create_question_with_http_info(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """save a new question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(body, x_vyasa_data_providers, async_req=True)
+        >>> thread = api.create_question_with_http_info(body, x_vyasa_data_providers, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -277,18 +277,18 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method create_question" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_question`")  # noqa: E501
         # verify the required parameter 'x_vyasa_data_providers' is set
         if ('x_vyasa_data_providers' not in params or
                 params['x_vyasa_data_providers'] is None):
-            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `create`")  # noqa: E501
+            raise ValueError("Missing the required parameter `x_vyasa_data_providers` when calling `create_question`")  # noqa: E501
 
         collection_formats = {}
 
@@ -335,12 +335,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_question(self, id, **kwargs):  # noqa: E501
+        """Delete a saved question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(id, async_req=True)
+        >>> thread = api.delete_question(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -351,17 +351,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_question_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_question_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_question_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete a saved question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_question_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -382,14 +382,14 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method delete_question" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_question`")  # noqa: E501
 
         collection_formats = {}
 
@@ -428,43 +428,41 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_many(self, body, **kwargs):  # noqa: E501
+    def delete_questions(self, **kwargs):  # noqa: E501
         """delete all the records with the given IDs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many(body, async_req=True)
+        >>> thread = api.delete_questions(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_questions_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_questions_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_many_with_http_info(self, body, **kwargs):  # noqa: E501
+    def delete_questions_with_http_info(self, **kwargs):  # noqa: E501
         """delete all the records with the given IDs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many_with_http_info(body, async_req=True)
+        >>> thread = api.delete_questions_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -475,14 +473,10 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_many" % key
+                    " to method delete_questions" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_many`")  # noqa: E501
 
         collection_formats = {}
 
@@ -496,14 +490,8 @@ class QuestionApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -614,12 +602,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, id, **kwargs):  # noqa: E501
-        """question details  # noqa: E501
+    def get_question(self, id, **kwargs):  # noqa: E501
+        """Get question details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, async_req=True)
+        >>> thread = api.get_question(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -630,17 +618,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_question_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_question_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """question details  # noqa: E501
+    def get_question_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get question details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, async_req=True)
+        >>> thread = api.get_question_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -661,14 +649,14 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_question" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_question`")  # noqa: E501
 
         collection_formats = {}
 
@@ -707,12 +695,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_field_counts(self, body, field, **kwargs):  # noqa: E501
-        """get_field_counts  # noqa: E501
+    def get_question_field_counts(self, body, field, **kwargs):  # noqa: E501
+        """Get curation counts or progress by field for a QA job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_field_counts(body, field, async_req=True)
+        >>> thread = api.get_question_field_counts(body, field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -724,17 +712,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_field_counts_with_http_info(body, field, **kwargs)  # noqa: E501
+            return self.get_question_field_counts_with_http_info(body, field, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_field_counts_with_http_info(body, field, **kwargs)  # noqa: E501
+            (data) = self.get_question_field_counts_with_http_info(body, field, **kwargs)  # noqa: E501
             return data
 
-    def get_field_counts_with_http_info(self, body, field, **kwargs):  # noqa: E501
-        """get_field_counts  # noqa: E501
+    def get_question_field_counts_with_http_info(self, body, field, **kwargs):  # noqa: E501
+        """Get curation counts or progress by field for a QA job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_field_counts_with_http_info(body, field, async_req=True)
+        >>> thread = api.get_question_field_counts_with_http_info(body, field, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -756,18 +744,18 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_field_counts" % key
+                    " to method get_question_field_counts" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `get_field_counts`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `get_question_field_counts`")  # noqa: E501
         # verify the required parameter 'field' is set
         if ('field' not in params or
                 params['field'] is None):
-            raise ValueError("Missing the required parameter `field` when calling `get_field_counts`")  # noqa: E501
+            raise ValueError("Missing the required parameter `field` when calling `get_question_field_counts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -812,12 +800,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def patch(self, body, id, **kwargs):  # noqa: E501
+    def patch_question(self, body, id, **kwargs):  # noqa: E501
         """patch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.patch(body, id, async_req=True)
+        >>> thread = api.patch_question(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -829,17 +817,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.patch_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.patch_question_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.patch_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.patch_question_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def patch_with_http_info(self, body, id, **kwargs):  # noqa: E501
+    def patch_question_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """patch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.patch_with_http_info(body, id, async_req=True)
+        >>> thread = api.patch_question_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -861,18 +849,18 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method patch" % key
+                    " to method patch_question" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `patch_question`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `patch_question`")  # noqa: E501
 
         collection_formats = {}
 
@@ -914,7 +902,7 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def query_expansion(self, body, **kwargs):  # noqa: E501
-        """query_expansion  # noqa: E501
+        """Expand the scope of a particular question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -935,7 +923,7 @@ class QuestionApi(object):
             return data
 
     def query_expansion_with_http_info(self, body, **kwargs):  # noqa: E501
-        """query_expansion  # noqa: E501
+        """Expand the scope of a particular question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1101,12 +1089,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
+    def search_questions(self, **kwargs):  # noqa: E501
         """search for questions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_questions(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1117,17 +1105,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_questions_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_questions_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
+    def search_questions_with_http_info(self, **kwargs):  # noqa: E501
         """search for questions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_questions_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1148,7 +1136,7 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_questions" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1204,7 +1192,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param BulkQuestionCommand body:
-        :return: InlineResponse2003
+        :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1225,7 +1213,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param BulkQuestionCommand body:
-        :return: InlineResponse2003
+        :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1279,7 +1267,7 @@ class QuestionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2003',  # noqa: E501
+            response_type='InlineResponse2002',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1287,12 +1275,12 @@ class QuestionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_question(self, body, id, **kwargs):  # noqa: E501
+        """Update a saved question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(body, id, async_req=True)
+        >>> thread = api.update_question(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1304,17 +1292,17 @@ class QuestionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_question_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_question_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_question_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Update a saved question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_question_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1336,18 +1324,18 @@ class QuestionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method update_question" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_question`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_question`")  # noqa: E501
 
         collection_formats = {}
 

@@ -4,14 +4,14 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ModuleApi.md#create) | **POST** /module | save
-[**get**](ModuleApi.md#get) | **GET** /module/{id} | module details
-[**search**](ModuleApi.md#search) | **GET** /module | search for modules
+[**create_module**](ModuleApi.md#create_module) | **POST** /module | Save a new module
+[**get_module**](ModuleApi.md#get_module) | **GET** /module/{id} | Get module details
+[**search_modules**](ModuleApi.md#search_modules) | **GET** /module | search for modules
 
-# **create**
-> list[Module] create(body)
+# **create_module**
+> list[Module] create_module(body)
 
-save
+Save a new module
 
 ### Example
 ```python
@@ -31,11 +31,11 @@ api_instance = layar_api.ModuleApi(layar_api.ApiClient(configuration))
 body = layar_api.Module() # Module | 
 
 try:
-    # save
-    api_response = api_instance.create(body)
+    # Save a new module
+    api_response = api_instance.create_module(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModuleApi->create: %s\n" % e)
+    print("Exception when calling ModuleApi->create_module: %s\n" % e)
 ```
 
 ### Parameters
@@ -59,10 +59,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> Module get(id)
+# **get_module**
+> Module get_module(id)
 
-module details
+Get module details
 
 ### Example
 ```python
@@ -82,11 +82,11 @@ api_instance = layar_api.ModuleApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # module details
-    api_response = api_instance.get(id)
+    # Get module details
+    api_response = api_instance.get_module(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModuleApi->get: %s\n" % e)
+    print("Exception when calling ModuleApi->get_module: %s\n" % e)
 ```
 
 ### Parameters
@@ -110,8 +110,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[Module] search(rows=rows, start=start, q=q)
+# **search_modules**
+> list[Module] search_modules(rows=rows, start=start, q=q)
 
 search for modules
 
@@ -136,10 +136,10 @@ q = 'q_example' # str | the query string to search for (optional)
 
 try:
     # search for modules
-    api_response = api_instance.search(rows=rows, start=start, q=q)
+    api_response = api_instance.search_modules(rows=rows, start=start, q=q)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModuleApi->search: %s\n" % e)
+    print("Exception when calling ModuleApi->search_modules: %s\n" % e)
 ```
 
 ### Parameters

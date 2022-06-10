@@ -1,4 +1,4 @@
-# AnswerSearchCommand
+# AnswerExcludeSearchCommand
 
 ## Properties
 Name | Type | Description | Notes
@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **show_accepted_first** | **bool** | order results with accepted answers first | [optional] 
 **single_doc_question_document_id** | **str** | include answers that were asked of a single document | [optional] 
 **with_concepts** | **bool** | return concept matches for each answer | [optional] 
-**excludes** | [**AnswerExcludeSearchCommand**](AnswerExcludeSearchCommand.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

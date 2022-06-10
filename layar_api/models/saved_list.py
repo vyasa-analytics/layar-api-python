@@ -33,6 +33,7 @@ class SavedList(object):
         'description': 'str',
         'list_type': 'str',
         'cross_queries': 'list[CrossQuery]',
+        'searches': 'list[DistributedSourceDocumentSearchCommand]',
         'id': 'str',
         'name': 'str'
     }
@@ -43,17 +44,19 @@ class SavedList(object):
         'description': 'description',
         'list_type': 'listType',
         'cross_queries': 'crossQueries',
+        'searches': 'searches',
         'id': 'id',
         'name': 'name'
     }
 
-    def __init__(self, created_by_user=None, date_indexed=None, description=None, list_type=None, cross_queries=None, id=None, name=None):  # noqa: E501
+    def __init__(self, created_by_user=None, date_indexed=None, description=None, list_type=None, cross_queries=None, searches=None, id=None, name=None):  # noqa: E501
         """SavedList - a model defined in Swagger"""  # noqa: E501
         self._created_by_user = None
         self._date_indexed = None
         self._description = None
         self._list_type = None
         self._cross_queries = None
+        self._searches = None
         self._id = None
         self._name = None
         self.discriminator = None
@@ -67,6 +70,8 @@ class SavedList(object):
             self.list_type = list_type
         if cross_queries is not None:
             self.cross_queries = cross_queries
+        if searches is not None:
+            self.searches = searches
         if id is not None:
             self.id = id
         if name is not None:
@@ -176,6 +181,27 @@ class SavedList(object):
         """
 
         self._cross_queries = cross_queries
+
+    @property
+    def searches(self):
+        """Gets the searches of this SavedList.  # noqa: E501
+
+
+        :return: The searches of this SavedList.  # noqa: E501
+        :rtype: list[DistributedSourceDocumentSearchCommand]
+        """
+        return self._searches
+
+    @searches.setter
+    def searches(self, searches):
+        """Sets the searches of this SavedList.
+
+
+        :param searches: The searches of this SavedList.  # noqa: E501
+        :type: list[DistributedSourceDocumentSearchCommand]
+        """
+
+        self._searches = searches
 
     @property
     def id(self):

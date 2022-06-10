@@ -32,12 +32,12 @@ class AllApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def search(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_all(self, **kwargs):  # noqa: E501
+        """search_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_all(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -52,17 +52,17 @@ class AllApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_all_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_all_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_all_with_http_info(self, **kwargs):  # noqa: E501
+        """search_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_all_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -87,7 +87,7 @@ class AllApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_all" % key
                 )
             params[key] = val
         del params['kwargs']

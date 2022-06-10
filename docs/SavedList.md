@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **list_type** | **str** |  | [optional] 
 **cross_queries** | [**list[CrossQuery]**](CrossQuery.md) |  | [optional] 
+**searches** | [**list[DistributedSourceDocumentSearchCommand]**](DistributedSourceDocumentSearchCommand.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 

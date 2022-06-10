@@ -4,39 +4,39 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_annotation**](SourceDocumentApi.md#add_annotation) | **POST** /sourceDocument/{id}/addAnnotation | bySource
-[**add_annotations**](SourceDocumentApi.md#add_annotations) | **POST** /sourceDocument/{id}/addAnnotations | bySource
-[**add_column**](SourceDocumentApi.md#add_column) | **PUT** /sourceDocument/{id}/addColumn | addColumn
+[**add_annotation**](SourceDocumentApi.md#add_annotation) | **POST** /sourceDocument/{id}/addAnnotation | Add annotation by source
+[**add_annotations**](SourceDocumentApi.md#add_annotations) | **POST** /sourceDocument/{id}/addAnnotations | Add a list of annotations to a document
+[**add_column**](SourceDocumentApi.md#add_column) | **PUT** /sourceDocument/{id}/addColumn | Add column to table
 [**add_viewer**](SourceDocumentApi.md#add_viewer) | **POST** /sourceDocument/{id}/viewers | add a viewer to the source document
-[**create**](SourceDocumentApi.md#create) | **POST** /sourceDocument | save
-[**delete**](SourceDocumentApi.md#delete) | **DELETE** /sourceDocument/{id} | delete
-[**delete_many**](SourceDocumentApi.md#delete_many) | **DELETE** /sourceDocument/deleteMany | deleteMany
-[**download**](SourceDocumentApi.md#download) | **GET** /sourceDocument/{id}/download | download
+[**create_document**](SourceDocumentApi.md#create_document) | **POST** /sourceDocument | Save a source document to Layar
+[**delete_document**](SourceDocumentApi.md#delete_document) | **DELETE** /sourceDocument/{id} | Delete a document from Layar
+[**delete_documents**](SourceDocumentApi.md#delete_documents) | **DELETE** /sourceDocument/deleteMany | Delete all documents in an array
 [**download_annotations**](SourceDocumentApi.md#download_annotations) | **GET** /sourceDocument/downloadAnnotations | downloads annotations as csv of one or more source document
+[**download_document**](SourceDocumentApi.md#download_document) | **GET** /sourceDocument/{id}/download | Download a document by ID
 [**extract_table_by_page**](SourceDocumentApi.md#extract_table_by_page) | **POST** /sourceDocument/{id}/page/{page}/extractTable | extract a table from a specific page
 [**extract_tables**](SourceDocumentApi.md#extract_tables) | **POST** /sourceDocument/{id}/extractTables | extract tables from a document
-[**get**](SourceDocumentApi.md#get) | **GET** /sourceDocument/{id} | source document details
-[**get_concepts**](SourceDocumentApi.md#get_concepts) | **GET** /sourceDocument/{id}/concepts | count concepts by source document
-[**get_counts_by_suggested_category**](SourceDocumentApi.md#get_counts_by_suggested_category) | **GET** /sourceDocument/{projectComputationId}/countBySuggestedCategory | countBySuggestedCategory
-[**get_counts_by_type**](SourceDocumentApi.md#get_counts_by_type) | **GET** /sourceDocument/countByType | countByType
+[**get_counts_by_suggested_category**](SourceDocumentApi.md#get_counts_by_suggested_category) | **GET** /sourceDocument/{projectComputationId}/countBySuggestedCategory | Get document counts by suggested category
+[**get_counts_by_type**](SourceDocumentApi.md#get_counts_by_type) | **GET** /sourceDocument/countByType | Get document counts by type
 [**get_counts_over_time**](SourceDocumentApi.md#get_counts_over_time) | **GET** /sourceDocument/docCountsOverTime | doc counts over time for term
-[**get_field_counts**](SourceDocumentApi.md#get_field_counts) | **POST** /sourceDocument/{field}/counts | 
-[**get_page_preview**](SourceDocumentApi.md#get_page_preview) | **GET** /sourceDocument/{id}/page/{page}/preview | preview of a specific page
-[**get_preview**](SourceDocumentApi.md#get_preview) | **GET** /sourceDocument/{id}/preview | preview
-[**get_statement_counts**](SourceDocumentApi.md#get_statement_counts) | **GET** /sourceDocument/{id}/statementCount | get statement counts
-[**get_statements**](SourceDocumentApi.md#get_statements) | **GET** /sourceDocument/{id}/statements | bySource
-[**get_status**](SourceDocumentApi.md#get_status) | **GET** /sourceDocument/{id}/status | status
+[**get_doc_field_counts**](SourceDocumentApi.md#get_doc_field_counts) | **POST** /sourceDocument/{field}/counts | Get counts by field type for documents
+[**get_document**](SourceDocumentApi.md#get_document) | **GET** /sourceDocument/{id} | source document details
+[**get_document_concepts**](SourceDocumentApi.md#get_document_concepts) | **GET** /sourceDocument/{id}/concepts | count concepts by source document
+[**get_document_statements**](SourceDocumentApi.md#get_document_statements) | **GET** /sourceDocument/{id}/statements | Get all the statements in a given document
+[**get_document_status**](SourceDocumentApi.md#get_document_status) | **GET** /sourceDocument/{id}/status | Get the import status for a document
+[**get_page_preview**](SourceDocumentApi.md#get_page_preview) | **GET** /sourceDocument/{id}/page/{page}/preview | Preview of a specific page in a document
+[**get_preview**](SourceDocumentApi.md#get_preview) | **GET** /sourceDocument/{id}/preview | Get a document preview
+[**get_statement_counts**](SourceDocumentApi.md#get_statement_counts) | **GET** /sourceDocument/{id}/statementCount | get statement counts for a document
 [**get_viewers**](SourceDocumentApi.md#get_viewers) | **GET** /sourceDocument/{id}/viewers | get a list of all viewers of the source document
-[**remove_annotation**](SourceDocumentApi.md#remove_annotation) | **DELETE** /sourceDocument/{id}/annotations/{annotationId} | delete
-[**render_pdf**](SourceDocumentApi.md#render_pdf) | **GET** /sourceDocument/{id}/renderPdf | renderPdf
-[**search**](SourceDocumentApi.md#search) | **POST** /sourceDocument/search | 
-[**update**](SourceDocumentApi.md#update) | **PUT** /sourceDocument/{id} | update
-[**update_annotation**](SourceDocumentApi.md#update_annotation) | **PUT** /sourceDocument/{id}/annotations | updateAnnotations
+[**remove_annotation**](SourceDocumentApi.md#remove_annotation) | **DELETE** /sourceDocument/{id}/annotations/{annotationId} | Delete annotations by ID
+[**render_pdf**](SourceDocumentApi.md#render_pdf) | **GET** /sourceDocument/{id}/renderPdf | Render a PDF of a document
+[**search_documents**](SourceDocumentApi.md#search_documents) | **POST** /sourceDocument/search | Search for documents in Layar
+[**update_annotation**](SourceDocumentApi.md#update_annotation) | **PUT** /sourceDocument/{id}/annotations | Update document annotations
+[**update_document**](SourceDocumentApi.md#update_document) | **PUT** /sourceDocument/{id} | Update document details
 
 # **add_annotation**
 > add_annotation(body, id)
 
-bySource
+Add annotation by source
 
 ### Example
 ```python
@@ -57,7 +57,7 @@ body = layar_api.Annotation() # Annotation |
 id = 'id_example' # str | 
 
 try:
-    # bySource
+    # Add annotation by source
     api_instance.add_annotation(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->add_annotation: %s\n" % e)
@@ -88,7 +88,7 @@ void (empty response body)
 # **add_annotations**
 > add_annotations(body, id)
 
-bySource
+Add a list of annotations to a document
 
 ### Example
 ```python
@@ -109,7 +109,7 @@ body = [layar_api.Annotation()] # list[Annotation] |
 id = 'id_example' # str | 
 
 try:
-    # bySource
+    # Add a list of annotations to a document
     api_instance.add_annotations(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->add_annotations: %s\n" % e)
@@ -140,7 +140,7 @@ void (empty response body)
 # **add_column**
 > add_column(body, id)
 
-addColumn
+Add column to table
 
 ### Example
 ```python
@@ -161,7 +161,7 @@ body = layar_api.AddColumnCommand() # AddColumnCommand |
 id = 'id_example' # str | 
 
 try:
-    # addColumn
+    # Add column to table
     api_instance.add_column(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->add_column: %s\n" % e)
@@ -240,10 +240,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> SourceDocument create(x_vyasa_data_providers, file=file, name=name, cortex_document_type=cortex_document_type)
+# **create_document**
+> SourceDocument create_document(x_vyasa_data_providers, file=file, name=name, cortex_document_type=cortex_document_type)
 
-save
+Save a source document to Layar
 
 ### Example
 ```python
@@ -266,11 +266,11 @@ name = 'name_example' # str |  (optional)
 cortex_document_type = 'cortex_document_type_example' # str |  (optional)
 
 try:
-    # save
-    api_response = api_instance.create(x_vyasa_data_providers, file=file, name=name, cortex_document_type=cortex_document_type)
+    # Save a source document to Layar
+    api_response = api_instance.create_document(x_vyasa_data_providers, file=file, name=name, cortex_document_type=cortex_document_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SourceDocumentApi->create: %s\n" % e)
+    print("Exception when calling SourceDocumentApi->create_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -297,10 +297,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_document**
+> delete_document(id)
 
-delete
+Delete a document from Layar
 
 ### Example
 ```python
@@ -320,10 +320,10 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a document from Layar
+    api_instance.delete_document(id)
 except ApiException as e:
-    print("Exception when calling SourceDocumentApi->delete: %s\n" % e)
+    print("Exception when calling SourceDocumentApi->delete_document: %s\n" % e)
 ```
 
 ### Parameters
@@ -347,10 +347,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_documents**
+> delete_documents()
 
-deleteMany
+Delete all documents in an array
 
 ### Example
 ```python
@@ -367,20 +367,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
-    # deleteMany
-    api_instance.delete_many(body)
+    # Delete all documents in an array
+    api_instance.delete_documents()
 except ApiException as e:
-    print("Exception when calling SourceDocumentApi->delete_many: %s\n" % e)
+    print("Exception when calling SourceDocumentApi->delete_documents: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -392,59 +388,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **download**
-> str download(id)
-
-download
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # download
-    api_response = api_instance.download(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->download: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -483,6 +428,57 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **search_command** | **str**|  | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **download_document**
+> str download_document(id)
+
+Download a document by ID
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Download a document by ID
+    api_response = api_instance.download_document(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->download_document: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -607,114 +603,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> SourceDocument get(id, x_vyasa_data_providers=x_vyasa_data_providers)
-
-source document details
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
-
-try:
-    # source document details
-    api_response = api_instance.get(id, x_vyasa_data_providers=x_vyasa_data_providers)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **x_vyasa_data_providers** | **str**| remote data providers to query | [optional] 
-
-### Return type
-
-[**SourceDocument**](SourceDocument.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_concepts**
-> list[ConceptCountCommand] get_concepts(id)
-
-count concepts by source document
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # count concepts by source document
-    api_response = api_instance.get_concepts(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->get_concepts: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**list[ConceptCountCommand]**](ConceptCountCommand.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_counts_by_suggested_category**
 > list[CountCommand] get_counts_by_suggested_category(project_computation_id)
 
-countBySuggestedCategory
+Get document counts by suggested category
 
 ### Example
 ```python
@@ -734,7 +626,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 project_computation_id = 'project_computation_id_example' # str | 
 
 try:
-    # countBySuggestedCategory
+    # Get document counts by suggested category
     api_response = api_instance.get_counts_by_suggested_category(project_computation_id)
     pprint(api_response)
 except ApiException as e:
@@ -765,7 +657,7 @@ Name | Type | Description  | Notes
 # **get_counts_by_type**
 > list[CountCommand] get_counts_by_type()
 
-countByType
+Get document counts by type
 
 ### Example
 ```python
@@ -784,7 +676,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 
 try:
-    # countByType
+    # Get document counts by type
     api_response = api_instance.get_counts_by_type()
     pprint(api_response)
 except ApiException as e:
@@ -810,7 +702,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_counts_over_time**
-> list[DocCountsInStatementsOverTime] get_counts_over_time(term)
+> list[DocCountsInStatementsOverTime] get_counts_over_time()
 
 doc counts over time for term
 
@@ -829,21 +721,17 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-term = 'term_example' # str | 
 
 try:
     # doc counts over time for term
-    api_response = api_instance.get_counts_over_time(term)
+    api_response = api_instance.get_counts_over_time()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->get_counts_over_time: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **term** | **str**|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -860,10 +748,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_field_counts**
-> list[FieldCount] get_field_counts(body, field, annotation_key=annotation_key, value_type=value_type)
+# **get_doc_field_counts**
+> list[FieldCount] get_doc_field_counts(body, field, annotation_key=annotation_key, value_type=value_type)
 
-
+Get counts by field type for documents
 
 ### Example
 ```python
@@ -886,10 +774,11 @@ annotation_key = 'annotation_key_example' # str |  (optional)
 value_type = 'value_type_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_field_counts(body, field, annotation_key=annotation_key, value_type=value_type)
+    # Get counts by field type for documents
+    api_response = api_instance.get_doc_field_counts(body, field, annotation_key=annotation_key, value_type=value_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SourceDocumentApi->get_field_counts: %s\n" % e)
+    print("Exception when calling SourceDocumentApi->get_doc_field_counts: %s\n" % e)
 ```
 
 ### Parameters
@@ -916,10 +805,216 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_document**
+> SourceDocument get_document(id, x_vyasa_data_providers=x_vyasa_data_providers)
+
+source document details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
+
+try:
+    # source document details
+    api_response = api_instance.get_document(id, x_vyasa_data_providers=x_vyasa_data_providers)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->get_document: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **x_vyasa_data_providers** | **str**| remote data providers to query | [optional] 
+
+### Return type
+
+[**SourceDocument**](SourceDocument.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_concepts**
+> list[ConceptCountCommand] get_document_concepts(id)
+
+count concepts by source document
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # count concepts by source document
+    api_response = api_instance.get_document_concepts(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->get_document_concepts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**list[ConceptCountCommand]**](ConceptCountCommand.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_statements**
+> list[Statement] get_document_statements(id)
+
+Get all the statements in a given document
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Get all the statements in a given document
+    api_response = api_instance.get_document_statements(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->get_document_statements: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**list[Statement]**](Statement.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_status**
+> SourceDocumentImportStatus get_document_status(id)
+
+Get the import status for a document
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Get the import status for a document
+    api_response = api_instance.get_document_status(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->get_document_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**SourceDocumentImportStatus**](SourceDocumentImportStatus.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_page_preview**
 > str get_page_preview(id, page)
 
-preview of a specific page
+Preview of a specific page in a document
 
 ### Example
 ```python
@@ -940,7 +1035,7 @@ id = 'id_example' # str |
 page = 56 # int | 
 
 try:
-    # preview of a specific page
+    # Preview of a specific page in a document
     api_response = api_instance.get_page_preview(id, page)
     pprint(api_response)
 except ApiException as e:
@@ -972,7 +1067,7 @@ Name | Type | Description  | Notes
 # **get_preview**
 > str get_preview(id)
 
-preview
+Get a document preview
 
 ### Example
 ```python
@@ -992,7 +1087,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # preview
+    # Get a document preview
     api_response = api_instance.get_preview(id)
     pprint(api_response)
 except ApiException as e:
@@ -1021,9 +1116,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statement_counts**
-> InlineResponse2005 get_statement_counts(id)
+> InlineResponse2004 get_statement_counts(id)
 
-get statement counts
+get statement counts for a document
 
 ### Example
 ```python
@@ -1043,7 +1138,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # get statement counts
+    # get statement counts for a document
     api_response = api_instance.get_statement_counts(id)
     pprint(api_response)
 except ApiException as e:
@@ -1058,109 +1153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_statements**
-> list[Statement] get_statements(id)
-
-bySource
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # bySource
-    api_response = api_instance.get_statements(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->get_statements: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**list[Statement]**](Statement.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_status**
-> SourceDocumentImportStatus get_status(id)
-
-status
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # status
-    api_response = api_instance.get_status(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->get_status: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**SourceDocumentImportStatus**](SourceDocumentImportStatus.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -1225,9 +1218,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_annotation**
-> remove_annotation()
+> remove_annotation(id, annotation_id)
 
-delete
+Delete annotations by ID
 
 ### Example
 ```python
@@ -1244,16 +1237,22 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+annotation_id = 'annotation_id_example' # str | 
 
 try:
-    # delete
-    api_instance.remove_annotation()
+    # Delete annotations by ID
+    api_instance.remove_annotation(id, annotation_id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->remove_annotation: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **annotation_id** | **str**|  | 
 
 ### Return type
 
@@ -1273,7 +1272,7 @@ void (empty response body)
 # **render_pdf**
 > str render_pdf(id)
 
-renderPdf
+Render a PDF of a document
 
 ### Example
 ```python
@@ -1293,7 +1292,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # renderPdf
+    # Render a PDF of a document
     api_response = api_instance.render_pdf(id)
     pprint(api_response)
 except ApiException as e:
@@ -1321,10 +1320,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[SourceDocument] search(body, x_vyasa_data_providers)
+# **search_documents**
+> list[SourceDocument] search_documents(body, x_vyasa_data_providers)
 
-
+Search for documents in Layar
 
 ### Example
 ```python
@@ -1345,10 +1344,11 @@ body = layar_api.SourceDocumentSearchCommand() # SourceDocumentSearchCommand |
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
 
 try:
-    api_response = api_instance.search(body, x_vyasa_data_providers)
+    # Search for documents in Layar
+    api_response = api_instance.search_documents(body, x_vyasa_data_providers)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SourceDocumentApi->search: %s\n" % e)
+    print("Exception when calling SourceDocumentApi->search_documents: %s\n" % e)
 ```
 
 ### Parameters
@@ -1373,63 +1373,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> SourceDocument update(body, id)
-
-update
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-body = layar_api.SourceDocument() # SourceDocument | 
-id = 'id_example' # str | 
-
-try:
-    # update
-    api_response = api_instance.update(body, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SourceDocumentApi->update: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SourceDocument**](SourceDocument.md)|  | 
- **id** | **str**|  | 
-
-### Return type
-
-[**SourceDocument**](SourceDocument.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **update_annotation**
 > update_annotation(body, id)
 
-updateAnnotations
+Update document annotations
 
 ### Example
 ```python
@@ -1450,7 +1397,7 @@ body = layar_api.Annotation() # Annotation |
 id = 'id_example' # str | 
 
 try:
-    # updateAnnotations
+    # Update document annotations
     api_instance.update_annotation(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->update_annotation: %s\n" % e)
@@ -1475,6 +1422,59 @@ void (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_document**
+> SourceDocument update_document(body, id)
+
+Update document details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+body = layar_api.SourceDocument() # SourceDocument | 
+id = 'id_example' # str | 
+
+try:
+    # Update document details
+    api_response = api_instance.update_document(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->update_document: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SourceDocument**](SourceDocument.md)|  | 
+ **id** | **str**|  | 
+
+### Return type
+
+[**SourceDocument**](SourceDocument.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

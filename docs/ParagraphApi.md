@@ -4,10 +4,60 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_paragraph**](ParagraphApi.md#get_paragraph) | **GET** /paragraph/{id} | Get details for a single paragraph
 [**paragraph_get**](ParagraphApi.md#paragraph_get) | **GET** /paragraph | search for paragraphs
-[**paragraph_id_get**](ParagraphApi.md#paragraph_id_get) | **GET** /paragraph/{id} | paragraph details
-[**paragraph_search_post**](ParagraphApi.md#paragraph_search_post) | **POST** /paragraph/search | search for paragraphs
-[**part_of_speech_parse_text_post**](ParagraphApi.md#part_of_speech_parse_text_post) | **POST** /partOfSpeech/parseText | parse text into part of speech components
+[**parse_text**](ParagraphApi.md#parse_text) | **POST** /partOfSpeech/parseText | Parse text into part of speech components and queryable terms
+
+# **get_paragraph**
+> Paragraph get_paragraph(id)
+
+Get details for a single paragraph
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.ParagraphApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Get details for a single paragraph
+    api_response = api_instance.get_paragraph(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ParagraphApi->get_paragraph: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**Paragraph**](Paragraph.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **paragraph_get**
 > list[Paragraph] paragraph_get(q=q, rows=rows, start=start, sort=sort, order=order, from_date=from_date, to_date=to_date, ids=ids, document_ids=document_ids, highlight=highlight, similar_ids=similar_ids, similar_text=similar_text, sources=sources)
@@ -84,112 +134,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **paragraph_id_get**
-> Paragraph paragraph_id_get(id)
+# **parse_text**
+> PartOfSpeechResponse parse_text(body=body)
 
-paragraph details
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.ParagraphApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # paragraph details
-    api_response = api_instance.paragraph_id_get(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ParagraphApi->paragraph_id_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**Paragraph**](Paragraph.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **paragraph_search_post**
-> list[Paragraph] paragraph_search_post(body=body)
-
-search for paragraphs
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.ParagraphApi(layar_api.ApiClient(configuration))
-body = layar_api.ParagraphSearchCommand() # ParagraphSearchCommand |  (optional)
-
-try:
-    # search for paragraphs
-    api_response = api_instance.paragraph_search_post(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ParagraphApi->paragraph_search_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ParagraphSearchCommand**](ParagraphSearchCommand.md)|  | [optional] 
-
-### Return type
-
-[**list[Paragraph]**](Paragraph.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **part_of_speech_parse_text_post**
-> list[PartOfSpeechResponse] part_of_speech_parse_text_post(body=body)
-
-parse text into part of speech components
+Parse text into part of speech components and queryable terms
 
 ### Example
 ```python
@@ -209,11 +157,11 @@ api_instance = layar_api.ParagraphApi(layar_api.ApiClient(configuration))
 body = layar_api.PartOfSpeechCommand() # PartOfSpeechCommand |  (optional)
 
 try:
-    # parse text into part of speech components
-    api_response = api_instance.part_of_speech_parse_text_post(body=body)
+    # Parse text into part of speech components and queryable terms
+    api_response = api_instance.parse_text(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ParagraphApi->part_of_speech_parse_text_post: %s\n" % e)
+    print("Exception when calling ParagraphApi->parse_text: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PartOfSpeechResponse]**](PartOfSpeechResponse.md)
+[**PartOfSpeechResponse**](PartOfSpeechResponse.md)
 
 ### Authorization
 

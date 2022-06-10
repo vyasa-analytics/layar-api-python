@@ -52,6 +52,7 @@ class DistributedSourceDocumentSearchCommand(SourceDocumentSearchCommand):
     def data_providers(self):
         """Gets the data_providers of this DistributedSourceDocumentSearchCommand.  # noqa: E501
 
+        The list of data providers (i.e. 'myinstance.yourcompany.com', 'master-arxiv.vyasa.com') to run your search against  # noqa: E501
 
         :return: The data_providers of this DistributedSourceDocumentSearchCommand.  # noqa: E501
         :rtype: list[str]
@@ -62,6 +63,7 @@ class DistributedSourceDocumentSearchCommand(SourceDocumentSearchCommand):
     def data_providers(self, data_providers):
         """Sets the data_providers of this DistributedSourceDocumentSearchCommand.
 
+        The list of data providers (i.e. 'myinstance.yourcompany.com', 'master-arxiv.vyasa.com') to run your search against  # noqa: E501
 
         :param data_providers: The data_providers of this DistributedSourceDocumentSearchCommand.  # noqa: E501
         :type: list[str]

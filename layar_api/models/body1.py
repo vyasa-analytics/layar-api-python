@@ -51,6 +51,7 @@ class Body1(object):
     def terms(self):
         """Gets the terms of this Body1.  # noqa: E501
 
+        A list of terms to be grouped  # noqa: E501
 
         :return: The terms of this Body1.  # noqa: E501
         :rtype: list[str]
@@ -61,6 +62,7 @@ class Body1(object):
     def terms(self, terms):
         """Sets the terms of this Body1.
 
+        A list of terms to be grouped  # noqa: E501
 
         :param terms: The terms of this Body1.  # noqa: E501
         :type: list[str]

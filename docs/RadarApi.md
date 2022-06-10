@@ -4,15 +4,68 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RadarApi.md#get) | **GET** /radar | 
-[**get_by_concept_id**](RadarApi.md#get_by_concept_id) | **GET** /radar/byConceptId | find semantically similar terms
-[**get_by_query_string**](RadarApi.md#get_by_query_string) | **GET** /radar/byQueryString | find semantically similar terms
-[**get_count**](RadarApi.md#get_count) | **GET** /radar/count | count of nearest neighbor terms that match the term in the query string
+[**get_nearest_neighbor_count**](RadarApi.md#get_nearest_neighbor_count) | **GET** /radar/count | count of nearest neighbor terms that match the term in the query string
+[**get_radar**](RadarApi.md#get_radar) | **GET** /radar | Get Radar results
+[**get_radar_by_concept_id**](RadarApi.md#get_radar_by_concept_id) | **GET** /radar/byConceptId | find semantically similar terms
+[**get_radar_by_query_string**](RadarApi.md#get_radar_by_query_string) | **GET** /radar/byQueryString | find semantically similar terms
 
-# **get**
-> list[Radar] get(x_vyasa_data_providers, start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, minimum_similarity=minimum_similarity, terms=terms, context_terms=context_terms, live_source_ids=live_source_ids, concept_type_ids=concept_type_ids, excludes=excludes)
+# **get_nearest_neighbor_count**
+> InlineResponse2003 get_nearest_neighbor_count(x_vyasa_data_providers, terms=terms)
 
+count of nearest neighbor terms that match the term in the query string
 
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.RadarApi(layar_api.ApiClient(configuration))
+x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
+terms = 'terms_example' # str |  (optional)
+
+try:
+    # count of nearest neighbor terms that match the term in the query string
+    api_response = api_instance.get_nearest_neighbor_count(x_vyasa_data_providers, terms=terms)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RadarApi->get_nearest_neighbor_count: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_vyasa_data_providers** | **str**| remote data providers to query | 
+ **terms** | **str**|  | [optional] 
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_radar**
+> list[Radar] get_radar(x_vyasa_data_providers, start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, minimum_similarity=minimum_similarity, terms=terms, context_terms=context_terms, live_source_ids=live_source_ids, concept_type_ids=concept_type_ids, excludes=excludes)
+
+Get Radar results
 
 ### Example
 ```python
@@ -45,10 +98,11 @@ concept_type_ids = ['concept_type_ids_example'] # list[str] | limit results to t
 excludes = layar_api.RadarExcludeSearchCommand() # RadarExcludeSearchCommand | limit results to those without these properties (optional)
 
 try:
-    api_response = api_instance.get(x_vyasa_data_providers, start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, minimum_similarity=minimum_similarity, terms=terms, context_terms=context_terms, live_source_ids=live_source_ids, concept_type_ids=concept_type_ids, excludes=excludes)
+    # Get Radar results
+    api_response = api_instance.get_radar(x_vyasa_data_providers, start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, minimum_similarity=minimum_similarity, terms=terms, context_terms=context_terms, live_source_ids=live_source_ids, concept_type_ids=concept_type_ids, excludes=excludes)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RadarApi->get: %s\n" % e)
+    print("Exception when calling RadarApi->get_radar: %s\n" % e)
 ```
 
 ### Parameters
@@ -85,8 +139,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_by_concept_id**
-> list[Radar] get_by_concept_id(size=size, minimum_similarity=minimum_similarity, concept_id=concept_id, source=source)
+# **get_radar_by_concept_id**
+> list[Radar] get_radar_by_concept_id(size=size, minimum_similarity=minimum_similarity, concept_id=concept_id, source=source)
 
 find semantically similar terms
 
@@ -112,10 +166,10 @@ source = 'source_example' # str |  (optional)
 
 try:
     # find semantically similar terms
-    api_response = api_instance.get_by_concept_id(size=size, minimum_similarity=minimum_similarity, concept_id=concept_id, source=source)
+    api_response = api_instance.get_radar_by_concept_id(size=size, minimum_similarity=minimum_similarity, concept_id=concept_id, source=source)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RadarApi->get_by_concept_id: %s\n" % e)
+    print("Exception when calling RadarApi->get_radar_by_concept_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -142,8 +196,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_by_query_string**
-> list[Radar] get_by_query_string(x_vyasa_data_providers, q=q, size=size, minimum_similarity=minimum_similarity, source=source)
+# **get_radar_by_query_string**
+> list[Radar] get_radar_by_query_string(x_vyasa_data_providers, q=q, size=size, minimum_similarity=minimum_similarity, source=source)
 
 find semantically similar terms
 
@@ -170,10 +224,10 @@ source = 'source_example' # str |  (optional)
 
 try:
     # find semantically similar terms
-    api_response = api_instance.get_by_query_string(x_vyasa_data_providers, q=q, size=size, minimum_similarity=minimum_similarity, source=source)
+    api_response = api_instance.get_radar_by_query_string(x_vyasa_data_providers, q=q, size=size, minimum_similarity=minimum_similarity, source=source)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RadarApi->get_by_query_string: %s\n" % e)
+    print("Exception when calling RadarApi->get_radar_by_query_string: %s\n" % e)
 ```
 
 ### Parameters
@@ -189,59 +243,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[Radar]**](Radar.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_count**
-> InlineResponse2004 get_count(x_vyasa_data_providers, terms=terms)
-
-count of nearest neighbor terms that match the term in the query string
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.RadarApi(layar_api.ApiClient(configuration))
-x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
-terms = 'terms_example' # str |  (optional)
-
-try:
-    # count of nearest neighbor terms that match the term in the query string
-    api_response = api_instance.get_count(x_vyasa_data_providers, terms=terms)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RadarApi->get_count: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_vyasa_data_providers** | **str**| remote data providers to query | 
- **terms** | **str**|  | [optional] 
-
-### Return type
-
-[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

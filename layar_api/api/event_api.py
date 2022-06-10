@@ -32,41 +32,43 @@ class EventApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get(self, **kwargs):  # noqa: E501
+    def get_event(self, id, **kwargs):  # noqa: E501
         """event details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(async_req=True)
+        >>> thread = api.get_event(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: Event
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_event_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_event_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, **kwargs):  # noqa: E501
+    def get_event_with_http_info(self, id, **kwargs):  # noqa: E501
         """event details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(async_req=True)
+        >>> thread = api.get_event_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: Event
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -77,14 +79,20 @@ class EventApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_event" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get_event`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -117,12 +125,12 @@ class EventApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
+    def search_events(self, **kwargs):  # noqa: E501
         """search for events  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_events(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -141,17 +149,17 @@ class EventApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_events_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_events_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
+    def search_events_with_http_info(self, **kwargs):  # noqa: E501
         """search for events  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_events_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -180,7 +188,7 @@ class EventApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_events" % key
                 )
             params[key] = val
         del params['kwargs']

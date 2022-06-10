@@ -32,101 +32,12 @@ class AutocompleteApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete(self, term, **kwargs):  # noqa: E501
-        """delete a previous search request  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(term, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str term: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_with_http_info(term, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_with_http_info(term, **kwargs)  # noqa: E501
-            return data
-
-    def delete_with_http_info(self, term, **kwargs):  # noqa: E501
-        """delete a previous search request  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(term, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str term: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['term']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'term' is set
-        if ('term' not in params or
-                params['term'] is None):
-            raise ValueError("Missing the required parameter `term` when calling `delete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'term' in params:
-            path_params['term'] = params['term']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/autocomplete/searchHistory/{term}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get(self, q, **kwargs):  # noqa: E501
+    def autocomplete_get(self, q, **kwargs):  # noqa: E501
         """search for names used in various cortex domain objects  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(q, async_req=True)
+        >>> thread = api.autocomplete_get(q, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -138,17 +49,17 @@ class AutocompleteApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(q, **kwargs)  # noqa: E501
+            return self.autocomplete_get_with_http_info(q, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(q, **kwargs)  # noqa: E501
+            (data) = self.autocomplete_get_with_http_info(q, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, q, **kwargs):  # noqa: E501
+    def autocomplete_get_with_http_info(self, q, **kwargs):  # noqa: E501
         """search for names used in various cortex domain objects  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(q, async_req=True)
+        >>> thread = api.autocomplete_get_with_http_info(q, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -170,14 +81,14 @@ class AutocompleteApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method autocomplete_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'q' is set
         if ('q' not in params or
                 params['q'] is None):
-            raise ValueError("Missing the required parameter `q` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `q` when calling `autocomplete_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -218,12 +129,101 @@ class AutocompleteApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
+    def delete_search_history(self, term, **kwargs):  # noqa: E501
+        """delete a previous search request  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_search_history(term, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str term: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_search_history_with_http_info(term, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_search_history_with_http_info(term, **kwargs)  # noqa: E501
+            return data
+
+    def delete_search_history_with_http_info(self, term, **kwargs):  # noqa: E501
+        """delete a previous search request  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_search_history_with_http_info(term, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str term: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['term']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_search_history" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'term' is set
+        if ('term' not in params or
+                params['term'] is None):
+            raise ValueError("Missing the required parameter `term` when calling `delete_search_history`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'term' in params:
+            path_params['term'] = params['term']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/autocomplete/searchHistory/{term}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_search_history(self, **kwargs):  # noqa: E501
         """find previous search requests  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.get_search_history(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -234,17 +234,17 @@ class AutocompleteApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.get_search_history_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_search_history_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
+    def get_search_history_with_http_info(self, **kwargs):  # noqa: E501
         """find previous search requests  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.get_search_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -265,7 +265,7 @@ class AutocompleteApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method get_search_history" % key
                 )
             params[key] = val
         del params['kwargs']

@@ -4,15 +4,15 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](ProjectComputationApi.md#cancel) | **POST** /projectComputation/{id}/cancel | cancel and shut down project computation without expecting any results back
+[**cancel_computation**](ProjectComputationApi.md#cancel_computation) | **POST** /projectComputation/{id}/cancel | cancel and shut down project computation without expecting any results back
+[**download_computation**](ProjectComputationApi.md#download_computation) | **GET** /projectComputation/{id}/downloadZipResults | download zip of documents created during computation
 [**download_logs**](ProjectComputationApi.md#download_logs) | **GET** /projectComputation/{id}/downloadLogs | download full logs for computation job
-[**download_results**](ProjectComputationApi.md#download_results) | **GET** /projectComputation/{id}/downloadZipResults | download zip of documents created during computation
-[**get**](ProjectComputationApi.md#get) | **GET** /projectComputation/{id} | project computation details
 [**get_logs**](ProjectComputationApi.md#get_logs) | **GET** /projectComputation/{id}/logs | retrieve logs for computation job
-[**stop**](ProjectComputationApi.md#stop) | **POST** /projectComputation/{id}/stopTraining | send computation job a stop message encouraging it to stop and send any results back
+[**get_project_computation**](ProjectComputationApi.md#get_project_computation) | **GET** /projectComputation/{id} | project computation details
+[**stop_job**](ProjectComputationApi.md#stop_job) | **POST** /projectComputation/{id}/stopTraining | send computation job a stop message encouraging it to stop and send any results back
 
-# **cancel**
-> ProjectComputation cancel(id)
+# **cancel_computation**
+> ProjectComputation cancel_computation(id)
 
 cancel and shut down project computation without expecting any results back
 
@@ -35,10 +35,10 @@ id = 'id_example' # str |
 
 try:
     # cancel and shut down project computation without expecting any results back
-    api_response = api_instance.cancel(id)
+    api_response = api_instance.cancel_computation(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProjectComputationApi->cancel: %s\n" % e)
+    print("Exception when calling ProjectComputationApi->cancel_computation: %s\n" % e)
 ```
 
 ### Parameters
@@ -62,61 +62,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **download_logs**
-> str download_logs(id, computation_id)
-
-download full logs for computation job
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-computation_id = 'computation_id_example' # str | 
-
-try:
-    # download full logs for computation job
-    api_response = api_instance.download_logs(id, computation_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectComputationApi->download_logs: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **computation_id** | **str**|  | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **download_results**
-> str download_results(id, computation_id)
+# **download_computation**
+> str download_computation(id)
 
 download zip of documents created during computation
 
@@ -136,14 +83,13 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
-computation_id = 'computation_id_example' # str | 
 
 try:
     # download zip of documents created during computation
-    api_response = api_instance.download_results(id, computation_id)
+    api_response = api_instance.download_computation(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProjectComputationApi->download_results: %s\n" % e)
+    print("Exception when calling ProjectComputationApi->download_computation: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,7 +97,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **computation_id** | **str**|  | 
 
 ### Return type
 
@@ -168,8 +113,114 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> ProjectComputation get(id)
+# **download_logs**
+> str download_logs(id)
+
+download full logs for computation job
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # download full logs for computation job
+    api_response = api_instance.download_logs(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProjectComputationApi->download_logs: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_logs**
+> list[LogStash] get_logs(id, max_rows=max_rows, order=order)
+
+retrieve logs for computation job
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+max_rows = 56 # int |  (optional)
+order = 'order_example' # str |  (optional)
+
+try:
+    # retrieve logs for computation job
+    api_response = api_instance.get_logs(id, max_rows=max_rows, order=order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProjectComputationApi->get_logs: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **max_rows** | **int**|  | [optional] 
+ **order** | **str**|  | [optional] 
+
+### Return type
+
+[**list[LogStash]**](LogStash.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_project_computation**
+> ProjectComputation get_project_computation(id)
 
 project computation details
 
@@ -192,10 +243,10 @@ id = 'id_example' # str |
 
 try:
     # project computation details
-    api_response = api_instance.get(id)
+    api_response = api_instance.get_project_computation(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProjectComputationApi->get: %s\n" % e)
+    print("Exception when calling ProjectComputationApi->get_project_computation: %s\n" % e)
 ```
 
 ### Parameters
@@ -219,65 +270,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_logs**
-> list[LogStash] get_logs(id, computation_id, max_rows=max_rows, order=order)
-
-retrieve logs for computation job
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-computation_id = 'computation_id_example' # str | 
-max_rows = 56 # int |  (optional)
-order = 'order_example' # str |  (optional)
-
-try:
-    # retrieve logs for computation job
-    api_response = api_instance.get_logs(id, computation_id, max_rows=max_rows, order=order)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectComputationApi->get_logs: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **computation_id** | **str**|  | 
- **max_rows** | **int**|  | [optional] 
- **order** | **str**|  | [optional] 
-
-### Return type
-
-[**list[LogStash]**](LogStash.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **stop**
-> StopTraining stop(id)
+# **stop_job**
+> StopTraining stop_job(id)
 
 send computation job a stop message encouraging it to stop and send any results back
 
@@ -300,10 +294,10 @@ id = 'id_example' # str |
 
 try:
     # send computation job a stop message encouraging it to stop and send any results back
-    api_response = api_instance.stop(id)
+    api_response = api_instance.stop_job(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProjectComputationApi->stop: %s\n" % e)
+    print("Exception when calling ProjectComputationApi->stop_job: %s\n" % e)
 ```
 
 ### Parameters

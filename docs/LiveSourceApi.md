@@ -4,23 +4,23 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](LiveSourceApi.md#create) | **POST** /liveSource | save
+[**create_feeds**](LiveSourceApi.md#create_feeds) | **POST** /liveSource | Create a new live source
 [**create_feeds_from_column**](LiveSourceApi.md#create_feeds_from_column) | **POST** /liveSource/createFeedsFromColumn | create live source feeds from column of a spreadsheet containing URLs
-[**delete**](LiveSourceApi.md#delete) | **DELETE** /liveSource/{id} | delete
-[**delete_many**](LiveSourceApi.md#delete_many) | **DELETE** /liveSource/deleteMany | delete the set of ids
-[**get**](LiveSourceApi.md#get) | **GET** /liveSource/{id} | live source details
-[**get_import_status**](LiveSourceApi.md#get_import_status) | **GET** /liveSource/{id}/importStatus | percent completion information
-[**get_job_status**](LiveSourceApi.md#get_job_status) | **GET** /liveSource/{id}/jobStatus | jobStatus
-[**get_source_documents**](LiveSourceApi.md#get_source_documents) | **GET** /liveSource/{id}/sourceDocuments | sourceDocuments
-[**search**](LiveSourceApi.md#search) | **GET** /liveSource | 
-[**unschedule_job**](LiveSourceApi.md#unschedule_job) | **PUT** /liveSource/{id}/jobStatus/unschedule | unschedule
-[**update**](LiveSourceApi.md#update) | **PUT** /liveSource/{id} | update
-[**update_job**](LiveSourceApi.md#update_job) | **PUT** /liveSource/{id}/{jobAction} | jobAction
+[**delete_feed**](LiveSourceApi.md#delete_feed) | **DELETE** /liveSource/{id} | Delete a live source
+[**delete_feeds**](LiveSourceApi.md#delete_feeds) | **DELETE** /liveSource/deleteMany | delete the set of live source ids
+[**get_feed**](LiveSourceApi.md#get_feed) | **GET** /liveSource/{id} | Get live source details
+[**get_import_status**](LiveSourceApi.md#get_import_status) | **GET** /liveSource/{id}/importStatus | Returns the percent completed for a live source import
+[**get_job_status**](LiveSourceApi.md#get_job_status) | **GET** /liveSource/{id}/jobStatus | Get job status details
+[**get_source_document_url**](LiveSourceApi.md#get_source_document_url) | **GET** /liveSource/{id}/sourceDocuments | Get the documents from a particular source
+[**search_feeds**](LiveSourceApi.md#search_feeds) | **GET** /liveSource | Search for live sources
+[**unschedule_job**](LiveSourceApi.md#unschedule_job) | **PUT** /liveSource/{id}/jobStatus/unschedule | Change a job status to &#x27;Unscheduled&#x27;
+[**update_feed**](LiveSourceApi.md#update_feed) | **PUT** /liveSource/{id} | Update a live source
+[**update_job**](LiveSourceApi.md#update_job) | **PUT** /liveSource/{id}/{jobAction} | Update a job with a new action
 
-# **create**
-> LiveSource create(body)
+# **create_feeds**
+> LiveSource create_feeds(body)
 
-save
+Create a new live source
 
 ### Example
 ```python
@@ -40,11 +40,11 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 body = layar_api.LiveSource() # LiveSource | 
 
 try:
-    # save
-    api_response = api_instance.create(body)
+    # Create a new live source
+    api_response = api_instance.create_feeds(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->create: %s\n" % e)
+    print("Exception when calling LiveSourceApi->create_feeds: %s\n" % e)
 ```
 
 ### Parameters
@@ -120,10 +120,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_feed**
+> delete_feed(id)
 
-delete
+Delete a live source
 
 ### Example
 ```python
@@ -143,10 +143,10 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a live source
+    api_instance.delete_feed(id)
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->delete: %s\n" % e)
+    print("Exception when calling LiveSourceApi->delete_feed: %s\n" % e)
 ```
 
 ### Parameters
@@ -170,10 +170,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_feeds**
+> delete_feeds()
 
-delete the set of ids
+delete the set of live source ids
 
 ### Example
 ```python
@@ -190,20 +190,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
-    # delete the set of ids
-    api_instance.delete_many(body)
+    # delete the set of live source ids
+    api_instance.delete_feeds()
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->delete_many: %s\n" % e)
+    print("Exception when calling LiveSourceApi->delete_feeds: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -215,15 +211,15 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> LiveSource get(id)
+# **get_feed**
+> LiveSource get_feed(id)
 
-live source details
+Get live source details
 
 ### Example
 ```python
@@ -243,11 +239,11 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # live source details
-    api_response = api_instance.get(id)
+    # Get live source details
+    api_response = api_instance.get_feed(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->get: %s\n" % e)
+    print("Exception when calling LiveSourceApi->get_feed: %s\n" % e)
 ```
 
 ### Parameters
@@ -274,7 +270,7 @@ Name | Type | Description  | Notes
 # **get_import_status**
 > LiveSourceImportStatus get_import_status(id)
 
-percent completion information
+Returns the percent completed for a live source import
 
 ### Example
 ```python
@@ -294,7 +290,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # percent completion information
+    # Returns the percent completed for a live source import
     api_response = api_instance.get_import_status(id)
     pprint(api_response)
 except ApiException as e:
@@ -325,7 +321,7 @@ Name | Type | Description  | Notes
 # **get_job_status**
 > LiveSourceJobStatus get_job_status(id)
 
-jobStatus
+Get job status details
 
 ### Example
 ```python
@@ -345,7 +341,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # jobStatus
+    # Get job status details
     api_response = api_instance.get_job_status(id)
     pprint(api_response)
 except ApiException as e:
@@ -373,10 +369,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_source_documents**
-> list[SourceDocument] get_source_documents(id, rows=rows, start=start)
+# **get_source_document_url**
+> list[SourceDocument] get_source_document_url(id, rows=rows, start=start)
 
-sourceDocuments
+Get the documents from a particular source
 
 ### Example
 ```python
@@ -398,11 +394,11 @@ rows = 56 # int | the number of rows to return (optional)
 start = 56 # int | the start offset for the row (optional)
 
 try:
-    # sourceDocuments
-    api_response = api_instance.get_source_documents(id, rows=rows, start=start)
+    # Get the documents from a particular source
+    api_response = api_instance.get_source_document_url(id, rows=rows, start=start)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->get_source_documents: %s\n" % e)
+    print("Exception when calling LiveSourceApi->get_source_document_url: %s\n" % e)
 ```
 
 ### Parameters
@@ -428,10 +424,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[LiveSource] search(start=start, rows=rows, q=q, sort=sort, order=order)
+# **search_feeds**
+> list[LiveSource] search_feeds(start=start, rows=rows, q=q, sort=sort, order=order)
 
-
+Search for live sources
 
 ### Example
 ```python
@@ -455,10 +451,11 @@ sort = 'sort_example' # str | sort results by the given property (optional)
 order = 'order_example' # str | what order to return sorted results (optional)
 
 try:
-    api_response = api_instance.search(start=start, rows=rows, q=q, sort=sort, order=order)
+    # Search for live sources
+    api_response = api_instance.search_feeds(start=start, rows=rows, q=q, sort=sort, order=order)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->search: %s\n" % e)
+    print("Exception when calling LiveSourceApi->search_feeds: %s\n" % e)
 ```
 
 ### Parameters
@@ -489,7 +486,7 @@ Name | Type | Description  | Notes
 # **unschedule_job**
 > LiveSourceJobStatus unschedule_job(id)
 
-unschedule
+Change a job status to 'Unscheduled'
 
 ### Example
 ```python
@@ -509,7 +506,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # unschedule
+    # Change a job status to 'Unscheduled'
     api_response = api_instance.unschedule_job(id)
     pprint(api_response)
 except ApiException as e:
@@ -537,10 +534,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> LiveSource update(body, id)
+# **update_feed**
+> LiveSource update_feed(body, id)
 
-update
+Update a live source
 
 ### Example
 ```python
@@ -561,11 +558,11 @@ body = layar_api.LiveSource() # LiveSource |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update(body, id)
+    # Update a live source
+    api_response = api_instance.update_feed(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LiveSourceApi->update: %s\n" % e)
+    print("Exception when calling LiveSourceApi->update_feed: %s\n" % e)
 ```
 
 ### Parameters
@@ -593,7 +590,7 @@ Name | Type | Description  | Notes
 # **update_job**
 > LiveSourceJobStatus update_job(id, job_action)
 
-jobAction
+Update a job with a new action
 
 ### Example
 ```python
@@ -614,7 +611,7 @@ id = 'id_example' # str |
 job_action = 'job_action_example' # str | 
 
 try:
-    # jobAction
+    # Update a job with a new action
     api_response = api_instance.update_job(id, job_action)
     pprint(api_response)
 except ApiException as e:

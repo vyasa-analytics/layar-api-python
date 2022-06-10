@@ -33,7 +33,7 @@ class ProjectApi(object):
         self.api_client = api_client
 
     def add_input(self, body, id, **kwargs):  # noqa: E501
-        """addInput  # noqa: E501
+        """Add source inputs to a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -55,7 +55,7 @@ class ProjectApi(object):
             return data
 
     def add_input_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """addInput  # noqa: E501
+        """Add source inputs to a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -137,12 +137,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_project(self, body, **kwargs):  # noqa: E501
+        """Save a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(body, async_req=True)
+        >>> thread = api.create_project(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -153,17 +153,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_project_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_project_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_with_http_info(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+    def create_project_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Save a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(body, async_req=True)
+        >>> thread = api.create_project_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -184,14 +184,14 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method create_project" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_project`")  # noqa: E501
 
         collection_formats = {}
 
@@ -234,12 +234,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_project(self, id, **kwargs):  # noqa: E501
+        """Delete a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(id, async_req=True)
+        >>> thread = api.delete_project(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -250,17 +250,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_project_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_project_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete_project_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_project_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -281,14 +281,14 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method delete_project" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_project`")  # noqa: E501
 
         collection_formats = {}
 
@@ -327,43 +327,41 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_many(self, body, **kwargs):  # noqa: E501
-        """deleteMany  # noqa: E501
+    def delete_projects(self, **kwargs):  # noqa: E501
+        """Delete multiple projects by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many(body, async_req=True)
+        >>> thread = api.delete_projects(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_projects_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_many_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_projects_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_many_with_http_info(self, body, **kwargs):  # noqa: E501
-        """deleteMany  # noqa: E501
+    def delete_projects_with_http_info(self, **kwargs):  # noqa: E501
+        """Delete multiple projects by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_many_with_http_info(body, async_req=True)
+        >>> thread = api.delete_projects_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ListOfIds body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -374,14 +372,10 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_many" % key
+                    " to method delete_projects" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_many`")  # noqa: E501
 
         collection_formats = {}
 
@@ -395,14 +389,8 @@ class ProjectApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -424,41 +412,43 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def download_results(self, **kwargs):  # noqa: E501
-        """downloadResults  # noqa: E501
+    def download_results(self, id, **kwargs):  # noqa: E501
+        """Download a zip file of a given project's results  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_results(async_req=True)
+        >>> thread = api.download_results(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.download_results_with_http_info(**kwargs)  # noqa: E501
+            return self.download_results_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.download_results_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.download_results_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def download_results_with_http_info(self, **kwargs):  # noqa: E501
-        """downloadResults  # noqa: E501
+    def download_results_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Download a zip file of a given project's results  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_results_with_http_info(async_req=True)
+        >>> thread = api.download_results_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -473,10 +463,16 @@ class ProjectApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `download_results`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -509,12 +505,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get(self, id, **kwargs):  # noqa: E501
+    def get_project(self, id, **kwargs):  # noqa: E501
         """project details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get(id, async_req=True)
+        >>> thread = api.get_project(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -525,17 +521,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_project_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_project_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_project_with_http_info(self, id, **kwargs):  # noqa: E501
         """project details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_with_http_info(id, async_req=True)
+        >>> thread = api.get_project_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -556,14 +552,14 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get" % key
+                    " to method get_project" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_project`")  # noqa: E501
 
         collection_formats = {}
 
@@ -603,7 +599,7 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def get_results(self, id, **kwargs):  # noqa: E501
-        """results  # noqa: E501
+        """Get project results details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -624,7 +620,7 @@ class ProjectApi(object):
             return data
 
     def get_results_with_http_info(self, id, **kwargs):  # noqa: E501
-        """results  # noqa: E501
+        """Get project results details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -789,7 +785,7 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def remove_input(self, body, id, **kwargs):  # noqa: E501
-        """removeInput  # noqa: E501
+        """Remove source inputs from a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -811,7 +807,7 @@ class ProjectApi(object):
             return data
 
     def remove_input_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """removeInput  # noqa: E501
+        """Remove source inputs from a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -893,12 +889,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def run(self, body, id, **kwargs):  # noqa: E501
-        """run  # noqa: E501
+    def run_project(self, body, id, **kwargs):  # noqa: E501
+        """Create and run a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.run(body, id, async_req=True)
+        >>> thread = api.run_project(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -910,17 +906,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.run_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.run_project_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.run_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.run_project_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def run_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """run  # noqa: E501
+    def run_project_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Create and run a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.run_with_http_info(body, id, async_req=True)
+        >>> thread = api.run_project_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -942,18 +938,18 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method run" % key
+                    " to method run_project" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `run`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `run_project`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `run`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `run_project`")  # noqa: E501
 
         collection_formats = {}
 
@@ -998,12 +994,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_projects(self, **kwargs):  # noqa: E501
+        """Get project details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search(async_req=True)
+        >>> thread = api.search_projects(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1016,17 +1012,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_with_http_info(**kwargs)  # noqa: E501
+            return self.search_projects_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_projects_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
-        """search  # noqa: E501
+    def search_projects_with_http_info(self, **kwargs):  # noqa: E501
+        """Get project details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_with_http_info(async_req=True)
+        >>> thread = api.search_projects_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1049,7 +1045,7 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search" % key
+                    " to method search_projects" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1095,12 +1091,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_project(self, body, id, **kwargs):  # noqa: E501
+        """Pdate project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(body, id, async_req=True)
+        >>> thread = api.update_project(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1112,17 +1108,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_project_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_project_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update_project_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """Pdate project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_project_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1144,18 +1140,18 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method update_project" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_project`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_project`")  # noqa: E501
 
         collection_formats = {}
 

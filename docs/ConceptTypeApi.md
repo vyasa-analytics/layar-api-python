@@ -4,19 +4,19 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ConceptTypeApi.md#create) | **POST** /conceptType | save
-[**delete**](ConceptTypeApi.md#delete) | **DELETE** /conceptType/{id} | delete
-[**delete_many**](ConceptTypeApi.md#delete_many) | **DELETE** /conceptType/deleteMany | delete all the records with the given IDs
-[**get**](ConceptTypeApi.md#get) | **GET** /conceptType/{id} | concept type details
-[**get_counts**](ConceptTypeApi.md#get_counts) | **GET** /concept/type/counts | get counts concepts broken down by concept type
+[**create_concept_type**](ConceptTypeApi.md#create_concept_type) | **POST** /conceptType | Save new concept types
+[**delete_concept_type**](ConceptTypeApi.md#delete_concept_type) | **DELETE** /conceptType/{id} | Delete a single concept type
+[**delete_concept_types**](ConceptTypeApi.md#delete_concept_types) | **DELETE** /conceptType/deleteMany | Delete all the records with the given IDs
+[**get_concept_type**](ConceptTypeApi.md#get_concept_type) | **GET** /conceptType/{id} | Concept type details
+[**get_counts**](ConceptTypeApi.md#get_counts) | **GET** /concept/type/counts | Get result counts by concept type
 [**get_relationship_templates**](ConceptTypeApi.md#get_relationship_templates) | **GET** /concept/type/relationshipTemplates | Relationship Templates
-[**search**](ConceptTypeApi.md#search) | **GET** /conceptType | search for concept types
-[**update**](ConceptTypeApi.md#update) | **PUT** /conceptType/{id} | update
+[**search_concept_types**](ConceptTypeApi.md#search_concept_types) | **GET** /conceptType | Search for concept types
+[**update_concept_type**](ConceptTypeApi.md#update_concept_type) | **PUT** /conceptType/{id} | Update a single concept type
 
-# **create**
-> list[ConceptType] create(body)
+# **create_concept_type**
+> list[ConceptType] create_concept_type(body)
 
-save
+Save new concept types
 
 ### Example
 ```python
@@ -36,11 +36,11 @@ api_instance = layar_api.ConceptTypeApi(layar_api.ApiClient(configuration))
 body = layar_api.ConceptType() # ConceptType | 
 
 try:
-    # save
-    api_response = api_instance.create(body)
+    # Save new concept types
+    api_response = api_instance.create_concept_type(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConceptTypeApi->create: %s\n" % e)
+    print("Exception when calling ConceptTypeApi->create_concept_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -64,10 +64,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_concept_type**
+> delete_concept_type(id)
 
-delete
+Delete a single concept type
 
 ### Example
 ```python
@@ -87,10 +87,10 @@ api_instance = layar_api.ConceptTypeApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a single concept type
+    api_instance.delete_concept_type(id)
 except ApiException as e:
-    print("Exception when calling ConceptTypeApi->delete: %s\n" % e)
+    print("Exception when calling ConceptTypeApi->delete_concept_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -114,10 +114,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_concept_types**
+> delete_concept_types()
 
-delete all the records with the given IDs
+Delete all the records with the given IDs
 
 ### Example
 ```python
@@ -134,20 +134,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ConceptTypeApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
-    # delete all the records with the given IDs
-    api_instance.delete_many(body)
+    # Delete all the records with the given IDs
+    api_instance.delete_concept_types()
 except ApiException as e:
-    print("Exception when calling ConceptTypeApi->delete_many: %s\n" % e)
+    print("Exception when calling ConceptTypeApi->delete_concept_types: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -159,15 +155,15 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> ConceptType get(id)
+# **get_concept_type**
+> ConceptType get_concept_type(id)
 
-concept type details
+Concept type details
 
 ### Example
 ```python
@@ -187,11 +183,11 @@ api_instance = layar_api.ConceptTypeApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # concept type details
-    api_response = api_instance.get(id)
+    # Concept type details
+    api_response = api_instance.get_concept_type(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConceptTypeApi->get: %s\n" % e)
+    print("Exception when calling ConceptTypeApi->get_concept_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -216,9 +212,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_counts**
-> MapC2ABstring2CobjectC2BB get_counts()
+> MapStringObject get_counts()
 
-get counts concepts broken down by concept type
+Get result counts by concept type
 
 ### Example
 ```python
@@ -237,7 +233,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.ConceptTypeApi(layar_api.ApiClient(configuration))
 
 try:
-    # get counts concepts broken down by concept type
+    # Get result counts by concept type
     api_response = api_instance.get_counts()
     pprint(api_response)
 except ApiException as e:
@@ -249,7 +245,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MapC2ABstring2CobjectC2BB**](MapC2ABstring2CobjectC2BB.md)
+[**MapStringObject**](MapStringObject.md)
 
 ### Authorization
 
@@ -309,10 +305,10 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[ConceptType] search(x_vyasa_data_providers, rows=rows, q=q)
+# **search_concept_types**
+> list[ConceptType] search_concept_types(x_vyasa_data_providers, rows=rows, q=q)
 
-search for concept types
+Search for concept types
 
 ### Example
 ```python
@@ -334,11 +330,11 @@ rows = 56 # int | the number of rows to return (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # search for concept types
-    api_response = api_instance.search(x_vyasa_data_providers, rows=rows, q=q)
+    # Search for concept types
+    api_response = api_instance.search_concept_types(x_vyasa_data_providers, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConceptTypeApi->search: %s\n" % e)
+    print("Exception when calling ConceptTypeApi->search_concept_types: %s\n" % e)
 ```
 
 ### Parameters
@@ -364,10 +360,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> ConceptType update(body, id)
+# **update_concept_type**
+> ConceptType update_concept_type(body, id)
 
-update
+Update a single concept type
 
 ### Example
 ```python
@@ -388,11 +384,11 @@ body = layar_api.ConceptType() # ConceptType |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update(body, id)
+    # Update a single concept type
+    api_response = api_instance.update_concept_type(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConceptTypeApi->update: %s\n" % e)
+    print("Exception when calling ConceptTypeApi->update_concept_type: %s\n" % e)
 ```
 
 ### Parameters

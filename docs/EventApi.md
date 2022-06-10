@@ -4,11 +4,11 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](EventApi.md#get) | **GET** /event/{id} | event details
-[**search**](EventApi.md#search) | **GET** /event | search for events
+[**get_event**](EventApi.md#get_event) | **GET** /event/{id} | event details
+[**search_events**](EventApi.md#search_events) | **GET** /event | search for events
 
-# **get**
-> Event get()
+# **get_event**
+> Event get_event(id)
 
 event details
 
@@ -27,17 +27,21 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.EventApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
 
 try:
     # event details
-    api_response = api_instance.get()
+    api_response = api_instance.get_event(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling EventApi->get: %s\n" % e)
+    print("Exception when calling EventApi->get_event: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -54,8 +58,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[Event] search(start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, subject_id=subject_id, project_id=project_id)
+# **search_events**
+> list[Event] search_events(start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, subject_id=subject_id, project_id=project_id)
 
 search for events
 
@@ -86,10 +90,10 @@ project_id = 'project_id_example' # str | limit results to those tagged with the
 
 try:
     # search for events
-    api_response = api_instance.search(start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, subject_id=subject_id, project_id=project_id)
+    api_response = api_instance.search_events(start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, subject_id=subject_id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling EventApi->search: %s\n" % e)
+    print("Exception when calling EventApi->search_events: %s\n" % e)
 ```
 
 ### Parameters

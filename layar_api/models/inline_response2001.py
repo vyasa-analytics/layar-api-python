@@ -28,14 +28,66 @@ class InlineResponse2001(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'job_id': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
+        'job_id': 'jobId',
+        'status': 'status'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, job_id=None, status=None):  # noqa: E501
         """InlineResponse2001 - a model defined in Swagger"""  # noqa: E501
+        self._job_id = None
+        self._status = None
         self.discriminator = None
+        if job_id is not None:
+            self.job_id = job_id
+        if status is not None:
+            self.status = status
+
+    @property
+    def job_id(self):
+        """Gets the job_id of this InlineResponse2001.  # noqa: E501
+
+
+        :return: The job_id of this InlineResponse2001.  # noqa: E501
+        :rtype: str
+        """
+        return self._job_id
+
+    @job_id.setter
+    def job_id(self, job_id):
+        """Sets the job_id of this InlineResponse2001.
+
+
+        :param job_id: The job_id of this InlineResponse2001.  # noqa: E501
+        :type: str
+        """
+
+        self._job_id = job_id
+
+    @property
+    def status(self):
+        """Gets the status of this InlineResponse2001.  # noqa: E501
+
+
+        :return: The status of this InlineResponse2001.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this InlineResponse2001.
+
+
+        :param status: The status of this InlineResponse2001.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

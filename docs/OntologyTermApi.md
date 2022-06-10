@@ -4,12 +4,163 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_term**](OntologyTermApi.md#create_term) | **POST** /ontologyTerm | Save a new ontology term
+[**delete_term**](OntologyTermApi.md#delete_term) | **DELETE** /ontologyTerm/{id} | Delete a term from the ontology
+[**get_term**](OntologyTermApi.md#get_term) | **GET** /ontologyTerm/{id} | get the ontology term details
 [**ontology_term_get**](OntologyTermApi.md#ontology_term_get) | **GET** /ontologyTerm | search for ontology terms
-[**ontology_term_id_delete**](OntologyTermApi.md#ontology_term_id_delete) | **DELETE** /ontologyTerm/{id} | delete
-[**ontology_term_id_get**](OntologyTermApi.md#ontology_term_id_get) | **GET** /ontologyTerm/{id} | ontologyTerm details
-[**ontology_term_id_put**](OntologyTermApi.md#ontology_term_id_put) | **PUT** /ontologyTerm/{id} | update
-[**ontology_term_post**](OntologyTermApi.md#ontology_term_post) | **POST** /ontologyTerm | save a new ontology term
-[**ontology_term_search_post**](OntologyTermApi.md#ontology_term_search_post) | **POST** /ontologyTerm/search | search for ontologyTerms
+[**update_term**](OntologyTermApi.md#update_term) | **PUT** /ontologyTerm/{id} | Update a term in an ontology
+
+# **create_term**
+> OntologyTerm create_term(body)
+
+Save a new ontology term
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
+body = layar_api.OntologyTerm() # OntologyTerm | 
+
+try:
+    # Save a new ontology term
+    api_response = api_instance.create_term(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyTermApi->create_term: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OntologyTerm**](OntologyTerm.md)|  | 
+
+### Return type
+
+[**OntologyTerm**](OntologyTerm.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_term**
+> delete_term(id)
+
+Delete a term from the ontology
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # Delete a term from the ontology
+    api_instance.delete_term(id)
+except ApiException as e:
+    print("Exception when calling OntologyTermApi->delete_term: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_term**
+> OntologyTerm get_term(id)
+
+get the ontology term details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    # get the ontology term details
+    api_response = api_instance.get_term(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyTermApi->get_term: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**OntologyTerm**](OntologyTerm.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ontology_term_get**
 > list[OntologyTerm] ontology_term_get(q=q, rows=rows, start=start, sort=sort, order=order, from_date=from_date, to_date=to_date, db_ids=db_ids, document_ids=document_ids, id_paths=id_paths, include_obsolete=include_obsolete, name_paths=name_paths, path_traversal=path_traversal, terms=terms)
@@ -88,111 +239,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ontology_term_id_delete**
-> ontology_term_id_delete(id)
+# **update_term**
+> OntologyTerm update_term(body, id)
 
-delete
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # delete
-    api_instance.ontology_term_id_delete(id)
-except ApiException as e:
-    print("Exception when calling OntologyTermApi->ontology_term_id_delete: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ontology_term_id_get**
-> OntologyTerm ontology_term_id_get(id)
-
-ontologyTerm details
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
-
-try:
-    # ontologyTerm details
-    api_response = api_instance.ontology_term_id_get(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OntologyTermApi->ontology_term_id_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**OntologyTerm**](OntologyTerm.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ontology_term_id_put**
-> OntologyTerm ontology_term_id_put(body, id)
-
-update
+Update a term in an ontology
 
 ### Example
 ```python
@@ -213,11 +263,11 @@ body = layar_api.OntologyTerm() # OntologyTerm |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.ontology_term_id_put(body, id)
+    # Update a term in an ontology
+    api_response = api_instance.update_term(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OntologyTermApi->ontology_term_id_put: %s\n" % e)
+    print("Exception when calling OntologyTermApi->update_term: %s\n" % e)
 ```
 
 ### Parameters
@@ -230,108 +280,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OntologyTerm**](OntologyTerm.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ontology_term_post**
-> OntologyTerm ontology_term_post(body)
-
-save a new ontology term
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
-body = layar_api.OntologyTerm() # OntologyTerm | 
-
-try:
-    # save a new ontology term
-    api_response = api_instance.ontology_term_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OntologyTermApi->ontology_term_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**OntologyTerm**](OntologyTerm.md)|  | 
-
-### Return type
-
-[**OntologyTerm**](OntologyTerm.md)
-
-### Authorization
-
-[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ontology_term_search_post**
-> list[OntologyTerm] ontology_term_search_post(body=body)
-
-search for ontologyTerms
-
-### Example
-```python
-from __future__ import print_function
-import time
-import layar_api
-from layar_api.rest import ApiException
-from pprint import pprint
-
-# configure oauth access token for authorization
-configuration = layar_api.Configuration()
-configuration.host = 'HOST_NAME'
-configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
-
-# create an instance of the api class
-api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
-body = layar_api.OntologySearchCommand() # OntologySearchCommand |  (optional)
-
-try:
-    # search for ontologyTerms
-    api_response = api_instance.ontology_term_search_post(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OntologyTermApi->ontology_term_search_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**OntologySearchCommand**](OntologySearchCommand.md)|  | [optional] 
-
-### Return type
-
-[**list[OntologyTerm]**](OntologyTerm.md)
 
 ### Authorization
 

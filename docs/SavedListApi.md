@@ -4,21 +4,21 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_items**](SavedListApi.md#add_items) | **PUT** /savedList/{id}/addItem | addItem
-[**add_items_by_search**](SavedListApi.md#add_items_by_search) | **PUT** /savedList/{id}/add | addItem
-[**create**](SavedListApi.md#create) | **POST** /savedList | save
-[**delete**](SavedListApi.md#delete) | **DELETE** /savedList/{id} | delete
-[**delete_many**](SavedListApi.md#delete_many) | **DELETE** /savedList/deleteMany | delete all the given ids
-[**download_csv**](SavedListApi.md#download_csv) | **GET** /savedList/{id}/downloadCsv | downloadCsv
-[**get**](SavedListApi.md#get) | **GET** /savedList/{id} | saved list details
-[**remove_items**](SavedListApi.md#remove_items) | **DELETE** /savedList/{id}/removeItem | removeItem
-[**search**](SavedListApi.md#search) | **GET** /savedList | 
-[**update**](SavedListApi.md#update) | **PUT** /savedList/{id} | update
+[**add_items**](SavedListApi.md#add_items) | **PUT** /savedList/{id}/addItem | Add items to a saved list
+[**add_items_by_search**](SavedListApi.md#add_items_by_search) | **PUT** /savedList/{id}/add | Add items to a saved list from a search
+[**create_saved_list**](SavedListApi.md#create_saved_list) | **POST** /savedList | Create a new saved list
+[**delete_saved_list**](SavedListApi.md#delete_saved_list) | **DELETE** /savedList/{id} | Delete a saved list
+[**delete_saved_lists**](SavedListApi.md#delete_saved_lists) | **DELETE** /savedList/deleteMany | delete all the given ids
+[**download_saved_list**](SavedListApi.md#download_saved_list) | **GET** /savedList/{id}/downloadCsv | Download the contents of a savedc list as a csv file
+[**get_saved_list**](SavedListApi.md#get_saved_list) | **GET** /savedList/{id} | saved list details
+[**remove_items**](SavedListApi.md#remove_items) | **DELETE** /savedList/{id}/removeItem | Remove items from a saved list
+[**search_saved_list**](SavedListApi.md#search_saved_list) | **GET** /savedList | Search for saved lists
+[**update_saved_list**](SavedListApi.md#update_saved_list) | **PUT** /savedList/{id} | Update a saved list
 
 # **add_items**
 > add_items(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 
-addItem
+Add items to a saved list
 
 ### Example
 ```python
@@ -40,7 +40,7 @@ id = 'id_example' # str |
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
-    # addItem
+    # Add items to a saved list
     api_instance.add_items(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 except ApiException as e:
     print("Exception when calling SavedListApi->add_items: %s\n" % e)
@@ -72,7 +72,7 @@ void (empty response body)
 # **add_items_by_search**
 > add_items_by_search(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 
-addItem
+Add items to a saved list from a search
 
 ### Example
 ```python
@@ -94,7 +94,7 @@ id = 'id_example' # str |
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
-    # addItem
+    # Add items to a saved list from a search
     api_instance.add_items_by_search(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 except ApiException as e:
     print("Exception when calling SavedListApi->add_items_by_search: %s\n" % e)
@@ -123,10 +123,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> SavedList create(body)
+# **create_saved_list**
+> SavedList create_saved_list(body, x_vyasa_client_hint=x_vyasa_client_hint)
 
-save
+Create a new saved list
 
 ### Example
 ```python
@@ -144,13 +144,14 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 # create an instance of the api class
 api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
 body = layar_api.SavedList() # SavedList | 
+x_vyasa_client_hint = 'x_vyasa_client_hint_example' # str | intended client application UI (optional)
 
 try:
-    # save
-    api_response = api_instance.create(body)
+    # Create a new saved list
+    api_response = api_instance.create_saved_list(body, x_vyasa_client_hint=x_vyasa_client_hint)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SavedListApi->create: %s\n" % e)
+    print("Exception when calling SavedListApi->create_saved_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -158,6 +159,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**SavedList**](SavedList.md)|  | 
+ **x_vyasa_client_hint** | **str**| intended client application UI | [optional] 
 
 ### Return type
 
@@ -174,10 +176,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **delete_saved_list**
+> delete_saved_list(id)
 
-delete
+Delete a saved list
 
 ### Example
 ```python
@@ -197,10 +199,10 @@ api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete(id)
+    # Delete a saved list
+    api_instance.delete_saved_list(id)
 except ApiException as e:
-    print("Exception when calling SavedListApi->delete: %s\n" % e)
+    print("Exception when calling SavedListApi->delete_saved_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,8 +226,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_many**
-> delete_many(body)
+# **delete_saved_lists**
+> delete_saved_lists()
 
 delete all the given ids
 
@@ -244,20 +246,16 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
     # delete all the given ids
-    api_instance.delete_many(body)
+    api_instance.delete_saved_lists()
 except ApiException as e:
-    print("Exception when calling SavedListApi->delete_many: %s\n" % e)
+    print("Exception when calling SavedListApi->delete_saved_lists: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ListOfIds**](ListOfIds.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -269,15 +267,15 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **download_csv**
-> str download_csv(id)
+# **download_saved_list**
+> str download_saved_list(id)
 
-downloadCsv
+Download the contents of a savedc list as a csv file
 
 ### Example
 ```python
@@ -297,11 +295,11 @@ api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # downloadCsv
-    api_response = api_instance.download_csv(id)
+    # Download the contents of a savedc list as a csv file
+    api_response = api_instance.download_saved_list(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SavedListApi->download_csv: %s\n" % e)
+    print("Exception when calling SavedListApi->download_saved_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -325,8 +323,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get**
-> SavedList get(id)
+# **get_saved_list**
+> SavedList get_saved_list(id)
 
 saved list details
 
@@ -349,10 +347,10 @@ id = 'id_example' # str |
 
 try:
     # saved list details
-    api_response = api_instance.get(id)
+    api_response = api_instance.get_saved_list(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SavedListApi->get: %s\n" % e)
+    print("Exception when calling SavedListApi->get_saved_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -377,9 +375,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_items**
-> remove_items(body, id)
+> remove_items(id)
 
-removeItem
+Remove items from a saved list
 
 ### Example
 ```python
@@ -396,12 +394,11 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
-body = layar_api.ListOfItemIds() # ListOfItemIds | 
 id = 'id_example' # str | 
 
 try:
-    # removeItem
-    api_instance.remove_items(body, id)
+    # Remove items from a saved list
+    api_instance.remove_items(id)
 except ApiException as e:
     print("Exception when calling SavedListApi->remove_items: %s\n" % e)
 ```
@@ -410,7 +407,6 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListOfItemIds**](ListOfItemIds.md)|  | 
  **id** | **str**|  | 
 
 ### Return type
@@ -423,15 +419,15 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search**
-> list[SavedList] search(rows=rows, start=start, q=q)
+# **search_saved_list**
+> list[SavedList] search_saved_list(rows=rows, start=start, q=q)
 
-
+Search for saved lists
 
 ### Example
 ```python
@@ -453,10 +449,11 @@ start = 56 # int | the start offset for the row (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    api_response = api_instance.search(rows=rows, start=start, q=q)
+    # Search for saved lists
+    api_response = api_instance.search_saved_list(rows=rows, start=start, q=q)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SavedListApi->search: %s\n" % e)
+    print("Exception when calling SavedListApi->search_saved_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -482,10 +479,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> SavedList update(body, id)
+# **update_saved_list**
+> SavedList update_saved_list(body, id)
 
-update
+Update a saved list
 
 ### Example
 ```python
@@ -506,11 +503,11 @@ body = layar_api.SavedList() # SavedList |
 id = 'id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update(body, id)
+    # Update a saved list
+    api_response = api_instance.update_saved_list(body, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SavedListApi->update: %s\n" % e)
+    print("Exception when calling SavedListApi->update_saved_list: %s\n" % e)
 ```
 
 ### Parameters

@@ -51,6 +51,7 @@ class AskQuestionCommand(object):
     def context(self):
         """Gets the context of this AskQuestionCommand.  # noqa: E501
 
+        A block of text to ask your questions against  # noqa: E501
 
         :return: The context of this AskQuestionCommand.  # noqa: E501
         :rtype: str
@@ -61,6 +62,7 @@ class AskQuestionCommand(object):
     def context(self, context):
         """Sets the context of this AskQuestionCommand.
 
+        A block of text to ask your questions against  # noqa: E501
 
         :param context: The context of this AskQuestionCommand.  # noqa: E501
         :type: str
@@ -72,6 +74,7 @@ class AskQuestionCommand(object):
     def questions(self):
         """Gets the questions of this AskQuestionCommand.  # noqa: E501
 
+        a list of question IDs  # noqa: E501
 
         :return: The questions of this AskQuestionCommand.  # noqa: E501
         :rtype: list[str]
@@ -82,6 +85,7 @@ class AskQuestionCommand(object):
     def questions(self, questions):
         """Sets the questions of this AskQuestionCommand.
 
+        a list of question IDs  # noqa: E501
 
         :param questions: The questions of this AskQuestionCommand.  # noqa: E501
         :type: list[str]
