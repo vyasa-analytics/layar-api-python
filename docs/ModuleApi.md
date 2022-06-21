@@ -4,14 +4,14 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_module**](ModuleApi.md#create_module) | **POST** /module | Save a new module
-[**get_module**](ModuleApi.md#get_module) | **GET** /module/{id} | Get module details
-[**search_modules**](ModuleApi.md#search_modules) | **GET** /module | search for modules
+[**create_module**](ModuleApi.md#create_module) | **POST** /layar/module | Create a new module
+[**get_module**](ModuleApi.md#get_module) | **GET** /layar/module/{id} | Get module details
+[**search_modules**](ModuleApi.md#search_modules) | **GET** /layar/module | Search for modules
 
 # **create_module**
 > list[Module] create_module(body)
 
-Save a new module
+Create a new module
 
 ### Example
 ```python
@@ -31,7 +31,7 @@ api_instance = layar_api.ModuleApi(layar_api.ApiClient(configuration))
 body = layar_api.Module() # Module | 
 
 try:
-    # Save a new module
+    # Create a new module
     api_response = api_instance.create_module(body)
     pprint(api_response)
 except ApiException as e:
@@ -63,6 +63,8 @@ Name | Type | Description  | Notes
 > Module get_module(id)
 
 Get module details
+
+Get information provided in a specific Module object.
 
 ### Example
 ```python
@@ -113,7 +115,9 @@ Name | Type | Description  | Notes
 # **search_modules**
 > list[Module] search_modules(rows=rows, start=start, q=q)
 
-search for modules
+Search for modules
+
+Find modules by their ID or other object parameters.
 
 ### Example
 ```python
@@ -135,7 +139,7 @@ start = 56 # int | the start offset for the row (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # search for modules
+    # Search for modules
     api_response = api_instance.search_modules(rows=rows, start=start, q=q)
     pprint(api_response)
 except ApiException as e:

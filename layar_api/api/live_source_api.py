@@ -33,8 +33,9 @@ class LiveSourceApi(object):
         self.api_client = api_client
 
     def create_feeds(self, body, **kwargs):  # noqa: E501
-        """Create a new live source  # noqa: E501
+        """Create a new connector  # noqa: E501
 
+        Excludes Twitter connectors, which have their own endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_feeds(body, async_req=True)
@@ -54,8 +55,9 @@ class LiveSourceApi(object):
             return data
 
     def create_feeds_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Create a new live source  # noqa: E501
+        """Create a new connector  # noqa: E501
 
+        Excludes Twitter connectors, which have their own endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_feeds_with_http_info(body, async_req=True)
@@ -114,7 +116,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource', 'POST',
+            '/layar/liveSource', 'POST',
             path_params,
             query_params,
             header_params,
@@ -130,7 +132,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def create_feeds_from_column(self, **kwargs):  # noqa: E501
-        """create live source feeds from column of a spreadsheet containing URLs  # noqa: E501
+        """Create new RSS connectors from a spreadsheet of URLs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -152,7 +154,7 @@ class LiveSourceApi(object):
             return data
 
     def create_feeds_from_column_with_http_info(self, **kwargs):  # noqa: E501
-        """create live source feeds from column of a spreadsheet containing URLs  # noqa: E501
+        """Create new RSS connectors from a spreadsheet of URLs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -203,7 +205,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/createFeedsFromColumn', 'POST',
+            '/layar/liveSource/createFeedsFromColumn', 'POST',
             path_params,
             query_params,
             header_params,
@@ -219,8 +221,9 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def delete_feed(self, id, **kwargs):  # noqa: E501
-        """Delete a live source  # noqa: E501
+        """Delete a connector  # noqa: E501
 
+        Remove a specified Connector object from your Layar instance. Excludes Twitter connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_feed(id, async_req=True)
@@ -240,8 +243,9 @@ class LiveSourceApi(object):
             return data
 
     def delete_feed_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a live source  # noqa: E501
+        """Delete a connector  # noqa: E501
 
+        Remove a specified Connector object from your Layar instance. Excludes Twitter connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_feed_with_http_info(id, async_req=True)
@@ -296,7 +300,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}', 'DELETE',
+            '/layar/liveSource/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -312,8 +316,9 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def delete_feeds(self, **kwargs):  # noqa: E501
-        """delete the set of live source ids  # noqa: E501
+        """Delete multiple connectors  # noqa: E501
 
+        Remove the list of specified Connector objects by their connector IDs. Excludes Twitter connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_feeds(async_req=True)
@@ -332,8 +337,9 @@ class LiveSourceApi(object):
             return data
 
     def delete_feeds_with_http_info(self, **kwargs):  # noqa: E501
-        """delete the set of live source ids  # noqa: E501
+        """Delete multiple connectors  # noqa: E501
 
+        Remove the list of specified Connector objects by their connector IDs. Excludes Twitter connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_feeds_with_http_info(async_req=True)
@@ -381,7 +387,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/deleteMany', 'DELETE',
+            '/layar/liveSource/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -397,8 +403,9 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def get_feed(self, id, **kwargs):  # noqa: E501
-        """Get live source details  # noqa: E501
+        """Get connector details  # noqa: E501
 
+        Get information provided in a specific LiveSource object. Excludes Twitter connectors, which have their own endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_feed(id, async_req=True)
@@ -418,8 +425,9 @@ class LiveSourceApi(object):
             return data
 
     def get_feed_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get live source details  # noqa: E501
+        """Get connector details  # noqa: E501
 
+        Get information provided in a specific LiveSource object. Excludes Twitter connectors, which have their own endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_feed_with_http_info(id, async_req=True)
@@ -474,7 +482,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}', 'GET',
+            '/layar/liveSource/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -490,7 +498,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def get_import_status(self, id, **kwargs):  # noqa: E501
-        """Returns the percent completed for a live source import  # noqa: E501
+        """Get percent completed for a live indexing job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -511,7 +519,7 @@ class LiveSourceApi(object):
             return data
 
     def get_import_status_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Returns the percent completed for a live source import  # noqa: E501
+        """Get percent completed for a live indexing job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -567,7 +575,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}/importStatus', 'GET',
+            '/layar/liveSource/{id}/importStatus', 'GET',
             path_params,
             query_params,
             header_params,
@@ -585,6 +593,7 @@ class LiveSourceApi(object):
     def get_job_status(self, id, **kwargs):  # noqa: E501
         """Get job status details  # noqa: E501
 
+        Get information provided in a specific LiveSource Job Status object. Excludes Twitter connectors, which have a different endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_job_status(id, async_req=True)
@@ -606,6 +615,7 @@ class LiveSourceApi(object):
     def get_job_status_with_http_info(self, id, **kwargs):  # noqa: E501
         """Get job status details  # noqa: E501
 
+        Get information provided in a specific LiveSource Job Status object. Excludes Twitter connectors, which have a different endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_job_status_with_http_info(id, async_req=True)
@@ -660,7 +670,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}/jobStatus', 'GET',
+            '/layar/liveSource/{id}/jobStatus', 'GET',
             path_params,
             query_params,
             header_params,
@@ -676,7 +686,7 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def get_source_document_url(self, id, **kwargs):  # noqa: E501
-        """Get the documents from a particular source  # noqa: E501
+        """Get the documents from a given connector  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -699,7 +709,7 @@ class LiveSourceApi(object):
             return data
 
     def get_source_document_url_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get the documents from a particular source  # noqa: E501
+        """Get the documents from a given connector  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -761,7 +771,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}/sourceDocuments', 'GET',
+            '/layar/liveSource/{id}/sourceDocuments', 'GET',
             path_params,
             query_params,
             header_params,
@@ -777,8 +787,9 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def search_feeds(self, **kwargs):  # noqa: E501
-        """Search for live sources  # noqa: E501
+        """Search for connectors  # noqa: E501
 
+        Find connectors by their ID or other object parameters. Excludes Twitter feed connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_feeds(async_req=True)
@@ -802,8 +813,9 @@ class LiveSourceApi(object):
             return data
 
     def search_feeds_with_http_info(self, **kwargs):  # noqa: E501
-        """Search for live sources  # noqa: E501
+        """Search for connectors  # noqa: E501
 
+        Find connectors by their ID or other object parameters. Excludes Twitter feed connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_feeds_with_http_info(async_req=True)
@@ -866,7 +878,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource', 'GET',
+            '/layar/liveSource', 'GET',
             path_params,
             query_params,
             header_params,
@@ -882,8 +894,9 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def unschedule_job(self, id, **kwargs):  # noqa: E501
-        """Change a job status to 'Unscheduled'  # noqa: E501
+        """Change job status schedule  # noqa: E501
 
+        Change the Live Source Job from an automated schedule to manual.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.unschedule_job(id, async_req=True)
@@ -903,8 +916,9 @@ class LiveSourceApi(object):
             return data
 
     def unschedule_job_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Change a job status to 'Unscheduled'  # noqa: E501
+        """Change job status schedule  # noqa: E501
 
+        Change the Live Source Job from an automated schedule to manual.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.unschedule_job_with_http_info(id, async_req=True)
@@ -959,7 +973,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}/jobStatus/unschedule', 'PUT',
+            '/layar/liveSource/{id}/jobStatus/unschedule', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -975,8 +989,9 @@ class LiveSourceApi(object):
             collection_formats=collection_formats)
 
     def update_feed(self, body, id, **kwargs):  # noqa: E501
-        """Update a live source  # noqa: E501
+        """Update connector details  # noqa: E501
 
+        Modify the information provided for a specific Connector object. Excludes Twitter connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_feed(body, id, async_req=True)
@@ -997,8 +1012,9 @@ class LiveSourceApi(object):
             return data
 
     def update_feed_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update a live source  # noqa: E501
+        """Update connector details  # noqa: E501
 
+        Modify the information provided for a specific Connector object. Excludes Twitter connectors.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_feed_with_http_info(body, id, async_req=True)
@@ -1064,7 +1080,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}', 'PUT',
+            '/layar/liveSource/{id}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -1082,6 +1098,7 @@ class LiveSourceApi(object):
     def update_job(self, id, job_action, **kwargs):  # noqa: E501
         """Update a job with a new action  # noqa: E501
 
+        Update a Live Source Job object with a modified job action.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_job(id, job_action, async_req=True)
@@ -1104,6 +1121,7 @@ class LiveSourceApi(object):
     def update_job_with_http_info(self, id, job_action, **kwargs):  # noqa: E501
         """Update a job with a new action  # noqa: E501
 
+        Update a Live Source Job object with a modified job action.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_job_with_http_info(id, job_action, async_req=True)
@@ -1165,7 +1183,7 @@ class LiveSourceApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/liveSource/{id}/{jobAction}', 'PUT',
+            '/layar/liveSource/{id}/{jobAction}', 'PUT',
             path_params,
             query_params,
             header_params,

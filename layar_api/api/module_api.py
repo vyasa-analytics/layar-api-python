@@ -33,7 +33,7 @@ class ModuleApi(object):
         self.api_client = api_client
 
     def create_module(self, body, **kwargs):  # noqa: E501
-        """Save a new module  # noqa: E501
+        """Create a new module  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class ModuleApi(object):
             return data
 
     def create_module_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Save a new module  # noqa: E501
+        """Create a new module  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -114,7 +114,7 @@ class ModuleApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/module', 'POST',
+            '/layar/module', 'POST',
             path_params,
             query_params,
             header_params,
@@ -132,6 +132,7 @@ class ModuleApi(object):
     def get_module(self, id, **kwargs):  # noqa: E501
         """Get module details  # noqa: E501
 
+        Get information provided in a specific Module object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_module(id, async_req=True)
@@ -153,6 +154,7 @@ class ModuleApi(object):
     def get_module_with_http_info(self, id, **kwargs):  # noqa: E501
         """Get module details  # noqa: E501
 
+        Get information provided in a specific Module object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_module_with_http_info(id, async_req=True)
@@ -207,7 +209,7 @@ class ModuleApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/module/{id}', 'GET',
+            '/layar/module/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -223,8 +225,9 @@ class ModuleApi(object):
             collection_formats=collection_formats)
 
     def search_modules(self, **kwargs):  # noqa: E501
-        """search for modules  # noqa: E501
+        """Search for modules  # noqa: E501
 
+        Find modules by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_modules(async_req=True)
@@ -246,8 +249,9 @@ class ModuleApi(object):
             return data
 
     def search_modules_with_http_info(self, **kwargs):  # noqa: E501
-        """search for modules  # noqa: E501
+        """Search for modules  # noqa: E501
 
+        Find modules by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_modules_with_http_info(async_req=True)
@@ -304,7 +308,7 @@ class ModuleApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/module', 'GET',
+            '/layar/module', 'GET',
             path_params,
             query_params,
             header_params,

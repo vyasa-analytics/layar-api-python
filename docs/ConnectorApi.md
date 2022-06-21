@@ -4,18 +4,18 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_connector**](ConnectorApi.md#create_connector) | **POST** /connector | Add a new Layar connector
-[**delete_connector**](ConnectorApi.md#delete_connector) | **DELETE** /connector/{id} | Delete a single Layar connector
-[**delete_connectors**](ConnectorApi.md#delete_connectors) | **DELETE** /connector/deleteMany | delete all the records with the given IDs
-[**get_connector**](ConnectorApi.md#get_connector) | **GET** /connector/{id} | Get the details for a single Layar connector
-[**patch_connector**](ConnectorApi.md#patch_connector) | **PATCH** /connector/{id} | patch
-[**search_connectors**](ConnectorApi.md#search_connectors) | **GET** /connector | Get the details for a given Layar connector
-[**update_connector**](ConnectorApi.md#update_connector) | **PUT** /connector/{id} | Update the details for a single Layar connector
+[**create_connector**](ConnectorApi.md#create_connector) | **POST** /layar/connector | Create a new Twitter connector
+[**delete_connector**](ConnectorApi.md#delete_connector) | **DELETE** /layar/connector/{id} | Delete a Twitter connector
+[**delete_connectors**](ConnectorApi.md#delete_connectors) | **DELETE** /layar/connector/deleteMany | Delete multiple Twitter connectors
+[**get_connector**](ConnectorApi.md#get_connector) | **GET** /layar/connector/{id} | Get Twitter connector details
+[**patch_connector**](ConnectorApi.md#patch_connector) | **PATCH** /layar/connector/{id} | Update a specific attribute
+[**search_connectors**](ConnectorApi.md#search_connectors) | **GET** /layar/connector | Search for Twitter connectors
+[**update_connector**](ConnectorApi.md#update_connector) | **PUT** /layar/connector/{id} | Update Twitter connector details
 
 # **create_connector**
 > list[Connector] create_connector(body)
 
-Add a new Layar connector
+Create a new Twitter connector
 
 ### Example
 ```python
@@ -35,7 +35,7 @@ api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 body = layar_api.Connector() # Connector | 
 
 try:
-    # Add a new Layar connector
+    # Create a new Twitter connector
     api_response = api_instance.create_connector(body)
     pprint(api_response)
 except ApiException as e:
@@ -66,7 +66,9 @@ Name | Type | Description  | Notes
 # **delete_connector**
 > delete_connector(id)
 
-Delete a single Layar connector
+Delete a Twitter connector
+
+Remove a specified Twitter Connector from your Layar instance.
 
 ### Example
 ```python
@@ -86,7 +88,7 @@ api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a single Layar connector
+    # Delete a Twitter connector
     api_instance.delete_connector(id)
 except ApiException as e:
     print("Exception when calling ConnectorApi->delete_connector: %s\n" % e)
@@ -116,7 +118,9 @@ void (empty response body)
 # **delete_connectors**
 > delete_connectors()
 
-delete all the records with the given IDs
+Delete multiple Twitter connectors
+
+Remove the list of specified Twitter connectors by their connector IDs.
 
 ### Example
 ```python
@@ -135,7 +139,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 
 try:
-    # delete all the records with the given IDs
+    # Delete multiple Twitter connectors
     api_instance.delete_connectors()
 except ApiException as e:
     print("Exception when calling ConnectorApi->delete_connectors: %s\n" % e)
@@ -162,7 +166,7 @@ void (empty response body)
 # **get_connector**
 > Connector get_connector(id)
 
-Get the details for a single Layar connector
+Get Twitter connector details
 
 ### Example
 ```python
@@ -182,7 +186,7 @@ api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Get the details for a single Layar connector
+    # Get Twitter connector details
     api_response = api_instance.get_connector(id)
     pprint(api_response)
 except ApiException as e:
@@ -213,7 +217,9 @@ Name | Type | Description  | Notes
 # **patch_connector**
 > patch_connector(body, id)
 
-patch
+Update a specific attribute
+
+Replace a specific attribute of the Twitter Connector object.
 
 ### Example
 ```python
@@ -234,7 +240,7 @@ body = layar_api.PatchCommand() # PatchCommand |
 id = 'id_example' # str | 
 
 try:
-    # patch
+    # Update a specific attribute
     api_instance.patch_connector(body, id)
 except ApiException as e:
     print("Exception when calling ConnectorApi->patch_connector: %s\n" % e)
@@ -265,7 +271,9 @@ void (empty response body)
 # **search_connectors**
 > list[Connector] search_connectors()
 
-Get the details for a given Layar connector
+Search for Twitter connectors
+
+Find connectors by their ID or other object parameters.
 
 ### Example
 ```python
@@ -284,7 +292,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
 
 try:
-    # Get the details for a given Layar connector
+    # Search for Twitter connectors
     api_response = api_instance.search_connectors()
     pprint(api_response)
 except ApiException as e:
@@ -312,7 +320,9 @@ This endpoint does not need any parameter.
 # **update_connector**
 > list[Connector] update_connector(body, id)
 
-Update the details for a single Layar connector
+Update Twitter connector details
+
+Modify the information provided for a specific Twitter Connector object.
 
 ### Example
 ```python
@@ -333,7 +343,7 @@ body = layar_api.Connector() # Connector |
 id = 'id_example' # str | 
 
 try:
-    # Update the details for a single Layar connector
+    # Update Twitter connector details
     api_response = api_instance.update_connector(body, id)
     pprint(api_response)
 except ApiException as e:

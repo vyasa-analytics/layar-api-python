@@ -4,23 +4,25 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_input**](ProjectApi.md#add_input) | **PUT** /project/{id}/addInput | Add source inputs to a project
-[**create_project**](ProjectApi.md#create_project) | **POST** /project | Save a new project
-[**delete_project**](ProjectApi.md#delete_project) | **DELETE** /project/{id} | Delete a project
-[**delete_projects**](ProjectApi.md#delete_projects) | **DELETE** /project/deleteMany | Delete multiple projects by ID
-[**download_results**](ProjectApi.md#download_results) | **GET** /project/{id}/results/download | Download a zip file of a given project&#x27;s results
-[**get_project**](ProjectApi.md#get_project) | **GET** /project/{id} | project details
-[**get_results**](ProjectApi.md#get_results) | **GET** /project/{id}/results | Get project results details
-[**get_results_som**](ProjectApi.md#get_results_som) | **GET** /project/{id}/results/som | results SOM
-[**remove_input**](ProjectApi.md#remove_input) | **PUT** /project/{id}/removeInput | Remove source inputs from a project
-[**run_project**](ProjectApi.md#run_project) | **POST** /project/{id}/run | Create and run a new project
-[**search_projects**](ProjectApi.md#search_projects) | **GET** /project | Get project details
-[**update_project**](ProjectApi.md#update_project) | **PUT** /project/{id} | Pdate project
+[**add_input**](ProjectApi.md#add_input) | **PUT** /layar/project/{id}/addInput | Add items to a project
+[**create_project**](ProjectApi.md#create_project) | **POST** /layar/project | Create a new project
+[**delete_project**](ProjectApi.md#delete_project) | **DELETE** /layar/project/{id} | Delete a project
+[**delete_projects**](ProjectApi.md#delete_projects) | **DELETE** /layar/project/deleteMany | Delete multiple projects
+[**download_results**](ProjectApi.md#download_results) | **GET** /layar/project/{id}/results/download | Download project results as zip file
+[**get_project**](ProjectApi.md#get_project) | **GET** /layar/project/{id} | Get project details
+[**get_results**](ProjectApi.md#get_results) | **GET** /layar/project/{id}/results | Get project results details
+[**get_results_som**](ProjectApi.md#get_results_som) | **GET** /layar/project/{id}/results/som | Download project results as SOM
+[**remove_input**](ProjectApi.md#remove_input) | **PUT** /layar/project/{id}/removeInput | Remove items from a project
+[**run_project**](ProjectApi.md#run_project) | **POST** /layar/project/{id}/run | Run a new project
+[**search_projects**](ProjectApi.md#search_projects) | **GET** /layar/project | Search for projects
+[**update_project**](ProjectApi.md#update_project) | **PUT** /layar/project/{id} | Update project details
 
 # **add_input**
 > add_input(body, id)
 
-Add source inputs to a project
+Add items to a project
+
+Modify the items added to a specific project ID.
 
 ### Example
 ```python
@@ -41,7 +43,7 @@ body = layar_api.ListOfSourceIds() # ListOfSourceIds |
 id = 'id_example' # str | 
 
 try:
-    # Add source inputs to a project
+    # Add items to a project
     api_instance.add_input(body, id)
 except ApiException as e:
     print("Exception when calling ProjectApi->add_input: %s\n" % e)
@@ -72,7 +74,7 @@ void (empty response body)
 # **create_project**
 > Project create_project(body)
 
-Save a new project
+Create a new project
 
 ### Example
 ```python
@@ -92,7 +94,7 @@ api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
 body = layar_api.Project() # Project | 
 
 try:
-    # Save a new project
+    # Create a new project
     api_response = api_instance.create_project(body)
     pprint(api_response)
 except ApiException as e:
@@ -124,6 +126,8 @@ Name | Type | Description  | Notes
 > delete_project(id)
 
 Delete a project
+
+Remove a specified Project object from your Layar instance.
 
 ### Example
 ```python
@@ -173,7 +177,9 @@ void (empty response body)
 # **delete_projects**
 > delete_projects()
 
-Delete multiple projects by ID
+Delete multiple projects
+
+Remove the list of specified Project objects by their project IDs.
 
 ### Example
 ```python
@@ -192,7 +198,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
 
 try:
-    # Delete multiple projects by ID
+    # Delete multiple projects
     api_instance.delete_projects()
 except ApiException as e:
     print("Exception when calling ProjectApi->delete_projects: %s\n" % e)
@@ -219,7 +225,9 @@ void (empty response body)
 # **download_results**
 > str download_results(id)
 
-Download a zip file of a given project's results
+Download project results as zip file
+
+Download all results for a given project into a compressed zip file.
 
 ### Example
 ```python
@@ -239,7 +247,7 @@ api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Download a zip file of a given project's results
+    # Download project results as zip file
     api_response = api_instance.download_results(id)
     pprint(api_response)
 except ApiException as e:
@@ -270,7 +278,9 @@ Name | Type | Description  | Notes
 # **get_project**
 > Project get_project(id)
 
-project details
+Get project details
+
+Get information provided in a specific Project object.
 
 ### Example
 ```python
@@ -290,7 +300,7 @@ api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # project details
+    # Get project details
     api_response = api_instance.get_project(id)
     pprint(api_response)
 except ApiException as e:
@@ -372,7 +382,9 @@ Name | Type | Description  | Notes
 # **get_results_som**
 > object get_results_som(id)
 
-results SOM
+Download project results as SOM
+
+Download all results for a given project into a self organizing map (SOM)
 
 ### Example
 ```python
@@ -392,7 +404,7 @@ api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # results SOM
+    # Download project results as SOM
     api_response = api_instance.get_results_som(id)
     pprint(api_response)
 except ApiException as e:
@@ -423,7 +435,9 @@ Name | Type | Description  | Notes
 # **remove_input**
 > remove_input(body, id)
 
-Remove source inputs from a project
+Remove items from a project
+
+Modify the items added to a specific project ID.
 
 ### Example
 ```python
@@ -444,7 +458,7 @@ body = layar_api.ListOfSourceIds() # ListOfSourceIds |
 id = 'id_example' # str | 
 
 try:
-    # Remove source inputs from a project
+    # Remove items from a project
     api_instance.remove_input(body, id)
 except ApiException as e:
     print("Exception when calling ProjectApi->remove_input: %s\n" % e)
@@ -475,7 +489,9 @@ void (empty response body)
 # **run_project**
 > ProjectComputation run_project(body, id)
 
-Create and run a new project
+Run a new project
+
+Create and run a new project from the same command.
 
 ### Example
 ```python
@@ -496,7 +512,7 @@ body = layar_api.Body2() # Body2 |
 id = 'id_example' # str | 
 
 try:
-    # Create and run a new project
+    # Run a new project
     api_response = api_instance.run_project(body, id)
     pprint(api_response)
 except ApiException as e:
@@ -528,7 +544,9 @@ Name | Type | Description  | Notes
 # **search_projects**
 > list[Project] search_projects(rows=rows, start=start, q=q)
 
-Get project details
+Search for projects
+
+Find projects by their ID or other object parameters.
 
 ### Example
 ```python
@@ -550,7 +568,7 @@ start = 56 # int | the start offset for the row (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # Get project details
+    # Search for projects
     api_response = api_instance.search_projects(rows=rows, start=start, q=q)
     pprint(api_response)
 except ApiException as e:
@@ -583,7 +601,9 @@ Name | Type | Description  | Notes
 # **update_project**
 > Project update_project(body, id)
 
-Pdate project
+Update project details
+
+Modify the information provided for a specific Project object.
 
 ### Example
 ```python
@@ -604,7 +624,7 @@ body = layar_api.Project() # Project |
 id = 'id_example' # str | 
 
 try:
-    # Pdate project
+    # Update project details
     api_response = api_instance.update_project(body, id)
     pprint(api_response)
 except ApiException as e:

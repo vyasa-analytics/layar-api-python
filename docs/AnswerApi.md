@@ -4,14 +4,16 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_answer**](AnswerApi.md#get_answer) | **GET** /answer/{id} | Get details for a QA Answer in your Layar instance
-[**search_answer**](AnswerApi.md#search_answer) | **POST** /answer/search | Search for previously found QA answers
-[**update_answer**](AnswerApi.md#update_answer) | **PUT** /answer/{id} | Update answer details
+[**get_answer**](AnswerApi.md#get_answer) | **GET** /layar/answer/{id} | Get answer details
+[**search_answer**](AnswerApi.md#search_answer) | **POST** /layar/answer/search | Search for answers
+[**update_answer**](AnswerApi.md#update_answer) | **PUT** /layar/answer/{id} | Update answer details
 
 # **get_answer**
 > Answer get_answer(id)
 
-Get details for a QA Answer in your Layar instance
+Get answer details
+
+Get information provided in a specific Answer object.
 
 ### Example
 ```python
@@ -31,7 +33,7 @@ api_instance = layar_api.AnswerApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Get details for a QA Answer in your Layar instance
+    # Get answer details
     api_response = api_instance.get_answer(id)
     pprint(api_response)
 except ApiException as e:
@@ -62,7 +64,9 @@ Name | Type | Description  | Notes
 # **search_answer**
 > list[Answer] search_answer(body=body)
 
-Search for previously found QA answers
+Search for answers
+
+Find answers by their ID or other object parameters.
 
 ### Example
 ```python
@@ -82,7 +86,7 @@ api_instance = layar_api.AnswerApi(layar_api.ApiClient(configuration))
 body = layar_api.AnswerSearchCommand() # AnswerSearchCommand |  (optional)
 
 try:
-    # Search for previously found QA answers
+    # Search for answers
     api_response = api_instance.search_answer(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -115,7 +119,7 @@ Name | Type | Description  | Notes
 
 Update answer details
 
-An Answer object containing only the data you wish to change.
+Modify the information provided for a specific Answer object.
 
 ### Example
 ```python

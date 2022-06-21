@@ -33,8 +33,9 @@ class StatusApi(object):
         self.api_client = api_client
 
     def get_app_status(self, **kwargs):  # noqa: E501
-        """get_app_status  # noqa: E501
+        """Get app uptime status  # noqa: E501
 
+        Check to see whether your Layar instance is up ('OK') or down.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_app_status(async_req=True)
@@ -53,8 +54,9 @@ class StatusApi(object):
             return data
 
     def get_app_status_with_http_info(self, **kwargs):  # noqa: E501
-        """get_app_status  # noqa: E501
+        """Get app uptime status  # noqa: E501
 
+        Check to see whether your Layar instance is up ('OK') or down.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_app_status_with_http_info(async_req=True)
@@ -102,7 +104,7 @@ class StatusApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/app', 'GET',
+            '/layar/app', 'GET',
             path_params,
             query_params,
             header_params,

@@ -33,8 +33,9 @@ class SavedListApi(object):
         self.api_client = api_client
 
     def add_items(self, body, id, **kwargs):  # noqa: E501
-        """Add items to a saved list  # noqa: E501
+        """Add items to a set  # noqa: E501
 
+        Modify the items added to a specific Layar Set.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_items(body, id, async_req=True)
@@ -56,8 +57,9 @@ class SavedListApi(object):
             return data
 
     def add_items_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Add items to a saved list  # noqa: E501
+        """Add items to a set  # noqa: E501
 
+        Modify the items added to a specific Layar Set.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_items_with_http_info(body, id, async_req=True)
@@ -126,7 +128,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}/addItem', 'PUT',
+            '/layar/savedList/{id}/addItem', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -142,7 +144,7 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def add_items_by_search(self, body, id, **kwargs):  # noqa: E501
-        """Add items to a saved list from a search  # noqa: E501
+        """add_items_by_search  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -165,7 +167,7 @@ class SavedListApi(object):
             return data
 
     def add_items_by_search_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Add items to a saved list from a search  # noqa: E501
+        """add_items_by_search  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -235,7 +237,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}/add', 'PUT',
+            '/layar/savedList/{id}/add', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -251,8 +253,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def create_saved_list(self, body, **kwargs):  # noqa: E501
-        """Create a new saved list  # noqa: E501
+        """Create a new set  # noqa: E501
 
+        Create a new Layar Set.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_saved_list(body, async_req=True)
@@ -273,8 +276,9 @@ class SavedListApi(object):
             return data
 
     def create_saved_list_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Create a new saved list  # noqa: E501
+        """Create a new set  # noqa: E501
 
+        Create a new Layar Set.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_saved_list_with_http_info(body, async_req=True)
@@ -336,7 +340,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList', 'POST',
+            '/layar/savedList', 'POST',
             path_params,
             query_params,
             header_params,
@@ -352,8 +356,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def delete_saved_list(self, id, **kwargs):  # noqa: E501
-        """Delete a saved list  # noqa: E501
+        """Delete a set  # noqa: E501
 
+        Remove a specified Set object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_saved_list(id, async_req=True)
@@ -373,8 +378,9 @@ class SavedListApi(object):
             return data
 
     def delete_saved_list_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a saved list  # noqa: E501
+        """Delete a set  # noqa: E501
 
+        Remove a specified Set object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_saved_list_with_http_info(id, async_req=True)
@@ -429,7 +435,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}', 'DELETE',
+            '/layar/savedList/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -445,8 +451,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def delete_saved_lists(self, **kwargs):  # noqa: E501
-        """delete all the given ids  # noqa: E501
+        """Delete multiple sets  # noqa: E501
 
+        Remove the list of specified Set objects by their set IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_saved_lists(async_req=True)
@@ -465,8 +472,9 @@ class SavedListApi(object):
             return data
 
     def delete_saved_lists_with_http_info(self, **kwargs):  # noqa: E501
-        """delete all the given ids  # noqa: E501
+        """Delete multiple sets  # noqa: E501
 
+        Remove the list of specified Set objects by their set IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_saved_lists_with_http_info(async_req=True)
@@ -514,7 +522,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/deleteMany', 'DELETE',
+            '/layar/savedList/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -530,8 +538,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def download_saved_list(self, id, **kwargs):  # noqa: E501
-        """Download the contents of a savedc list as a csv file  # noqa: E501
+        """Download set contents to a CSV  # noqa: E501
 
+        Download the items within a Layar set to a CSV file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_saved_list(id, async_req=True)
@@ -551,8 +560,9 @@ class SavedListApi(object):
             return data
 
     def download_saved_list_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Download the contents of a savedc list as a csv file  # noqa: E501
+        """Download set contents to a CSV  # noqa: E501
 
+        Download the items within a Layar set to a CSV file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_saved_list_with_http_info(id, async_req=True)
@@ -607,7 +617,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}/downloadCsv', 'GET',
+            '/layar/savedList/{id}/downloadCsv', 'GET',
             path_params,
             query_params,
             header_params,
@@ -623,8 +633,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def get_saved_list(self, id, **kwargs):  # noqa: E501
-        """saved list details  # noqa: E501
+        """Get set details  # noqa: E501
 
+        Get information provided in a specific Set object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_saved_list(id, async_req=True)
@@ -644,8 +655,9 @@ class SavedListApi(object):
             return data
 
     def get_saved_list_with_http_info(self, id, **kwargs):  # noqa: E501
-        """saved list details  # noqa: E501
+        """Get set details  # noqa: E501
 
+        Get information provided in a specific Set object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_saved_list_with_http_info(id, async_req=True)
@@ -700,7 +712,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}', 'GET',
+            '/layar/savedList/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -716,7 +728,7 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def remove_items(self, id, **kwargs):  # noqa: E501
-        """Remove items from a saved list  # noqa: E501
+        """Remove items from a Layar set  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -737,7 +749,7 @@ class SavedListApi(object):
             return data
 
     def remove_items_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Remove items from a saved list  # noqa: E501
+        """Remove items from a Layar set  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -793,7 +805,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}/removeItem', 'DELETE',
+            '/layar/savedList/{id}/removeItem', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -809,8 +821,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def search_saved_list(self, **kwargs):  # noqa: E501
-        """Search for saved lists  # noqa: E501
+        """Search for sets  # noqa: E501
 
+        Find a set by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_saved_list(async_req=True)
@@ -832,8 +845,9 @@ class SavedListApi(object):
             return data
 
     def search_saved_list_with_http_info(self, **kwargs):  # noqa: E501
-        """Search for saved lists  # noqa: E501
+        """Search for sets  # noqa: E501
 
+        Find a set by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_saved_list_with_http_info(async_req=True)
@@ -890,7 +904,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList', 'GET',
+            '/layar/savedList', 'GET',
             path_params,
             query_params,
             header_params,
@@ -906,8 +920,9 @@ class SavedListApi(object):
             collection_formats=collection_formats)
 
     def update_saved_list(self, body, id, **kwargs):  # noqa: E501
-        """Update a saved list  # noqa: E501
+        """Update set details  # noqa: E501
 
+        Modify the information provided for a specific Set object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_saved_list(body, id, async_req=True)
@@ -928,8 +943,9 @@ class SavedListApi(object):
             return data
 
     def update_saved_list_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update a saved list  # noqa: E501
+        """Update set details  # noqa: E501
 
+        Modify the information provided for a specific Set object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_saved_list_with_http_info(body, id, async_req=True)
@@ -995,7 +1011,7 @@ class SavedListApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/savedList/{id}', 'PUT',
+            '/layar/savedList/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

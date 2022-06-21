@@ -33,8 +33,9 @@ class EventApi(object):
         self.api_client = api_client
 
     def get_event(self, id, **kwargs):  # noqa: E501
-        """event details  # noqa: E501
+        """Get event details  # noqa: E501
 
+        Get information provided in a specific Event object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_event(id, async_req=True)
@@ -54,8 +55,9 @@ class EventApi(object):
             return data
 
     def get_event_with_http_info(self, id, **kwargs):  # noqa: E501
-        """event details  # noqa: E501
+        """Get event details  # noqa: E501
 
+        Get information provided in a specific Event object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_event_with_http_info(id, async_req=True)
@@ -110,7 +112,7 @@ class EventApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/event/{id}', 'GET',
+            '/layar/event/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -126,7 +128,7 @@ class EventApi(object):
             collection_formats=collection_formats)
 
     def search_events(self, **kwargs):  # noqa: E501
-        """search for events  # noqa: E501
+        """Search for events  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -155,7 +157,7 @@ class EventApi(object):
             return data
 
     def search_events_with_http_info(self, **kwargs):  # noqa: E501
-        """search for events  # noqa: E501
+        """Search for events  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -231,7 +233,7 @@ class EventApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/event', 'GET',
+            '/layar/event', 'GET',
             path_params,
             query_params,
             header_params,

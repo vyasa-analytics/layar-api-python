@@ -33,8 +33,9 @@ class ModelApi(object):
         self.api_client = api_client
 
     def download_model(self, id, **kwargs):  # noqa: E501
-        """Download a learning model by ID  # noqa: E501
+        """Download a model by ID  # noqa: E501
 
+        Download the original model file by its model ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_model(id, async_req=True)
@@ -54,8 +55,9 @@ class ModelApi(object):
             return data
 
     def download_model_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Download a learning model by ID  # noqa: E501
+        """Download a model by ID  # noqa: E501
 
+        Download the original model file by its model ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_model_with_http_info(id, async_req=True)
@@ -110,7 +112,7 @@ class ModelApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/model/{id}/download', 'GET',
+            '/layar/model/{id}/download', 'GET',
             path_params,
             query_params,
             header_params,
@@ -126,7 +128,7 @@ class ModelApi(object):
             collection_formats=collection_formats)
 
     def search_models_by_computation_id(self, id, **kwargs):  # noqa: E501
-        """find deep learning models by project computation  # noqa: E501
+        """Find models by project computation ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -150,7 +152,7 @@ class ModelApi(object):
             return data
 
     def search_models_by_computation_id_with_http_info(self, id, **kwargs):  # noqa: E501
-        """find deep learning models by project computation  # noqa: E501
+        """Find models by project computation ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -215,7 +217,7 @@ class ModelApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}/models', 'GET',
+            '/layar/projectComputation/{id}/models', 'GET',
             path_params,
             query_params,
             header_params,
@@ -231,7 +233,7 @@ class ModelApi(object):
             collection_formats=collection_formats)
 
     def search_models_by_module_id(self, module_id, **kwargs):  # noqa: E501
-        """Find deep learning models by module  # noqa: E501
+        """Find models by module ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -255,7 +257,7 @@ class ModelApi(object):
             return data
 
     def search_models_by_module_id_with_http_info(self, module_id, **kwargs):  # noqa: E501
-        """Find deep learning models by module  # noqa: E501
+        """Find models by module ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -320,7 +322,7 @@ class ModelApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/module/{moduleId}/models', 'GET',
+            '/layar/module/{moduleId}/models', 'GET',
             path_params,
             query_params,
             header_params,
@@ -336,7 +338,7 @@ class ModelApi(object):
             collection_formats=collection_formats)
 
     def search_models_by_project_id(self, project_id, **kwargs):  # noqa: E501
-        """find deep learning models by project  # noqa: E501
+        """Find models by project ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -360,7 +362,7 @@ class ModelApi(object):
             return data
 
     def search_models_by_project_id_with_http_info(self, project_id, **kwargs):  # noqa: E501
-        """find deep learning models by project  # noqa: E501
+        """Find models by project ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -425,7 +427,7 @@ class ModelApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{projectId}/models', 'GET',
+            '/layar/project/{projectId}/models', 'GET',
             path_params,
             query_params,
             header_params,

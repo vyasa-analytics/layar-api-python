@@ -4,15 +4,15 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_statement**](StatementApi.md#create_statement) | **POST** /statement | Create a new statement
-[**delete_statement**](StatementApi.md#delete_statement) | **DELETE** /statement/{id} | Delete a statement by ID
-[**delete_statements**](StatementApi.md#delete_statements) | **DELETE** /statement/deleteMany | Delete all the statements in an array
-[**get_relationship_evidence**](StatementApi.md#get_relationship_evidence) | **GET** /statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2} | Get the relationship evidence between two given concepts
-[**get_statement**](StatementApi.md#get_statement) | **GET** /statement/{id} | Get statement details by ID
-[**get_statement_field_counts**](StatementApi.md#get_statement_field_counts) | **POST** /statement/{field}/counts | Get statement counts by table column
-[**named_entity_tag**](StatementApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
-[**search_statements**](StatementApi.md#search_statements) | **POST** /statement/search | search for statements
-[**update_statement**](StatementApi.md#update_statement) | **PUT** /statement/{id} | Update a statement by ID
+[**create_statement**](StatementApi.md#create_statement) | **POST** /layar/statement | Create a new statement
+[**delete_statement**](StatementApi.md#delete_statement) | **DELETE** /layar/statement/{id} | Delete a statement
+[**delete_statements**](StatementApi.md#delete_statements) | **DELETE** /layar/statement/deleteMany | Delete multiple statements
+[**get_relationship_evidence**](StatementApi.md#get_relationship_evidence) | **GET** /layar/statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2} | Get existing relationships between two given concepts
+[**get_statement**](StatementApi.md#get_statement) | **GET** /layar/statement/{id} | Get statement details
+[**get_statement_field_counts**](StatementApi.md#get_statement_field_counts) | **POST** /layar/statement/{field}/counts | Get statement counts for a table column
+[**named_entity_tag**](StatementApi.md#named_entity_tag) | **POST** /layar/statement/{id}/namedEntity/tag | Tag named entities within specific columns of a table
+[**search_statements**](StatementApi.md#search_statements) | **POST** /layar/statement/search | Search for statements
+[**update_statement**](StatementApi.md#update_statement) | **PUT** /layar/statement/{id} | Update statement details
 
 # **create_statement**
 > Statement create_statement(body)
@@ -68,7 +68,9 @@ Name | Type | Description  | Notes
 # **delete_statement**
 > delete_statement(id)
 
-Delete a statement by ID
+Delete a statement
+
+Remove a specified Statement object from your Layar instance.
 
 ### Example
 ```python
@@ -88,7 +90,7 @@ api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a statement by ID
+    # Delete a statement
     api_instance.delete_statement(id)
 except ApiException as e:
     print("Exception when calling StatementApi->delete_statement: %s\n" % e)
@@ -118,7 +120,9 @@ void (empty response body)
 # **delete_statements**
 > delete_statements()
 
-Delete all the statements in an array
+Delete multiple statements
+
+Remove the list of specified Statement objects by their statement IDs.
 
 ### Example
 ```python
@@ -137,7 +141,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
 
 try:
-    # Delete all the statements in an array
+    # Delete multiple statements
     api_instance.delete_statements()
 except ApiException as e:
     print("Exception when calling StatementApi->delete_statements: %s\n" % e)
@@ -164,7 +168,7 @@ void (empty response body)
 # **get_relationship_evidence**
 > list[Statement] get_relationship_evidence(concept_id1, relationship, concept_id2)
 
-Get the relationship evidence between two given concepts
+Get existing relationships between two given concepts
 
 ### Example
 ```python
@@ -186,7 +190,7 @@ relationship = 'relationship_example' # str |
 concept_id2 = 'concept_id2_example' # str | 
 
 try:
-    # Get the relationship evidence between two given concepts
+    # Get existing relationships between two given concepts
     api_response = api_instance.get_relationship_evidence(concept_id1, relationship, concept_id2)
     pprint(api_response)
 except ApiException as e:
@@ -219,7 +223,9 @@ Name | Type | Description  | Notes
 # **get_statement**
 > Statement get_statement(id)
 
-Get statement details by ID
+Get statement details
+
+Get information provided in a specific Statement object.
 
 ### Example
 ```python
@@ -239,7 +245,7 @@ api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Get statement details by ID
+    # Get statement details
     api_response = api_instance.get_statement(id)
     pprint(api_response)
 except ApiException as e:
@@ -270,7 +276,7 @@ Name | Type | Description  | Notes
 # **get_statement_field_counts**
 > list[FieldCount] get_statement_field_counts(body, field)
 
-Get statement counts by table column
+Get statement counts for a table column
 
 ### Example
 ```python
@@ -291,7 +297,7 @@ body = layar_api.StatementSearchCommand() # StatementSearchCommand |
 field = 'field_example' # str | 
 
 try:
-    # Get statement counts by table column
+    # Get statement counts for a table column
     api_response = api_instance.get_statement_field_counts(body, field)
     pprint(api_response)
 except ApiException as e:
@@ -323,7 +329,7 @@ Name | Type | Description  | Notes
 # **named_entity_tag**
 > Statement named_entity_tag(body, id)
 
-tag named entities within specific columns of a statement
+Tag named entities within specific columns of a table
 
 ### Example
 ```python
@@ -344,7 +350,7 @@ body = layar_api.StatementNamedEntityCommand() # StatementNamedEntityCommand |
 id = 'id_example' # str | 
 
 try:
-    # tag named entities within specific columns of a statement
+    # Tag named entities within specific columns of a table
     api_response = api_instance.named_entity_tag(body, id)
     pprint(api_response)
 except ApiException as e:
@@ -376,7 +382,9 @@ Name | Type | Description  | Notes
 # **search_statements**
 > list[Statement] search_statements(body=body)
 
-search for statements
+Search for statements
+
+Find a statement by their ID or other object parameters.
 
 ### Example
 ```python
@@ -396,7 +404,7 @@ api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
 body = layar_api.StatementSearchCommand() # StatementSearchCommand |  (optional)
 
 try:
-    # search for statements
+    # Search for statements
     api_response = api_instance.search_statements(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -427,7 +435,9 @@ Name | Type | Description  | Notes
 # **update_statement**
 > Statement update_statement(body, id)
 
-Update a statement by ID
+Update statement details
+
+Modify the information provided for a specific Statement object.
 
 ### Example
 ```python
@@ -448,7 +458,7 @@ body = layar_api.Statement() # Statement |
 id = 'id_example' # str | 
 
 try:
-    # Update a statement by ID
+    # Update statement details
     api_response = api_instance.update_statement(body, id)
     pprint(api_response)
 except ApiException as e:

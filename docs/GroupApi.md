@@ -4,12 +4,12 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**group_terms**](GroupApi.md#group_terms) | **POST** /group/terms | group similar terms (eg, &#x27;Vyasa Analytics&#x27; and &#x27;Vyasa Analytics, LLC&#x27;)
+[**group_terms**](GroupApi.md#group_terms) | **POST** /layar/group/terms | Group similar terms
 
 # **group_terms**
 > list[list[str]] group_terms(body)
 
-group similar terms (eg, 'Vyasa Analytics' and 'Vyasa Analytics, LLC')
+Group similar terms
 
 ### Example
 ```python
@@ -29,7 +29,7 @@ api_instance = layar_api.GroupApi(layar_api.ApiClient(configuration))
 body = layar_api.Body1() # Body1 | 
 
 try:
-    # group similar terms (eg, 'Vyasa Analytics' and 'Vyasa Analytics, LLC')
+    # Group similar terms
     api_response = api_instance.group_terms(body)
     pprint(api_response)
 except ApiException as e:

@@ -4,14 +4,16 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_types**](NamedEntityApi.md#get_types) | **GET** /namedEntity/types | A list of the available Named Entity Types
-[**named_entity_tag**](NamedEntityApi.md#named_entity_tag) | **POST** /statement/{id}/namedEntity/tag | tag named entities within specific columns of a statement
-[**tag_ner**](NamedEntityApi.md#tag_ner) | **POST** /namedEntity/tag | Find named entity tags by query term or list of types
+[**get_types**](NamedEntityApi.md#get_types) | **GET** /layar/namedEntity/types | Retrieve a list of available named entity types
+[**named_entity_tag**](NamedEntityApi.md#named_entity_tag) | **POST** /layar/statement/{id}/namedEntity/tag | Tag named entities within specific columns of a table
+[**tag_ner**](NamedEntityApi.md#tag_ner) | **POST** /layar/namedEntity/tag | Tag named entities
 
 # **get_types**
 > list[str] get_types()
 
-A list of the available Named Entity Types
+Retrieve a list of available named entity types
+
+Get a list all named entity types Vyasa offers off-the-shelf for NER tagging.
 
 ### Example
 ```python
@@ -30,7 +32,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.NamedEntityApi(layar_api.ApiClient(configuration))
 
 try:
-    # A list of the available Named Entity Types
+    # Retrieve a list of available named entity types
     api_response = api_instance.get_types()
     pprint(api_response)
 except ApiException as e:
@@ -58,7 +60,7 @@ This endpoint does not need any parameter.
 # **named_entity_tag**
 > Statement named_entity_tag(body, id)
 
-tag named entities within specific columns of a statement
+Tag named entities within specific columns of a table
 
 ### Example
 ```python
@@ -79,7 +81,7 @@ body = layar_api.StatementNamedEntityCommand() # StatementNamedEntityCommand |
 id = 'id_example' # str | 
 
 try:
-    # tag named entities within specific columns of a statement
+    # Tag named entities within specific columns of a table
     api_response = api_instance.named_entity_tag(body, id)
     pprint(api_response)
 except ApiException as e:
@@ -111,7 +113,9 @@ Name | Type | Description  | Notes
 # **tag_ner**
 > NamedEntityResponse tag_ner(body)
 
-Find named entity tags by query term or list of types
+Tag named entities
+
+Tag named entity concepts and their respective concept types for an input string of text.
 
 ### Example
 ```python
@@ -131,7 +135,7 @@ api_instance = layar_api.NamedEntityApi(layar_api.ApiClient(configuration))
 body = layar_api.NamedEntityRequest() # NamedEntityRequest | 
 
 try:
-    # Find named entity tags by query term or list of types
+    # Tag named entities
     api_response = api_instance.tag_ner(body)
     pprint(api_response)
 except ApiException as e:

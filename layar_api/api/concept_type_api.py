@@ -33,8 +33,9 @@ class ConceptTypeApi(object):
         self.api_client = api_client
 
     def create_concept_type(self, body, **kwargs):  # noqa: E501
-        """Save new concept types  # noqa: E501
+        """Create a new concept type  # noqa: E501
 
+        Create a new Concept Type object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_concept_type(body, async_req=True)
@@ -54,8 +55,9 @@ class ConceptTypeApi(object):
             return data
 
     def create_concept_type_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Save new concept types  # noqa: E501
+        """Create a new concept type  # noqa: E501
 
+        Create a new Concept Type object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_concept_type_with_http_info(body, async_req=True)
@@ -114,7 +116,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/conceptType', 'POST',
+            '/layar/conceptType', 'POST',
             path_params,
             query_params,
             header_params,
@@ -130,8 +132,9 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def delete_concept_type(self, id, **kwargs):  # noqa: E501
-        """Delete a single concept type  # noqa: E501
+        """Delete a concept type  # noqa: E501
 
+        Remove a specified Concept object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_concept_type(id, async_req=True)
@@ -151,8 +154,9 @@ class ConceptTypeApi(object):
             return data
 
     def delete_concept_type_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a single concept type  # noqa: E501
+        """Delete a concept type  # noqa: E501
 
+        Remove a specified Concept object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_concept_type_with_http_info(id, async_req=True)
@@ -203,7 +207,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/conceptType/{id}', 'DELETE',
+            '/layar/conceptType/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -219,8 +223,9 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def delete_concept_types(self, **kwargs):  # noqa: E501
-        """Delete all the records with the given IDs  # noqa: E501
+        """Delete multiple concept types  # noqa: E501
 
+        Remove the list of specified Concept Type objects by their concept type IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_concept_types(async_req=True)
@@ -239,8 +244,9 @@ class ConceptTypeApi(object):
             return data
 
     def delete_concept_types_with_http_info(self, **kwargs):  # noqa: E501
-        """Delete all the records with the given IDs  # noqa: E501
+        """Delete multiple concept types  # noqa: E501
 
+        Remove the list of specified Concept Type objects by their concept type IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_concept_types_with_http_info(async_req=True)
@@ -288,7 +294,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/conceptType/deleteMany', 'DELETE',
+            '/layar/conceptType/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -304,8 +310,9 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def get_concept_type(self, id, **kwargs):  # noqa: E501
-        """Concept type details  # noqa: E501
+        """Get concept type details  # noqa: E501
 
+        Get information provided in a specific Concept Type object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_concept_type(id, async_req=True)
@@ -325,8 +332,9 @@ class ConceptTypeApi(object):
             return data
 
     def get_concept_type_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Concept type details  # noqa: E501
+        """Get concept type details  # noqa: E501
 
+        Get information provided in a specific Concept Type object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_concept_type_with_http_info(id, async_req=True)
@@ -381,7 +389,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/conceptType/{id}', 'GET',
+            '/layar/conceptType/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -397,8 +405,9 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def get_counts(self, **kwargs):  # noqa: E501
-        """Get result counts by concept type  # noqa: E501
+        """Get concept type counts  # noqa: E501
 
+        Get a total count of how many concept types exist for a specified concept.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts(async_req=True)
@@ -417,8 +426,9 @@ class ConceptTypeApi(object):
             return data
 
     def get_counts_with_http_info(self, **kwargs):  # noqa: E501
-        """Get result counts by concept type  # noqa: E501
+        """Get concept type counts  # noqa: E501
 
+        Get a total count of how many concept types exist for a specified concept.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_with_http_info(async_req=True)
@@ -466,7 +476,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/concept/type/counts', 'GET',
+            '/layar/concept/type/counts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -482,8 +492,9 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def get_relationship_templates(self, **kwargs):  # noqa: E501
-        """Relationship Templates  # noqa: E501
+        """Get concept relationship details  # noqa: E501
 
+        Get a list of relationships between the given Concept object and other concepts.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_relationship_templates(async_req=True)
@@ -502,8 +513,9 @@ class ConceptTypeApi(object):
             return data
 
     def get_relationship_templates_with_http_info(self, **kwargs):  # noqa: E501
-        """Relationship Templates  # noqa: E501
+        """Get concept relationship details  # noqa: E501
 
+        Get a list of relationships between the given Concept object and other concepts.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_relationship_templates_with_http_info(async_req=True)
@@ -551,7 +563,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/concept/type/relationshipTemplates', 'GET',
+            '/layar/concept/type/relationshipTemplates', 'GET',
             path_params,
             query_params,
             header_params,
@@ -569,6 +581,7 @@ class ConceptTypeApi(object):
     def search_concept_types(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """Search for concept types  # noqa: E501
 
+        Find concept types by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_concept_types(x_vyasa_data_providers, async_req=True)
@@ -592,6 +605,7 @@ class ConceptTypeApi(object):
     def search_concept_types_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
         """Search for concept types  # noqa: E501
 
+        Find concept types by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_concept_types_with_http_info(x_vyasa_data_providers, async_req=True)
@@ -652,7 +666,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/conceptType', 'GET',
+            '/layar/conceptType', 'GET',
             path_params,
             query_params,
             header_params,
@@ -668,8 +682,9 @@ class ConceptTypeApi(object):
             collection_formats=collection_formats)
 
     def update_concept_type(self, body, id, **kwargs):  # noqa: E501
-        """Update a single concept type  # noqa: E501
+        """Update concept type details  # noqa: E501
 
+        Modify the information provided for a specific Concept Type object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_concept_type(body, id, async_req=True)
@@ -690,8 +705,9 @@ class ConceptTypeApi(object):
             return data
 
     def update_concept_type_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update a single concept type  # noqa: E501
+        """Update concept type details  # noqa: E501
 
+        Modify the information provided for a specific Concept Type object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_concept_type_with_http_info(body, id, async_req=True)
@@ -757,7 +773,7 @@ class ConceptTypeApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/conceptType/{id}', 'PUT',
+            '/layar/conceptType/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

@@ -4,13 +4,15 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_event**](EventApi.md#get_event) | **GET** /event/{id} | event details
-[**search_events**](EventApi.md#search_events) | **GET** /event | search for events
+[**get_event**](EventApi.md#get_event) | **GET** /layar/event/{id} | Get event details
+[**search_events**](EventApi.md#search_events) | **GET** /layar/event | Search for events
 
 # **get_event**
 > Event get_event(id)
 
-event details
+Get event details
+
+Get information provided in a specific Event object.
 
 ### Example
 ```python
@@ -30,7 +32,7 @@ api_instance = layar_api.EventApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # event details
+    # Get event details
     api_response = api_instance.get_event(id)
     pprint(api_response)
 except ApiException as e:
@@ -61,7 +63,7 @@ Name | Type | Description  | Notes
 # **search_events**
 > list[Event] search_events(start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, subject_id=subject_id, project_id=project_id)
 
-search for events
+Search for events
 
 ### Example
 ```python
@@ -89,7 +91,7 @@ subject_id = 'subject_id_example' # str | limit results to those tagged with the
 project_id = 'project_id_example' # str | limit results to those tagged with the given project ID (optional)
 
 try:
-    # search for events
+    # Search for events
     api_response = api_instance.search_events(start=start, rows=rows, q=q, sort=sort, order=order, from_date=from_date, to_date=to_date, subject_id=subject_id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:

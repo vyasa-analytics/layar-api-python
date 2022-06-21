@@ -33,8 +33,9 @@ class SmilesApi(object):
         self.api_client = api_client
 
     def create_tox_csv(self, body, **kwargs):  # noqa: E501
-        """Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.  # noqa: E501
+        """Run the Tox21 model and download the results to a CSV  # noqa: E501
 
+        Run the Tox21 toxicity prediction model on a list of smiles and download the results to a CSV file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_tox_csv(body, async_req=True)
@@ -54,8 +55,9 @@ class SmilesApi(object):
             return data
 
     def create_tox_csv_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Runs Tox21 toxicity analysis against list of smiles and returns the results in a CSV file.  # noqa: E501
+        """Run the Tox21 model and download the results to a CSV  # noqa: E501
 
+        Run the Tox21 toxicity prediction model on a list of smiles and download the results to a CSV file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_tox_csv_with_http_info(body, async_req=True)
@@ -110,7 +112,7 @@ class SmilesApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/smiles/createTox21CSV', 'POST',
+            '/layar/smiles/createTox21CSV', 'POST',
             path_params,
             query_params,
             header_params,
@@ -126,8 +128,9 @@ class SmilesApi(object):
             collection_formats=collection_formats)
 
     def create_tox_som(self, body, **kwargs):  # noqa: E501
-        """Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)  # noqa: E501
+        """Run the Tox21 model and download the results to a SOM  # noqa: E501
 
+        Runs Tox21 toxicity analysis against list of smiles and returns the results in a self organizing map (SOM)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_tox_som(body, async_req=True)
@@ -147,8 +150,9 @@ class SmilesApi(object):
             return data
 
     def create_tox_som_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Runs Tox21 toxicity analysis against list of smiles and returns the results in a Self Organizing Map (SOM)  # noqa: E501
+        """Run the Tox21 model and download the results to a SOM  # noqa: E501
 
+        Runs Tox21 toxicity analysis against list of smiles and returns the results in a self organizing map (SOM)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_tox_som_with_http_info(body, async_req=True)
@@ -203,7 +207,7 @@ class SmilesApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/smiles/createTox21SOM', 'POST',
+            '/layar/smiles/createTox21SOM', 'POST',
             path_params,
             query_params,
             header_params,

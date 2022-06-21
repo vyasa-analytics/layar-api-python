@@ -4,16 +4,16 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_term**](OntologyTermApi.md#create_term) | **POST** /ontologyTerm | Save a new ontology term
-[**delete_term**](OntologyTermApi.md#delete_term) | **DELETE** /ontologyTerm/{id} | Delete a term from the ontology
-[**get_term**](OntologyTermApi.md#get_term) | **GET** /ontologyTerm/{id} | get the ontology term details
-[**ontology_term_get**](OntologyTermApi.md#ontology_term_get) | **GET** /ontologyTerm | search for ontology terms
-[**update_term**](OntologyTermApi.md#update_term) | **PUT** /ontologyTerm/{id} | Update a term in an ontology
+[**create_term**](OntologyTermApi.md#create_term) | **POST** /layar/ontologyTerm | Create a new ontology term
+[**delete_term**](OntologyTermApi.md#delete_term) | **DELETE** /layar/ontologyTerm/{id} | Delete an ontology term
+[**get_term**](OntologyTermApi.md#get_term) | **GET** /layar/ontologyTerm/{id} | Get ontology term details
+[**layar_ontology_term_get**](OntologyTermApi.md#layar_ontology_term_get) | **GET** /layar/ontologyTerm | Search for ontology terms
+[**update_term**](OntologyTermApi.md#update_term) | **PUT** /layar/ontologyTerm/{id} | Update ontology term details
 
 # **create_term**
 > OntologyTerm create_term(body)
 
-Save a new ontology term
+Create a new ontology term
 
 ### Example
 ```python
@@ -33,7 +33,7 @@ api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
 body = layar_api.OntologyTerm() # OntologyTerm | 
 
 try:
-    # Save a new ontology term
+    # Create a new ontology term
     api_response = api_instance.create_term(body)
     pprint(api_response)
 except ApiException as e:
@@ -64,7 +64,9 @@ Name | Type | Description  | Notes
 # **delete_term**
 > delete_term(id)
 
-Delete a term from the ontology
+Delete an ontology term
+
+Remove a specified Ontology Term object from your Layar instance.
 
 ### Example
 ```python
@@ -84,7 +86,7 @@ api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a term from the ontology
+    # Delete an ontology term
     api_instance.delete_term(id)
 except ApiException as e:
     print("Exception when calling OntologyTermApi->delete_term: %s\n" % e)
@@ -114,7 +116,9 @@ void (empty response body)
 # **get_term**
 > OntologyTerm get_term(id)
 
-get the ontology term details
+Get ontology term details
+
+Get information provided in a specific Ontology Term object.
 
 ### Example
 ```python
@@ -134,7 +138,7 @@ api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # get the ontology term details
+    # Get ontology term details
     api_response = api_instance.get_term(id)
     pprint(api_response)
 except ApiException as e:
@@ -162,10 +166,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ontology_term_get**
-> list[OntologyTerm] ontology_term_get(q=q, rows=rows, start=start, sort=sort, order=order, from_date=from_date, to_date=to_date, db_ids=db_ids, document_ids=document_ids, id_paths=id_paths, include_obsolete=include_obsolete, name_paths=name_paths, path_traversal=path_traversal, terms=terms)
+# **layar_ontology_term_get**
+> list[OntologyTerm] layar_ontology_term_get(q=q, rows=rows, start=start, sort=sort, order=order, from_date=from_date, to_date=to_date, db_ids=db_ids, document_ids=document_ids, id_paths=id_paths, include_obsolete=include_obsolete, name_paths=name_paths, path_traversal=path_traversal, terms=terms)
 
-search for ontology terms
+Search for ontology terms
 
 ### Example
 ```python
@@ -198,11 +202,11 @@ path_traversal = 'path_traversal_example' # str | limit results based on a speci
 terms = ['terms_example'] # list[str] | limit results to terms matching the supplied terms (in either name or synonym) (optional)
 
 try:
-    # search for ontology terms
-    api_response = api_instance.ontology_term_get(q=q, rows=rows, start=start, sort=sort, order=order, from_date=from_date, to_date=to_date, db_ids=db_ids, document_ids=document_ids, id_paths=id_paths, include_obsolete=include_obsolete, name_paths=name_paths, path_traversal=path_traversal, terms=terms)
+    # Search for ontology terms
+    api_response = api_instance.layar_ontology_term_get(q=q, rows=rows, start=start, sort=sort, order=order, from_date=from_date, to_date=to_date, db_ids=db_ids, document_ids=document_ids, id_paths=id_paths, include_obsolete=include_obsolete, name_paths=name_paths, path_traversal=path_traversal, terms=terms)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OntologyTermApi->ontology_term_get: %s\n" % e)
+    print("Exception when calling OntologyTermApi->layar_ontology_term_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -242,7 +246,9 @@ Name | Type | Description  | Notes
 # **update_term**
 > OntologyTerm update_term(body, id)
 
-Update a term in an ontology
+Update ontology term details
+
+Modify the information provided for a specific Ontology Term object.
 
 ### Example
 ```python
@@ -263,7 +269,7 @@ body = layar_api.OntologyTerm() # OntologyTerm |
 id = 'id_example' # str | 
 
 try:
-    # Update a term in an ontology
+    # Update ontology term details
     api_response = api_instance.update_term(body, id)
     pprint(api_response)
 except ApiException as e:

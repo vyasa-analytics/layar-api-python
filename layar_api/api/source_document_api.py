@@ -33,7 +33,7 @@ class SourceDocumentApi(object):
         self.api_client = api_client
 
     def add_annotation(self, body, id, **kwargs):  # noqa: E501
-        """Add annotation by source  # noqa: E501
+        """Add an annotation to a document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -55,7 +55,7 @@ class SourceDocumentApi(object):
             return data
 
     def add_annotation_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Add annotation by source  # noqa: E501
+        """Add an annotation to a document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -118,7 +118,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/addAnnotation', 'POST',
+            '/layar/sourceDocument/{id}/addAnnotation', 'POST',
             path_params,
             query_params,
             header_params,
@@ -219,7 +219,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/addAnnotations', 'POST',
+            '/layar/sourceDocument/{id}/addAnnotations', 'POST',
             path_params,
             query_params,
             header_params,
@@ -235,8 +235,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def add_column(self, body, id, **kwargs):  # noqa: E501
-        """Add column to table  # noqa: E501
+        """Add a column to a table document  # noqa: E501
 
+        Add a new column to a specific Layar table document.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_column(body, id, async_req=True)
@@ -257,8 +258,9 @@ class SourceDocumentApi(object):
             return data
 
     def add_column_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Add column to table  # noqa: E501
+        """Add a column to a table document  # noqa: E501
 
+        Add a new column to a specific Layar table document.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_column_with_http_info(body, id, async_req=True)
@@ -320,7 +322,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/addColumn', 'PUT',
+            '/layar/sourceDocument/{id}/addColumn', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -336,7 +338,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def add_viewer(self, id, **kwargs):  # noqa: E501
-        """add a viewer to the source document  # noqa: E501
+        """Authorize a viewer for the source document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -357,7 +359,7 @@ class SourceDocumentApi(object):
             return data
 
     def add_viewer_with_http_info(self, id, **kwargs):  # noqa: E501
-        """add a viewer to the source document  # noqa: E501
+        """Authorize a viewer for the source document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -413,7 +415,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/viewers', 'POST',
+            '/layar/sourceDocument/{id}/viewers', 'POST',
             path_params,
             query_params,
             header_params,
@@ -429,7 +431,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def create_document(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """Save a source document to Layar  # noqa: E501
+        """Create a source document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -453,7 +455,7 @@ class SourceDocumentApi(object):
             return data
 
     def create_document_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """Save a source document to Layar  # noqa: E501
+        """Create a source document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -522,7 +524,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument', 'POST',
+            '/layar/sourceDocument', 'POST',
             path_params,
             query_params,
             header_params,
@@ -538,8 +540,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def delete_document(self, id, **kwargs):  # noqa: E501
-        """Delete a document from Layar  # noqa: E501
+        """Delete a document  # noqa: E501
 
+        Remove a specified Source Document object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_document(id, async_req=True)
@@ -559,8 +562,9 @@ class SourceDocumentApi(object):
             return data
 
     def delete_document_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a document from Layar  # noqa: E501
+        """Delete a document  # noqa: E501
 
+        Remove a specified Source Document object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_document_with_http_info(id, async_req=True)
@@ -615,7 +619,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}', 'DELETE',
+            '/layar/sourceDocument/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -631,8 +635,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def delete_documents(self, **kwargs):  # noqa: E501
-        """Delete all documents in an array  # noqa: E501
+        """Delete multiple documents  # noqa: E501
 
+        Remove the list of specified Source Document objects by their document IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_documents(async_req=True)
@@ -651,8 +656,9 @@ class SourceDocumentApi(object):
             return data
 
     def delete_documents_with_http_info(self, **kwargs):  # noqa: E501
-        """Delete all documents in an array  # noqa: E501
+        """Delete multiple documents  # noqa: E501
 
+        Remove the list of specified Source Document objects by their document IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_documents_with_http_info(async_req=True)
@@ -700,7 +706,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/deleteMany', 'DELETE',
+            '/layar/sourceDocument/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -716,8 +722,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def download_annotations(self, **kwargs):  # noqa: E501
-        """downloads annotations as csv of one or more source document  # noqa: E501
+        """Download document annotations to a CSV  # noqa: E501
 
+        Download the annotations for a given source document to a CSV file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_annotations(async_req=True)
@@ -737,8 +744,9 @@ class SourceDocumentApi(object):
             return data
 
     def download_annotations_with_http_info(self, **kwargs):  # noqa: E501
-        """downloads annotations as csv of one or more source document  # noqa: E501
+        """Download document annotations to a CSV  # noqa: E501
 
+        Download the annotations for a given source document to a CSV file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_annotations_with_http_info(async_req=True)
@@ -789,7 +797,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/downloadAnnotations', 'GET',
+            '/layar/sourceDocument/downloadAnnotations', 'GET',
             path_params,
             query_params,
             header_params,
@@ -805,15 +813,16 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def download_document(self, id, **kwargs):  # noqa: E501
-        """Download a document by ID  # noqa: E501
+        """Download document by ID  # noqa: E501
 
+        Download the original document by its source document ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_document(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: the Layar ID for that document (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -826,15 +835,16 @@ class SourceDocumentApi(object):
             return data
 
     def download_document_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Download a document by ID  # noqa: E501
+        """Download document by ID  # noqa: E501
 
+        Download the original document by its source document ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_document_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: the Layar ID for that document (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -882,7 +892,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/download', 'GET',
+            '/layar/sourceDocument/{id}/download', 'GET',
             path_params,
             query_params,
             header_params,
@@ -898,7 +908,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def extract_table_by_page(self, body, id, page, **kwargs):  # noqa: E501
-        """extract a table from a specific page  # noqa: E501
+        """Extract table from a specific page  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -921,7 +931,7 @@ class SourceDocumentApi(object):
             return data
 
     def extract_table_by_page_with_http_info(self, body, id, page, **kwargs):  # noqa: E501
-        """extract a table from a specific page  # noqa: E501
+        """Extract table from a specific page  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -995,7 +1005,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/page/{page}/extractTable', 'POST',
+            '/layar/sourceDocument/{id}/page/{page}/extractTable', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1011,7 +1021,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def extract_tables(self, body, id, **kwargs):  # noqa: E501
-        """extract tables from a document  # noqa: E501
+        """Extract tables from a document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1033,7 +1043,7 @@ class SourceDocumentApi(object):
             return data
 
     def extract_tables_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """extract tables from a document  # noqa: E501
+        """Extract tables from a document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1100,7 +1110,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/extractTables', 'POST',
+            '/layar/sourceDocument/{id}/extractTables', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1116,8 +1126,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_counts_by_suggested_category(self, project_computation_id, **kwargs):  # noqa: E501
-        """Get document counts by suggested category  # noqa: E501
+        """Get document counts for suggested concept type by computation id  # noqa: E501
 
+        Return a total number of documents where a specific concept type has been suggested.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_by_suggested_category(project_computation_id, async_req=True)
@@ -1137,8 +1148,9 @@ class SourceDocumentApi(object):
             return data
 
     def get_counts_by_suggested_category_with_http_info(self, project_computation_id, **kwargs):  # noqa: E501
-        """Get document counts by suggested category  # noqa: E501
+        """Get document counts for suggested concept type by computation id  # noqa: E501
 
+        Return a total number of documents where a specific concept type has been suggested.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_by_suggested_category_with_http_info(project_computation_id, async_req=True)
@@ -1193,7 +1205,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{projectComputationId}/countBySuggestedCategory', 'GET',
+            '/layar/sourceDocument/{projectComputationId}/countBySuggestedCategory', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1211,6 +1223,7 @@ class SourceDocumentApi(object):
     def get_counts_by_type(self, **kwargs):  # noqa: E501
         """Get document counts by type  # noqa: E501
 
+        Get total number of documents based on what document type they are (Documents, Images, Tables, etc.)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_by_type(async_req=True)
@@ -1231,6 +1244,7 @@ class SourceDocumentApi(object):
     def get_counts_by_type_with_http_info(self, **kwargs):  # noqa: E501
         """Get document counts by type  # noqa: E501
 
+        Get total number of documents based on what document type they are (Documents, Images, Tables, etc.)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_by_type_with_http_info(async_req=True)
@@ -1278,7 +1292,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/countByType', 'GET',
+            '/layar/sourceDocument/countByType', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1294,8 +1308,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_counts_over_time(self, **kwargs):  # noqa: E501
-        """doc counts over time for term  # noqa: E501
+        """Get document counts over time  # noqa: E501
 
+        Get a total count of how many documents contain the specified term each month.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_over_time(async_req=True)
@@ -1314,8 +1329,9 @@ class SourceDocumentApi(object):
             return data
 
     def get_counts_over_time_with_http_info(self, **kwargs):  # noqa: E501
-        """doc counts over time for term  # noqa: E501
+        """Get document counts over time  # noqa: E501
 
+        Get a total count of how many documents contain the specified term each month.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_counts_over_time_with_http_info(async_req=True)
@@ -1363,7 +1379,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/docCountsOverTime', 'GET',
+            '/layar/sourceDocument/docCountsOverTime', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1379,8 +1395,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_doc_field_counts(self, body, field, **kwargs):  # noqa: E501
-        """Get counts by field type for documents  # noqa: E501
+        """Get document counts by field type  # noqa: E501
 
+        Get a total number of documents based on a specific Document object parameter (type, date, etc.)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_doc_field_counts(body, field, async_req=True)
@@ -1403,8 +1420,9 @@ class SourceDocumentApi(object):
             return data
 
     def get_doc_field_counts_with_http_info(self, body, field, **kwargs):  # noqa: E501
-        """Get counts by field type for documents  # noqa: E501
+        """Get document counts by field type  # noqa: E501
 
+        Get a total number of documents based on a specific Document object parameter (type, date, etc.)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_doc_field_counts_with_http_info(body, field, async_req=True)
@@ -1476,7 +1494,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{field}/counts', 'POST',
+            '/layar/sourceDocument/{field}/counts', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1492,8 +1510,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_document(self, id, **kwargs):  # noqa: E501
-        """source document details  # noqa: E501
+        """Get source document details  # noqa: E501
 
+        Get information provided in a specific Source Document object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_document(id, async_req=True)
@@ -1514,8 +1533,9 @@ class SourceDocumentApi(object):
             return data
 
     def get_document_with_http_info(self, id, **kwargs):  # noqa: E501
-        """source document details  # noqa: E501
+        """Get source document details  # noqa: E501
 
+        Get information provided in a specific Source Document object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_document_with_http_info(id, async_req=True)
@@ -1573,7 +1593,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}', 'GET',
+            '/layar/sourceDocument/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1589,7 +1609,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_document_concepts(self, id, **kwargs):  # noqa: E501
-        """count concepts by source document  # noqa: E501
+        """Get concept counts by document ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1610,7 +1630,7 @@ class SourceDocumentApi(object):
             return data
 
     def get_document_concepts_with_http_info(self, id, **kwargs):  # noqa: E501
-        """count concepts by source document  # noqa: E501
+        """Get concept counts by document ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1666,7 +1686,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/concepts', 'GET',
+            '/layar/sourceDocument/{id}/concepts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1682,7 +1702,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_document_statements(self, id, **kwargs):  # noqa: E501
-        """Get all the statements in a given document  # noqa: E501
+        """Get statement counts by document ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1703,7 +1723,7 @@ class SourceDocumentApi(object):
             return data
 
     def get_document_statements_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get all the statements in a given document  # noqa: E501
+        """Get statement counts by document ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1759,7 +1779,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/statements', 'GET',
+            '/layar/sourceDocument/{id}/statements', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1852,7 +1872,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/status', 'GET',
+            '/layar/sourceDocument/{id}/status', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1868,7 +1888,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_page_preview(self, id, page, **kwargs):  # noqa: E501
-        """Preview of a specific page in a document  # noqa: E501
+        """Get a document preview for a specific page  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1890,7 +1910,7 @@ class SourceDocumentApi(object):
             return data
 
     def get_page_preview_with_http_info(self, id, page, **kwargs):  # noqa: E501
-        """Preview of a specific page in a document  # noqa: E501
+        """Get a document preview for a specific page  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1953,7 +1973,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/page/{page}/preview', 'GET',
+            '/layar/sourceDocument/{id}/page/{page}/preview', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2046,7 +2066,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/preview', 'GET',
+            '/layar/sourceDocument/{id}/preview', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2062,7 +2082,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_statement_counts(self, id, **kwargs):  # noqa: E501
-        """get statement counts for a document  # noqa: E501
+        """Get a count of all statements in a document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2083,7 +2103,7 @@ class SourceDocumentApi(object):
             return data
 
     def get_statement_counts_with_http_info(self, id, **kwargs):  # noqa: E501
-        """get statement counts for a document  # noqa: E501
+        """Get a count of all statements in a document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2139,7 +2159,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/statementCount', 'GET',
+            '/layar/sourceDocument/{id}/statementCount', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2155,7 +2175,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def get_viewers(self, id, **kwargs):  # noqa: E501
-        """get a list of all viewers of the source document  # noqa: E501
+        """Get a list of all viewers of the source document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2176,7 +2196,7 @@ class SourceDocumentApi(object):
             return data
 
     def get_viewers_with_http_info(self, id, **kwargs):  # noqa: E501
-        """get a list of all viewers of the source document  # noqa: E501
+        """Get a list of all viewers of the source document  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2232,7 +2252,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/viewers', 'GET',
+            '/layar/sourceDocument/{id}/viewers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2248,7 +2268,7 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def remove_annotation(self, id, annotation_id, **kwargs):  # noqa: E501
-        """Delete annotations by ID  # noqa: E501
+        """Delete annotations by annotation ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2270,7 +2290,7 @@ class SourceDocumentApi(object):
             return data
 
     def remove_annotation_with_http_info(self, id, annotation_id, **kwargs):  # noqa: E501
-        """Delete annotations by ID  # noqa: E501
+        """Delete annotations by annotation ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2329,7 +2349,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/annotations/{annotationId}', 'DELETE',
+            '/layar/sourceDocument/{id}/annotations/{annotationId}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2422,7 +2442,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/renderPdf', 'GET',
+            '/layar/sourceDocument/{id}/renderPdf', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2438,8 +2458,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def search_documents(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """Search for documents in Layar  # noqa: E501
+        """Search for documents  # noqa: E501
 
+        Find a source document by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_documents(body, x_vyasa_data_providers, async_req=True)
@@ -2460,8 +2481,9 @@ class SourceDocumentApi(object):
             return data
 
     def search_documents_with_http_info(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """Search for documents in Layar  # noqa: E501
+        """Search for documents  # noqa: E501
 
+        Find a source document by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_documents_with_http_info(body, x_vyasa_data_providers, async_req=True)
@@ -2527,7 +2549,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/search', 'POST',
+            '/layar/sourceDocument/search', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2543,8 +2565,9 @@ class SourceDocumentApi(object):
             collection_formats=collection_formats)
 
     def update_annotation(self, body, id, **kwargs):  # noqa: E501
-        """Update document annotations  # noqa: E501
+        """Update annotation details  # noqa: E501
 
+        Modify the information provided for a specific annotation within the Source Document object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_annotation(body, id, async_req=True)
@@ -2565,8 +2588,9 @@ class SourceDocumentApi(object):
             return data
 
     def update_annotation_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update document annotations  # noqa: E501
+        """Update annotation details  # noqa: E501
 
+        Modify the information provided for a specific annotation within the Source Document object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_annotation_with_http_info(body, id, async_req=True)
@@ -2628,7 +2652,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}/annotations', 'PUT',
+            '/layar/sourceDocument/{id}/annotations', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -2733,7 +2757,7 @@ class SourceDocumentApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sourceDocument/{id}', 'PUT',
+            '/layar/sourceDocument/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

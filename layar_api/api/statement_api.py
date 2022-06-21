@@ -114,7 +114,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement', 'POST',
+            '/layar/statement', 'POST',
             path_params,
             query_params,
             header_params,
@@ -130,8 +130,9 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def delete_statement(self, id, **kwargs):  # noqa: E501
-        """Delete a statement by ID  # noqa: E501
+        """Delete a statement  # noqa: E501
 
+        Remove a specified Statement object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_statement(id, async_req=True)
@@ -151,8 +152,9 @@ class StatementApi(object):
             return data
 
     def delete_statement_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a statement by ID  # noqa: E501
+        """Delete a statement  # noqa: E501
 
+        Remove a specified Statement object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_statement_with_http_info(id, async_req=True)
@@ -207,7 +209,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/{id}', 'DELETE',
+            '/layar/statement/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -223,8 +225,9 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def delete_statements(self, **kwargs):  # noqa: E501
-        """Delete all the statements in an array  # noqa: E501
+        """Delete multiple statements  # noqa: E501
 
+        Remove the list of specified Statement objects by their statement IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_statements(async_req=True)
@@ -243,8 +246,9 @@ class StatementApi(object):
             return data
 
     def delete_statements_with_http_info(self, **kwargs):  # noqa: E501
-        """Delete all the statements in an array  # noqa: E501
+        """Delete multiple statements  # noqa: E501
 
+        Remove the list of specified Statement objects by their statement IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_statements_with_http_info(async_req=True)
@@ -292,7 +296,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/deleteMany', 'DELETE',
+            '/layar/statement/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -308,7 +312,7 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def get_relationship_evidence(self, concept_id1, relationship, concept_id2, **kwargs):  # noqa: E501
-        """Get the relationship evidence between two given concepts  # noqa: E501
+        """Get existing relationships between two given concepts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -331,7 +335,7 @@ class StatementApi(object):
             return data
 
     def get_relationship_evidence_with_http_info(self, concept_id1, relationship, concept_id2, **kwargs):  # noqa: E501
-        """Get the relationship evidence between two given concepts  # noqa: E501
+        """Get existing relationships between two given concepts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -401,7 +405,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2}', 'GET',
+            '/layar/statement/relationshipEvidence/{conceptId1}/{relationship}/{conceptId2}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -417,8 +421,9 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def get_statement(self, id, **kwargs):  # noqa: E501
-        """Get statement details by ID  # noqa: E501
+        """Get statement details  # noqa: E501
 
+        Get information provided in a specific Statement object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_statement(id, async_req=True)
@@ -438,8 +443,9 @@ class StatementApi(object):
             return data
 
     def get_statement_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get statement details by ID  # noqa: E501
+        """Get statement details  # noqa: E501
 
+        Get information provided in a specific Statement object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_statement_with_http_info(id, async_req=True)
@@ -494,7 +500,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/{id}', 'GET',
+            '/layar/statement/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -510,7 +516,7 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def get_statement_field_counts(self, body, field, **kwargs):  # noqa: E501
-        """Get statement counts by table column  # noqa: E501
+        """Get statement counts for a table column  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -532,7 +538,7 @@ class StatementApi(object):
             return data
 
     def get_statement_field_counts_with_http_info(self, body, field, **kwargs):  # noqa: E501
-        """Get statement counts by table column  # noqa: E501
+        """Get statement counts for a table column  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -599,7 +605,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/{field}/counts', 'POST',
+            '/layar/statement/{field}/counts', 'POST',
             path_params,
             query_params,
             header_params,
@@ -615,7 +621,7 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def named_entity_tag(self, body, id, **kwargs):  # noqa: E501
-        """tag named entities within specific columns of a statement  # noqa: E501
+        """Tag named entities within specific columns of a table  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -637,7 +643,7 @@ class StatementApi(object):
             return data
 
     def named_entity_tag_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """tag named entities within specific columns of a statement  # noqa: E501
+        """Tag named entities within specific columns of a table  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -704,7 +710,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/{id}/namedEntity/tag', 'POST',
+            '/layar/statement/{id}/namedEntity/tag', 'POST',
             path_params,
             query_params,
             header_params,
@@ -720,8 +726,9 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def search_statements(self, **kwargs):  # noqa: E501
-        """search for statements  # noqa: E501
+        """Search for statements  # noqa: E501
 
+        Find a statement by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_statements(async_req=True)
@@ -741,8 +748,9 @@ class StatementApi(object):
             return data
 
     def search_statements_with_http_info(self, **kwargs):  # noqa: E501
-        """search for statements  # noqa: E501
+        """Search for statements  # noqa: E501
 
+        Find a statement by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_statements_with_http_info(async_req=True)
@@ -797,7 +805,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/search', 'POST',
+            '/layar/statement/search', 'POST',
             path_params,
             query_params,
             header_params,
@@ -813,8 +821,9 @@ class StatementApi(object):
             collection_formats=collection_formats)
 
     def update_statement(self, body, id, **kwargs):  # noqa: E501
-        """Update a statement by ID  # noqa: E501
+        """Update statement details  # noqa: E501
 
+        Modify the information provided for a specific Statement object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_statement(body, id, async_req=True)
@@ -835,8 +844,9 @@ class StatementApi(object):
             return data
 
     def update_statement_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update a statement by ID  # noqa: E501
+        """Update statement details  # noqa: E501
 
+        Modify the information provided for a specific Statement object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_statement_with_http_info(body, id, async_req=True)
@@ -902,7 +912,7 @@ class StatementApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/{id}', 'PUT',
+            '/layar/statement/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

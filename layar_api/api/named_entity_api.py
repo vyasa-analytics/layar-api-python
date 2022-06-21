@@ -33,8 +33,9 @@ class NamedEntityApi(object):
         self.api_client = api_client
 
     def get_types(self, **kwargs):  # noqa: E501
-        """A list of the available Named Entity Types  # noqa: E501
+        """Retrieve a list of available named entity types  # noqa: E501
 
+        Get a list all named entity types Vyasa offers off-the-shelf for NER tagging.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_types(async_req=True)
@@ -53,8 +54,9 @@ class NamedEntityApi(object):
             return data
 
     def get_types_with_http_info(self, **kwargs):  # noqa: E501
-        """A list of the available Named Entity Types  # noqa: E501
+        """Retrieve a list of available named entity types  # noqa: E501
 
+        Get a list all named entity types Vyasa offers off-the-shelf for NER tagging.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_types_with_http_info(async_req=True)
@@ -102,7 +104,7 @@ class NamedEntityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/namedEntity/types', 'GET',
+            '/layar/namedEntity/types', 'GET',
             path_params,
             query_params,
             header_params,
@@ -118,7 +120,7 @@ class NamedEntityApi(object):
             collection_formats=collection_formats)
 
     def named_entity_tag(self, body, id, **kwargs):  # noqa: E501
-        """tag named entities within specific columns of a statement  # noqa: E501
+        """Tag named entities within specific columns of a table  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -140,7 +142,7 @@ class NamedEntityApi(object):
             return data
 
     def named_entity_tag_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """tag named entities within specific columns of a statement  # noqa: E501
+        """Tag named entities within specific columns of a table  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -207,7 +209,7 @@ class NamedEntityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/statement/{id}/namedEntity/tag', 'POST',
+            '/layar/statement/{id}/namedEntity/tag', 'POST',
             path_params,
             query_params,
             header_params,
@@ -223,8 +225,9 @@ class NamedEntityApi(object):
             collection_formats=collection_formats)
 
     def tag_ner(self, body, **kwargs):  # noqa: E501
-        """Find named entity tags by query term or list of types  # noqa: E501
+        """Tag named entities  # noqa: E501
 
+        Tag named entity concepts and their respective concept types for an input string of text.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.tag_ner(body, async_req=True)
@@ -244,8 +247,9 @@ class NamedEntityApi(object):
             return data
 
     def tag_ner_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Find named entity tags by query term or list of types  # noqa: E501
+        """Tag named entities  # noqa: E501
 
+        Tag named entity concepts and their respective concept types for an input string of text.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.tag_ner_with_http_info(body, async_req=True)
@@ -304,7 +308,7 @@ class NamedEntityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/namedEntity/tag', 'POST',
+            '/layar/namedEntity/tag', 'POST',
             path_params,
             query_params,
             header_params,

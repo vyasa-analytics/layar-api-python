@@ -33,7 +33,7 @@ class OntologyTermApi(object):
         self.api_client = api_client
 
     def create_term(self, body, **kwargs):  # noqa: E501
-        """Save a new ontology term  # noqa: E501
+        """Create a new ontology term  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class OntologyTermApi(object):
             return data
 
     def create_term_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Save a new ontology term  # noqa: E501
+        """Create a new ontology term  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -114,7 +114,7 @@ class OntologyTermApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/ontologyTerm', 'POST',
+            '/layar/ontologyTerm', 'POST',
             path_params,
             query_params,
             header_params,
@@ -130,8 +130,9 @@ class OntologyTermApi(object):
             collection_formats=collection_formats)
 
     def delete_term(self, id, **kwargs):  # noqa: E501
-        """Delete a term from the ontology  # noqa: E501
+        """Delete an ontology term  # noqa: E501
 
+        Remove a specified Ontology Term object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_term(id, async_req=True)
@@ -151,8 +152,9 @@ class OntologyTermApi(object):
             return data
 
     def delete_term_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a term from the ontology  # noqa: E501
+        """Delete an ontology term  # noqa: E501
 
+        Remove a specified Ontology Term object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_term_with_http_info(id, async_req=True)
@@ -207,7 +209,7 @@ class OntologyTermApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/ontologyTerm/{id}', 'DELETE',
+            '/layar/ontologyTerm/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -223,8 +225,9 @@ class OntologyTermApi(object):
             collection_formats=collection_formats)
 
     def get_term(self, id, **kwargs):  # noqa: E501
-        """get the ontology term details  # noqa: E501
+        """Get ontology term details  # noqa: E501
 
+        Get information provided in a specific Ontology Term object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_term(id, async_req=True)
@@ -244,8 +247,9 @@ class OntologyTermApi(object):
             return data
 
     def get_term_with_http_info(self, id, **kwargs):  # noqa: E501
-        """get the ontology term details  # noqa: E501
+        """Get ontology term details  # noqa: E501
 
+        Get information provided in a specific Ontology Term object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_term_with_http_info(id, async_req=True)
@@ -300,7 +304,7 @@ class OntologyTermApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/ontologyTerm/{id}', 'GET',
+            '/layar/ontologyTerm/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -315,12 +319,12 @@ class OntologyTermApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def ontology_term_get(self, **kwargs):  # noqa: E501
-        """search for ontology terms  # noqa: E501
+    def layar_ontology_term_get(self, **kwargs):  # noqa: E501
+        """Search for ontology terms  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.ontology_term_get(async_req=True)
+        >>> thread = api.layar_ontology_term_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -344,17 +348,17 @@ class OntologyTermApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.ontology_term_get_with_http_info(**kwargs)  # noqa: E501
+            return self.layar_ontology_term_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.ontology_term_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.layar_ontology_term_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def ontology_term_get_with_http_info(self, **kwargs):  # noqa: E501
-        """search for ontology terms  # noqa: E501
+    def layar_ontology_term_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Search for ontology terms  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.ontology_term_get_with_http_info(async_req=True)
+        >>> thread = api.layar_ontology_term_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -388,7 +392,7 @@ class OntologyTermApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method ontology_term_get" % key
+                    " to method layar_ontology_term_get" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -446,7 +450,7 @@ class OntologyTermApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/ontologyTerm', 'GET',
+            '/layar/ontologyTerm', 'GET',
             path_params,
             query_params,
             header_params,
@@ -462,8 +466,9 @@ class OntologyTermApi(object):
             collection_formats=collection_formats)
 
     def update_term(self, body, id, **kwargs):  # noqa: E501
-        """Update a term in an ontology  # noqa: E501
+        """Update ontology term details  # noqa: E501
 
+        Modify the information provided for a specific Ontology Term object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_term(body, id, async_req=True)
@@ -484,8 +489,9 @@ class OntologyTermApi(object):
             return data
 
     def update_term_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update a term in an ontology  # noqa: E501
+        """Update ontology term details  # noqa: E501
 
+        Modify the information provided for a specific Ontology Term object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_term_with_http_info(body, id, async_req=True)
@@ -551,7 +557,7 @@ class OntologyTermApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/ontologyTerm/{id}', 'PUT',
+            '/layar/ontologyTerm/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

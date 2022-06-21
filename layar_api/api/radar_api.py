@@ -33,8 +33,9 @@ class RadarApi(object):
         self.api_client = api_client
 
     def get_nearest_neighbor_count(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """count of nearest neighbor terms that match the term in the query string  # noqa: E501
+        """Get nearest neighbor counts  # noqa: E501
 
+        Return a count of nearest neighbor terms for an input query string  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_nearest_neighbor_count(x_vyasa_data_providers, async_req=True)
@@ -55,8 +56,9 @@ class RadarApi(object):
             return data
 
     def get_nearest_neighbor_count_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """count of nearest neighbor terms that match the term in the query string  # noqa: E501
+        """Get nearest neighbor counts  # noqa: E501
 
+        Return a count of nearest neighbor terms for an input query string  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_nearest_neighbor_count_with_http_info(x_vyasa_data_providers, async_req=True)
@@ -114,7 +116,7 @@ class RadarApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/radar/count', 'GET',
+            '/layar/radar/count', 'GET',
             path_params,
             query_params,
             header_params,
@@ -263,7 +265,7 @@ class RadarApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/radar', 'GET',
+            '/layar/radar', 'GET',
             path_params,
             query_params,
             header_params,
@@ -279,7 +281,7 @@ class RadarApi(object):
             collection_formats=collection_formats)
 
     def get_radar_by_concept_id(self, **kwargs):  # noqa: E501
-        """find semantically similar terms  # noqa: E501
+        """Find semantically similar terms for a concept  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -303,7 +305,7 @@ class RadarApi(object):
             return data
 
     def get_radar_by_concept_id_with_http_info(self, **kwargs):  # noqa: E501
-        """find semantically similar terms  # noqa: E501
+        """Find semantically similar terms for a concept  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -364,7 +366,7 @@ class RadarApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/radar/byConceptId', 'GET',
+            '/layar/radar/byConceptId', 'GET',
             path_params,
             query_params,
             header_params,
@@ -380,7 +382,7 @@ class RadarApi(object):
             collection_formats=collection_formats)
 
     def get_radar_by_query_string(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """find semantically similar terms  # noqa: E501
+        """Find semantically similar terms for a string  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -405,7 +407,7 @@ class RadarApi(object):
             return data
 
     def get_radar_by_query_string_with_http_info(self, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """find semantically similar terms  # noqa: E501
+        """Find semantically similar terms for a string  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -473,7 +475,7 @@ class RadarApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/radar/byQueryString', 'GET',
+            '/layar/radar/byQueryString', 'GET',
             path_params,
             query_params,
             header_params,

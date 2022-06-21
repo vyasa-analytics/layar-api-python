@@ -4,12 +4,14 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**render**](CompoundApi.md#render) | **GET** /compound/render | Render a SMILES compound string. Returns an SVG of the render.
+[**render**](CompoundApi.md#render) | **GET** /layar/compound/render | Render SMILES into an SVG
 
 # **render**
 > str render(smiles_string=smiles_string, height=height, width=width)
 
-Render a SMILES compound string. Returns an SVG of the render.
+Render SMILES into an SVG
+
+Convert a compound SMILE string into a rendered image file.
 
 ### Example
 ```python
@@ -31,7 +33,7 @@ height = 56 # int | the height in pixels of the rendered compound structure (opt
 width = 56 # int | the width in pixels of the rendered compound structure (optional)
 
 try:
-    # Render a SMILES compound string. Returns an SVG of the render.
+    # Render SMILES into an SVG
     api_response = api_instance.render(smiles_string=smiles_string, height=height, width=width)
     pprint(api_response)
 except ApiException as e:

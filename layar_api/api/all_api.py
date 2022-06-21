@@ -33,8 +33,9 @@ class AllApi(object):
         self.api_client = api_client
 
     def search_all(self, **kwargs):  # noqa: E501
-        """search_all  # noqa: E501
+        """Search for all domain objects  # noqa: E501
 
+        Find any objects across all domains (e.g. Answers, Concepts, Paragraphs, Projects, etc.) where the input query string exists.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_all(async_req=True)
@@ -58,8 +59,9 @@ class AllApi(object):
             return data
 
     def search_all_with_http_info(self, **kwargs):  # noqa: E501
-        """search_all  # noqa: E501
+        """Search for all domain objects  # noqa: E501
 
+        Find any objects across all domains (e.g. Answers, Concepts, Paragraphs, Projects, etc.) where the input query string exists.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_all_with_http_info(async_req=True)
@@ -122,7 +124,7 @@ class AllApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/all', 'GET',
+            '/layar/all', 'GET',
             path_params,
             query_params,
             header_params,

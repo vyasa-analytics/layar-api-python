@@ -33,7 +33,7 @@ class ConnectorApi(object):
         self.api_client = api_client
 
     def create_connector(self, body, **kwargs):  # noqa: E501
-        """Add a new Layar connector  # noqa: E501
+        """Create a new Twitter connector  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class ConnectorApi(object):
             return data
 
     def create_connector_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Add a new Layar connector  # noqa: E501
+        """Create a new Twitter connector  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -114,7 +114,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector', 'POST',
+            '/layar/connector', 'POST',
             path_params,
             query_params,
             header_params,
@@ -130,8 +130,9 @@ class ConnectorApi(object):
             collection_formats=collection_formats)
 
     def delete_connector(self, id, **kwargs):  # noqa: E501
-        """Delete a single Layar connector  # noqa: E501
+        """Delete a Twitter connector  # noqa: E501
 
+        Remove a specified Twitter Connector from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_connector(id, async_req=True)
@@ -151,8 +152,9 @@ class ConnectorApi(object):
             return data
 
     def delete_connector_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a single Layar connector  # noqa: E501
+        """Delete a Twitter connector  # noqa: E501
 
+        Remove a specified Twitter Connector from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_connector_with_http_info(id, async_req=True)
@@ -207,7 +209,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector/{id}', 'DELETE',
+            '/layar/connector/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -223,8 +225,9 @@ class ConnectorApi(object):
             collection_formats=collection_formats)
 
     def delete_connectors(self, **kwargs):  # noqa: E501
-        """delete all the records with the given IDs  # noqa: E501
+        """Delete multiple Twitter connectors  # noqa: E501
 
+        Remove the list of specified Twitter connectors by their connector IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_connectors(async_req=True)
@@ -243,8 +246,9 @@ class ConnectorApi(object):
             return data
 
     def delete_connectors_with_http_info(self, **kwargs):  # noqa: E501
-        """delete all the records with the given IDs  # noqa: E501
+        """Delete multiple Twitter connectors  # noqa: E501
 
+        Remove the list of specified Twitter connectors by their connector IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_connectors_with_http_info(async_req=True)
@@ -292,7 +296,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector/deleteMany', 'DELETE',
+            '/layar/connector/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -308,7 +312,7 @@ class ConnectorApi(object):
             collection_formats=collection_formats)
 
     def get_connector(self, id, **kwargs):  # noqa: E501
-        """Get the details for a single Layar connector  # noqa: E501
+        """Get Twitter connector details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -329,7 +333,7 @@ class ConnectorApi(object):
             return data
 
     def get_connector_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get the details for a single Layar connector  # noqa: E501
+        """Get Twitter connector details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -385,7 +389,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector/{id}', 'GET',
+            '/layar/connector/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -401,8 +405,9 @@ class ConnectorApi(object):
             collection_formats=collection_formats)
 
     def patch_connector(self, body, id, **kwargs):  # noqa: E501
-        """patch  # noqa: E501
+        """Update a specific attribute  # noqa: E501
 
+        Replace a specific attribute of the Twitter Connector object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.patch_connector(body, id, async_req=True)
@@ -423,8 +428,9 @@ class ConnectorApi(object):
             return data
 
     def patch_connector_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """patch  # noqa: E501
+        """Update a specific attribute  # noqa: E501
 
+        Replace a specific attribute of the Twitter Connector object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.patch_connector_with_http_info(body, id, async_req=True)
@@ -486,7 +492,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector/{id}', 'PATCH',
+            '/layar/connector/{id}', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -502,8 +508,9 @@ class ConnectorApi(object):
             collection_formats=collection_formats)
 
     def search_connectors(self, **kwargs):  # noqa: E501
-        """Get the details for a given Layar connector  # noqa: E501
+        """Search for Twitter connectors  # noqa: E501
 
+        Find connectors by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_connectors(async_req=True)
@@ -522,8 +529,9 @@ class ConnectorApi(object):
             return data
 
     def search_connectors_with_http_info(self, **kwargs):  # noqa: E501
-        """Get the details for a given Layar connector  # noqa: E501
+        """Search for Twitter connectors  # noqa: E501
 
+        Find connectors by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_connectors_with_http_info(async_req=True)
@@ -571,7 +579,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector', 'GET',
+            '/layar/connector', 'GET',
             path_params,
             query_params,
             header_params,
@@ -587,8 +595,9 @@ class ConnectorApi(object):
             collection_formats=collection_formats)
 
     def update_connector(self, body, id, **kwargs):  # noqa: E501
-        """Update the details for a single Layar connector  # noqa: E501
+        """Update Twitter connector details  # noqa: E501
 
+        Modify the information provided for a specific Twitter Connector object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_connector(body, id, async_req=True)
@@ -609,8 +618,9 @@ class ConnectorApi(object):
             return data
 
     def update_connector_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Update the details for a single Layar connector  # noqa: E501
+        """Update Twitter connector details  # noqa: E501
 
+        Modify the information provided for a specific Twitter Connector object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_connector_with_http_info(body, id, async_req=True)
@@ -676,7 +686,7 @@ class ConnectorApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/connector/{id}', 'PUT',
+            '/layar/connector/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

@@ -33,8 +33,9 @@ class ProjectApi(object):
         self.api_client = api_client
 
     def add_input(self, body, id, **kwargs):  # noqa: E501
-        """Add source inputs to a project  # noqa: E501
+        """Add items to a project  # noqa: E501
 
+        Modify the items added to a specific project ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_input(body, id, async_req=True)
@@ -55,8 +56,9 @@ class ProjectApi(object):
             return data
 
     def add_input_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Add source inputs to a project  # noqa: E501
+        """Add items to a project  # noqa: E501
 
+        Modify the items added to a specific project ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.add_input_with_http_info(body, id, async_req=True)
@@ -122,7 +124,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}/addInput', 'PUT',
+            '/layar/project/{id}/addInput', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -138,7 +140,7 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def create_project(self, body, **kwargs):  # noqa: E501
-        """Save a new project  # noqa: E501
+        """Create a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -159,7 +161,7 @@ class ProjectApi(object):
             return data
 
     def create_project_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Save a new project  # noqa: E501
+        """Create a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -219,7 +221,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project', 'POST',
+            '/layar/project', 'POST',
             path_params,
             query_params,
             header_params,
@@ -237,6 +239,7 @@ class ProjectApi(object):
     def delete_project(self, id, **kwargs):  # noqa: E501
         """Delete a project  # noqa: E501
 
+        Remove a specified Project object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_project(id, async_req=True)
@@ -258,6 +261,7 @@ class ProjectApi(object):
     def delete_project_with_http_info(self, id, **kwargs):  # noqa: E501
         """Delete a project  # noqa: E501
 
+        Remove a specified Project object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_project_with_http_info(id, async_req=True)
@@ -312,7 +316,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}', 'DELETE',
+            '/layar/project/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -328,8 +332,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def delete_projects(self, **kwargs):  # noqa: E501
-        """Delete multiple projects by ID  # noqa: E501
+        """Delete multiple projects  # noqa: E501
 
+        Remove the list of specified Project objects by their project IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_projects(async_req=True)
@@ -348,8 +353,9 @@ class ProjectApi(object):
             return data
 
     def delete_projects_with_http_info(self, **kwargs):  # noqa: E501
-        """Delete multiple projects by ID  # noqa: E501
+        """Delete multiple projects  # noqa: E501
 
+        Remove the list of specified Project objects by their project IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_projects_with_http_info(async_req=True)
@@ -397,7 +403,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/deleteMany', 'DELETE',
+            '/layar/project/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -413,8 +419,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def download_results(self, id, **kwargs):  # noqa: E501
-        """Download a zip file of a given project's results  # noqa: E501
+        """Download project results as zip file  # noqa: E501
 
+        Download all results for a given project into a compressed zip file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_results(id, async_req=True)
@@ -434,8 +441,9 @@ class ProjectApi(object):
             return data
 
     def download_results_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Download a zip file of a given project's results  # noqa: E501
+        """Download project results as zip file  # noqa: E501
 
+        Download all results for a given project into a compressed zip file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_results_with_http_info(id, async_req=True)
@@ -490,7 +498,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}/results/download', 'GET',
+            '/layar/project/{id}/results/download', 'GET',
             path_params,
             query_params,
             header_params,
@@ -506,8 +514,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def get_project(self, id, **kwargs):  # noqa: E501
-        """project details  # noqa: E501
+        """Get project details  # noqa: E501
 
+        Get information provided in a specific Project object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project(id, async_req=True)
@@ -527,8 +536,9 @@ class ProjectApi(object):
             return data
 
     def get_project_with_http_info(self, id, **kwargs):  # noqa: E501
-        """project details  # noqa: E501
+        """Get project details  # noqa: E501
 
+        Get information provided in a specific Project object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_with_http_info(id, async_req=True)
@@ -583,7 +593,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}', 'GET',
+            '/layar/project/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -676,7 +686,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}/results', 'GET',
+            '/layar/project/{id}/results', 'GET',
             path_params,
             query_params,
             header_params,
@@ -692,8 +702,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def get_results_som(self, id, **kwargs):  # noqa: E501
-        """results SOM  # noqa: E501
+        """Download project results as SOM  # noqa: E501
 
+        Download all results for a given project into a self organizing map (SOM)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_results_som(id, async_req=True)
@@ -713,8 +724,9 @@ class ProjectApi(object):
             return data
 
     def get_results_som_with_http_info(self, id, **kwargs):  # noqa: E501
-        """results SOM  # noqa: E501
+        """Download project results as SOM  # noqa: E501
 
+        Download all results for a given project into a self organizing map (SOM)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_results_som_with_http_info(id, async_req=True)
@@ -769,7 +781,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}/results/som', 'GET',
+            '/layar/project/{id}/results/som', 'GET',
             path_params,
             query_params,
             header_params,
@@ -785,8 +797,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def remove_input(self, body, id, **kwargs):  # noqa: E501
-        """Remove source inputs from a project  # noqa: E501
+        """Remove items from a project  # noqa: E501
 
+        Modify the items added to a specific project ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.remove_input(body, id, async_req=True)
@@ -807,8 +820,9 @@ class ProjectApi(object):
             return data
 
     def remove_input_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Remove source inputs from a project  # noqa: E501
+        """Remove items from a project  # noqa: E501
 
+        Modify the items added to a specific project ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.remove_input_with_http_info(body, id, async_req=True)
@@ -874,7 +888,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}/removeInput', 'PUT',
+            '/layar/project/{id}/removeInput', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -890,8 +904,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def run_project(self, body, id, **kwargs):  # noqa: E501
-        """Create and run a new project  # noqa: E501
+        """Run a new project  # noqa: E501
 
+        Create and run a new project from the same command.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.run_project(body, id, async_req=True)
@@ -912,8 +927,9 @@ class ProjectApi(object):
             return data
 
     def run_project_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Create and run a new project  # noqa: E501
+        """Run a new project  # noqa: E501
 
+        Create and run a new project from the same command.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.run_project_with_http_info(body, id, async_req=True)
@@ -979,7 +995,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}/run', 'POST',
+            '/layar/project/{id}/run', 'POST',
             path_params,
             query_params,
             header_params,
@@ -995,8 +1011,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def search_projects(self, **kwargs):  # noqa: E501
-        """Get project details  # noqa: E501
+        """Search for projects  # noqa: E501
 
+        Find projects by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_projects(async_req=True)
@@ -1018,8 +1035,9 @@ class ProjectApi(object):
             return data
 
     def search_projects_with_http_info(self, **kwargs):  # noqa: E501
-        """Get project details  # noqa: E501
+        """Search for projects  # noqa: E501
 
+        Find projects by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_projects_with_http_info(async_req=True)
@@ -1076,7 +1094,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project', 'GET',
+            '/layar/project', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1092,8 +1110,9 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def update_project(self, body, id, **kwargs):  # noqa: E501
-        """Pdate project  # noqa: E501
+        """Update project details  # noqa: E501
 
+        Modify the information provided for a specific Project object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project(body, id, async_req=True)
@@ -1114,8 +1133,9 @@ class ProjectApi(object):
             return data
 
     def update_project_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """Pdate project  # noqa: E501
+        """Update project details  # noqa: E501
 
+        Modify the information provided for a specific Project object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project_with_http_info(body, id, async_req=True)
@@ -1181,7 +1201,7 @@ class ProjectApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/project/{id}', 'PUT',
+            '/layar/project/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

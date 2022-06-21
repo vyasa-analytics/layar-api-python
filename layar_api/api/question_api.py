@@ -33,8 +33,9 @@ class QuestionApi(object):
         self.api_client = api_client
 
     def ask(self, body, **kwargs):  # noqa: E501
-        """Create and ask a new question in the QA model  # noqa: E501
+        """Ask a new question  # noqa: E501
 
+        Ask a new question string and auto-generate a new Question object at the same time.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.ask(body, async_req=True)
@@ -55,8 +56,9 @@ class QuestionApi(object):
             return data
 
     def ask_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Create and ask a new question in the QA model  # noqa: E501
+        """Ask a new question  # noqa: E501
 
+        Ask a new question string and auto-generate a new Question object at the same time.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.ask_with_http_info(body, async_req=True)
@@ -118,7 +120,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/ask', 'POST',
+            '/layar/question/ask', 'POST',
             path_params,
             query_params,
             header_params,
@@ -134,7 +136,7 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def cancel_batch(self, job_id, **kwargs):  # noqa: E501
-        """cancel an existing request to ask a batch of questions  # noqa: E501
+        """Cancel a bulk QA job request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -155,7 +157,7 @@ class QuestionApi(object):
             return data
 
     def cancel_batch_with_http_info(self, job_id, **kwargs):  # noqa: E501
-        """cancel an existing request to ask a batch of questions  # noqa: E501
+        """Cancel a bulk QA job request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -211,7 +213,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/cancelBulkQuestionAnswerJob/{jobID}', 'PUT',
+            '/layar/question/cancelBulkQuestionAnswerJob/{jobID}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -227,8 +229,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def create_question(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """save a new question  # noqa: E501
+        """Create a new question  # noqa: E501
 
+        Create a new Question object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_question(body, x_vyasa_data_providers, async_req=True)
@@ -250,8 +253,9 @@ class QuestionApi(object):
             return data
 
     def create_question_with_http_info(self, body, x_vyasa_data_providers, **kwargs):  # noqa: E501
-        """save a new question  # noqa: E501
+        """Create a new question  # noqa: E501
 
+        Create a new Question object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_question_with_http_info(body, x_vyasa_data_providers, async_req=True)
@@ -320,7 +324,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question', 'POST',
+            '/layar/question', 'POST',
             path_params,
             query_params,
             header_params,
@@ -336,8 +340,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def delete_question(self, id, **kwargs):  # noqa: E501
-        """Delete a saved question  # noqa: E501
+        """Delete a question  # noqa: E501
 
+        Remove a specified Question object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_question(id, async_req=True)
@@ -357,8 +362,9 @@ class QuestionApi(object):
             return data
 
     def delete_question_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete a saved question  # noqa: E501
+        """Delete a question  # noqa: E501
 
+        Remove a specified Question object from your Layar instance.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_question_with_http_info(id, async_req=True)
@@ -413,7 +419,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{id}', 'DELETE',
+            '/layar/question/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -429,8 +435,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def delete_questions(self, **kwargs):  # noqa: E501
-        """delete all the records with the given IDs  # noqa: E501
+        """Delete multiple questions  # noqa: E501
 
+        Remove the list of specified Question objects by their question IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_questions(async_req=True)
@@ -449,8 +456,9 @@ class QuestionApi(object):
             return data
 
     def delete_questions_with_http_info(self, **kwargs):  # noqa: E501
-        """delete all the records with the given IDs  # noqa: E501
+        """Delete multiple questions  # noqa: E501
 
+        Remove the list of specified Question objects by their question IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_questions_with_http_info(async_req=True)
@@ -498,7 +506,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/deleteMany', 'DELETE',
+            '/layar/question/deleteMany', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -514,7 +522,7 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def find_more_answers(self, id, **kwargs):  # noqa: E501
-        """look for more answers to this question  # noqa: E501
+        """Find more answers to a question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -535,7 +543,7 @@ class QuestionApi(object):
             return data
 
     def find_more_answers_with_http_info(self, id, **kwargs):  # noqa: E501
-        """look for more answers to this question  # noqa: E501
+        """Find more answers to a question  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -587,7 +595,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{id}/answers/more', 'POST',
+            '/layar/question/{id}/answers/more', 'POST',
             path_params,
             query_params,
             header_params,
@@ -605,6 +613,7 @@ class QuestionApi(object):
     def get_question(self, id, **kwargs):  # noqa: E501
         """Get question details  # noqa: E501
 
+        Modify the information provided for a specific Question object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_question(id, async_req=True)
@@ -626,6 +635,7 @@ class QuestionApi(object):
     def get_question_with_http_info(self, id, **kwargs):  # noqa: E501
         """Get question details  # noqa: E501
 
+        Modify the information provided for a specific Question object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_question_with_http_info(id, async_req=True)
@@ -680,7 +690,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{id}', 'GET',
+            '/layar/question/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -696,8 +706,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def get_question_field_counts(self, body, field, **kwargs):  # noqa: E501
-        """Get curation counts or progress by field for a QA job  # noqa: E501
+        """Get curation details by field type  # noqa: E501
 
+        Get a total number of questions that meet specific Question object parameters (curationType, moderators, discord, etc.)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_question_field_counts(body, field, async_req=True)
@@ -718,8 +729,9 @@ class QuestionApi(object):
             return data
 
     def get_question_field_counts_with_http_info(self, body, field, **kwargs):  # noqa: E501
-        """Get curation counts or progress by field for a QA job  # noqa: E501
+        """Get curation details by field type  # noqa: E501
 
+        Get a total number of questions that meet specific Question object parameters (curationType, moderators, discord, etc.)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_question_field_counts_with_http_info(body, field, async_req=True)
@@ -785,7 +797,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{field}/counts', 'POST',
+            '/layar/question/{field}/counts', 'POST',
             path_params,
             query_params,
             header_params,
@@ -801,8 +813,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def patch_question(self, body, id, **kwargs):  # noqa: E501
-        """patch  # noqa: E501
+        """Update specific details for a question  # noqa: E501
 
+        Replace a specific attribute of the Question object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.patch_question(body, id, async_req=True)
@@ -823,8 +836,9 @@ class QuestionApi(object):
             return data
 
     def patch_question_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """patch  # noqa: E501
+        """Update specific details for a question  # noqa: E501
 
+        Replace a specific attribute of the Question object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.patch_question_with_http_info(body, id, async_req=True)
@@ -886,7 +900,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{id}', 'PATCH',
+            '/layar/question/{id}', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -902,8 +916,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def query_expansion(self, body, **kwargs):  # noqa: E501
-        """Expand the scope of a particular question  # noqa: E501
+        """Enable query expansion  # noqa: E501
 
+        Expand the scope of query understanding within the QA Service by enabling our new query expansion method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.query_expansion(body, async_req=True)
@@ -923,8 +938,9 @@ class QuestionApi(object):
             return data
 
     def query_expansion_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Expand the scope of a particular question  # noqa: E501
+        """Enable query expansion  # noqa: E501
 
+        Expand the scope of query understanding within the QA Service by enabling our new query expansion method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.query_expansion_with_http_info(body, async_req=True)
@@ -983,7 +999,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/queryExpansion', 'POST',
+            '/layar/question/queryExpansion', 'POST',
             path_params,
             query_params,
             header_params,
@@ -999,7 +1015,7 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def refresh_answers(self, id, **kwargs):  # noqa: E501
-        """look for answers in new documents  # noqa: E501
+        """Search for answers in new documents  # noqa: E501
 
         Look for answers in new documents (since the last time this endpoint was called or since the question was created, if this endpoint has never been called)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1021,7 +1037,7 @@ class QuestionApi(object):
             return data
 
     def refresh_answers_with_http_info(self, id, **kwargs):  # noqa: E501
-        """look for answers in new documents  # noqa: E501
+        """Search for answers in new documents  # noqa: E501
 
         Look for answers in new documents (since the last time this endpoint was called or since the question was created, if this endpoint has never been called)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1074,7 +1090,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{id}/answers/refresh', 'POST',
+            '/layar/question/{id}/answers/refresh', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1090,8 +1106,9 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def search_questions(self, **kwargs):  # noqa: E501
-        """search for questions  # noqa: E501
+        """Search for questions  # noqa: E501
 
+        Find a question by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_questions(async_req=True)
@@ -1111,8 +1128,9 @@ class QuestionApi(object):
             return data
 
     def search_questions_with_http_info(self, **kwargs):  # noqa: E501
-        """search for questions  # noqa: E501
+        """Search for questions  # noqa: E501
 
+        Find a question by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_questions_with_http_info(async_req=True)
@@ -1167,7 +1185,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/search', 'POST',
+            '/layar/question/search', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1183,7 +1201,7 @@ class QuestionApi(object):
             collection_formats=collection_formats)
 
     def start_batch(self, **kwargs):  # noqa: E501
-        """submit a request to ask a batch of questions  # noqa: E501
+        """Submit a bulk QA job request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1204,7 +1222,7 @@ class QuestionApi(object):
             return data
 
     def start_batch_with_http_info(self, **kwargs):  # noqa: E501
-        """submit a request to ask a batch of questions  # noqa: E501
+        """Submit a bulk QA job request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1260,7 +1278,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/startBulkQuestionAnswerJob', 'POST',
+            '/layar/question/startBulkQuestionAnswerJob', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1365,7 +1383,7 @@ class QuestionApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/question/{id}', 'PUT',
+            '/layar/question/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

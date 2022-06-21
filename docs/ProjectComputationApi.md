@@ -4,17 +4,17 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_computation**](ProjectComputationApi.md#cancel_computation) | **POST** /projectComputation/{id}/cancel | cancel and shut down project computation without expecting any results back
-[**download_computation**](ProjectComputationApi.md#download_computation) | **GET** /projectComputation/{id}/downloadZipResults | download zip of documents created during computation
-[**download_logs**](ProjectComputationApi.md#download_logs) | **GET** /projectComputation/{id}/downloadLogs | download full logs for computation job
-[**get_logs**](ProjectComputationApi.md#get_logs) | **GET** /projectComputation/{id}/logs | retrieve logs for computation job
-[**get_project_computation**](ProjectComputationApi.md#get_project_computation) | **GET** /projectComputation/{id} | project computation details
-[**stop_job**](ProjectComputationApi.md#stop_job) | **POST** /projectComputation/{id}/stopTraining | send computation job a stop message encouraging it to stop and send any results back
+[**cancel_computation**](ProjectComputationApi.md#cancel_computation) | **POST** /layar/projectComputation/{id}/cancel | Cancel a project computation job (hard stop)
+[**download_computation**](ProjectComputationApi.md#download_computation) | **GET** /layar/projectComputation/{id}/downloadZipResults | Download computation job documents as zip file
+[**download_logs**](ProjectComputationApi.md#download_logs) | **GET** /layar/projectComputation/{id}/downloadLogs | Download all computation job logs
+[**get_logs**](ProjectComputationApi.md#get_logs) | **GET** /layar/projectComputation/{id}/logs | Retrieve logs for computation job
+[**get_project_computation**](ProjectComputationApi.md#get_project_computation) | **GET** /layar/projectComputation/{id} | Get project computation details
+[**stop_job**](ProjectComputationApi.md#stop_job) | **POST** /layar/projectComputation/{id}/stopTraining | Stop a computation job (soft stop)
 
 # **cancel_computation**
 > ProjectComputation cancel_computation(id)
 
-cancel and shut down project computation without expecting any results back
+Cancel a project computation job (hard stop)
 
 ### Example
 ```python
@@ -34,7 +34,7 @@ api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration
 id = 'id_example' # str | 
 
 try:
-    # cancel and shut down project computation without expecting any results back
+    # Cancel a project computation job (hard stop)
     api_response = api_instance.cancel_computation(id)
     pprint(api_response)
 except ApiException as e:
@@ -65,7 +65,9 @@ Name | Type | Description  | Notes
 # **download_computation**
 > str download_computation(id)
 
-download zip of documents created during computation
+Download computation job documents as zip file
+
+Download all documents for a project computation job into a compressed zip file.
 
 ### Example
 ```python
@@ -85,7 +87,7 @@ api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration
 id = 'id_example' # str | 
 
 try:
-    # download zip of documents created during computation
+    # Download computation job documents as zip file
     api_response = api_instance.download_computation(id)
     pprint(api_response)
 except ApiException as e:
@@ -116,7 +118,9 @@ Name | Type | Description  | Notes
 # **download_logs**
 > str download_logs(id)
 
-download full logs for computation job
+Download all computation job logs
+
+Download the full logs for a project computation job.
 
 ### Example
 ```python
@@ -136,7 +140,7 @@ api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration
 id = 'id_example' # str | 
 
 try:
-    # download full logs for computation job
+    # Download all computation job logs
     api_response = api_instance.download_logs(id)
     pprint(api_response)
 except ApiException as e:
@@ -167,7 +171,7 @@ Name | Type | Description  | Notes
 # **get_logs**
 > list[LogStash] get_logs(id, max_rows=max_rows, order=order)
 
-retrieve logs for computation job
+Retrieve logs for computation job
 
 ### Example
 ```python
@@ -189,7 +193,7 @@ max_rows = 56 # int |  (optional)
 order = 'order_example' # str |  (optional)
 
 try:
-    # retrieve logs for computation job
+    # Retrieve logs for computation job
     api_response = api_instance.get_logs(id, max_rows=max_rows, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -222,7 +226,9 @@ Name | Type | Description  | Notes
 # **get_project_computation**
 > ProjectComputation get_project_computation(id)
 
-project computation details
+Get project computation details
+
+Get information provided in a specific Computation object.
 
 ### Example
 ```python
@@ -242,7 +248,7 @@ api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration
 id = 'id_example' # str | 
 
 try:
-    # project computation details
+    # Get project computation details
     api_response = api_instance.get_project_computation(id)
     pprint(api_response)
 except ApiException as e:
@@ -273,7 +279,7 @@ Name | Type | Description  | Notes
 # **stop_job**
 > StopTraining stop_job(id)
 
-send computation job a stop message encouraging it to stop and send any results back
+Stop a computation job (soft stop)
 
 ### Example
 ```python
@@ -293,7 +299,7 @@ api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration
 id = 'id_example' # str | 
 
 try:
-    # send computation job a stop message encouraging it to stop and send any results back
+    # Stop a computation job (soft stop)
     api_response = api_instance.stop_job(id)
     pprint(api_response)
 except ApiException as e:

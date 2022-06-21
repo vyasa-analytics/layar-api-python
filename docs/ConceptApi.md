@@ -4,26 +4,28 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_from_term**](ConceptApi.md#assign_from_term) | **POST** /concept/assignTerm | create a concept from an arbitrary text string
-[**create_concept**](ConceptApi.md#create_concept) | **POST** /concept | Save a new concept
-[**delete_concept**](ConceptApi.md#delete_concept) | **DELETE** /concept/{id} | Delete a concept from Layar
-[**delete_concepts**](ConceptApi.md#delete_concepts) | **DELETE** /concept/deleteMany | delete all the records with the given IDs
-[**demote_concept**](ConceptApi.md#demote_concept) | **PUT** /concept/{id}/demote | Remove relationship with a concept
-[**get_concept**](ConceptApi.md#get_concept) | **GET** /concept/{id} | Get concept details
-[**get_external_concepts**](ConceptApi.md#get_external_concepts) | **GET** /concept/external/{idKey}/{idValue} | find concepts by external id
-[**get_related_concepts**](ConceptApi.md#get_related_concepts) | **GET** /concept/{id}/related | Returns a list of concepts related to the original concept.
-[**get_statement_counts_over_time**](ConceptApi.md#get_statement_counts_over_time) | **GET** /concept/{id}/statementCountsOverTime | statement counts over time for concept id
-[**make_primary_synonym**](ConceptApi.md#make_primary_synonym) | **PUT** /concept/{id}/makePrimarySynonym | Set a concept as the primary in its group of synonyms
-[**make_synonyms**](ConceptApi.md#make_synonyms) | **PUT** /concept/makeSynonyms | Set all of the provided concept ids as synonyms of each other
-[**patch_concept**](ConceptApi.md#patch_concept) | **PATCH** /concept/{id} | patch
-[**remove_synonym**](ConceptApi.md#remove_synonym) | **DELETE** /concept/{id}/removeAsSynonym | Remove a concept from its group of synonyms
-[**search_concept**](ConceptApi.md#search_concept) | **POST** /concept/search | search for concepts
-[**update_concept**](ConceptApi.md#update_concept) | **PUT** /concept/{id} | Update concept details
+[**assign_from_term**](ConceptApi.md#assign_from_term) | **POST** /layar/concept/assignTerm | Create a new term for a concept
+[**create_concept**](ConceptApi.md#create_concept) | **POST** /layar/concept | Create a new concept
+[**delete_concept**](ConceptApi.md#delete_concept) | **DELETE** /layar/concept/{id} | Delete a concept
+[**delete_concepts**](ConceptApi.md#delete_concepts) | **DELETE** /layar/concept/deleteMany | Delete multiple concepts
+[**demote_concept**](ConceptApi.md#demote_concept) | **PUT** /layar/concept/{id}/demote | Demote a relationship with another concept
+[**get_concept**](ConceptApi.md#get_concept) | **GET** /layar/concept/{id} | Get concept details
+[**get_external_concepts**](ConceptApi.md#get_external_concepts) | **GET** /layar/concept/external/{idKey}/{idValue} | Search for concepts by external ID
+[**get_related_concepts**](ConceptApi.md#get_related_concepts) | **GET** /layar/concept/{id}/related | Find related concepts
+[**get_statement_counts_over_time**](ConceptApi.md#get_statement_counts_over_time) | **GET** /layar/concept/{id}/statementCountsOverTime | Get statement counts over time
+[**make_primary_synonym**](ConceptApi.md#make_primary_synonym) | **PUT** /layar/concept/{id}/makePrimarySynonym | Set as primary synonym
+[**make_synonyms**](ConceptApi.md#make_synonyms) | **PUT** /layar/concept/makeSynonyms | Set as synonyms
+[**patch_concept**](ConceptApi.md#patch_concept) | **PATCH** /layar/concept/{id} | Update specific details for a concept
+[**remove_synonym**](ConceptApi.md#remove_synonym) | **DELETE** /layar/concept/{id}/removeAsSynonym | Remove as synonym
+[**search_concept**](ConceptApi.md#search_concept) | **POST** /layar/concept/search | Search for concepts
+[**update_concept**](ConceptApi.md#update_concept) | **PUT** /layar/concept/{id} | Update all details for a concept
 
 # **assign_from_term**
 > list[Concept] assign_from_term(body)
 
-create a concept from an arbitrary text string
+Create a new term for a concept
+
+Add a new term or query string into a Concept object.
 
 ### Example
 ```python
@@ -43,7 +45,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 body = layar_api.ConceptTermAssignment() # ConceptTermAssignment | 
 
 try:
-    # create a concept from an arbitrary text string
+    # Create a new term for a concept
     api_response = api_instance.assign_from_term(body)
     pprint(api_response)
 except ApiException as e:
@@ -74,7 +76,9 @@ Name | Type | Description  | Notes
 # **create_concept**
 > Concept create_concept(body)
 
-Save a new concept
+Create a new concept
+
+Convert a term or query string into a new Concept object.
 
 ### Example
 ```python
@@ -94,7 +98,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 body = layar_api.Concept() # Concept | 
 
 try:
-    # Save a new concept
+    # Create a new concept
     api_response = api_instance.create_concept(body)
     pprint(api_response)
 except ApiException as e:
@@ -125,7 +129,9 @@ Name | Type | Description  | Notes
 # **delete_concept**
 > delete_concept(id)
 
-Delete a concept from Layar
+Delete a concept
+
+Remove a specified Concept object from your Layar instance.
 
 ### Example
 ```python
@@ -145,7 +151,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a concept from Layar
+    # Delete a concept
     api_instance.delete_concept(id)
 except ApiException as e:
     print("Exception when calling ConceptApi->delete_concept: %s\n" % e)
@@ -175,7 +181,9 @@ void (empty response body)
 # **delete_concepts**
 > delete_concepts()
 
-delete all the records with the given IDs
+Delete multiple concepts
+
+Remove the list of specified Concept objects by their concept IDs.
 
 ### Example
 ```python
@@ -194,7 +202,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 
 try:
-    # delete all the records with the given IDs
+    # Delete multiple concepts
     api_instance.delete_concepts()
 except ApiException as e:
     print("Exception when calling ConceptApi->delete_concepts: %s\n" % e)
@@ -221,7 +229,9 @@ void (empty response body)
 # **demote_concept**
 > demote_concept(id)
 
-Remove relationship with a concept
+Demote a relationship with another concept
+
+Demote a linked relationship between the current concept and another concept to a lower relational tier.
 
 ### Example
 ```python
@@ -241,7 +251,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Remove relationship with a concept
+    # Demote a relationship with another concept
     api_instance.demote_concept(id)
 except ApiException as e:
     print("Exception when calling ConceptApi->demote_concept: %s\n" % e)
@@ -272,6 +282,8 @@ void (empty response body)
 > Concept get_concept(id)
 
 Get concept details
+
+Get information provided in a specific Concept object.
 
 ### Example
 ```python
@@ -322,7 +334,9 @@ Name | Type | Description  | Notes
 # **get_external_concepts**
 > list[Concept] get_external_concepts(id_key, id_value)
 
-find concepts by external id
+Search for concepts by external ID
+
+Find concepts by custom IDs, which are added as an external ID in the concept object.
 
 ### Example
 ```python
@@ -343,7 +357,7 @@ id_key = 'id_key_example' # str |
 id_value = 'id_value_example' # str | 
 
 try:
-    # find concepts by external id
+    # Search for concepts by external ID
     api_response = api_instance.get_external_concepts(id_key, id_value)
     pprint(api_response)
 except ApiException as e:
@@ -375,7 +389,9 @@ Name | Type | Description  | Notes
 # **get_related_concepts**
 > list[ConceptCountCommand] get_related_concepts(id)
 
-Returns a list of concepts related to the original concept.
+Find related concepts
+
+Return a list of concepts ids that are related to the original concept.
 
 ### Example
 ```python
@@ -395,7 +411,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Returns a list of concepts related to the original concept.
+    # Find related concepts
     api_response = api_instance.get_related_concepts(id)
     pprint(api_response)
 except ApiException as e:
@@ -426,7 +442,9 @@ Name | Type | Description  | Notes
 # **get_statement_counts_over_time**
 > list[ConceptCountsInStatementsOverTime] get_statement_counts_over_time(id)
 
-statement counts over time for concept id
+Get statement counts over time
+
+Get a total count of how many statements contain the specified concept each month.
 
 ### Example
 ```python
@@ -446,7 +464,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # statement counts over time for concept id
+    # Get statement counts over time
     api_response = api_instance.get_statement_counts_over_time(id)
     pprint(api_response)
 except ApiException as e:
@@ -477,7 +495,9 @@ Name | Type | Description  | Notes
 # **make_primary_synonym**
 > list[ConceptSynonymAssignmentResponse] make_primary_synonym(id)
 
-Set a concept as the primary in its group of synonyms
+Set as primary synonym
+
+Establish a specific concept as the primary term for its synonym group.
 
 ### Example
 ```python
@@ -497,7 +517,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Set a concept as the primary in its group of synonyms
+    # Set as primary synonym
     api_response = api_instance.make_primary_synonym(id)
     pprint(api_response)
 except ApiException as e:
@@ -528,7 +548,9 @@ Name | Type | Description  | Notes
 # **make_synonyms**
 > ConceptSynonymAssignmentResponse make_synonyms(body)
 
-Set all of the provided concept ids as synonyms of each other
+Set as synonyms
+
+Establish all of the provided concept ids as synonyms of each other
 
 ### Example
 ```python
@@ -548,7 +570,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 body = layar_api.ListOfIds() # ListOfIds | 
 
 try:
-    # Set all of the provided concept ids as synonyms of each other
+    # Set as synonyms
     api_response = api_instance.make_synonyms(body)
     pprint(api_response)
 except ApiException as e:
@@ -579,7 +601,9 @@ Name | Type | Description  | Notes
 # **patch_concept**
 > patch_concept(body, id)
 
-patch
+Update specific details for a concept
+
+Replace a specific attribute of the Concept object.
 
 ### Example
 ```python
@@ -600,7 +624,7 @@ body = layar_api.PatchCommand() # PatchCommand |
 id = 'id_example' # str | 
 
 try:
-    # patch
+    # Update specific details for a concept
     api_instance.patch_concept(body, id)
 except ApiException as e:
     print("Exception when calling ConceptApi->patch_concept: %s\n" % e)
@@ -631,7 +655,9 @@ void (empty response body)
 # **remove_synonym**
 > list[Concept] remove_synonym(id)
 
-Remove a concept from its group of synonyms
+Remove as synonym
+
+Remove a specific concept from its associated synonym group.
 
 ### Example
 ```python
@@ -651,7 +677,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Remove a concept from its group of synonyms
+    # Remove as synonym
     api_response = api_instance.remove_synonym(id)
     pprint(api_response)
 except ApiException as e:
@@ -682,7 +708,9 @@ Name | Type | Description  | Notes
 # **search_concept**
 > list[Concept] search_concept(body=body)
 
-search for concepts
+Search for concepts
+
+Find concepts by their ID or other object parameters.
 
 ### Example
 ```python
@@ -702,7 +730,7 @@ api_instance = layar_api.ConceptApi(layar_api.ApiClient(configuration))
 body = layar_api.Body() # Body |  (optional)
 
 try:
-    # search for concepts
+    # Search for concepts
     api_response = api_instance.search_concept(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -733,7 +761,9 @@ Name | Type | Description  | Notes
 # **update_concept**
 > Concept update_concept(body, id)
 
-Update concept details
+Update all details for a concept
+
+Replace all current attributes of the Concept object with only those in the request payload.
 
 ### Example
 ```python
@@ -754,7 +784,7 @@ body = layar_api.Concept() # Concept |
 id = 'id_example' # str | 
 
 try:
-    # Update concept details
+    # Update all details for a concept
     api_response = api_instance.update_concept(body, id)
     pprint(api_response)
 except ApiException as e:

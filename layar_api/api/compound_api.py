@@ -33,8 +33,9 @@ class CompoundApi(object):
         self.api_client = api_client
 
     def render(self, **kwargs):  # noqa: E501
-        """Render a SMILES compound string. Returns an SVG of the render.  # noqa: E501
+        """Render SMILES into an SVG  # noqa: E501
 
+        Convert a compound SMILE string into a rendered image file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.render(async_req=True)
@@ -56,8 +57,9 @@ class CompoundApi(object):
             return data
 
     def render_with_http_info(self, **kwargs):  # noqa: E501
-        """Render a SMILES compound string. Returns an SVG of the render.  # noqa: E501
+        """Render SMILES into an SVG  # noqa: E501
 
+        Convert a compound SMILE string into a rendered image file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.render_with_http_info(async_req=True)
@@ -114,7 +116,7 @@ class CompoundApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/compound/render', 'GET',
+            '/layar/compound/render', 'GET',
             path_params,
             query_params,
             header_params,

@@ -33,7 +33,7 @@ class ProjectComputationApi(object):
         self.api_client = api_client
 
     def cancel_computation(self, id, **kwargs):  # noqa: E501
-        """cancel and shut down project computation without expecting any results back  # noqa: E501
+        """Cancel a project computation job (hard stop)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class ProjectComputationApi(object):
             return data
 
     def cancel_computation_with_http_info(self, id, **kwargs):  # noqa: E501
-        """cancel and shut down project computation without expecting any results back  # noqa: E501
+        """Cancel a project computation job (hard stop)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -110,7 +110,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}/cancel', 'POST',
+            '/layar/projectComputation/{id}/cancel', 'POST',
             path_params,
             query_params,
             header_params,
@@ -126,8 +126,9 @@ class ProjectComputationApi(object):
             collection_formats=collection_formats)
 
     def download_computation(self, id, **kwargs):  # noqa: E501
-        """download zip of documents created during computation  # noqa: E501
+        """Download computation job documents as zip file  # noqa: E501
 
+        Download all documents for a project computation job into a compressed zip file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_computation(id, async_req=True)
@@ -147,8 +148,9 @@ class ProjectComputationApi(object):
             return data
 
     def download_computation_with_http_info(self, id, **kwargs):  # noqa: E501
-        """download zip of documents created during computation  # noqa: E501
+        """Download computation job documents as zip file  # noqa: E501
 
+        Download all documents for a project computation job into a compressed zip file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_computation_with_http_info(id, async_req=True)
@@ -203,7 +205,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}/downloadZipResults', 'GET',
+            '/layar/projectComputation/{id}/downloadZipResults', 'GET',
             path_params,
             query_params,
             header_params,
@@ -219,8 +221,9 @@ class ProjectComputationApi(object):
             collection_formats=collection_formats)
 
     def download_logs(self, id, **kwargs):  # noqa: E501
-        """download full logs for computation job  # noqa: E501
+        """Download all computation job logs  # noqa: E501
 
+        Download the full logs for a project computation job.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_logs(id, async_req=True)
@@ -240,8 +243,9 @@ class ProjectComputationApi(object):
             return data
 
     def download_logs_with_http_info(self, id, **kwargs):  # noqa: E501
-        """download full logs for computation job  # noqa: E501
+        """Download all computation job logs  # noqa: E501
 
+        Download the full logs for a project computation job.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_logs_with_http_info(id, async_req=True)
@@ -296,7 +300,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}/downloadLogs', 'GET',
+            '/layar/projectComputation/{id}/downloadLogs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -312,7 +316,7 @@ class ProjectComputationApi(object):
             collection_formats=collection_formats)
 
     def get_logs(self, id, **kwargs):  # noqa: E501
-        """retrieve logs for computation job  # noqa: E501
+        """Retrieve logs for computation job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -335,7 +339,7 @@ class ProjectComputationApi(object):
             return data
 
     def get_logs_with_http_info(self, id, **kwargs):  # noqa: E501
-        """retrieve logs for computation job  # noqa: E501
+        """Retrieve logs for computation job  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -397,7 +401,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}/logs', 'GET',
+            '/layar/projectComputation/{id}/logs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -413,8 +417,9 @@ class ProjectComputationApi(object):
             collection_formats=collection_formats)
 
     def get_project_computation(self, id, **kwargs):  # noqa: E501
-        """project computation details  # noqa: E501
+        """Get project computation details  # noqa: E501
 
+        Get information provided in a specific Computation object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_computation(id, async_req=True)
@@ -434,8 +439,9 @@ class ProjectComputationApi(object):
             return data
 
     def get_project_computation_with_http_info(self, id, **kwargs):  # noqa: E501
-        """project computation details  # noqa: E501
+        """Get project computation details  # noqa: E501
 
+        Get information provided in a specific Computation object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_computation_with_http_info(id, async_req=True)
@@ -490,7 +496,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}', 'GET',
+            '/layar/projectComputation/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -506,7 +512,7 @@ class ProjectComputationApi(object):
             collection_formats=collection_formats)
 
     def stop_job(self, id, **kwargs):  # noqa: E501
-        """send computation job a stop message encouraging it to stop and send any results back  # noqa: E501
+        """Stop a computation job (soft stop)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -527,7 +533,7 @@ class ProjectComputationApi(object):
             return data
 
     def stop_job_with_http_info(self, id, **kwargs):  # noqa: E501
-        """send computation job a stop message encouraging it to stop and send any results back  # noqa: E501
+        """Stop a computation job (soft stop)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -583,7 +589,7 @@ class ProjectComputationApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/projectComputation/{id}/stopTraining', 'POST',
+            '/layar/projectComputation/{id}/stopTraining', 'POST',
             path_params,
             query_params,
             header_params,

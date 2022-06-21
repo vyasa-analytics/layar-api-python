@@ -4,39 +4,39 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_annotation**](SourceDocumentApi.md#add_annotation) | **POST** /sourceDocument/{id}/addAnnotation | Add annotation by source
-[**add_annotations**](SourceDocumentApi.md#add_annotations) | **POST** /sourceDocument/{id}/addAnnotations | Add a list of annotations to a document
-[**add_column**](SourceDocumentApi.md#add_column) | **PUT** /sourceDocument/{id}/addColumn | Add column to table
-[**add_viewer**](SourceDocumentApi.md#add_viewer) | **POST** /sourceDocument/{id}/viewers | add a viewer to the source document
-[**create_document**](SourceDocumentApi.md#create_document) | **POST** /sourceDocument | Save a source document to Layar
-[**delete_document**](SourceDocumentApi.md#delete_document) | **DELETE** /sourceDocument/{id} | Delete a document from Layar
-[**delete_documents**](SourceDocumentApi.md#delete_documents) | **DELETE** /sourceDocument/deleteMany | Delete all documents in an array
-[**download_annotations**](SourceDocumentApi.md#download_annotations) | **GET** /sourceDocument/downloadAnnotations | downloads annotations as csv of one or more source document
-[**download_document**](SourceDocumentApi.md#download_document) | **GET** /sourceDocument/{id}/download | Download a document by ID
-[**extract_table_by_page**](SourceDocumentApi.md#extract_table_by_page) | **POST** /sourceDocument/{id}/page/{page}/extractTable | extract a table from a specific page
-[**extract_tables**](SourceDocumentApi.md#extract_tables) | **POST** /sourceDocument/{id}/extractTables | extract tables from a document
-[**get_counts_by_suggested_category**](SourceDocumentApi.md#get_counts_by_suggested_category) | **GET** /sourceDocument/{projectComputationId}/countBySuggestedCategory | Get document counts by suggested category
-[**get_counts_by_type**](SourceDocumentApi.md#get_counts_by_type) | **GET** /sourceDocument/countByType | Get document counts by type
-[**get_counts_over_time**](SourceDocumentApi.md#get_counts_over_time) | **GET** /sourceDocument/docCountsOverTime | doc counts over time for term
-[**get_doc_field_counts**](SourceDocumentApi.md#get_doc_field_counts) | **POST** /sourceDocument/{field}/counts | Get counts by field type for documents
-[**get_document**](SourceDocumentApi.md#get_document) | **GET** /sourceDocument/{id} | source document details
-[**get_document_concepts**](SourceDocumentApi.md#get_document_concepts) | **GET** /sourceDocument/{id}/concepts | count concepts by source document
-[**get_document_statements**](SourceDocumentApi.md#get_document_statements) | **GET** /sourceDocument/{id}/statements | Get all the statements in a given document
-[**get_document_status**](SourceDocumentApi.md#get_document_status) | **GET** /sourceDocument/{id}/status | Get the import status for a document
-[**get_page_preview**](SourceDocumentApi.md#get_page_preview) | **GET** /sourceDocument/{id}/page/{page}/preview | Preview of a specific page in a document
-[**get_preview**](SourceDocumentApi.md#get_preview) | **GET** /sourceDocument/{id}/preview | Get a document preview
-[**get_statement_counts**](SourceDocumentApi.md#get_statement_counts) | **GET** /sourceDocument/{id}/statementCount | get statement counts for a document
-[**get_viewers**](SourceDocumentApi.md#get_viewers) | **GET** /sourceDocument/{id}/viewers | get a list of all viewers of the source document
-[**remove_annotation**](SourceDocumentApi.md#remove_annotation) | **DELETE** /sourceDocument/{id}/annotations/{annotationId} | Delete annotations by ID
-[**render_pdf**](SourceDocumentApi.md#render_pdf) | **GET** /sourceDocument/{id}/renderPdf | Render a PDF of a document
-[**search_documents**](SourceDocumentApi.md#search_documents) | **POST** /sourceDocument/search | Search for documents in Layar
-[**update_annotation**](SourceDocumentApi.md#update_annotation) | **PUT** /sourceDocument/{id}/annotations | Update document annotations
-[**update_document**](SourceDocumentApi.md#update_document) | **PUT** /sourceDocument/{id} | Update document details
+[**add_annotation**](SourceDocumentApi.md#add_annotation) | **POST** /layar/sourceDocument/{id}/addAnnotation | Add an annotation to a document
+[**add_annotations**](SourceDocumentApi.md#add_annotations) | **POST** /layar/sourceDocument/{id}/addAnnotations | Add a list of annotations to a document
+[**add_column**](SourceDocumentApi.md#add_column) | **PUT** /layar/sourceDocument/{id}/addColumn | Add a column to a table document
+[**add_viewer**](SourceDocumentApi.md#add_viewer) | **POST** /layar/sourceDocument/{id}/viewers | Authorize a viewer for the source document
+[**create_document**](SourceDocumentApi.md#create_document) | **POST** /layar/sourceDocument | Create a source document
+[**delete_document**](SourceDocumentApi.md#delete_document) | **DELETE** /layar/sourceDocument/{id} | Delete a document
+[**delete_documents**](SourceDocumentApi.md#delete_documents) | **DELETE** /layar/sourceDocument/deleteMany | Delete multiple documents
+[**download_annotations**](SourceDocumentApi.md#download_annotations) | **GET** /layar/sourceDocument/downloadAnnotations | Download document annotations to a CSV
+[**download_document**](SourceDocumentApi.md#download_document) | **GET** /layar/sourceDocument/{id}/download | Download document by ID
+[**extract_table_by_page**](SourceDocumentApi.md#extract_table_by_page) | **POST** /layar/sourceDocument/{id}/page/{page}/extractTable | Extract table from a specific page
+[**extract_tables**](SourceDocumentApi.md#extract_tables) | **POST** /layar/sourceDocument/{id}/extractTables | Extract tables from a document
+[**get_counts_by_suggested_category**](SourceDocumentApi.md#get_counts_by_suggested_category) | **GET** /layar/sourceDocument/{projectComputationId}/countBySuggestedCategory | Get document counts for suggested concept type by computation id
+[**get_counts_by_type**](SourceDocumentApi.md#get_counts_by_type) | **GET** /layar/sourceDocument/countByType | Get document counts by type
+[**get_counts_over_time**](SourceDocumentApi.md#get_counts_over_time) | **GET** /layar/sourceDocument/docCountsOverTime | Get document counts over time
+[**get_doc_field_counts**](SourceDocumentApi.md#get_doc_field_counts) | **POST** /layar/sourceDocument/{field}/counts | Get document counts by field type
+[**get_document**](SourceDocumentApi.md#get_document) | **GET** /layar/sourceDocument/{id} | Get source document details
+[**get_document_concepts**](SourceDocumentApi.md#get_document_concepts) | **GET** /layar/sourceDocument/{id}/concepts | Get concept counts by document ID
+[**get_document_statements**](SourceDocumentApi.md#get_document_statements) | **GET** /layar/sourceDocument/{id}/statements | Get statement counts by document ID
+[**get_document_status**](SourceDocumentApi.md#get_document_status) | **GET** /layar/sourceDocument/{id}/status | Get the import status for a document
+[**get_page_preview**](SourceDocumentApi.md#get_page_preview) | **GET** /layar/sourceDocument/{id}/page/{page}/preview | Get a document preview for a specific page
+[**get_preview**](SourceDocumentApi.md#get_preview) | **GET** /layar/sourceDocument/{id}/preview | Get a document preview
+[**get_statement_counts**](SourceDocumentApi.md#get_statement_counts) | **GET** /layar/sourceDocument/{id}/statementCount | Get a count of all statements in a document
+[**get_viewers**](SourceDocumentApi.md#get_viewers) | **GET** /layar/sourceDocument/{id}/viewers | Get a list of all viewers of the source document
+[**remove_annotation**](SourceDocumentApi.md#remove_annotation) | **DELETE** /layar/sourceDocument/{id}/annotations/{annotationId} | Delete annotations by annotation ID
+[**render_pdf**](SourceDocumentApi.md#render_pdf) | **GET** /layar/sourceDocument/{id}/renderPdf | Render a PDF of a document
+[**search_documents**](SourceDocumentApi.md#search_documents) | **POST** /layar/sourceDocument/search | Search for documents
+[**update_annotation**](SourceDocumentApi.md#update_annotation) | **PUT** /layar/sourceDocument/{id}/annotations | Update annotation details
+[**update_document**](SourceDocumentApi.md#update_document) | **PUT** /layar/sourceDocument/{id} | Update document details
 
 # **add_annotation**
 > add_annotation(body, id)
 
-Add annotation by source
+Add an annotation to a document
 
 ### Example
 ```python
@@ -57,7 +57,7 @@ body = layar_api.Annotation() # Annotation |
 id = 'id_example' # str | 
 
 try:
-    # Add annotation by source
+    # Add an annotation to a document
     api_instance.add_annotation(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->add_annotation: %s\n" % e)
@@ -140,7 +140,9 @@ void (empty response body)
 # **add_column**
 > add_column(body, id)
 
-Add column to table
+Add a column to a table document
+
+Add a new column to a specific Layar table document.
 
 ### Example
 ```python
@@ -161,7 +163,7 @@ body = layar_api.AddColumnCommand() # AddColumnCommand |
 id = 'id_example' # str | 
 
 try:
-    # Add column to table
+    # Add a column to a table document
     api_instance.add_column(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->add_column: %s\n" % e)
@@ -192,7 +194,7 @@ void (empty response body)
 # **add_viewer**
 > SourceDocumentViewer add_viewer(id)
 
-add a viewer to the source document
+Authorize a viewer for the source document
 
 ### Example
 ```python
@@ -212,7 +214,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # add a viewer to the source document
+    # Authorize a viewer for the source document
     api_response = api_instance.add_viewer(id)
     pprint(api_response)
 except ApiException as e:
@@ -243,7 +245,7 @@ Name | Type | Description  | Notes
 # **create_document**
 > SourceDocument create_document(x_vyasa_data_providers, file=file, name=name, cortex_document_type=cortex_document_type)
 
-Save a source document to Layar
+Create a source document
 
 ### Example
 ```python
@@ -266,7 +268,7 @@ name = 'name_example' # str |  (optional)
 cortex_document_type = 'cortex_document_type_example' # str |  (optional)
 
 try:
-    # Save a source document to Layar
+    # Create a source document
     api_response = api_instance.create_document(x_vyasa_data_providers, file=file, name=name, cortex_document_type=cortex_document_type)
     pprint(api_response)
 except ApiException as e:
@@ -300,7 +302,9 @@ Name | Type | Description  | Notes
 # **delete_document**
 > delete_document(id)
 
-Delete a document from Layar
+Delete a document
+
+Remove a specified Source Document object from your Layar instance.
 
 ### Example
 ```python
@@ -320,7 +324,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a document from Layar
+    # Delete a document
     api_instance.delete_document(id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->delete_document: %s\n" % e)
@@ -350,7 +354,9 @@ void (empty response body)
 # **delete_documents**
 > delete_documents()
 
-Delete all documents in an array
+Delete multiple documents
+
+Remove the list of specified Source Document objects by their document IDs.
 
 ### Example
 ```python
@@ -369,7 +375,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 
 try:
-    # Delete all documents in an array
+    # Delete multiple documents
     api_instance.delete_documents()
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->delete_documents: %s\n" % e)
@@ -396,7 +402,9 @@ void (empty response body)
 # **download_annotations**
 > str download_annotations(search_command=search_command)
 
-downloads annotations as csv of one or more source document
+Download document annotations to a CSV
+
+Download the annotations for a given source document to a CSV file.
 
 ### Example
 ```python
@@ -416,7 +424,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 search_command = 'search_command_example' # str |  (optional)
 
 try:
-    # downloads annotations as csv of one or more source document
+    # Download document annotations to a CSV
     api_response = api_instance.download_annotations(search_command=search_command)
     pprint(api_response)
 except ApiException as e:
@@ -447,7 +455,9 @@ Name | Type | Description  | Notes
 # **download_document**
 > str download_document(id)
 
-Download a document by ID
+Download document by ID
+
+Download the original document by its source document ID.
 
 ### Example
 ```python
@@ -464,10 +474,10 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-id = 'id_example' # str | 
+id = 'id_example' # str | the Layar ID for that document
 
 try:
-    # Download a document by ID
+    # Download document by ID
     api_response = api_instance.download_document(id)
     pprint(api_response)
 except ApiException as e:
@@ -478,7 +488,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **id** | **str**| the Layar ID for that document | 
 
 ### Return type
 
@@ -498,7 +508,7 @@ Name | Type | Description  | Notes
 # **extract_table_by_page**
 > SourceDocument extract_table_by_page(body, id, page)
 
-extract a table from a specific page
+Extract table from a specific page
 
 ### Example
 ```python
@@ -520,7 +530,7 @@ id = 'id_example' # str |
 page = 56 # int | 
 
 try:
-    # extract a table from a specific page
+    # Extract table from a specific page
     api_response = api_instance.extract_table_by_page(body, id, page)
     pprint(api_response)
 except ApiException as e:
@@ -553,7 +563,7 @@ Name | Type | Description  | Notes
 # **extract_tables**
 > list[str] extract_tables(body, id)
 
-extract tables from a document
+Extract tables from a document
 
 ### Example
 ```python
@@ -574,7 +584,7 @@ body = layar_api.ExtractTablesCommand() # ExtractTablesCommand |
 id = 'id_example' # str | 
 
 try:
-    # extract tables from a document
+    # Extract tables from a document
     api_response = api_instance.extract_tables(body, id)
     pprint(api_response)
 except ApiException as e:
@@ -606,7 +616,9 @@ Name | Type | Description  | Notes
 # **get_counts_by_suggested_category**
 > list[CountCommand] get_counts_by_suggested_category(project_computation_id)
 
-Get document counts by suggested category
+Get document counts for suggested concept type by computation id
+
+Return a total number of documents where a specific concept type has been suggested.
 
 ### Example
 ```python
@@ -626,7 +638,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 project_computation_id = 'project_computation_id_example' # str | 
 
 try:
-    # Get document counts by suggested category
+    # Get document counts for suggested concept type by computation id
     api_response = api_instance.get_counts_by_suggested_category(project_computation_id)
     pprint(api_response)
 except ApiException as e:
@@ -658,6 +670,8 @@ Name | Type | Description  | Notes
 > list[CountCommand] get_counts_by_type()
 
 Get document counts by type
+
+Get total number of documents based on what document type they are (Documents, Images, Tables, etc.)
 
 ### Example
 ```python
@@ -704,7 +718,9 @@ This endpoint does not need any parameter.
 # **get_counts_over_time**
 > list[DocCountsInStatementsOverTime] get_counts_over_time()
 
-doc counts over time for term
+Get document counts over time
+
+Get a total count of how many documents contain the specified term each month.
 
 ### Example
 ```python
@@ -723,7 +739,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 
 try:
-    # doc counts over time for term
+    # Get document counts over time
     api_response = api_instance.get_counts_over_time()
     pprint(api_response)
 except ApiException as e:
@@ -751,7 +767,9 @@ This endpoint does not need any parameter.
 # **get_doc_field_counts**
 > list[FieldCount] get_doc_field_counts(body, field, annotation_key=annotation_key, value_type=value_type)
 
-Get counts by field type for documents
+Get document counts by field type
+
+Get a total number of documents based on a specific Document object parameter (type, date, etc.)
 
 ### Example
 ```python
@@ -774,7 +792,7 @@ annotation_key = 'annotation_key_example' # str |  (optional)
 value_type = 'value_type_example' # str |  (optional)
 
 try:
-    # Get counts by field type for documents
+    # Get document counts by field type
     api_response = api_instance.get_doc_field_counts(body, field, annotation_key=annotation_key, value_type=value_type)
     pprint(api_response)
 except ApiException as e:
@@ -808,7 +826,9 @@ Name | Type | Description  | Notes
 # **get_document**
 > SourceDocument get_document(id, x_vyasa_data_providers=x_vyasa_data_providers)
 
-source document details
+Get source document details
+
+Get information provided in a specific Source Document object.
 
 ### Example
 ```python
@@ -829,7 +849,7 @@ id = 'id_example' # str |
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
-    # source document details
+    # Get source document details
     api_response = api_instance.get_document(id, x_vyasa_data_providers=x_vyasa_data_providers)
     pprint(api_response)
 except ApiException as e:
@@ -861,7 +881,7 @@ Name | Type | Description  | Notes
 # **get_document_concepts**
 > list[ConceptCountCommand] get_document_concepts(id)
 
-count concepts by source document
+Get concept counts by document ID
 
 ### Example
 ```python
@@ -881,7 +901,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # count concepts by source document
+    # Get concept counts by document ID
     api_response = api_instance.get_document_concepts(id)
     pprint(api_response)
 except ApiException as e:
@@ -912,7 +932,7 @@ Name | Type | Description  | Notes
 # **get_document_statements**
 > list[Statement] get_document_statements(id)
 
-Get all the statements in a given document
+Get statement counts by document ID
 
 ### Example
 ```python
@@ -932,7 +952,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Get all the statements in a given document
+    # Get statement counts by document ID
     api_response = api_instance.get_document_statements(id)
     pprint(api_response)
 except ApiException as e:
@@ -1014,7 +1034,7 @@ Name | Type | Description  | Notes
 # **get_page_preview**
 > str get_page_preview(id, page)
 
-Preview of a specific page in a document
+Get a document preview for a specific page
 
 ### Example
 ```python
@@ -1035,7 +1055,7 @@ id = 'id_example' # str |
 page = 56 # int | 
 
 try:
-    # Preview of a specific page in a document
+    # Get a document preview for a specific page
     api_response = api_instance.get_page_preview(id, page)
     pprint(api_response)
 except ApiException as e:
@@ -1118,7 +1138,7 @@ Name | Type | Description  | Notes
 # **get_statement_counts**
 > InlineResponse2004 get_statement_counts(id)
 
-get statement counts for a document
+Get a count of all statements in a document
 
 ### Example
 ```python
@@ -1138,7 +1158,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # get statement counts for a document
+    # Get a count of all statements in a document
     api_response = api_instance.get_statement_counts(id)
     pprint(api_response)
 except ApiException as e:
@@ -1169,7 +1189,7 @@ Name | Type | Description  | Notes
 # **get_viewers**
 > list[SourceDocumentViewer] get_viewers(id)
 
-get a list of all viewers of the source document
+Get a list of all viewers of the source document
 
 ### Example
 ```python
@@ -1189,7 +1209,7 @@ api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # get a list of all viewers of the source document
+    # Get a list of all viewers of the source document
     api_response = api_instance.get_viewers(id)
     pprint(api_response)
 except ApiException as e:
@@ -1220,7 +1240,7 @@ Name | Type | Description  | Notes
 # **remove_annotation**
 > remove_annotation(id, annotation_id)
 
-Delete annotations by ID
+Delete annotations by annotation ID
 
 ### Example
 ```python
@@ -1241,7 +1261,7 @@ id = 'id_example' # str |
 annotation_id = 'annotation_id_example' # str | 
 
 try:
-    # Delete annotations by ID
+    # Delete annotations by annotation ID
     api_instance.remove_annotation(id, annotation_id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->remove_annotation: %s\n" % e)
@@ -1323,7 +1343,9 @@ Name | Type | Description  | Notes
 # **search_documents**
 > list[SourceDocument] search_documents(body, x_vyasa_data_providers)
 
-Search for documents in Layar
+Search for documents
+
+Find a source document by their ID or other object parameters.
 
 ### Example
 ```python
@@ -1344,7 +1366,7 @@ body = layar_api.SourceDocumentSearchCommand() # SourceDocumentSearchCommand |
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
 
 try:
-    # Search for documents in Layar
+    # Search for documents
     api_response = api_instance.search_documents(body, x_vyasa_data_providers)
     pprint(api_response)
 except ApiException as e:
@@ -1376,7 +1398,9 @@ Name | Type | Description  | Notes
 # **update_annotation**
 > update_annotation(body, id)
 
-Update document annotations
+Update annotation details
+
+Modify the information provided for a specific annotation within the Source Document object.
 
 ### Example
 ```python
@@ -1397,7 +1421,7 @@ body = layar_api.Annotation() # Annotation |
 id = 'id_example' # str | 
 
 try:
-    # Update document annotations
+    # Update annotation details
     api_instance.update_annotation(body, id)
 except ApiException as e:
     print("Exception when calling SourceDocumentApi->update_annotation: %s\n" % e)

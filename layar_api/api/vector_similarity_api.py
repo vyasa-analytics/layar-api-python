@@ -33,7 +33,7 @@ class VectorSimilarityApi(object):
         self.api_client = api_client
 
     def create_vector_similarity(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+        """Create a new vector embedding  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class VectorSimilarityApi(object):
             return data
 
     def create_vector_similarity_with_http_info(self, body, **kwargs):  # noqa: E501
-        """save  # noqa: E501
+        """Create a new vector embedding  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -114,7 +114,7 @@ class VectorSimilarityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/vectorSimilarity', 'POST',
+            '/layar/vectorSimilarity', 'POST',
             path_params,
             query_params,
             header_params,
@@ -130,7 +130,7 @@ class VectorSimilarityApi(object):
             collection_formats=collection_formats)
 
     def get_similar_statements(self, similarity_request_id, **kwargs):  # noqa: E501
-        """similarStatements  # noqa: E501
+        """Find similar statements by statement ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -151,7 +151,7 @@ class VectorSimilarityApi(object):
             return data
 
     def get_similar_statements_with_http_info(self, similarity_request_id, **kwargs):  # noqa: E501
-        """similarStatements  # noqa: E501
+        """Find similar statements by statement ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -207,7 +207,7 @@ class VectorSimilarityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/vectorSimilarity/{similarityRequestId}/statements', 'GET',
+            '/layar/vectorSimilarity/{similarityRequestId}/statements', 'GET',
             path_params,
             query_params,
             header_params,
@@ -223,8 +223,9 @@ class VectorSimilarityApi(object):
             collection_formats=collection_formats)
 
     def get_vector_similarity(self, id, **kwargs):  # noqa: E501
-        """vector similarity details  # noqa: E501
+        """Get vector details  # noqa: E501
 
+        Get information provided in a specific Vector Embedding object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_vector_similarity(id, async_req=True)
@@ -244,8 +245,9 @@ class VectorSimilarityApi(object):
             return data
 
     def get_vector_similarity_with_http_info(self, id, **kwargs):  # noqa: E501
-        """vector similarity details  # noqa: E501
+        """Get vector details  # noqa: E501
 
+        Get information provided in a specific Vector Embedding object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_vector_similarity_with_http_info(id, async_req=True)
@@ -300,7 +302,7 @@ class VectorSimilarityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/vectorSimilarity/{id}', 'GET',
+            '/layar/vectorSimilarity/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -316,7 +318,7 @@ class VectorSimilarityApi(object):
             collection_formats=collection_formats)
 
     def get_vectors_by_query_string(self, **kwargs):  # noqa: E501
-        """byQueryString  # noqa: E501
+        """Find similar embeddings by query string  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -337,7 +339,7 @@ class VectorSimilarityApi(object):
             return data
 
     def get_vectors_by_query_string_with_http_info(self, **kwargs):  # noqa: E501
-        """byQueryString  # noqa: E501
+        """Find similar embeddings by query string  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -389,7 +391,7 @@ class VectorSimilarityApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/vectorSimilarity/byQueryString', 'GET',
+            '/layar/vectorSimilarity/byQueryString', 'GET',
             path_params,
             query_params,
             header_params,

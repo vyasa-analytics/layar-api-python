@@ -4,23 +4,25 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_feeds**](LiveSourceApi.md#create_feeds) | **POST** /liveSource | Create a new live source
-[**create_feeds_from_column**](LiveSourceApi.md#create_feeds_from_column) | **POST** /liveSource/createFeedsFromColumn | create live source feeds from column of a spreadsheet containing URLs
-[**delete_feed**](LiveSourceApi.md#delete_feed) | **DELETE** /liveSource/{id} | Delete a live source
-[**delete_feeds**](LiveSourceApi.md#delete_feeds) | **DELETE** /liveSource/deleteMany | delete the set of live source ids
-[**get_feed**](LiveSourceApi.md#get_feed) | **GET** /liveSource/{id} | Get live source details
-[**get_import_status**](LiveSourceApi.md#get_import_status) | **GET** /liveSource/{id}/importStatus | Returns the percent completed for a live source import
-[**get_job_status**](LiveSourceApi.md#get_job_status) | **GET** /liveSource/{id}/jobStatus | Get job status details
-[**get_source_document_url**](LiveSourceApi.md#get_source_document_url) | **GET** /liveSource/{id}/sourceDocuments | Get the documents from a particular source
-[**search_feeds**](LiveSourceApi.md#search_feeds) | **GET** /liveSource | Search for live sources
-[**unschedule_job**](LiveSourceApi.md#unschedule_job) | **PUT** /liveSource/{id}/jobStatus/unschedule | Change a job status to &#x27;Unscheduled&#x27;
-[**update_feed**](LiveSourceApi.md#update_feed) | **PUT** /liveSource/{id} | Update a live source
-[**update_job**](LiveSourceApi.md#update_job) | **PUT** /liveSource/{id}/{jobAction} | Update a job with a new action
+[**create_feeds**](LiveSourceApi.md#create_feeds) | **POST** /layar/liveSource | Create a new connector
+[**create_feeds_from_column**](LiveSourceApi.md#create_feeds_from_column) | **POST** /layar/liveSource/createFeedsFromColumn | Create new RSS connectors from a spreadsheet of URLs
+[**delete_feed**](LiveSourceApi.md#delete_feed) | **DELETE** /layar/liveSource/{id} | Delete a connector
+[**delete_feeds**](LiveSourceApi.md#delete_feeds) | **DELETE** /layar/liveSource/deleteMany | Delete multiple connectors
+[**get_feed**](LiveSourceApi.md#get_feed) | **GET** /layar/liveSource/{id} | Get connector details
+[**get_import_status**](LiveSourceApi.md#get_import_status) | **GET** /layar/liveSource/{id}/importStatus | Get percent completed for a live indexing job
+[**get_job_status**](LiveSourceApi.md#get_job_status) | **GET** /layar/liveSource/{id}/jobStatus | Get job status details
+[**get_source_document_url**](LiveSourceApi.md#get_source_document_url) | **GET** /layar/liveSource/{id}/sourceDocuments | Get the documents from a given connector
+[**search_feeds**](LiveSourceApi.md#search_feeds) | **GET** /layar/liveSource | Search for connectors
+[**unschedule_job**](LiveSourceApi.md#unschedule_job) | **PUT** /layar/liveSource/{id}/jobStatus/unschedule | Change job status schedule
+[**update_feed**](LiveSourceApi.md#update_feed) | **PUT** /layar/liveSource/{id} | Update connector details
+[**update_job**](LiveSourceApi.md#update_job) | **PUT** /layar/liveSource/{id}/{jobAction} | Update a job with a new action
 
 # **create_feeds**
 > LiveSource create_feeds(body)
 
-Create a new live source
+Create a new connector
+
+Excludes Twitter connectors, which have their own endpoint.
 
 ### Example
 ```python
@@ -40,7 +42,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 body = layar_api.LiveSource() # LiveSource | 
 
 try:
-    # Create a new live source
+    # Create a new connector
     api_response = api_instance.create_feeds(body)
     pprint(api_response)
 except ApiException as e:
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 # **create_feeds_from_column**
 > create_feeds_from_column(document_id=document_id, column_key=column_key)
 
-create live source feeds from column of a spreadsheet containing URLs
+Create new RSS connectors from a spreadsheet of URLs
 
 ### Example
 ```python
@@ -92,7 +94,7 @@ document_id = 'document_id_example' # str |  (optional)
 column_key = 'column_key_example' # str |  (optional)
 
 try:
-    # create live source feeds from column of a spreadsheet containing URLs
+    # Create new RSS connectors from a spreadsheet of URLs
     api_instance.create_feeds_from_column(document_id=document_id, column_key=column_key)
 except ApiException as e:
     print("Exception when calling LiveSourceApi->create_feeds_from_column: %s\n" % e)
@@ -123,7 +125,9 @@ void (empty response body)
 # **delete_feed**
 > delete_feed(id)
 
-Delete a live source
+Delete a connector
+
+Remove a specified Connector object from your Layar instance. Excludes Twitter connectors.
 
 ### Example
 ```python
@@ -143,7 +147,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a live source
+    # Delete a connector
     api_instance.delete_feed(id)
 except ApiException as e:
     print("Exception when calling LiveSourceApi->delete_feed: %s\n" % e)
@@ -173,7 +177,9 @@ void (empty response body)
 # **delete_feeds**
 > delete_feeds()
 
-delete the set of live source ids
+Delete multiple connectors
+
+Remove the list of specified Connector objects by their connector IDs. Excludes Twitter connectors.
 
 ### Example
 ```python
@@ -192,7 +198,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 
 try:
-    # delete the set of live source ids
+    # Delete multiple connectors
     api_instance.delete_feeds()
 except ApiException as e:
     print("Exception when calling LiveSourceApi->delete_feeds: %s\n" % e)
@@ -219,7 +225,9 @@ void (empty response body)
 # **get_feed**
 > LiveSource get_feed(id)
 
-Get live source details
+Get connector details
+
+Get information provided in a specific LiveSource object. Excludes Twitter connectors, which have their own endpoint.
 
 ### Example
 ```python
@@ -239,7 +247,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Get live source details
+    # Get connector details
     api_response = api_instance.get_feed(id)
     pprint(api_response)
 except ApiException as e:
@@ -270,7 +278,7 @@ Name | Type | Description  | Notes
 # **get_import_status**
 > LiveSourceImportStatus get_import_status(id)
 
-Returns the percent completed for a live source import
+Get percent completed for a live indexing job
 
 ### Example
 ```python
@@ -290,7 +298,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Returns the percent completed for a live source import
+    # Get percent completed for a live indexing job
     api_response = api_instance.get_import_status(id)
     pprint(api_response)
 except ApiException as e:
@@ -322,6 +330,8 @@ Name | Type | Description  | Notes
 > LiveSourceJobStatus get_job_status(id)
 
 Get job status details
+
+Get information provided in a specific LiveSource Job Status object. Excludes Twitter connectors, which have a different endpoint.
 
 ### Example
 ```python
@@ -372,7 +382,7 @@ Name | Type | Description  | Notes
 # **get_source_document_url**
 > list[SourceDocument] get_source_document_url(id, rows=rows, start=start)
 
-Get the documents from a particular source
+Get the documents from a given connector
 
 ### Example
 ```python
@@ -394,7 +404,7 @@ rows = 56 # int | the number of rows to return (optional)
 start = 56 # int | the start offset for the row (optional)
 
 try:
-    # Get the documents from a particular source
+    # Get the documents from a given connector
     api_response = api_instance.get_source_document_url(id, rows=rows, start=start)
     pprint(api_response)
 except ApiException as e:
@@ -427,7 +437,9 @@ Name | Type | Description  | Notes
 # **search_feeds**
 > list[LiveSource] search_feeds(start=start, rows=rows, q=q, sort=sort, order=order)
 
-Search for live sources
+Search for connectors
+
+Find connectors by their ID or other object parameters. Excludes Twitter feed connectors.
 
 ### Example
 ```python
@@ -451,7 +463,7 @@ sort = 'sort_example' # str | sort results by the given property (optional)
 order = 'order_example' # str | what order to return sorted results (optional)
 
 try:
-    # Search for live sources
+    # Search for connectors
     api_response = api_instance.search_feeds(start=start, rows=rows, q=q, sort=sort, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -486,7 +498,9 @@ Name | Type | Description  | Notes
 # **unschedule_job**
 > LiveSourceJobStatus unschedule_job(id)
 
-Change a job status to 'Unscheduled'
+Change job status schedule
+
+Change the Live Source Job from an automated schedule to manual.
 
 ### Example
 ```python
@@ -506,7 +520,7 @@ api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Change a job status to 'Unscheduled'
+    # Change job status schedule
     api_response = api_instance.unschedule_job(id)
     pprint(api_response)
 except ApiException as e:
@@ -537,7 +551,9 @@ Name | Type | Description  | Notes
 # **update_feed**
 > LiveSource update_feed(body, id)
 
-Update a live source
+Update connector details
+
+Modify the information provided for a specific Connector object. Excludes Twitter connectors.
 
 ### Example
 ```python
@@ -558,7 +574,7 @@ body = layar_api.LiveSource() # LiveSource |
 id = 'id_example' # str | 
 
 try:
-    # Update a live source
+    # Update connector details
     api_response = api_instance.update_feed(body, id)
     pprint(api_response)
 except ApiException as e:
@@ -591,6 +607,8 @@ Name | Type | Description  | Notes
 > LiveSourceJobStatus update_job(id, job_action)
 
 Update a job with a new action
+
+Update a Live Source Job object with a modified job action.
 
 ### Example
 ```python

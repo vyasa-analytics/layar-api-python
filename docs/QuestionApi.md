@@ -4,25 +4,27 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ask**](QuestionApi.md#ask) | **POST** /question/ask | Create and ask a new question in the QA model
-[**cancel_batch**](QuestionApi.md#cancel_batch) | **PUT** /question/cancelBulkQuestionAnswerJob/{jobID} | cancel an existing request to ask a batch of questions
-[**create_question**](QuestionApi.md#create_question) | **POST** /question | save a new question
-[**delete_question**](QuestionApi.md#delete_question) | **DELETE** /question/{id} | Delete a saved question
-[**delete_questions**](QuestionApi.md#delete_questions) | **DELETE** /question/deleteMany | delete all the records with the given IDs
-[**find_more_answers**](QuestionApi.md#find_more_answers) | **POST** /question/{id}/answers/more | look for more answers to this question
-[**get_question**](QuestionApi.md#get_question) | **GET** /question/{id} | Get question details
-[**get_question_field_counts**](QuestionApi.md#get_question_field_counts) | **POST** /question/{field}/counts | Get curation counts or progress by field for a QA job
-[**patch_question**](QuestionApi.md#patch_question) | **PATCH** /question/{id} | patch
-[**query_expansion**](QuestionApi.md#query_expansion) | **POST** /question/queryExpansion | Expand the scope of a particular question
-[**refresh_answers**](QuestionApi.md#refresh_answers) | **POST** /question/{id}/answers/refresh | look for answers in new documents
-[**search_questions**](QuestionApi.md#search_questions) | **POST** /question/search | search for questions
-[**start_batch**](QuestionApi.md#start_batch) | **POST** /question/startBulkQuestionAnswerJob | submit a request to ask a batch of questions
-[**update_question**](QuestionApi.md#update_question) | **PUT** /question/{id} | Update a saved question
+[**ask**](QuestionApi.md#ask) | **POST** /layar/question/ask | Ask a new question
+[**cancel_batch**](QuestionApi.md#cancel_batch) | **PUT** /layar/question/cancelBulkQuestionAnswerJob/{jobID} | Cancel a bulk QA job request
+[**create_question**](QuestionApi.md#create_question) | **POST** /layar/question | Create a new question
+[**delete_question**](QuestionApi.md#delete_question) | **DELETE** /layar/question/{id} | Delete a question
+[**delete_questions**](QuestionApi.md#delete_questions) | **DELETE** /layar/question/deleteMany | Delete multiple questions
+[**find_more_answers**](QuestionApi.md#find_more_answers) | **POST** /layar/question/{id}/answers/more | Find more answers to a question
+[**get_question**](QuestionApi.md#get_question) | **GET** /layar/question/{id} | Get question details
+[**get_question_field_counts**](QuestionApi.md#get_question_field_counts) | **POST** /layar/question/{field}/counts | Get curation details by field type
+[**patch_question**](QuestionApi.md#patch_question) | **PATCH** /layar/question/{id} | Update specific details for a question
+[**query_expansion**](QuestionApi.md#query_expansion) | **POST** /layar/question/queryExpansion | Enable query expansion
+[**refresh_answers**](QuestionApi.md#refresh_answers) | **POST** /layar/question/{id}/answers/refresh | Search for answers in new documents
+[**search_questions**](QuestionApi.md#search_questions) | **POST** /layar/question/search | Search for questions
+[**start_batch**](QuestionApi.md#start_batch) | **POST** /layar/question/startBulkQuestionAnswerJob | Submit a bulk QA job request
+[**update_question**](QuestionApi.md#update_question) | **PUT** /layar/question/{id} | Update a saved question
 
 # **ask**
 > AskQuestionResponse ask(body, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
 
-Create and ask a new question in the QA model
+Ask a new question
+
+Ask a new question string and auto-generate a new Question object at the same time.
 
 ### Example
 ```python
@@ -43,7 +45,7 @@ body = layar_api.AskQuestionCommand() # AskQuestionCommand |
 x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for advanced users and debugging.  A JSON structure overriding default Question Answering parameters (optional)
 
 try:
-    # Create and ask a new question in the QA model
+    # Ask a new question
     api_response = api_instance.ask(body, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
     pprint(api_response)
 except ApiException as e:
@@ -75,7 +77,7 @@ Name | Type | Description  | Notes
 # **cancel_batch**
 > InlineResponse2001 cancel_batch(job_id)
 
-cancel an existing request to ask a batch of questions
+Cancel a bulk QA job request
 
 ### Example
 ```python
@@ -95,7 +97,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 job_id = 'job_id_example' # str | 
 
 try:
-    # cancel an existing request to ask a batch of questions
+    # Cancel a bulk QA job request
     api_response = api_instance.cancel_batch(job_id)
     pprint(api_response)
 except ApiException as e:
@@ -126,7 +128,9 @@ Name | Type | Description  | Notes
 # **create_question**
 > Question create_question(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
 
-save a new question
+Create a new question
+
+Create a new Question object.
 
 ### Example
 ```python
@@ -148,7 +152,7 @@ x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data pr
 x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for advanced users and debugging.  A JSON structure overriding default Question Answering parameters (optional)
 
 try:
-    # save a new question
+    # Create a new question
     api_response = api_instance.create_question(body, x_vyasa_data_providers, x_vyasa_advanced_parameters=x_vyasa_advanced_parameters)
     pprint(api_response)
 except ApiException as e:
@@ -181,7 +185,9 @@ Name | Type | Description  | Notes
 # **delete_question**
 > delete_question(id)
 
-Delete a saved question
+Delete a question
+
+Remove a specified Question object from your Layar instance.
 
 ### Example
 ```python
@@ -201,7 +207,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Delete a saved question
+    # Delete a question
     api_instance.delete_question(id)
 except ApiException as e:
     print("Exception when calling QuestionApi->delete_question: %s\n" % e)
@@ -231,7 +237,9 @@ void (empty response body)
 # **delete_questions**
 > delete_questions()
 
-delete all the records with the given IDs
+Delete multiple questions
+
+Remove the list of specified Question objects by their question IDs.
 
 ### Example
 ```python
@@ -250,7 +258,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 
 try:
-    # delete all the records with the given IDs
+    # Delete multiple questions
     api_instance.delete_questions()
 except ApiException as e:
     print("Exception when calling QuestionApi->delete_questions: %s\n" % e)
@@ -277,7 +285,7 @@ void (empty response body)
 # **find_more_answers**
 > find_more_answers(id)
 
-look for more answers to this question
+Find more answers to a question
 
 ### Example
 ```python
@@ -297,7 +305,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # look for more answers to this question
+    # Find more answers to a question
     api_instance.find_more_answers(id)
 except ApiException as e:
     print("Exception when calling QuestionApi->find_more_answers: %s\n" % e)
@@ -328,6 +336,8 @@ void (empty response body)
 > Question get_question(id)
 
 Get question details
+
+Modify the information provided for a specific Question object.
 
 ### Example
 ```python
@@ -378,7 +388,9 @@ Name | Type | Description  | Notes
 # **get_question_field_counts**
 > list[FieldCount] get_question_field_counts(body, field)
 
-Get curation counts or progress by field for a QA job
+Get curation details by field type
+
+Get a total number of questions that meet specific Question object parameters (curationType, moderators, discord, etc.)
 
 ### Example
 ```python
@@ -399,7 +411,7 @@ body = layar_api.QuestionSearchCommand() # QuestionSearchCommand |
 field = 'field_example' # str | 
 
 try:
-    # Get curation counts or progress by field for a QA job
+    # Get curation details by field type
     api_response = api_instance.get_question_field_counts(body, field)
     pprint(api_response)
 except ApiException as e:
@@ -431,7 +443,9 @@ Name | Type | Description  | Notes
 # **patch_question**
 > patch_question(body, id)
 
-patch
+Update specific details for a question
+
+Replace a specific attribute of the Question object.
 
 ### Example
 ```python
@@ -452,7 +466,7 @@ body = layar_api.PatchCommand() # PatchCommand |
 id = 'id_example' # str | 
 
 try:
-    # patch
+    # Update specific details for a question
     api_instance.patch_question(body, id)
 except ApiException as e:
     print("Exception when calling QuestionApi->patch_question: %s\n" % e)
@@ -483,7 +497,9 @@ void (empty response body)
 # **query_expansion**
 > QueryExpansionResponse query_expansion(body)
 
-Expand the scope of a particular question
+Enable query expansion
+
+Expand the scope of query understanding within the QA Service by enabling our new query expansion method.
 
 ### Example
 ```python
@@ -503,7 +519,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.QueryExpansionRequest() # QueryExpansionRequest | 
 
 try:
-    # Expand the scope of a particular question
+    # Enable query expansion
     api_response = api_instance.query_expansion(body)
     pprint(api_response)
 except ApiException as e:
@@ -534,7 +550,7 @@ Name | Type | Description  | Notes
 # **refresh_answers**
 > refresh_answers(id)
 
-look for answers in new documents
+Search for answers in new documents
 
 Look for answers in new documents (since the last time this endpoint was called or since the question was created, if this endpoint has never been called)
 
@@ -556,7 +572,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # look for answers in new documents
+    # Search for answers in new documents
     api_instance.refresh_answers(id)
 except ApiException as e:
     print("Exception when calling QuestionApi->refresh_answers: %s\n" % e)
@@ -586,7 +602,9 @@ void (empty response body)
 # **search_questions**
 > list[Question] search_questions(body=body)
 
-search for questions
+Search for questions
+
+Find a question by their ID or other object parameters.
 
 ### Example
 ```python
@@ -606,7 +624,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.QuestionSearchCommand() # QuestionSearchCommand |  (optional)
 
 try:
-    # search for questions
+    # Search for questions
     api_response = api_instance.search_questions(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -637,7 +655,7 @@ Name | Type | Description  | Notes
 # **start_batch**
 > InlineResponse2002 start_batch(body=body)
 
-submit a request to ask a batch of questions
+Submit a bulk QA job request
 
 ### Example
 ```python
@@ -657,7 +675,7 @@ api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
 body = layar_api.BulkQuestionCommand() # BulkQuestionCommand |  (optional)
 
 try:
-    # submit a request to ask a batch of questions
+    # Submit a bulk QA job request
     api_response = api_instance.start_batch(body=body)
     pprint(api_response)
 except ApiException as e:

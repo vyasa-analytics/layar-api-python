@@ -33,8 +33,9 @@ class AnswerApi(object):
         self.api_client = api_client
 
     def get_answer(self, id, **kwargs):  # noqa: E501
-        """Get details for a QA Answer in your Layar instance  # noqa: E501
+        """Get answer details  # noqa: E501
 
+        Get information provided in a specific Answer object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_answer(id, async_req=True)
@@ -54,8 +55,9 @@ class AnswerApi(object):
             return data
 
     def get_answer_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get details for a QA Answer in your Layar instance  # noqa: E501
+        """Get answer details  # noqa: E501
 
+        Get information provided in a specific Answer object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_answer_with_http_info(id, async_req=True)
@@ -110,7 +112,7 @@ class AnswerApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/answer/{id}', 'GET',
+            '/layar/answer/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -126,8 +128,9 @@ class AnswerApi(object):
             collection_formats=collection_formats)
 
     def search_answer(self, **kwargs):  # noqa: E501
-        """Search for previously found QA answers  # noqa: E501
+        """Search for answers  # noqa: E501
 
+        Find answers by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_answer(async_req=True)
@@ -147,8 +150,9 @@ class AnswerApi(object):
             return data
 
     def search_answer_with_http_info(self, **kwargs):  # noqa: E501
-        """Search for previously found QA answers  # noqa: E501
+        """Search for answers  # noqa: E501
 
+        Find answers by their ID or other object parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.search_answer_with_http_info(async_req=True)
@@ -203,7 +207,7 @@ class AnswerApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/answer/search', 'POST',
+            '/layar/answer/search', 'POST',
             path_params,
             query_params,
             header_params,
@@ -221,7 +225,7 @@ class AnswerApi(object):
     def update_answer(self, body, id, **kwargs):  # noqa: E501
         """Update answer details  # noqa: E501
 
-        An Answer object containing only the data you wish to change.  # noqa: E501
+        Modify the information provided for a specific Answer object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_answer(body, id, async_req=True)
@@ -244,7 +248,7 @@ class AnswerApi(object):
     def update_answer_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """Update answer details  # noqa: E501
 
-        An Answer object containing only the data you wish to change.  # noqa: E501
+        Modify the information provided for a specific Answer object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_answer_with_http_info(body, id, async_req=True)
@@ -310,7 +314,7 @@ class AnswerApi(object):
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501
 
         return self.api_client.call_api(
-            '/answer/{id}', 'PUT',
+            '/layar/answer/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

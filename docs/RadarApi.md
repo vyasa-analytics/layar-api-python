@@ -4,15 +4,17 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_nearest_neighbor_count**](RadarApi.md#get_nearest_neighbor_count) | **GET** /radar/count | count of nearest neighbor terms that match the term in the query string
-[**get_radar**](RadarApi.md#get_radar) | **GET** /radar | Get Radar results
-[**get_radar_by_concept_id**](RadarApi.md#get_radar_by_concept_id) | **GET** /radar/byConceptId | find semantically similar terms
-[**get_radar_by_query_string**](RadarApi.md#get_radar_by_query_string) | **GET** /radar/byQueryString | find semantically similar terms
+[**get_nearest_neighbor_count**](RadarApi.md#get_nearest_neighbor_count) | **GET** /layar/radar/count | Get nearest neighbor counts
+[**get_radar**](RadarApi.md#get_radar) | **GET** /layar/radar | Get Radar results
+[**get_radar_by_concept_id**](RadarApi.md#get_radar_by_concept_id) | **GET** /layar/radar/byConceptId | Find semantically similar terms for a concept
+[**get_radar_by_query_string**](RadarApi.md#get_radar_by_query_string) | **GET** /layar/radar/byQueryString | Find semantically similar terms for a string
 
 # **get_nearest_neighbor_count**
 > InlineResponse2003 get_nearest_neighbor_count(x_vyasa_data_providers, terms=terms)
 
-count of nearest neighbor terms that match the term in the query string
+Get nearest neighbor counts
+
+Return a count of nearest neighbor terms for an input query string
 
 ### Example
 ```python
@@ -33,7 +35,7 @@ x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data pr
 terms = 'terms_example' # str |  (optional)
 
 try:
-    # count of nearest neighbor terms that match the term in the query string
+    # Get nearest neighbor counts
     api_response = api_instance.get_nearest_neighbor_count(x_vyasa_data_providers, terms=terms)
     pprint(api_response)
 except ApiException as e:
@@ -142,7 +144,7 @@ Name | Type | Description  | Notes
 # **get_radar_by_concept_id**
 > list[Radar] get_radar_by_concept_id(size=size, minimum_similarity=minimum_similarity, concept_id=concept_id, source=source)
 
-find semantically similar terms
+Find semantically similar terms for a concept
 
 ### Example
 ```python
@@ -165,7 +167,7 @@ concept_id = 'concept_id_example' # str |  (optional)
 source = 'source_example' # str |  (optional)
 
 try:
-    # find semantically similar terms
+    # Find semantically similar terms for a concept
     api_response = api_instance.get_radar_by_concept_id(size=size, minimum_similarity=minimum_similarity, concept_id=concept_id, source=source)
     pprint(api_response)
 except ApiException as e:
@@ -199,7 +201,7 @@ Name | Type | Description  | Notes
 # **get_radar_by_query_string**
 > list[Radar] get_radar_by_query_string(x_vyasa_data_providers, q=q, size=size, minimum_similarity=minimum_similarity, source=source)
 
-find semantically similar terms
+Find semantically similar terms for a string
 
 ### Example
 ```python
@@ -223,7 +225,7 @@ minimum_similarity = 3.4 # float |  (optional)
 source = 'source_example' # str |  (optional)
 
 try:
-    # find semantically similar terms
+    # Find semantically similar terms for a string
     api_response = api_instance.get_radar_by_query_string(x_vyasa_data_providers, q=q, size=size, minimum_similarity=minimum_similarity, source=source)
     pprint(api_response)
 except ApiException as e:

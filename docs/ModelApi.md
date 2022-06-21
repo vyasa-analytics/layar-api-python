@@ -4,15 +4,17 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**download_model**](ModelApi.md#download_model) | **GET** /model/{id}/download | Download a learning model by ID
-[**search_models_by_computation_id**](ModelApi.md#search_models_by_computation_id) | **GET** /projectComputation/{id}/models | find deep learning models by project computation
-[**search_models_by_module_id**](ModelApi.md#search_models_by_module_id) | **GET** /module/{moduleId}/models | Find deep learning models by module
-[**search_models_by_project_id**](ModelApi.md#search_models_by_project_id) | **GET** /project/{projectId}/models | find deep learning models by project
+[**download_model**](ModelApi.md#download_model) | **GET** /layar/model/{id}/download | Download a model by ID
+[**search_models_by_computation_id**](ModelApi.md#search_models_by_computation_id) | **GET** /layar/projectComputation/{id}/models | Find models by project computation ID
+[**search_models_by_module_id**](ModelApi.md#search_models_by_module_id) | **GET** /layar/module/{moduleId}/models | Find models by module ID
+[**search_models_by_project_id**](ModelApi.md#search_models_by_project_id) | **GET** /layar/project/{projectId}/models | Find models by project ID
 
 # **download_model**
 > str download_model(id)
 
-Download a learning model by ID
+Download a model by ID
+
+Download the original model file by its model ID.
 
 ### Example
 ```python
@@ -32,7 +34,7 @@ api_instance = layar_api.ModelApi(layar_api.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
-    # Download a learning model by ID
+    # Download a model by ID
     api_response = api_instance.download_model(id)
     pprint(api_response)
 except ApiException as e:
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 # **search_models_by_computation_id**
 > list[DeepLearningModel] search_models_by_computation_id(id, start=start, rows=rows, q=q)
 
-find deep learning models by project computation
+Find models by project computation ID
 
 ### Example
 ```python
@@ -86,7 +88,7 @@ rows = 56 # int | the number of rows to return (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # find deep learning models by project computation
+    # Find models by project computation ID
     api_response = api_instance.search_models_by_computation_id(id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 # **search_models_by_module_id**
 > list[DeepLearningModel] search_models_by_module_id(module_id, start=start, rows=rows, q=q)
 
-Find deep learning models by module
+Find models by module ID
 
 ### Example
 ```python
@@ -143,7 +145,7 @@ rows = 56 # int | the number of rows to return (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # Find deep learning models by module
+    # Find models by module ID
     api_response = api_instance.search_models_by_module_id(module_id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
@@ -177,7 +179,7 @@ Name | Type | Description  | Notes
 # **search_models_by_project_id**
 > list[DeepLearningModel] search_models_by_project_id(project_id, start=start, rows=rows, q=q)
 
-find deep learning models by project
+Find models by project ID
 
 ### Example
 ```python
@@ -200,7 +202,7 @@ rows = 56 # int | the number of rows to return (optional)
 q = 'q_example' # str | the query string to search for (optional)
 
 try:
-    # find deep learning models by project
+    # Find models by project ID
     api_response = api_instance.search_models_by_project_id(project_id, start=start, rows=rows, q=q)
     pprint(api_response)
 except ApiException as e:
