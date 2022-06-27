@@ -5,7 +5,7 @@ All URIs are relative to *BASE_PATH*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_items**](SavedListApi.md#add_items) | **PUT** /layar/savedList/{id}/addItem | Add items to a set
-[**add_items_by_search**](SavedListApi.md#add_items_by_search) | **PUT** /layar/savedList/{id}/add | 
+[**add_items_by_search**](SavedListApi.md#add_items_by_search) | **PUT** /layar/savedList/{id}/add | Add items to a set
 [**create_saved_list**](SavedListApi.md#create_saved_list) | **POST** /layar/savedList | Create a new set
 [**delete_saved_list**](SavedListApi.md#delete_saved_list) | **DELETE** /layar/savedList/{id} | Delete a set
 [**delete_saved_lists**](SavedListApi.md#delete_saved_lists) | **DELETE** /layar/savedList/deleteMany | Delete multiple sets
@@ -74,7 +74,7 @@ void (empty response body)
 # **add_items_by_search**
 > add_items_by_search(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 
-
+Add items to a set
 
 ### Example
 ```python
@@ -96,6 +96,7 @@ id = 'id_example' # str |
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query (optional)
 
 try:
+    # Add items to a set
     api_instance.add_items_by_search(body, id, x_vyasa_data_providers=x_vyasa_data_providers)
 except ApiException as e:
     print("Exception when calling SavedListApi->add_items_by_search: %s\n" % e)

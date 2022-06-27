@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_search_history**](AutocompleteApi.md#delete_search_history) | **DELETE** /layar/autocomplete/searchHistory/{term} | Delete a search request
 [**get_search_history**](AutocompleteApi.md#get_search_history) | **GET** /layar/autocomplete/searchHistory | Get search history
-[**layar_autocomplete_get**](AutocompleteApi.md#layar_autocomplete_get) | **GET** /layar/autocomplete | Search across all domain objects
+[**layar_autocomplete_get**](AutocompleteApi.md#layar_autocomplete_get) | **GET** /layar/autocomplete | Get search history for all domain objects
 
 # **delete_search_history**
 > delete_search_history(term)
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 # **layar_autocomplete_get**
 > AutocompleteResult layar_autocomplete_get(q, index_type=index_type)
 
-Search across all domain objects
+Get search history for all domain objects
 
 Find any objects across all domains (e.g. Answers, Concepts, Paragraphs, Projects, etc.) where the input query string exists as the name.
 
@@ -139,7 +139,7 @@ q = 'q_example' # str |
 index_type = 'index_type_example' # str |  (optional)
 
 try:
-    # Search across all domain objects
+    # Get search history for all domain objects
     api_response = api_instance.layar_autocomplete_get(q, index_type=index_type)
     pprint(api_response)
 except ApiException as e:

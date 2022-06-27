@@ -51,13 +51,14 @@ All URIs are relative to *BASE_PATH*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AllApi* | [**search_all**](docs/AllApi.md#search_all) | **GET** /layar/all | Search for all domain objects
+*AllApi* | [**search_all**](docs/AllApi.md#search_all) | **GET** /layar/all | Search across all domain objects
 *AnswerApi* | [**get_answer**](docs/AnswerApi.md#get_answer) | **GET** /layar/answer/{id} | Get answer details
+*AnswerApi* | [**layar_answer_get**](docs/AnswerApi.md#layar_answer_get) | **GET** /layar/answer | 
 *AnswerApi* | [**search_answer**](docs/AnswerApi.md#search_answer) | **POST** /layar/answer/search | Search for answers
 *AnswerApi* | [**update_answer**](docs/AnswerApi.md#update_answer) | **PUT** /layar/answer/{id} | Update answer details
 *AutocompleteApi* | [**delete_search_history**](docs/AutocompleteApi.md#delete_search_history) | **DELETE** /layar/autocomplete/searchHistory/{term} | Delete a search request
 *AutocompleteApi* | [**get_search_history**](docs/AutocompleteApi.md#get_search_history) | **GET** /layar/autocomplete/searchHistory | Get search history
-*AutocompleteApi* | [**layar_autocomplete_get**](docs/AutocompleteApi.md#layar_autocomplete_get) | **GET** /layar/autocomplete | Search across all domain objects
+*AutocompleteApi* | [**layar_autocomplete_get**](docs/AutocompleteApi.md#layar_autocomplete_get) | **GET** /layar/autocomplete | Get search history for all domain objects
 *CompoundApi* | [**render**](docs/CompoundApi.md#render) | **GET** /layar/compound/render | Render SMILES into an SVG
 *ConceptApi* | [**assign_from_term**](docs/ConceptApi.md#assign_from_term) | **POST** /layar/concept/assignTerm | Create a new term for a concept
 *ConceptApi* | [**create_concept**](docs/ConceptApi.md#create_concept) | **POST** /layar/concept | Create a new concept
@@ -89,11 +90,8 @@ Class | Method | HTTP request | Description
 *ConnectorApi* | [**patch_connector**](docs/ConnectorApi.md#patch_connector) | **PATCH** /layar/connector/{id} | Update a specific attribute
 *ConnectorApi* | [**search_connectors**](docs/ConnectorApi.md#search_connectors) | **GET** /layar/connector | Search for Twitter connectors
 *ConnectorApi* | [**update_connector**](docs/ConnectorApi.md#update_connector) | **PUT** /layar/connector/{id} | Update Twitter connector details
-*DefaultApi* | [**get_data_providers**](docs/DefaultApi.md#get_data_providers) | **GET** /connect/node | Search for data providers
-*DefaultApi* | [**get_fabrics**](docs/DefaultApi.md#get_fabrics) | **GET** /connect/fabric | Search for data fabrics
-*DefaultApi* | [**layar_paragraph_get**](docs/DefaultApi.md#layar_paragraph_get) | **GET** /layar/paragraph | 
-*DefaultApi* | [**search_paragraph**](docs/DefaultApi.md#search_paragraph) | **POST** /layar/paragraph/search | 
-*DefaultApi* | [**search_term**](docs/DefaultApi.md#search_term) | **POST** /layar/ontologyTerm/search | 
+*DataFabricApi* | [**get_data_providers**](docs/DataFabricApi.md#get_data_providers) | **GET** /layar/node | Search for data providers
+*DataFabricApi* | [**get_fabrics**](docs/DataFabricApi.md#get_fabrics) | **GET** /layar/fabric | Search for data fabrics
 *EventApi* | [**get_event**](docs/EventApi.md#get_event) | **GET** /layar/event/{id} | Get event details
 *EventApi* | [**search_events**](docs/EventApi.md#search_events) | **GET** /layar/event | Search for events
 *GroupApi* | [**group_terms**](docs/GroupApi.md#group_terms) | **POST** /layar/group/terms | Group similar terms
@@ -119,13 +117,17 @@ Class | Method | HTTP request | Description
 *NamedEntityApi* | [**get_types**](docs/NamedEntityApi.md#get_types) | **GET** /layar/namedEntity/types | Retrieve a list of available named entity types
 *NamedEntityApi* | [**named_entity_tag**](docs/NamedEntityApi.md#named_entity_tag) | **POST** /layar/statement/{id}/namedEntity/tag | Tag named entities within specific columns of a table
 *NamedEntityApi* | [**tag_ner**](docs/NamedEntityApi.md#tag_ner) | **POST** /layar/namedEntity/tag | Tag named entities
+*OntologyApi* | [**create_table_ontology**](docs/OntologyApi.md#create_table_ontology) | **POST** /layar/sourceDocument/{id}/createOntology | Create an ontology from a table
 *OntologyTermApi* | [**create_term**](docs/OntologyTermApi.md#create_term) | **POST** /layar/ontologyTerm | Create a new ontology term
 *OntologyTermApi* | [**delete_term**](docs/OntologyTermApi.md#delete_term) | **DELETE** /layar/ontologyTerm/{id} | Delete an ontology term
 *OntologyTermApi* | [**get_term**](docs/OntologyTermApi.md#get_term) | **GET** /layar/ontologyTerm/{id} | Get ontology term details
 *OntologyTermApi* | [**layar_ontology_term_get**](docs/OntologyTermApi.md#layar_ontology_term_get) | **GET** /layar/ontologyTerm | Search for ontology terms
+*OntologyTermApi* | [**search_term**](docs/OntologyTermApi.md#search_term) | **POST** /layar/ontologyTerm/search | 
 *OntologyTermApi* | [**update_term**](docs/OntologyTermApi.md#update_term) | **PUT** /layar/ontologyTerm/{id} | Update ontology term details
 *ParagraphApi* | [**get_paragraph**](docs/ParagraphApi.md#get_paragraph) | **GET** /layar/paragraph/{id} | Get paragraph details
+*ParagraphApi* | [**layar_paragraph_get**](docs/ParagraphApi.md#layar_paragraph_get) | **GET** /layar/paragraph | Search for paragraphs
 *ParagraphApi* | [**parse_text**](docs/ParagraphApi.md#parse_text) | **POST** /layar/partOfSpeech/parseText | Parse text into part-of-speech components
+*ParagraphApi* | [**search_paragraph**](docs/ParagraphApi.md#search_paragraph) | **POST** /layar/paragraph/search | 
 *ProjectApi* | [**add_input**](docs/ProjectApi.md#add_input) | **PUT** /layar/project/{id}/addInput | Add items to a project
 *ProjectApi* | [**create_project**](docs/ProjectApi.md#create_project) | **POST** /layar/project | Create a new project
 *ProjectApi* | [**delete_project**](docs/ProjectApi.md#delete_project) | **DELETE** /layar/project/{id} | Delete a project
@@ -155,6 +157,7 @@ Class | Method | HTTP request | Description
 *QuestionApi* | [**patch_question**](docs/QuestionApi.md#patch_question) | **PATCH** /layar/question/{id} | Update specific details for a question
 *QuestionApi* | [**query_expansion**](docs/QuestionApi.md#query_expansion) | **POST** /layar/question/queryExpansion | Enable query expansion
 *QuestionApi* | [**refresh_answers**](docs/QuestionApi.md#refresh_answers) | **POST** /layar/question/{id}/answers/refresh | Search for answers in new documents
+*QuestionApi* | [**search_question_batch**](docs/QuestionApi.md#search_question_batch) | **POST** /layar/question/searchQuestionBatch | Search for question batches
 *QuestionApi* | [**search_questions**](docs/QuestionApi.md#search_questions) | **POST** /layar/question/search | Search for questions
 *QuestionApi* | [**start_batch**](docs/QuestionApi.md#start_batch) | **POST** /layar/question/startBulkQuestionAnswerJob | Submit a bulk QA job request
 *QuestionApi* | [**update_question**](docs/QuestionApi.md#update_question) | **PUT** /layar/question/{id} | Update a saved question
@@ -163,7 +166,7 @@ Class | Method | HTTP request | Description
 *RadarApi* | [**get_radar_by_concept_id**](docs/RadarApi.md#get_radar_by_concept_id) | **GET** /layar/radar/byConceptId | Find semantically similar terms for a concept
 *RadarApi* | [**get_radar_by_query_string**](docs/RadarApi.md#get_radar_by_query_string) | **GET** /layar/radar/byQueryString | Find semantically similar terms for a string
 *SavedListApi* | [**add_items**](docs/SavedListApi.md#add_items) | **PUT** /layar/savedList/{id}/addItem | Add items to a set
-*SavedListApi* | [**add_items_by_search**](docs/SavedListApi.md#add_items_by_search) | **PUT** /layar/savedList/{id}/add | 
+*SavedListApi* | [**add_items_by_search**](docs/SavedListApi.md#add_items_by_search) | **PUT** /layar/savedList/{id}/add | Add items to a set
 *SavedListApi* | [**create_saved_list**](docs/SavedListApi.md#create_saved_list) | **POST** /layar/savedList | Create a new set
 *SavedListApi* | [**delete_saved_list**](docs/SavedListApi.md#delete_saved_list) | **DELETE** /layar/savedList/{id} | Delete a set
 *SavedListApi* | [**delete_saved_lists**](docs/SavedListApi.md#delete_saved_lists) | **DELETE** /layar/savedList/deleteMany | Delete multiple sets
@@ -179,6 +182,7 @@ Class | Method | HTTP request | Description
 *SourceDocumentApi* | [**add_column**](docs/SourceDocumentApi.md#add_column) | **PUT** /layar/sourceDocument/{id}/addColumn | Add a column to a table document
 *SourceDocumentApi* | [**add_viewer**](docs/SourceDocumentApi.md#add_viewer) | **POST** /layar/sourceDocument/{id}/viewers | Authorize a viewer for the source document
 *SourceDocumentApi* | [**create_document**](docs/SourceDocumentApi.md#create_document) | **POST** /layar/sourceDocument | Create a source document
+*SourceDocumentApi* | [**create_table_ontology**](docs/SourceDocumentApi.md#create_table_ontology) | **POST** /layar/sourceDocument/{id}/createOntology | Create an ontology from a table
 *SourceDocumentApi* | [**delete_document**](docs/SourceDocumentApi.md#delete_document) | **DELETE** /layar/sourceDocument/{id} | Delete a document
 *SourceDocumentApi* | [**delete_documents**](docs/SourceDocumentApi.md#delete_documents) | **DELETE** /layar/sourceDocument/deleteMany | Delete multiple documents
 *SourceDocumentApi* | [**download_annotations**](docs/SourceDocumentApi.md#download_annotations) | **GET** /layar/sourceDocument/downloadAnnotations | Download document annotations to a CSV

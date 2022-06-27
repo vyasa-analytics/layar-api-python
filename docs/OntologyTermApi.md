@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_term**](OntologyTermApi.md#delete_term) | **DELETE** /layar/ontologyTerm/{id} | Delete an ontology term
 [**get_term**](OntologyTermApi.md#get_term) | **GET** /layar/ontologyTerm/{id} | Get ontology term details
 [**layar_ontology_term_get**](OntologyTermApi.md#layar_ontology_term_get) | **GET** /layar/ontologyTerm | Search for ontology terms
+[**search_term**](OntologyTermApi.md#search_term) | **POST** /layar/ontologyTerm/search | 
 [**update_term**](OntologyTermApi.md#update_term) | **PUT** /layar/ontologyTerm/{id} | Update ontology term details
 
 # **create_term**
@@ -239,6 +240,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_term**
+> list[OntologyTerm] search_term(body=body)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
+body = layar_api.OntologySearchCommand() # OntologySearchCommand |  (optional)
+
+try:
+    api_response = api_instance.search_term(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyTermApi->search_term: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OntologySearchCommand**](OntologySearchCommand.md)|  | [optional] 
+
+### Return type
+
+[**list[OntologyTerm]**](OntologyTerm.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

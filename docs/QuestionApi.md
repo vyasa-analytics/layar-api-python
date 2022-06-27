@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**patch_question**](QuestionApi.md#patch_question) | **PATCH** /layar/question/{id} | Update specific details for a question
 [**query_expansion**](QuestionApi.md#query_expansion) | **POST** /layar/question/queryExpansion | Enable query expansion
 [**refresh_answers**](QuestionApi.md#refresh_answers) | **POST** /layar/question/{id}/answers/refresh | Search for answers in new documents
+[**search_question_batch**](QuestionApi.md#search_question_batch) | **POST** /layar/question/searchQuestionBatch | Search for question batches
 [**search_questions**](QuestionApi.md#search_questions) | **POST** /layar/question/search | Search for questions
 [**start_batch**](QuestionApi.md#start_batch) | **POST** /layar/question/startBulkQuestionAnswerJob | Submit a bulk QA job request
 [**update_question**](QuestionApi.md#update_question) | **PUT** /layar/question/{id} | Update a saved question
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch**
-> InlineResponse2001 cancel_batch(job_id)
+> InlineResponse2002 cancel_batch(job_id)
 
 Cancel a bulk QA job request
 
@@ -112,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -599,6 +600,59 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_question_batch**
+> list[QuestionBatch] search_question_batch(body=body)
+
+Search for question batches
+
+Find a question batch by their batch ID, job ID, or other object parameters.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
+body = layar_api.BulkQuestionSearchCommand() # BulkQuestionSearchCommand |  (optional)
+
+try:
+    # Search for question batches
+    api_response = api_instance.search_question_batch(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QuestionApi->search_question_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BulkQuestionSearchCommand**](BulkQuestionSearchCommand.md)|  | [optional] 
+
+### Return type
+
+[**list[QuestionBatch]**](QuestionBatch.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_questions**
 > list[Question] search_questions(body=body)
 
@@ -653,7 +707,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **start_batch**
-> InlineResponse2002 start_batch(body=body)
+> InlineResponse2001 start_batch(body=body)
 
 Submit a bulk QA job request
 
@@ -690,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

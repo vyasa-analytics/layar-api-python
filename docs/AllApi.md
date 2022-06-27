@@ -4,12 +4,12 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search_all**](AllApi.md#search_all) | **GET** /layar/all | Search for all domain objects
+[**search_all**](AllApi.md#search_all) | **GET** /layar/all | Search across all domain objects
 
 # **search_all**
 > AllSearchResponse search_all(q=q, start=start, rows=rows, concept_id=concept_id, type_filter=type_filter)
 
-Search for all domain objects
+Search across all domain objects
 
 Find any objects across all domains (e.g. Answers, Concepts, Paragraphs, Projects, etc.) where the input query string exists.
 
@@ -35,7 +35,7 @@ concept_id = 'concept_id_example' # str | limit results to those tagged with the
 type_filter = 'type_filter_example' # str |  (optional)
 
 try:
-    # Search for all domain objects
+    # Search across all domain objects
     api_response = api_instance.search_all(q=q, start=start, rows=rows, concept_id=concept_id, type_filter=type_filter)
     pprint(api_response)
 except ApiException as e:
