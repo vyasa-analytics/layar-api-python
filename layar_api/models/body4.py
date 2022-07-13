@@ -54,12 +54,9 @@ class Body4(object):
         self._properties = None
         self._delimeter = None
         self.discriminator = None
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
-        if label is not None:
-            self.label = label
+        self.name = name
+        self.id = id
+        self.label = label
         if synonyms is not None:
             self.synonyms = synonyms
         if properties is not None:
@@ -87,6 +84,8 @@ class Body4(object):
         :param name: The name of this Body4.  # noqa: E501
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 
@@ -110,6 +109,8 @@ class Body4(object):
         :param id: The id of this Body4.  # noqa: E501
         :type: str
         """
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
 
@@ -133,6 +134,8 @@ class Body4(object):
         :param label: The label of this Body4.  # noqa: E501
         :type: str
         """
+        if label is None:
+            raise ValueError("Invalid value for `label`, must not be `None`")  # noqa: E501
 
         self._label = label
 
