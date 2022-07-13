@@ -206,6 +206,7 @@ Class | Method | HTTP request | Description
 *SourceDocumentApi* | [**search_documents**](docs/SourceDocumentApi.md#search_documents) | **POST** /layar/sourceDocument/search | Search for documents
 *SourceDocumentApi* | [**update_annotation**](docs/SourceDocumentApi.md#update_annotation) | **PUT** /layar/sourceDocument/{id}/annotations | Update annotation details
 *SourceDocumentApi* | [**update_document**](docs/SourceDocumentApi.md#update_document) | **PUT** /layar/sourceDocument/{id} | Update document details
+*StatementApi* | [**aggregate_values**](docs/StatementApi.md#aggregate_values) | **POST** /layar/statement/aggs | Return distinct values in columns
 *StatementApi* | [**create_statement**](docs/StatementApi.md#create_statement) | **POST** /layar/statement | Create a new statement
 *StatementApi* | [**delete_statement**](docs/StatementApi.md#delete_statement) | **DELETE** /layar/statement/{id} | Delete a statement
 *StatementApi* | [**delete_statements**](docs/StatementApi.md#delete_statements) | **DELETE** /layar/statement/deleteMany | Delete multiple statements

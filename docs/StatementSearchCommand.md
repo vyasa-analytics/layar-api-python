@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **sort_order** | **str** |  | [optional] 
 **document_ids** | **list[str]** |  | [optional] 
 **start_offset** | **float** |  | [optional] 
+**aggs** | **object** |  | [optional] 
 **column_filters** | [**list[ColumnFilter]**](ColumnFilter.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

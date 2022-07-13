@@ -35,6 +35,7 @@ class StatementSearchCommand(object):
         'sort_order': 'str',
         'document_ids': 'list[str]',
         'start_offset': 'float',
+        'aggs': 'object',
         'column_filters': 'list[ColumnFilter]'
     }
 
@@ -46,10 +47,11 @@ class StatementSearchCommand(object):
         'sort_order': 'sortOrder',
         'document_ids': 'documentIds',
         'start_offset': 'startOffset',
+        'aggs': 'aggs',
         'column_filters': 'columnFilters'
     }
 
-    def __init__(self, q=None, rows=None, start=None, sort=None, sort_order=None, document_ids=None, start_offset=None, column_filters=None):  # noqa: E501
+    def __init__(self, q=None, rows=None, start=None, sort=None, sort_order=None, document_ids=None, start_offset=None, aggs=None, column_filters=None):  # noqa: E501
         """StatementSearchCommand - a model defined in Swagger"""  # noqa: E501
         self._q = None
         self._rows = None
@@ -58,6 +60,7 @@ class StatementSearchCommand(object):
         self._sort_order = None
         self._document_ids = None
         self._start_offset = None
+        self._aggs = None
         self._column_filters = None
         self.discriminator = None
         if q is not None:
@@ -74,6 +77,8 @@ class StatementSearchCommand(object):
             self.document_ids = document_ids
         if start_offset is not None:
             self.start_offset = start_offset
+        if aggs is not None:
+            self.aggs = aggs
         if column_filters is not None:
             self.column_filters = column_filters
 
@@ -229,6 +234,27 @@ class StatementSearchCommand(object):
         """
 
         self._start_offset = start_offset
+
+    @property
+    def aggs(self):
+        """Gets the aggs of this StatementSearchCommand.  # noqa: E501
+
+
+        :return: The aggs of this StatementSearchCommand.  # noqa: E501
+        :rtype: object
+        """
+        return self._aggs
+
+    @aggs.setter
+    def aggs(self, aggs):
+        """Sets the aggs of this StatementSearchCommand.
+
+
+        :param aggs: The aggs of this StatementSearchCommand.  # noqa: E501
+        :type: object
+        """
+
+        self._aggs = aggs
 
     @property
     def column_filters(self):

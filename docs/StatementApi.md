@@ -4,6 +4,7 @@ All URIs are relative to *BASE_PATH*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**aggregate_values**](StatementApi.md#aggregate_values) | **POST** /layar/statement/aggs | Return distinct values in columns
 [**create_statement**](StatementApi.md#create_statement) | **POST** /layar/statement | Create a new statement
 [**delete_statement**](StatementApi.md#delete_statement) | **DELETE** /layar/statement/{id} | Delete a statement
 [**delete_statements**](StatementApi.md#delete_statements) | **DELETE** /layar/statement/deleteMany | Delete multiple statements
@@ -13,6 +14,59 @@ Method | HTTP request | Description
 [**named_entity_tag**](StatementApi.md#named_entity_tag) | **POST** /layar/statement/{id}/namedEntity/tag | Tag named entities within specific columns of a table
 [**search_statements**](StatementApi.md#search_statements) | **POST** /layar/statement/search | Search for statements
 [**update_statement**](StatementApi.md#update_statement) | **PUT** /layar/statement/{id} | Update statement details
+
+# **aggregate_values**
+> object aggregate_values(body=body)
+
+Return distinct values in columns
+
+Get a distinct values and counts for columns of data
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
+body = layar_api.StatementSearchCommand() # StatementSearchCommand |  (optional)
+
+try:
+    # Return distinct values in columns
+    api_response = api_instance.aggregate_values(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatementApi->aggregate_values: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**StatementSearchCommand**](StatementSearchCommand.md)|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_statement**
 > Statement create_statement(body)
