@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**remove_annotation**](SourceDocumentApi.md#remove_annotation) | **DELETE** /layar/sourceDocument/{id}/annotations/{annotationId} | Delete annotations by annotation ID
 [**render_pdf**](SourceDocumentApi.md#render_pdf) | **GET** /layar/sourceDocument/{id}/renderPdf | Render a PDF of a document
 [**search_documents**](SourceDocumentApi.md#search_documents) | **POST** /layar/sourceDocument/search | Search for documents
+[**table_similarity**](SourceDocumentApi.md#table_similarity) | **POST** /layar/sourceDocument/similarity | Calculate table similarity
 [**update_annotation**](SourceDocumentApi.md#update_annotation) | **PUT** /layar/sourceDocument/{id}/annotations | Update annotation details
 [**update_document**](SourceDocumentApi.md#update_document) | **PUT** /layar/sourceDocument/{id} | Update document details
 
@@ -1447,6 +1448,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[SourceDocument]**](SourceDocument.md)
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **table_similarity**
+> list[TableSimilarity] table_similarity(body)
+
+Calculate table similarity
+
+Calculate similarity between columns of two different tables.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
+body = layar_api.SourceDocumentSimilarityCommand() # SourceDocumentSimilarityCommand | 
+
+try:
+    # Calculate table similarity
+    api_response = api_instance.table_similarity(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SourceDocumentApi->table_similarity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SourceDocumentSimilarityCommand**](SourceDocumentSimilarityCommand.md)|  | 
+
+### Return type
+
+[**list[TableSimilarity]**](TableSimilarity.md)
 
 ### Authorization
 

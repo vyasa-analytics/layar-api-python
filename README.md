@@ -204,6 +204,7 @@ Class | Method | HTTP request | Description
 *SourceDocumentApi* | [**remove_annotation**](docs/SourceDocumentApi.md#remove_annotation) | **DELETE** /layar/sourceDocument/{id}/annotations/{annotationId} | Delete annotations by annotation ID
 *SourceDocumentApi* | [**render_pdf**](docs/SourceDocumentApi.md#render_pdf) | **GET** /layar/sourceDocument/{id}/renderPdf | Render a PDF of a document
 *SourceDocumentApi* | [**search_documents**](docs/SourceDocumentApi.md#search_documents) | **POST** /layar/sourceDocument/search | Search for documents
+*SourceDocumentApi* | [**table_similarity**](docs/SourceDocumentApi.md#table_similarity) | **POST** /layar/sourceDocument/similarity | Calculate table similarity
 *SourceDocumentApi* | [**update_annotation**](docs/SourceDocumentApi.md#update_annotation) | **PUT** /layar/sourceDocument/{id}/annotations | Update annotation details
 *SourceDocumentApi* | [**update_document**](docs/SourceDocumentApi.md#update_document) | **PUT** /layar/sourceDocument/{id} | Update document details
 *StatementApi* | [**aggregate_values**](docs/StatementApi.md#aggregate_values) | **POST** /layar/statement/aggs | Return distinct values in columns
