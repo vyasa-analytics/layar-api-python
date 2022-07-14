@@ -152,10 +152,12 @@ from layar_api.models.restart_services_request import RestartServicesRequest
 from layar_api.models.som_request import SOMRequest
 from layar_api.models.saved_list import SavedList
 from layar_api.models.section_search import SectionSearch
+from layar_api.models.similar_column import SimilarColumn
 from layar_api.models.source_document import SourceDocument
 from layar_api.models.source_document_exclude_search_command import SourceDocumentExcludeSearchCommand
 from layar_api.models.source_document_import_status import SourceDocumentImportStatus
 from layar_api.models.source_document_search_command import SourceDocumentSearchCommand
+from layar_api.models.source_document_similarity_command import SourceDocumentSimilarityCommand
 from layar_api.models.source_document_type import SourceDocumentType
 from layar_api.models.source_document_viewer import SourceDocumentViewer
 from layar_api.models.source_documents_assignment import SourceDocumentsAssignment
@@ -164,6 +166,7 @@ from layar_api.models.statement_named_entity_command import StatementNamedEntity
 from layar_api.models.statement_search_command import StatementSearchCommand
 from layar_api.models.statement_similarity import StatementSimilarity
 from layar_api.models.stop_training import StopTraining
+from layar_api.models.table_similarity import TableSimilarity
 from layar_api.models.tagged_concept import TaggedConcept
 from layar_api.models.tagged_relationship import TaggedRelationship
 from layar_api.models.vector_similarity_request import VectorSimilarityRequest
