@@ -28,185 +28,38 @@ class Body4(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'str',
-        'label': 'str',
-        'synonyms': 'list[str]',
-        'properties': 'list[str]',
-        'delimeter': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
-        'label': 'label',
-        'synonyms': 'synonyms',
-        'properties': 'properties',
-        'delimeter': 'delimeter'
     }
 
-    def __init__(self, name=None, id=None, label=None, synonyms=None, properties=None, delimeter=None):  # noqa: E501
+    discriminator_value_class_map = {
+            'AZURE'.lower(): 'AzureConnector',
+            'DELL_ISILON'.lower(): 'IsilonConnector',
+            'FILE_SYSTEM'.lower(): 'FileSystemConnector',
+            'GBQ_PROJECT'.lower(): 'BQConnector',
+            'GBQ_DATASET'.lower(): 'BQConnector',
+            'GCS'.lower(): 'GCSConnector',
+            'GOOGLE_DRIVE'.lower(): 'GoogleDriveConnector',
+            'GFHIRS_PROJECT'.lower(): 'FHIRStoreConnector',
+            'IRODS'.lower(): 'IRODSConnector',
+            'JDBC_SNOWFLAKE'.lower(): 'SnowflakeConnector',
+            'JDBC_SAP_HANA'.lower(): 'SAPHanaConnector',
+            'JDBC_GENERIC'.lower(): 'SQLConnector',
+            'NEO4J_CYPHER'.lower(): 'Neo4jConnector',
+            'RSS'.lower(): 'RSSConnector',
+            'S3'.lower(): 'S3Connector',
+            'WEBSITE'.lower(): 'WebsiteConnector',
+    }
+
+    def __init__(self):  # noqa: E501
         """Body4 - a model defined in Swagger"""  # noqa: E501
-        self._name = None
-        self._id = None
-        self._label = None
-        self._synonyms = None
-        self._properties = None
-        self._delimeter = None
-        self.discriminator = None
-        self.name = name
-        self.id = id
-        self.label = label
-        if synonyms is not None:
-            self.synonyms = synonyms
-        if properties is not None:
-            self.properties = properties
-        if delimeter is not None:
-            self.delimeter = delimeter
+        self.discriminator = 'live_source_type'
 
-    @property
-    def name(self):
-        """Gets the name of this Body4.  # noqa: E501
-
-        Provide a name for the new ontology  # noqa: E501
-
-        :return: The name of this Body4.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Body4.
-
-        Provide a name for the new ontology  # noqa: E501
-
-        :param name: The name of this Body4.  # noqa: E501
-        :type: str
-        """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def id(self):
-        """Gets the id of this Body4.  # noqa: E501
-
-        The column to use when creating term IDs  # noqa: E501
-
-        :return: The id of this Body4.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Body4.
-
-        The column to use when creating term IDs  # noqa: E501
-
-        :param id: The id of this Body4.  # noqa: E501
-        :type: str
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
-
-    @property
-    def label(self):
-        """Gets the label of this Body4.  # noqa: E501
-
-        The column to use when creating term labels  # noqa: E501
-
-        :return: The label of this Body4.  # noqa: E501
-        :rtype: str
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this Body4.
-
-        The column to use when creating term labels  # noqa: E501
-
-        :param label: The label of this Body4.  # noqa: E501
-        :type: str
-        """
-        if label is None:
-            raise ValueError("Invalid value for `label`, must not be `None`")  # noqa: E501
-
-        self._label = label
-
-    @property
-    def synonyms(self):
-        """Gets the synonyms of this Body4.  # noqa: E501
-
-        The column(s) to use when creating term synonyms  # noqa: E501
-
-        :return: The synonyms of this Body4.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._synonyms
-
-    @synonyms.setter
-    def synonyms(self, synonyms):
-        """Sets the synonyms of this Body4.
-
-        The column(s) to use when creating term synonyms  # noqa: E501
-
-        :param synonyms: The synonyms of this Body4.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._synonyms = synonyms
-
-    @property
-    def properties(self):
-        """Gets the properties of this Body4.  # noqa: E501
-
-        The column(s) to use when creating term properties  # noqa: E501
-
-        :return: The properties of this Body4.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._properties
-
-    @properties.setter
-    def properties(self, properties):
-        """Sets the properties of this Body4.
-
-        The column(s) to use when creating term properties  # noqa: E501
-
-        :param properties: The properties of this Body4.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._properties = properties
-
-    @property
-    def delimeter(self):
-        """Gets the delimeter of this Body4.  # noqa: E501
-
-        If term synonyms are collected in a single column, please provide a delimeter to separate each one  # noqa: E501
-
-        :return: The delimeter of this Body4.  # noqa: E501
-        :rtype: str
-        """
-        return self._delimeter
-
-    @delimeter.setter
-    def delimeter(self, delimeter):
-        """Sets the delimeter of this Body4.
-
-        If term synonyms are collected in a single column, please provide a delimeter to separate each one  # noqa: E501
-
-        :param delimeter: The delimeter of this Body4.  # noqa: E501
-        :type: str
-        """
-
-        self._delimeter = delimeter
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[self.discriminator].lower()
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

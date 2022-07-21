@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**update_connector**](ConnectorApi.md#update_connector) | **PUT** /layar/connector/{id} | Update Twitter connector details
 
 # **create_connector**
-> list[Connector] create_connector(body)
+> InlineResponse201 create_connector(body)
 
 Create a new Twitter connector
 
@@ -32,7 +32,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
-body = layar_api.Connector() # Connector | 
+body = layar_api.Body1() # Body1 | 
 
 try:
     # Create a new Twitter connector
@@ -46,11 +46,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Connector**](Connector.md)|  | 
+ **body** | [**Body1**](Body1.md)|  | 
 
 ### Return type
 
-[**list[Connector]**](Connector.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_connector**
-> Connector get_connector(id)
+> InlineResponse201 get_connector(id)
 
 Get Twitter connector details
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Connector**](Connector.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -318,7 +318,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_connector**
-> list[Connector] update_connector(body, id)
+> Body2 update_connector(body, id)
 
 Update Twitter connector details
 
@@ -339,7 +339,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ConnectorApi(layar_api.ApiClient(configuration))
-body = layar_api.Connector() # Connector | 
+body = layar_api.Body2() # Body2 | 
 id = 'id_example' # str | 
 
 try:
@@ -354,12 +354,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Connector**](Connector.md)|  | 
+ **body** | [**Body2**](Body2.md)|  | 
  **id** | **str**|  | 
 
 ### Return type
 
-[**list[Connector]**](Connector.md)
+[**Body2**](Body2.md)
 
 ### Authorization
 

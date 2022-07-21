@@ -41,8 +41,8 @@ class ConnectorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Connector body: (required)
-        :return: list[Connector]
+        :param Body1 body: (required)
+        :return: InlineResponse201
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -62,8 +62,8 @@ class ConnectorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Connector body: (required)
-        :return: list[Connector]
+        :param Body1 body: (required)
+        :return: InlineResponse201
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -121,7 +121,7 @@ class ConnectorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Connector]',  # noqa: E501
+            response_type='InlineResponse201',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -321,7 +321,7 @@ class ConnectorApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :return: Connector
+        :return: InlineResponse201
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -342,7 +342,7 @@ class ConnectorApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :return: Connector
+        :return: InlineResponse201
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -396,7 +396,7 @@ class ConnectorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Connector',  # noqa: E501
+            response_type='InlineResponse201',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -604,9 +604,9 @@ class ConnectorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Connector body: (required)
+        :param Body2 body: (required)
         :param str id: (required)
-        :return: list[Connector]
+        :return: Body2
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -627,9 +627,9 @@ class ConnectorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Connector body: (required)
+        :param Body2 body: (required)
         :param str id: (required)
-        :return: list[Connector]
+        :return: Body2
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -693,7 +693,7 @@ class ConnectorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Connector]',  # noqa: E501
+            response_type='Body2',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -36,6 +36,10 @@ from layar_api.models.body1 import Body1
 from layar_api.models.body2 import Body2
 from layar_api.models.body3 import Body3
 from layar_api.models.body4 import Body4
+from layar_api.models.body5 import Body5
+from layar_api.models.body6 import Body6
+from layar_api.models.body7 import Body7
+from layar_api.models.body8 import Body8
 from layar_api.models.bulk_question import BulkQuestion
 from layar_api.models.bulk_question_command import BulkQuestionCommand
 from layar_api.models.bulk_question_search_command import BulkQuestionSearchCommand
@@ -77,6 +81,8 @@ from layar_api.models.inline_response2001 import InlineResponse2001
 from layar_api.models.inline_response2002 import InlineResponse2002
 from layar_api.models.inline_response2003 import InlineResponse2003
 from layar_api.models.inline_response2004 import InlineResponse2004
+from layar_api.models.inline_response201 import InlineResponse201
+from layar_api.models.inline_response2011 import InlineResponse2011
 from layar_api.models.list_of_annotations import ListOfAnnotations
 from layar_api.models.list_of_ids import ListOfIds
 from layar_api.models.list_of_item_ids import ListOfItemIds
@@ -93,6 +99,12 @@ from layar_api.models.named_entity_request import NamedEntityRequest
 from layar_api.models.named_entity_response import NamedEntityResponse
 from layar_api.models.named_entity_response_named_entities import NamedEntityResponseNamedEntities
 from layar_api.models.one_of_annotation_search_values_items import OneOfAnnotationSearchValuesItems
+from layar_api.models.one_ofbody1 import OneOfbody1
+from layar_api.models.one_ofbody2 import OneOfbody2
+from layar_api.models.one_ofbody4 import OneOfbody4
+from layar_api.models.one_ofbody5 import OneOfbody5
+from layar_api.models.one_ofinline_response201 import OneOfinlineResponse201
+from layar_api.models.one_ofinline_response2011 import OneOfinlineResponse2011
 from layar_api.models.ontology_search_command import OntologySearchCommand
 from layar_api.models.ontology_term import OntologyTerm
 from layar_api.models.paragraph import Paragraph

@@ -28,98 +28,68 @@ class Body3(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file': 'str',
-        'name': 'str',
-        'cortex_document_type': 'str'
+        'terms': 'list[str]',
+        'cutoff': 'float'
     }
 
     attribute_map = {
-        'file': 'file',
-        'name': 'name',
-        'cortex_document_type': 'cortexDocumentType'
+        'terms': 'terms',
+        'cutoff': 'cutoff'
     }
 
-    def __init__(self, file=None, name=None, cortex_document_type=None):  # noqa: E501
+    def __init__(self, terms=None, cutoff=None):  # noqa: E501
         """Body3 - a model defined in Swagger"""  # noqa: E501
-        self._file = None
-        self._name = None
-        self._cortex_document_type = None
+        self._terms = None
+        self._cutoff = None
         self.discriminator = None
-        if file is not None:
-            self.file = file
-        if name is not None:
-            self.name = name
-        if cortex_document_type is not None:
-            self.cortex_document_type = cortex_document_type
+        if terms is not None:
+            self.terms = terms
+        if cutoff is not None:
+            self.cutoff = cutoff
 
     @property
-    def file(self):
-        """Gets the file of this Body3.  # noqa: E501
+    def terms(self):
+        """Gets the terms of this Body3.  # noqa: E501
 
+        A list of terms to be grouped  # noqa: E501
 
-        :return: The file of this Body3.  # noqa: E501
-        :rtype: str
+        :return: The terms of this Body3.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._file
+        return self._terms
 
-    @file.setter
-    def file(self, file):
-        """Sets the file of this Body3.
+    @terms.setter
+    def terms(self, terms):
+        """Sets the terms of this Body3.
 
+        A list of terms to be grouped  # noqa: E501
 
-        :param file: The file of this Body3.  # noqa: E501
-        :type: str
+        :param terms: The terms of this Body3.  # noqa: E501
+        :type: list[str]
         """
 
-        self._file = file
+        self._terms = terms
 
     @property
-    def name(self):
-        """Gets the name of this Body3.  # noqa: E501
+    def cutoff(self):
+        """Gets the cutoff of this Body3.  # noqa: E501
 
 
-        :return: The name of this Body3.  # noqa: E501
-        :rtype: str
+        :return: The cutoff of this Body3.  # noqa: E501
+        :rtype: float
         """
-        return self._name
+        return self._cutoff
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Body3.
+    @cutoff.setter
+    def cutoff(self, cutoff):
+        """Sets the cutoff of this Body3.
 
 
-        :param name: The name of this Body3.  # noqa: E501
-        :type: str
+        :param cutoff: The cutoff of this Body3.  # noqa: E501
+        :type: float
         """
 
-        self._name = name
-
-    @property
-    def cortex_document_type(self):
-        """Gets the cortex_document_type of this Body3.  # noqa: E501
-
-
-        :return: The cortex_document_type of this Body3.  # noqa: E501
-        :rtype: str
-        """
-        return self._cortex_document_type
-
-    @cortex_document_type.setter
-    def cortex_document_type(self, cortex_document_type):
-        """Sets the cortex_document_type of this Body3.
-
-
-        :param cortex_document_type: The cortex_document_type of this Body3.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["IMAGE", "DOCUMENT", "TABLE"]  # noqa: E501
-        if cortex_document_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cortex_document_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(cortex_document_type, allowed_values)
-            )
-
-        self._cortex_document_type = cortex_document_type
+        self._cutoff = cutoff
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,66 +28,22 @@ class Body2(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'model_id': 'str',
-        'computation_parameters': 'dict(str, str)'
     }
 
     attribute_map = {
-        'model_id': 'modelId',
-        'computation_parameters': 'computationParameters'
     }
 
-    def __init__(self, model_id=None, computation_parameters=None):  # noqa: E501
+    discriminator_value_class_map = {
+              }
+
+    def __init__(self):  # noqa: E501
         """Body2 - a model defined in Swagger"""  # noqa: E501
-        self._model_id = None
-        self._computation_parameters = None
-        self.discriminator = None
-        if model_id is not None:
-            self.model_id = model_id
-        if computation_parameters is not None:
-            self.computation_parameters = computation_parameters
+        self.discriminator = 'connector_type'
 
-    @property
-    def model_id(self):
-        """Gets the model_id of this Body2.  # noqa: E501
-
-
-        :return: The model_id of this Body2.  # noqa: E501
-        :rtype: str
-        """
-        return self._model_id
-
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this Body2.
-
-
-        :param model_id: The model_id of this Body2.  # noqa: E501
-        :type: str
-        """
-
-        self._model_id = model_id
-
-    @property
-    def computation_parameters(self):
-        """Gets the computation_parameters of this Body2.  # noqa: E501
-
-
-        :return: The computation_parameters of this Body2.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._computation_parameters
-
-    @computation_parameters.setter
-    def computation_parameters(self, computation_parameters):
-        """Sets the computation_parameters of this Body2.
-
-
-        :param computation_parameters: The computation_parameters of this Body2.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._computation_parameters = computation_parameters
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[self.discriminator].lower()
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

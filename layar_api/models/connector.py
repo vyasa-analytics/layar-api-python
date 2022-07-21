@@ -29,7 +29,7 @@ class Connector(object):
     """
     swagger_types = {
         'connector_type': 'str',
-        'created_by_user': 'int',
+        'created_by_user': 'str',
         'date_indexed': 'datetime',
         'id': 'str',
         'name': 'str'
@@ -43,6 +43,10 @@ class Connector(object):
         'name': 'name'
     }
 
+    discriminator_value_class_map = {
+            'TWITTER'.lower(): 'TwitterConnector',
+    }
+
     def __init__(self, connector_type=None, created_by_user=None, date_indexed=None, id=None, name=None):  # noqa: E501
         """Connector - a model defined in Swagger"""  # noqa: E501
         self._connector_type = None
@@ -50,7 +54,7 @@ class Connector(object):
         self._date_indexed = None
         self._id = None
         self._name = None
-        self.discriminator = None
+        self.discriminator = 'connectorType'
         if connector_type is not None:
             self.connector_type = connector_type
         if created_by_user is not None:
@@ -95,7 +99,7 @@ class Connector(object):
 
 
         :return: The created_by_user of this Connector.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._created_by_user
 
@@ -105,7 +109,7 @@ class Connector(object):
 
 
         :param created_by_user: The created_by_user of this Connector.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._created_by_user = created_by_user
@@ -135,6 +139,7 @@ class Connector(object):
     def id(self):
         """Gets the id of this Connector.  # noqa: E501
 
+        Layar Connector ID  # noqa: E501
 
         :return: The id of this Connector.  # noqa: E501
         :rtype: str
@@ -145,6 +150,7 @@ class Connector(object):
     def id(self, id):
         """Sets the id of this Connector.
 
+        Layar Connector ID  # noqa: E501
 
         :param id: The id of this Connector.  # noqa: E501
         :type: str
@@ -156,6 +162,7 @@ class Connector(object):
     def name(self):
         """Gets the name of this Connector.  # noqa: E501
 
+        Name provided by a user to a given Layar Connector  # noqa: E501
 
         :return: The name of this Connector.  # noqa: E501
         :rtype: str
@@ -166,12 +173,18 @@ class Connector(object):
     def name(self, name):
         """Sets the name of this Connector.
 
+        Name provided by a user to a given Layar Connector  # noqa: E501
 
         :param name: The name of this Connector.  # noqa: E501
         :type: str
         """
 
         self._name = name
+
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[self.discriminator].lower()
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

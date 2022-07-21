@@ -913,7 +913,7 @@ class ProjectApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body2 body: (required)
+        :param Body6 body: (required)
         :param str id: (required)
         :return: ProjectComputation
                  If the method is called asynchronously,
@@ -936,7 +936,7 @@ class ProjectApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body2 body: (required)
+        :param Body6 body: (required)
         :param str id: (required)
         :return: ProjectComputation
                  If the method is called asynchronously,
