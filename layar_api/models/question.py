@@ -32,7 +32,10 @@ class Question(DomainObject):
         'batch_grouping_key': 'str',
         'complete': 'bool',
         'concept_types': 'list[str]',
+        'best_answers': 'list[str]',
+        'section_keywords': 'list[str]',
         'data_providers': 'str',
+        'field_to_analyze': 'str',
         'number_of_best_answers': 'int',
         'query_string': 'str',
         'question_key': 'str',
@@ -50,7 +53,10 @@ class Question(DomainObject):
         'batch_grouping_key': 'batchGroupingKey',
         'complete': 'complete',
         'concept_types': 'conceptTypes',
+        'best_answers': 'bestAnswers',
+        'section_keywords': 'sectionKeywords',
         'data_providers': 'dataProviders',
+        'field_to_analyze': 'fieldToAnalyze',
         'number_of_best_answers': 'numberOfBestAnswers',
         'query_string': 'queryString',
         'question_key': 'questionKey',
@@ -64,12 +70,15 @@ class Question(DomainObject):
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, data_providers=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, template=None, type_of_search=None, advanced_params=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, best_answers=None, section_keywords=None, data_providers=None, field_to_analyze=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, template=None, type_of_search=None, advanced_params=None, *args, **kwargs):  # noqa: E501
         """Question - a model defined in Swagger"""  # noqa: E501
         self._batch_grouping_key = None
         self._complete = None
         self._concept_types = None
+        self._best_answers = None
+        self._section_keywords = None
         self._data_providers = None
+        self._field_to_analyze = None
         self._number_of_best_answers = None
         self._query_string = None
         self._question_key = None
@@ -86,8 +95,14 @@ class Question(DomainObject):
             self.complete = complete
         if concept_types is not None:
             self.concept_types = concept_types
+        if best_answers is not None:
+            self.best_answers = best_answers
+        if section_keywords is not None:
+            self.section_keywords = section_keywords
         if data_providers is not None:
             self.data_providers = data_providers
+        if field_to_analyze is not None:
+            self.field_to_analyze = field_to_analyze
         if number_of_best_answers is not None:
             self.number_of_best_answers = number_of_best_answers
         if query_string is not None:
@@ -172,6 +187,48 @@ class Question(DomainObject):
         self._concept_types = concept_types
 
     @property
+    def best_answers(self):
+        """Gets the best_answers of this Question.  # noqa: E501
+
+
+        :return: The best_answers of this Question.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._best_answers
+
+    @best_answers.setter
+    def best_answers(self, best_answers):
+        """Sets the best_answers of this Question.
+
+
+        :param best_answers: The best_answers of this Question.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._best_answers = best_answers
+
+    @property
+    def section_keywords(self):
+        """Gets the section_keywords of this Question.  # noqa: E501
+
+
+        :return: The section_keywords of this Question.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._section_keywords
+
+    @section_keywords.setter
+    def section_keywords(self, section_keywords):
+        """Sets the section_keywords of this Question.
+
+
+        :param section_keywords: The section_keywords of this Question.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._section_keywords = section_keywords
+
+    @property
     def data_providers(self):
         """Gets the data_providers of this Question.  # noqa: E501
 
@@ -191,6 +248,27 @@ class Question(DomainObject):
         """
 
         self._data_providers = data_providers
+
+    @property
+    def field_to_analyze(self):
+        """Gets the field_to_analyze of this Question.  # noqa: E501
+
+
+        :return: The field_to_analyze of this Question.  # noqa: E501
+        :rtype: str
+        """
+        return self._field_to_analyze
+
+    @field_to_analyze.setter
+    def field_to_analyze(self, field_to_analyze):
+        """Sets the field_to_analyze of this Question.
+
+
+        :param field_to_analyze: The field_to_analyze of this Question.  # noqa: E501
+        :type: str
+        """
+
+        self._field_to_analyze = field_to_analyze
 
     @property
     def number_of_best_answers(self):
