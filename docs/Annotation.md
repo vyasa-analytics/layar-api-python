@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **value_boolean** | **bool** |  | [optional] 
 **value_integer** | **int** |  | [optional] 
 **value_date** | **datetime** |  | [optional] 
+**value_type** | **str** |  | [optional] 
 **created_by_user** | **int** |  | [optional] 
 **date_indexed** | **datetime** |  | [optional] 
 

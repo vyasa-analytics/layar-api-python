@@ -35,6 +35,7 @@ class Annotation(object):
         'value_boolean': 'bool',
         'value_integer': 'int',
         'value_date': 'datetime',
+        'value_type': 'str',
         'created_by_user': 'int',
         'date_indexed': 'datetime'
     }
@@ -47,11 +48,12 @@ class Annotation(object):
         'value_boolean': 'valueBoolean',
         'value_integer': 'valueInteger',
         'value_date': 'valueDate',
+        'value_type': 'valueType',
         'created_by_user': 'createdByUser',
         'date_indexed': 'dateIndexed'
     }
 
-    def __init__(self, source_id=None, key=None, value_string=None, value_double=None, value_boolean=None, value_integer=None, value_date=None, created_by_user=None, date_indexed=None):  # noqa: E501
+    def __init__(self, source_id=None, key=None, value_string=None, value_double=None, value_boolean=None, value_integer=None, value_date=None, value_type=None, created_by_user=None, date_indexed=None):  # noqa: E501
         """Annotation - a model defined in Swagger"""  # noqa: E501
         self._source_id = None
         self._key = None
@@ -60,6 +62,7 @@ class Annotation(object):
         self._value_boolean = None
         self._value_integer = None
         self._value_date = None
+        self._value_type = None
         self._created_by_user = None
         self._date_indexed = None
         self.discriminator = None
@@ -77,6 +80,8 @@ class Annotation(object):
             self.value_integer = value_integer
         if value_date is not None:
             self.value_date = value_date
+        if value_type is not None:
+            self.value_type = value_type
         if created_by_user is not None:
             self.created_by_user = created_by_user
         if date_indexed is not None:
@@ -228,6 +233,33 @@ class Annotation(object):
         """
 
         self._value_date = value_date
+
+    @property
+    def value_type(self):
+        """Gets the value_type of this Annotation.  # noqa: E501
+
+
+        :return: The value_type of this Annotation.  # noqa: E501
+        :rtype: str
+        """
+        return self._value_type
+
+    @value_type.setter
+    def value_type(self, value_type):
+        """Sets the value_type of this Annotation.
+
+
+        :param value_type: The value_type of this Annotation.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STRING", "BOOLEAN", "INTEGER", "LONG", "DOUBLE", "DATE"]  # noqa: E501
+        if value_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `value_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(value_type, allowed_values)
+            )
+
+        self._value_type = value_type
 
     @property
     def created_by_user(self):
