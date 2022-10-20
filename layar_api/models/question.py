@@ -29,80 +29,149 @@ class Question(DomainObject):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'assigned_user_count': 'int',
+        'assigned_user_ids': 'list[int]',
         'batch_grouping_key': 'str',
+        'best_answers': 'list[str]',
         'complete': 'bool',
         'concept_types': 'list[str]',
-        'best_answers': 'list[str]',
-        'section_keywords': 'list[str]',
+        'curated_answer_user_count': 'int',
+        'curated_answer_total_count': 'int',
+        'curated_answer_unique_count': 'int',
+        'curation_percent_complete': 'float',
+        'curation_discord': 'bool',
+        'deep_learning_model_id': 'str',
         'data_providers': 'str',
         'field_to_analyze': 'str',
+        'has_answers': 'bool',
+        'job_id': 'str',
+        'minimum_requested_answers': 'int',
+        'moderated': 'bool',
+        'moderator_user_ids': 'list[int]',
         'number_of_best_answers': 'int',
         'query_string': 'str',
         'question_key': 'str',
         'search': 'ParagraphQuestionSearchCommand',
         'search_command_json_string': 'str',
+        'section_keywords': 'list[str]',
         'single_doc_question_document_id': 'str',
         'template': 'str',
+        'truncate_text_to_length': 'int',
         'type_of_search': 'QuestionAnswerTypeOfSearch',
+        'user_curations': 'list[UserCuration]',
         'advanced_params': 'object'
     }
     if hasattr(DomainObject, "swagger_types"):
         swagger_types.update(DomainObject.swagger_types)
 
     attribute_map = {
+        'assigned_user_count': 'assignedUserCount',
+        'assigned_user_ids': 'assignedUserIds',
         'batch_grouping_key': 'batchGroupingKey',
+        'best_answers': 'bestAnswers',
         'complete': 'complete',
         'concept_types': 'conceptTypes',
-        'best_answers': 'bestAnswers',
-        'section_keywords': 'sectionKeywords',
+        'curated_answer_user_count': 'curatedAnswerUserCount',
+        'curated_answer_total_count': 'curatedAnswerTotalCount',
+        'curated_answer_unique_count': 'curatedAnswerUniqueCount',
+        'curation_percent_complete': 'curationPercentComplete',
+        'curation_discord': 'curationDiscord',
+        'deep_learning_model_id': 'deepLearningModelId',
         'data_providers': 'dataProviders',
         'field_to_analyze': 'fieldToAnalyze',
+        'has_answers': 'hasAnswers',
+        'job_id': 'jobId',
+        'minimum_requested_answers': 'minimumRequestedAnswers',
+        'moderated': 'moderated',
+        'moderator_user_ids': 'moderatorUserIds',
         'number_of_best_answers': 'numberOfBestAnswers',
         'query_string': 'queryString',
         'question_key': 'questionKey',
         'search': 'search',
         'search_command_json_string': 'searchCommandJsonString',
+        'section_keywords': 'sectionKeywords',
         'single_doc_question_document_id': 'singleDocQuestionDocumentId',
         'template': 'template',
+        'truncate_text_to_length': 'truncateTextToLength',
         'type_of_search': 'typeOfSearch',
+        'user_curations': 'userCurations',
         'advanced_params': 'advancedParams'
     }
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, batch_grouping_key=None, complete=None, concept_types=None, best_answers=None, section_keywords=None, data_providers=None, field_to_analyze=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, single_doc_question_document_id=None, template=None, type_of_search=None, advanced_params=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, assigned_user_count=None, assigned_user_ids=None, batch_grouping_key=None, best_answers=None, complete=None, concept_types=None, curated_answer_user_count=None, curated_answer_total_count=None, curated_answer_unique_count=None, curation_percent_complete=None, curation_discord=None, deep_learning_model_id=None, data_providers=None, field_to_analyze=None, has_answers=None, job_id=None, minimum_requested_answers=None, moderated=None, moderator_user_ids=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, section_keywords=None, single_doc_question_document_id=None, template=None, truncate_text_to_length=None, type_of_search=None, user_curations=None, advanced_params=None, *args, **kwargs):  # noqa: E501
         """Question - a model defined in Swagger"""  # noqa: E501
+        self._assigned_user_count = None
+        self._assigned_user_ids = None
         self._batch_grouping_key = None
+        self._best_answers = None
         self._complete = None
         self._concept_types = None
-        self._best_answers = None
-        self._section_keywords = None
+        self._curated_answer_user_count = None
+        self._curated_answer_total_count = None
+        self._curated_answer_unique_count = None
+        self._curation_percent_complete = None
+        self._curation_discord = None
+        self._deep_learning_model_id = None
         self._data_providers = None
         self._field_to_analyze = None
+        self._has_answers = None
+        self._job_id = None
+        self._minimum_requested_answers = None
+        self._moderated = None
+        self._moderator_user_ids = None
         self._number_of_best_answers = None
         self._query_string = None
         self._question_key = None
         self._search = None
         self._search_command_json_string = None
+        self._section_keywords = None
         self._single_doc_question_document_id = None
         self._template = None
+        self._truncate_text_to_length = None
         self._type_of_search = None
+        self._user_curations = None
         self._advanced_params = None
         self.discriminator = None
+        if assigned_user_count is not None:
+            self.assigned_user_count = assigned_user_count
+        if assigned_user_ids is not None:
+            self.assigned_user_ids = assigned_user_ids
         if batch_grouping_key is not None:
             self.batch_grouping_key = batch_grouping_key
+        if best_answers is not None:
+            self.best_answers = best_answers
         if complete is not None:
             self.complete = complete
         if concept_types is not None:
             self.concept_types = concept_types
-        if best_answers is not None:
-            self.best_answers = best_answers
-        if section_keywords is not None:
-            self.section_keywords = section_keywords
+        if curated_answer_user_count is not None:
+            self.curated_answer_user_count = curated_answer_user_count
+        if curated_answer_total_count is not None:
+            self.curated_answer_total_count = curated_answer_total_count
+        if curated_answer_unique_count is not None:
+            self.curated_answer_unique_count = curated_answer_unique_count
+        if curation_percent_complete is not None:
+            self.curation_percent_complete = curation_percent_complete
+        if curation_discord is not None:
+            self.curation_discord = curation_discord
+        if deep_learning_model_id is not None:
+            self.deep_learning_model_id = deep_learning_model_id
         if data_providers is not None:
             self.data_providers = data_providers
         if field_to_analyze is not None:
             self.field_to_analyze = field_to_analyze
+        if has_answers is not None:
+            self.has_answers = has_answers
+        if job_id is not None:
+            self.job_id = job_id
+        if minimum_requested_answers is not None:
+            self.minimum_requested_answers = minimum_requested_answers
+        if moderated is not None:
+            self.moderated = moderated
+        if moderator_user_ids is not None:
+            self.moderator_user_ids = moderator_user_ids
         if number_of_best_answers is not None:
             self.number_of_best_answers = number_of_best_answers
         if query_string is not None:
@@ -113,15 +182,63 @@ class Question(DomainObject):
             self.search = search
         if search_command_json_string is not None:
             self.search_command_json_string = search_command_json_string
+        if section_keywords is not None:
+            self.section_keywords = section_keywords
         if single_doc_question_document_id is not None:
             self.single_doc_question_document_id = single_doc_question_document_id
         if template is not None:
             self.template = template
+        if truncate_text_to_length is not None:
+            self.truncate_text_to_length = truncate_text_to_length
         if type_of_search is not None:
             self.type_of_search = type_of_search
+        if user_curations is not None:
+            self.user_curations = user_curations
         if advanced_params is not None:
             self.advanced_params = advanced_params
         DomainObject.__init__(self, *args, **kwargs)
+
+    @property
+    def assigned_user_count(self):
+        """Gets the assigned_user_count of this Question.  # noqa: E501
+
+
+        :return: The assigned_user_count of this Question.  # noqa: E501
+        :rtype: int
+        """
+        return self._assigned_user_count
+
+    @assigned_user_count.setter
+    def assigned_user_count(self, assigned_user_count):
+        """Sets the assigned_user_count of this Question.
+
+
+        :param assigned_user_count: The assigned_user_count of this Question.  # noqa: E501
+        :type: int
+        """
+
+        self._assigned_user_count = assigned_user_count
+
+    @property
+    def assigned_user_ids(self):
+        """Gets the assigned_user_ids of this Question.  # noqa: E501
+
+
+        :return: The assigned_user_ids of this Question.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._assigned_user_ids
+
+    @assigned_user_ids.setter
+    def assigned_user_ids(self, assigned_user_ids):
+        """Sets the assigned_user_ids of this Question.
+
+
+        :param assigned_user_ids: The assigned_user_ids of this Question.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._assigned_user_ids = assigned_user_ids
 
     @property
     def batch_grouping_key(self):
@@ -143,6 +260,27 @@ class Question(DomainObject):
         """
 
         self._batch_grouping_key = batch_grouping_key
+
+    @property
+    def best_answers(self):
+        """Gets the best_answers of this Question.  # noqa: E501
+
+
+        :return: The best_answers of this Question.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._best_answers
+
+    @best_answers.setter
+    def best_answers(self, best_answers):
+        """Sets the best_answers of this Question.
+
+
+        :param best_answers: The best_answers of this Question.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._best_answers = best_answers
 
     @property
     def complete(self):
@@ -187,46 +325,130 @@ class Question(DomainObject):
         self._concept_types = concept_types
 
     @property
-    def best_answers(self):
-        """Gets the best_answers of this Question.  # noqa: E501
+    def curated_answer_user_count(self):
+        """Gets the curated_answer_user_count of this Question.  # noqa: E501
 
 
-        :return: The best_answers of this Question.  # noqa: E501
-        :rtype: list[str]
+        :return: The curated_answer_user_count of this Question.  # noqa: E501
+        :rtype: int
         """
-        return self._best_answers
+        return self._curated_answer_user_count
 
-    @best_answers.setter
-    def best_answers(self, best_answers):
-        """Sets the best_answers of this Question.
+    @curated_answer_user_count.setter
+    def curated_answer_user_count(self, curated_answer_user_count):
+        """Sets the curated_answer_user_count of this Question.
 
 
-        :param best_answers: The best_answers of this Question.  # noqa: E501
-        :type: list[str]
+        :param curated_answer_user_count: The curated_answer_user_count of this Question.  # noqa: E501
+        :type: int
         """
 
-        self._best_answers = best_answers
+        self._curated_answer_user_count = curated_answer_user_count
 
     @property
-    def section_keywords(self):
-        """Gets the section_keywords of this Question.  # noqa: E501
+    def curated_answer_total_count(self):
+        """Gets the curated_answer_total_count of this Question.  # noqa: E501
 
 
-        :return: The section_keywords of this Question.  # noqa: E501
-        :rtype: list[str]
+        :return: The curated_answer_total_count of this Question.  # noqa: E501
+        :rtype: int
         """
-        return self._section_keywords
+        return self._curated_answer_total_count
 
-    @section_keywords.setter
-    def section_keywords(self, section_keywords):
-        """Sets the section_keywords of this Question.
+    @curated_answer_total_count.setter
+    def curated_answer_total_count(self, curated_answer_total_count):
+        """Sets the curated_answer_total_count of this Question.
 
 
-        :param section_keywords: The section_keywords of this Question.  # noqa: E501
-        :type: list[str]
+        :param curated_answer_total_count: The curated_answer_total_count of this Question.  # noqa: E501
+        :type: int
         """
 
-        self._section_keywords = section_keywords
+        self._curated_answer_total_count = curated_answer_total_count
+
+    @property
+    def curated_answer_unique_count(self):
+        """Gets the curated_answer_unique_count of this Question.  # noqa: E501
+
+
+        :return: The curated_answer_unique_count of this Question.  # noqa: E501
+        :rtype: int
+        """
+        return self._curated_answer_unique_count
+
+    @curated_answer_unique_count.setter
+    def curated_answer_unique_count(self, curated_answer_unique_count):
+        """Sets the curated_answer_unique_count of this Question.
+
+
+        :param curated_answer_unique_count: The curated_answer_unique_count of this Question.  # noqa: E501
+        :type: int
+        """
+
+        self._curated_answer_unique_count = curated_answer_unique_count
+
+    @property
+    def curation_percent_complete(self):
+        """Gets the curation_percent_complete of this Question.  # noqa: E501
+
+
+        :return: The curation_percent_complete of this Question.  # noqa: E501
+        :rtype: float
+        """
+        return self._curation_percent_complete
+
+    @curation_percent_complete.setter
+    def curation_percent_complete(self, curation_percent_complete):
+        """Sets the curation_percent_complete of this Question.
+
+
+        :param curation_percent_complete: The curation_percent_complete of this Question.  # noqa: E501
+        :type: float
+        """
+
+        self._curation_percent_complete = curation_percent_complete
+
+    @property
+    def curation_discord(self):
+        """Gets the curation_discord of this Question.  # noqa: E501
+
+
+        :return: The curation_discord of this Question.  # noqa: E501
+        :rtype: bool
+        """
+        return self._curation_discord
+
+    @curation_discord.setter
+    def curation_discord(self, curation_discord):
+        """Sets the curation_discord of this Question.
+
+
+        :param curation_discord: The curation_discord of this Question.  # noqa: E501
+        :type: bool
+        """
+
+        self._curation_discord = curation_discord
+
+    @property
+    def deep_learning_model_id(self):
+        """Gets the deep_learning_model_id of this Question.  # noqa: E501
+
+
+        :return: The deep_learning_model_id of this Question.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_learning_model_id
+
+    @deep_learning_model_id.setter
+    def deep_learning_model_id(self, deep_learning_model_id):
+        """Sets the deep_learning_model_id of this Question.
+
+
+        :param deep_learning_model_id: The deep_learning_model_id of this Question.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_learning_model_id = deep_learning_model_id
 
     @property
     def data_providers(self):
@@ -269,6 +491,111 @@ class Question(DomainObject):
         """
 
         self._field_to_analyze = field_to_analyze
+
+    @property
+    def has_answers(self):
+        """Gets the has_answers of this Question.  # noqa: E501
+
+
+        :return: The has_answers of this Question.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_answers
+
+    @has_answers.setter
+    def has_answers(self, has_answers):
+        """Sets the has_answers of this Question.
+
+
+        :param has_answers: The has_answers of this Question.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_answers = has_answers
+
+    @property
+    def job_id(self):
+        """Gets the job_id of this Question.  # noqa: E501
+
+
+        :return: The job_id of this Question.  # noqa: E501
+        :rtype: str
+        """
+        return self._job_id
+
+    @job_id.setter
+    def job_id(self, job_id):
+        """Sets the job_id of this Question.
+
+
+        :param job_id: The job_id of this Question.  # noqa: E501
+        :type: str
+        """
+
+        self._job_id = job_id
+
+    @property
+    def minimum_requested_answers(self):
+        """Gets the minimum_requested_answers of this Question.  # noqa: E501
+
+
+        :return: The minimum_requested_answers of this Question.  # noqa: E501
+        :rtype: int
+        """
+        return self._minimum_requested_answers
+
+    @minimum_requested_answers.setter
+    def minimum_requested_answers(self, minimum_requested_answers):
+        """Sets the minimum_requested_answers of this Question.
+
+
+        :param minimum_requested_answers: The minimum_requested_answers of this Question.  # noqa: E501
+        :type: int
+        """
+
+        self._minimum_requested_answers = minimum_requested_answers
+
+    @property
+    def moderated(self):
+        """Gets the moderated of this Question.  # noqa: E501
+
+
+        :return: The moderated of this Question.  # noqa: E501
+        :rtype: bool
+        """
+        return self._moderated
+
+    @moderated.setter
+    def moderated(self, moderated):
+        """Sets the moderated of this Question.
+
+
+        :param moderated: The moderated of this Question.  # noqa: E501
+        :type: bool
+        """
+
+        self._moderated = moderated
+
+    @property
+    def moderator_user_ids(self):
+        """Gets the moderator_user_ids of this Question.  # noqa: E501
+
+
+        :return: The moderator_user_ids of this Question.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._moderator_user_ids
+
+    @moderator_user_ids.setter
+    def moderator_user_ids(self, moderator_user_ids):
+        """Sets the moderator_user_ids of this Question.
+
+
+        :param moderator_user_ids: The moderator_user_ids of this Question.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._moderator_user_ids = moderator_user_ids
 
     @property
     def number_of_best_answers(self):
@@ -376,6 +703,27 @@ class Question(DomainObject):
         self._search_command_json_string = search_command_json_string
 
     @property
+    def section_keywords(self):
+        """Gets the section_keywords of this Question.  # noqa: E501
+
+
+        :return: The section_keywords of this Question.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._section_keywords
+
+    @section_keywords.setter
+    def section_keywords(self, section_keywords):
+        """Sets the section_keywords of this Question.
+
+
+        :param section_keywords: The section_keywords of this Question.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._section_keywords = section_keywords
+
+    @property
     def single_doc_question_document_id(self):
         """Gets the single_doc_question_document_id of this Question.  # noqa: E501
 
@@ -418,6 +766,27 @@ class Question(DomainObject):
         self._template = template
 
     @property
+    def truncate_text_to_length(self):
+        """Gets the truncate_text_to_length of this Question.  # noqa: E501
+
+
+        :return: The truncate_text_to_length of this Question.  # noqa: E501
+        :rtype: int
+        """
+        return self._truncate_text_to_length
+
+    @truncate_text_to_length.setter
+    def truncate_text_to_length(self, truncate_text_to_length):
+        """Sets the truncate_text_to_length of this Question.
+
+
+        :param truncate_text_to_length: The truncate_text_to_length of this Question.  # noqa: E501
+        :type: int
+        """
+
+        self._truncate_text_to_length = truncate_text_to_length
+
+    @property
     def type_of_search(self):
         """Gets the type_of_search of this Question.  # noqa: E501
 
@@ -437,6 +806,27 @@ class Question(DomainObject):
         """
 
         self._type_of_search = type_of_search
+
+    @property
+    def user_curations(self):
+        """Gets the user_curations of this Question.  # noqa: E501
+
+
+        :return: The user_curations of this Question.  # noqa: E501
+        :rtype: list[UserCuration]
+        """
+        return self._user_curations
+
+    @user_curations.setter
+    def user_curations(self, user_curations):
+        """Sets the user_curations of this Question.
+
+
+        :param user_curations: The user_curations of this Question.  # noqa: E501
+        :type: list[UserCuration]
+        """
+
+        self._user_curations = user_curations
 
     @property
     def advanced_params(self):

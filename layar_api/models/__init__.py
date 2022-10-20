@@ -65,6 +65,9 @@ from layar_api.models.coordinates import Coordinates
 from layar_api.models.cortex_setting import CortexSetting
 from layar_api.models.count_command import CountCommand
 from layar_api.models.cross_query import CrossQuery
+from layar_api.models.curation import Curation
+from layar_api.models.curation_custom_string_context import CurationCustomStringContext
+from layar_api.models.curation_type import CurationType
 from layar_api.models.deep_learning_model import DeepLearningModel
 from layar_api.models.deep_learning_task_update import DeepLearningTaskUpdate
 from layar_api.models.detected_concept import DetectedConcept
@@ -149,5 +152,6 @@ from layar_api.models.stop_training import StopTraining
 from layar_api.models.table_similarity import TableSimilarity
 from layar_api.models.tagged_concept import TaggedConcept
 from layar_api.models.tagged_relationship import TaggedRelationship
+from layar_api.models.user_curation import UserCuration
 from layar_api.models.vector_similarity_request import VectorSimilarityRequest
 from layar_api.models.version_info_result import VersionInfoResult
