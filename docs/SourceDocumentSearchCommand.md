@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **connector_ids** | **list[str]** |  | [optional] 
 **data_source_types** | **list[str]** |  | [optional] 
 **excludes** | [**SourceDocumentExcludeSearchCommand**](SourceDocumentExcludeSearchCommand.md) |  | [optional] 
+**filters** | [**list[FieldFilter]**](FieldFilter.md) |  | [optional] 
+**filter_op** | **str** |  | [optional] 
 **has_fields** | **list[str]** |  | [optional] 
 **highlight** | **bool** |  | [optional] 
 **highlight_fragment_size** | **int** |  | [optional] 

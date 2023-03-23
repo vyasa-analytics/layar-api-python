@@ -79,6 +79,8 @@ from layar_api.models.error import Error
 from layar_api.models.event import Event
 from layar_api.models.extract_tables_command import ExtractTablesCommand
 from layar_api.models.field_count import FieldCount
+from layar_api.models.field_filter import FieldFilter
+from layar_api.models.field_filter_conditions import FieldFilterConditions
 from layar_api.models.inline_response200 import InlineResponse200
 from layar_api.models.inline_response2001 import InlineResponse2001
 from layar_api.models.inline_response2002 import InlineResponse2002

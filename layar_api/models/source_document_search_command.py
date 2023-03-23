@@ -36,6 +36,8 @@ class SourceDocumentSearchCommand(BaseSearchCommand):
         'connector_ids': 'list[str]',
         'data_source_types': 'list[str]',
         'excludes': 'SourceDocumentExcludeSearchCommand',
+        'filters': 'list[FieldFilter]',
+        'filter_op': 'str',
         'has_fields': 'list[str]',
         'highlight': 'bool',
         'highlight_fragment_size': 'int',
@@ -79,6 +81,8 @@ class SourceDocumentSearchCommand(BaseSearchCommand):
         'connector_ids': 'connectorIds',
         'data_source_types': 'dataSourceTypes',
         'excludes': 'excludes',
+        'filters': 'filters',
+        'filter_op': 'filterOp',
         'has_fields': 'hasFields',
         'highlight': 'highlight',
         'highlight_fragment_size': 'highlightFragmentSize',
@@ -114,7 +118,7 @@ class SourceDocumentSearchCommand(BaseSearchCommand):
     if hasattr(BaseSearchCommand, "attribute_map"):
         attribute_map.update(BaseSearchCommand.attribute_map)
 
-    def __init__(self, annotation_searches=None, category_ids=None, concept_ids=None, connector_id=None, connector_ids=None, data_source_types=None, excludes=None, has_fields=None, highlight=None, highlight_fragment_size=None, highlight_number_of_fragments=None, highlight_post_tag=None, highlight_pre_tag=None, ids=None, live_source_id=None, live_source_ids=None, live_source_types=None, log_search=None, mime_types=None, must_have_annotations=None, named_entities=None, parent_ids=None, paths=None, project_computation_id=None, question=None, saved_list_ids=None, section_searches=None, similarity_document_id=None, similarity_threshold=None, source_fields=None, sources=None, term_operator=None, terms=None, trial_data=None, type=None, types=None, user_ids=None, vyasa_clients=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, annotation_searches=None, category_ids=None, concept_ids=None, connector_id=None, connector_ids=None, data_source_types=None, excludes=None, filters=None, filter_op=None, has_fields=None, highlight=None, highlight_fragment_size=None, highlight_number_of_fragments=None, highlight_post_tag=None, highlight_pre_tag=None, ids=None, live_source_id=None, live_source_ids=None, live_source_types=None, log_search=None, mime_types=None, must_have_annotations=None, named_entities=None, parent_ids=None, paths=None, project_computation_id=None, question=None, saved_list_ids=None, section_searches=None, similarity_document_id=None, similarity_threshold=None, source_fields=None, sources=None, term_operator=None, terms=None, trial_data=None, type=None, types=None, user_ids=None, vyasa_clients=None, *args, **kwargs):  # noqa: E501
         """SourceDocumentSearchCommand - a model defined in Swagger"""  # noqa: E501
         self._annotation_searches = None
         self._category_ids = None
@@ -123,6 +127,8 @@ class SourceDocumentSearchCommand(BaseSearchCommand):
         self._connector_ids = None
         self._data_source_types = None
         self._excludes = None
+        self._filters = None
+        self._filter_op = None
         self._has_fields = None
         self._highlight = None
         self._highlight_fragment_size = None
@@ -169,6 +175,10 @@ class SourceDocumentSearchCommand(BaseSearchCommand):
             self.data_source_types = data_source_types
         if excludes is not None:
             self.excludes = excludes
+        if filters is not None:
+            self.filters = filters
+        if filter_op is not None:
+            self.filter_op = filter_op
         if has_fields is not None:
             self.has_fields = has_fields
         if highlight is not None:
@@ -379,6 +389,54 @@ class SourceDocumentSearchCommand(BaseSearchCommand):
         """
 
         self._excludes = excludes
+
+    @property
+    def filters(self):
+        """Gets the filters of this SourceDocumentSearchCommand.  # noqa: E501
+
+
+        :return: The filters of this SourceDocumentSearchCommand.  # noqa: E501
+        :rtype: list[FieldFilter]
+        """
+        return self._filters
+
+    @filters.setter
+    def filters(self, filters):
+        """Sets the filters of this SourceDocumentSearchCommand.
+
+
+        :param filters: The filters of this SourceDocumentSearchCommand.  # noqa: E501
+        :type: list[FieldFilter]
+        """
+
+        self._filters = filters
+
+    @property
+    def filter_op(self):
+        """Gets the filter_op of this SourceDocumentSearchCommand.  # noqa: E501
+
+
+        :return: The filter_op of this SourceDocumentSearchCommand.  # noqa: E501
+        :rtype: str
+        """
+        return self._filter_op
+
+    @filter_op.setter
+    def filter_op(self, filter_op):
+        """Sets the filter_op of this SourceDocumentSearchCommand.
+
+
+        :param filter_op: The filter_op of this SourceDocumentSearchCommand.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AND", "OR"]  # noqa: E501
+        if filter_op not in allowed_values:
+            raise ValueError(
+                "Invalid value for `filter_op` ({0}), must be one of {1}"  # noqa: E501
+                .format(filter_op, allowed_values)
+            )
+
+        self._filter_op = filter_op
 
     @property
     def has_fields(self):
