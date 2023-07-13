@@ -17,6 +17,7 @@ import logging
 import multiprocessing
 import sys
 import urllib3
+import re
 
 import six
 from six.moves import http_client as httplib
@@ -256,7 +257,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                format(env=sys.platform, pyversion=sys.version)
 
     def fetch_access_token(self, client_id, client_secret):
-        return requests.post ("{}/connect/oauth/token".format(self.host.replace('/layar', '')),
+        return requests.post ("{}/connect/oauth/token".format(re.sub('/layar$','',self.host)),
             headers={'Accept':'application/json'},
             auth=HTTPBasicAuth (client_id,client_secret) ,
             params={'grant_type':'client_credentials'}
