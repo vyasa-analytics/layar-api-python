@@ -88,6 +88,7 @@ from layar_api.models.inline_response2003 import InlineResponse2003
 from layar_api.models.inline_response2004 import InlineResponse2004
 from layar_api.models.inline_response201 import InlineResponse201
 from layar_api.models.inline_response2011 import InlineResponse2011
+from layar_api.models.layargroupterms_grouping_params import LayargrouptermsGroupingParams
 from layar_api.models.list_of_annotations import ListOfAnnotations
 from layar_api.models.list_of_ids import ListOfIds
 from layar_api.models.list_of_item_ids import ListOfItemIds

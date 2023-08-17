@@ -33,7 +33,7 @@ class GroupApi(object):
         self.api_client = api_client
 
     def group_terms(self, body, **kwargs):  # noqa: E501
-        """Group similar terms  # noqa: E501
+        """group similar terms (eg, 'Vyasa Analytics' and 'Vyasa Analytics, LLC')  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class GroupApi(object):
             return data
 
     def group_terms_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Group similar terms  # noqa: E501
+        """group similar terms (eg, 'Vyasa Analytics' and 'Vyasa Analytics, LLC')  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

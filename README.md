@@ -94,7 +94,7 @@ Class | Method | HTTP request | Description
 *DataFabricApi* | [**get_fabrics**](docs/DataFabricApi.md#get_fabrics) | **GET** /layar/fabric | Search for data fabrics
 *EventApi* | [**get_event**](docs/EventApi.md#get_event) | **GET** /layar/event/{id} | Get event details
 *EventApi* | [**search_events**](docs/EventApi.md#search_events) | **GET** /layar/event | Search for events
-*GroupApi* | [**group_terms**](docs/GroupApi.md#group_terms) | **POST** /layar/group/terms | Group similar terms
+*GroupApi* | [**group_terms**](docs/GroupApi.md#group_terms) | **POST** /layar/group/terms | group similar terms (eg, &#x27;Vyasa Analytics&#x27; and &#x27;Vyasa Analytics, LLC&#x27;)
 *LiveSourceApi* | [**create_feeds**](docs/LiveSourceApi.md#create_feeds) | **POST** /layar/liveSource | Create a new connector
 *LiveSourceApi* | [**create_feeds_from_column**](docs/LiveSourceApi.md#create_feeds_from_column) | **POST** /layar/liveSource/createFeedsFromColumn | Create new RSS connectors from a spreadsheet of URLs
 *LiveSourceApi* | [**delete_feed**](docs/LiveSourceApi.md#delete_feed) | **DELETE** /layar/liveSource/{id} | Delete a connector

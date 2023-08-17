@@ -30,13 +30,19 @@ class OntologyTerm(DomainObject):
     """
     swagger_types = {
         'attributes': 'object',
+        'comment': 'str',
+        'consider': 'list[str]',
+        'created_by': 'str',
+        'creation_date': 'datetime',
         'db_alt_ids': 'list[str]',
         'db_id': 'str',
+        'definition': 'str',
         'document_id': 'str',
         'id_path': 'str',
         'name_path': 'str',
         'namespace': 'str',
         'obsolete': 'bool',
+        'replaced_by': 'list[str]',
         'sem_type_id_path': 'str',
         'sem_type_name_path': 'str',
         'synonyms': 'list[str]',
@@ -47,13 +53,19 @@ class OntologyTerm(DomainObject):
 
     attribute_map = {
         'attributes': 'attributes',
+        'comment': 'comment',
+        'consider': 'consider',
+        'created_by': 'createdBy',
+        'creation_date': 'creationDate',
         'db_alt_ids': 'dbAltIds',
         'db_id': 'dbId',
+        'definition': 'definition',
         'document_id': 'documentId',
         'id_path': 'idPath',
         'name_path': 'namePath',
         'namespace': 'namespace',
         'obsolete': 'obsolete',
+        'replaced_by': 'replacedBy',
         'sem_type_id_path': 'semTypeIdPath',
         'sem_type_name_path': 'semTypeNamePath',
         'synonyms': 'synonyms',
@@ -62,16 +74,22 @@ class OntologyTerm(DomainObject):
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, attributes=None, db_alt_ids=None, db_id=None, document_id=None, id_path=None, name_path=None, namespace=None, obsolete=None, sem_type_id_path=None, sem_type_name_path=None, synonyms=None, xrefs=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, attributes=None, comment=None, consider=None, created_by=None, creation_date=None, db_alt_ids=None, db_id=None, definition=None, document_id=None, id_path=None, name_path=None, namespace=None, obsolete=None, replaced_by=None, sem_type_id_path=None, sem_type_name_path=None, synonyms=None, xrefs=None, *args, **kwargs):  # noqa: E501
         """OntologyTerm - a model defined in Swagger"""  # noqa: E501
         self._attributes = None
+        self._comment = None
+        self._consider = None
+        self._created_by = None
+        self._creation_date = None
         self._db_alt_ids = None
         self._db_id = None
+        self._definition = None
         self._document_id = None
         self._id_path = None
         self._name_path = None
         self._namespace = None
         self._obsolete = None
+        self._replaced_by = None
         self._sem_type_id_path = None
         self._sem_type_name_path = None
         self._synonyms = None
@@ -79,10 +97,20 @@ class OntologyTerm(DomainObject):
         self.discriminator = None
         if attributes is not None:
             self.attributes = attributes
+        if comment is not None:
+            self.comment = comment
+        if consider is not None:
+            self.consider = consider
+        if created_by is not None:
+            self.created_by = created_by
+        if creation_date is not None:
+            self.creation_date = creation_date
         if db_alt_ids is not None:
             self.db_alt_ids = db_alt_ids
         if db_id is not None:
             self.db_id = db_id
+        if definition is not None:
+            self.definition = definition
         if document_id is not None:
             self.document_id = document_id
         if id_path is not None:
@@ -93,6 +121,8 @@ class OntologyTerm(DomainObject):
             self.namespace = namespace
         if obsolete is not None:
             self.obsolete = obsolete
+        if replaced_by is not None:
+            self.replaced_by = replaced_by
         if sem_type_id_path is not None:
             self.sem_type_id_path = sem_type_id_path
         if sem_type_name_path is not None:
@@ -123,6 +153,90 @@ class OntologyTerm(DomainObject):
         """
 
         self._attributes = attributes
+
+    @property
+    def comment(self):
+        """Gets the comment of this OntologyTerm.  # noqa: E501
+
+
+        :return: The comment of this OntologyTerm.  # noqa: E501
+        :rtype: str
+        """
+        return self._comment
+
+    @comment.setter
+    def comment(self, comment):
+        """Sets the comment of this OntologyTerm.
+
+
+        :param comment: The comment of this OntologyTerm.  # noqa: E501
+        :type: str
+        """
+
+        self._comment = comment
+
+    @property
+    def consider(self):
+        """Gets the consider of this OntologyTerm.  # noqa: E501
+
+
+        :return: The consider of this OntologyTerm.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._consider
+
+    @consider.setter
+    def consider(self, consider):
+        """Sets the consider of this OntologyTerm.
+
+
+        :param consider: The consider of this OntologyTerm.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._consider = consider
+
+    @property
+    def created_by(self):
+        """Gets the created_by of this OntologyTerm.  # noqa: E501
+
+
+        :return: The created_by of this OntologyTerm.  # noqa: E501
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this OntologyTerm.
+
+
+        :param created_by: The created_by of this OntologyTerm.  # noqa: E501
+        :type: str
+        """
+
+        self._created_by = created_by
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this OntologyTerm.  # noqa: E501
+
+
+        :return: The creation_date of this OntologyTerm.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this OntologyTerm.
+
+
+        :param creation_date: The creation_date of this OntologyTerm.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
 
     @property
     def db_alt_ids(self):
@@ -167,6 +281,27 @@ class OntologyTerm(DomainObject):
         self._db_id = db_id
 
     @property
+    def definition(self):
+        """Gets the definition of this OntologyTerm.  # noqa: E501
+
+
+        :return: The definition of this OntologyTerm.  # noqa: E501
+        :rtype: str
+        """
+        return self._definition
+
+    @definition.setter
+    def definition(self, definition):
+        """Sets the definition of this OntologyTerm.
+
+
+        :param definition: The definition of this OntologyTerm.  # noqa: E501
+        :type: str
+        """
+
+        self._definition = definition
+
+    @property
     def document_id(self):
         """Gets the document_id of this OntologyTerm.  # noqa: E501
 
@@ -191,7 +326,7 @@ class OntologyTerm(DomainObject):
     def id_path(self):
         """Gets the id_path of this OntologyTerm.  # noqa: E501
 
-        slash-separated list of the ID path hierarchy  # noqa: E501
+        delimited list of the ID path hierarchy  # noqa: E501
 
         :return: The id_path of this OntologyTerm.  # noqa: E501
         :rtype: str
@@ -202,7 +337,7 @@ class OntologyTerm(DomainObject):
     def id_path(self, id_path):
         """Sets the id_path of this OntologyTerm.
 
-        slash-separated list of the ID path hierarchy  # noqa: E501
+        delimited list of the ID path hierarchy  # noqa: E501
 
         :param id_path: The id_path of this OntologyTerm.  # noqa: E501
         :type: str
@@ -214,7 +349,7 @@ class OntologyTerm(DomainObject):
     def name_path(self):
         """Gets the name_path of this OntologyTerm.  # noqa: E501
 
-        slash-separated list of the name path hierarchy  # noqa: E501
+        delimited list of the name path hierarchy  # noqa: E501
 
         :return: The name_path of this OntologyTerm.  # noqa: E501
         :rtype: str
@@ -225,7 +360,7 @@ class OntologyTerm(DomainObject):
     def name_path(self, name_path):
         """Sets the name_path of this OntologyTerm.
 
-        slash-separated list of the name path hierarchy  # noqa: E501
+        delimited list of the name path hierarchy  # noqa: E501
 
         :param name_path: The name_path of this OntologyTerm.  # noqa: E501
         :type: str
@@ -276,10 +411,31 @@ class OntologyTerm(DomainObject):
         self._obsolete = obsolete
 
     @property
+    def replaced_by(self):
+        """Gets the replaced_by of this OntologyTerm.  # noqa: E501
+
+
+        :return: The replaced_by of this OntologyTerm.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._replaced_by
+
+    @replaced_by.setter
+    def replaced_by(self, replaced_by):
+        """Sets the replaced_by of this OntologyTerm.
+
+
+        :param replaced_by: The replaced_by of this OntologyTerm.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._replaced_by = replaced_by
+
+    @property
     def sem_type_id_path(self):
         """Gets the sem_type_id_path of this OntologyTerm.  # noqa: E501
 
-        slash-separated list of the semantic type ID path hierarchy  # noqa: E501
+        delimited list of the semantic type ID path hierarchy  # noqa: E501
 
         :return: The sem_type_id_path of this OntologyTerm.  # noqa: E501
         :rtype: str
@@ -290,7 +446,7 @@ class OntologyTerm(DomainObject):
     def sem_type_id_path(self, sem_type_id_path):
         """Sets the sem_type_id_path of this OntologyTerm.
 
-        slash-separated list of the semantic type ID path hierarchy  # noqa: E501
+        delimited list of the semantic type ID path hierarchy  # noqa: E501
 
         :param sem_type_id_path: The sem_type_id_path of this OntologyTerm.  # noqa: E501
         :type: str
@@ -302,7 +458,7 @@ class OntologyTerm(DomainObject):
     def sem_type_name_path(self):
         """Gets the sem_type_name_path of this OntologyTerm.  # noqa: E501
 
-        slash-separated list of the semantic type name path hierarchy  # noqa: E501
+        delimited list of the semantic type name path hierarchy  # noqa: E501
 
         :return: The sem_type_name_path of this OntologyTerm.  # noqa: E501
         :rtype: str
@@ -313,7 +469,7 @@ class OntologyTerm(DomainObject):
     def sem_type_name_path(self, sem_type_name_path):
         """Sets the sem_type_name_path of this OntologyTerm.
 
-        slash-separated list of the semantic type name path hierarchy  # noqa: E501
+        delimited list of the semantic type name path hierarchy  # noqa: E501
 
         :param sem_type_name_path: The sem_type_name_path of this OntologyTerm.  # noqa: E501
         :type: str

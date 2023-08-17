@@ -1,10 +1,10 @@
-# Body3
+# LayargrouptermsGroupingParams
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**terms** | **list[str]** | A list of terms to be grouped | [optional] 
-**grouping_params** | [**LayargrouptermsGroupingParams**](LayargrouptermsGroupingParams.md) |  | [optional] 
+**close_match_cutoff** | **float** |  | [optional] 
+**split_up_lists** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
