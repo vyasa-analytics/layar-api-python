@@ -508,7 +508,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
-body = layar_api.Body6() # Body6 | 
+body = layar_api.Body5() # Body5 | 
 id = 'id_example' # str | 
 
 try:
@@ -523,7 +523,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body6**](Body6.md)|  | 
+ **body** | [**Body5**](Body5.md)|  | 
  **id** | **str**|  | 
 
 ### Return type

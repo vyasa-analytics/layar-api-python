@@ -28,66 +28,98 @@ class Body6(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'model_id': 'str',
-        'computation_parameters': 'dict(str, str)'
+        'file': 'str',
+        'name': 'str',
+        'cortex_document_type': 'str'
     }
 
     attribute_map = {
-        'model_id': 'modelId',
-        'computation_parameters': 'computationParameters'
+        'file': 'file',
+        'name': 'name',
+        'cortex_document_type': 'cortexDocumentType'
     }
 
-    def __init__(self, model_id=None, computation_parameters=None):  # noqa: E501
+    def __init__(self, file=None, name=None, cortex_document_type=None):  # noqa: E501
         """Body6 - a model defined in Swagger"""  # noqa: E501
-        self._model_id = None
-        self._computation_parameters = None
+        self._file = None
+        self._name = None
+        self._cortex_document_type = None
         self.discriminator = None
-        if model_id is not None:
-            self.model_id = model_id
-        if computation_parameters is not None:
-            self.computation_parameters = computation_parameters
+        if file is not None:
+            self.file = file
+        if name is not None:
+            self.name = name
+        if cortex_document_type is not None:
+            self.cortex_document_type = cortex_document_type
 
     @property
-    def model_id(self):
-        """Gets the model_id of this Body6.  # noqa: E501
+    def file(self):
+        """Gets the file of this Body6.  # noqa: E501
 
 
-        :return: The model_id of this Body6.  # noqa: E501
+        :return: The file of this Body6.  # noqa: E501
         :rtype: str
         """
-        return self._model_id
+        return self._file
 
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this Body6.
+    @file.setter
+    def file(self, file):
+        """Sets the file of this Body6.
 
 
-        :param model_id: The model_id of this Body6.  # noqa: E501
+        :param file: The file of this Body6.  # noqa: E501
         :type: str
         """
 
-        self._model_id = model_id
+        self._file = file
 
     @property
-    def computation_parameters(self):
-        """Gets the computation_parameters of this Body6.  # noqa: E501
+    def name(self):
+        """Gets the name of this Body6.  # noqa: E501
 
 
-        :return: The computation_parameters of this Body6.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The name of this Body6.  # noqa: E501
+        :rtype: str
         """
-        return self._computation_parameters
+        return self._name
 
-    @computation_parameters.setter
-    def computation_parameters(self, computation_parameters):
-        """Sets the computation_parameters of this Body6.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Body6.
 
 
-        :param computation_parameters: The computation_parameters of this Body6.  # noqa: E501
-        :type: dict(str, str)
+        :param name: The name of this Body6.  # noqa: E501
+        :type: str
         """
 
-        self._computation_parameters = computation_parameters
+        self._name = name
+
+    @property
+    def cortex_document_type(self):
+        """Gets the cortex_document_type of this Body6.  # noqa: E501
+
+
+        :return: The cortex_document_type of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._cortex_document_type
+
+    @cortex_document_type.setter
+    def cortex_document_type(self, cortex_document_type):
+        """Sets the cortex_document_type of this Body6.
+
+
+        :param cortex_document_type: The cortex_document_type of this Body6.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["IMAGE", "DOCUMENT", "TABLE"]  # noqa: E501
+        if cortex_document_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cortex_document_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(cortex_document_type, allowed_values)
+            )
+
+        self._cortex_document_type = cortex_document_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

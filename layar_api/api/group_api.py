@@ -41,7 +41,7 @@ class GroupApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body3 body: (required)
+        :param GroupTermsCommand body: (required)
         :return: list[list[str]]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class GroupApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body3 body: (required)
+        :param GroupTermsCommand body: (required)
         :return: list[list[str]]
                  If the method is called asynchronously,
                  returns the request thread.

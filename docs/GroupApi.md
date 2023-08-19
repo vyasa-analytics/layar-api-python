@@ -26,7 +26,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.GroupApi(layar_api.ApiClient(configuration))
-body = layar_api.Body3() # Body3 | 
+body = layar_api.GroupTermsCommand() # GroupTermsCommand | 
 
 try:
     # group similar terms (eg, 'Vyasa Analytics' and 'Vyasa Analytics, LLC')
@@ -40,7 +40,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body3**](Body3.md)|  | 
+ **body** | [**GroupTermsCommand**](GroupTermsCommand.md)|  | 
 
 ### Return type
 

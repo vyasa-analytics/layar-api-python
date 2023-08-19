@@ -39,7 +39,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
-body = layar_api.Body4() # Body4 | 
+body = layar_api.Body3() # Body3 | 
 
 try:
     # Create a new connector
@@ -53,7 +53,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body4**](Body4.md)|  | 
+ **body** | [**Body3**](Body3.md)|  | 
 
 ### Return type
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_feed**
-> Body5 update_feed(body, id)
+> Body4 update_feed(body, id)
 
 Update connector details
 
@@ -570,7 +570,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.LiveSourceApi(layar_api.ApiClient(configuration))
-body = layar_api.Body5() # Body5 | 
+body = layar_api.Body4() # Body4 | 
 id = 'id_example' # str | 
 
 try:
@@ -585,12 +585,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body5**](Body5.md)|  | 
+ **body** | [**Body4**](Body4.md)|  | 
  **id** | **str**|  | 
 
 ### Return type
 
-[**Body5**](Body5.md)
+[**Body4**](Body4.md)
 
 ### Authorization
 

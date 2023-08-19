@@ -28,55 +28,47 @@ class Body7(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file': 'str',
         'name': 'str',
-        'cortex_document_type': 'str'
+        'id': 'str',
+        'label': 'str',
+        'synonyms': 'list[str]',
+        'properties': 'list[str]',
+        'delimeter': 'str'
     }
 
     attribute_map = {
-        'file': 'file',
         'name': 'name',
-        'cortex_document_type': 'cortexDocumentType'
+        'id': 'id',
+        'label': 'label',
+        'synonyms': 'synonyms',
+        'properties': 'properties',
+        'delimeter': 'delimeter'
     }
 
-    def __init__(self, file=None, name=None, cortex_document_type=None):  # noqa: E501
+    def __init__(self, name=None, id=None, label=None, synonyms=None, properties=None, delimeter=None):  # noqa: E501
         """Body7 - a model defined in Swagger"""  # noqa: E501
-        self._file = None
         self._name = None
-        self._cortex_document_type = None
+        self._id = None
+        self._label = None
+        self._synonyms = None
+        self._properties = None
+        self._delimeter = None
         self.discriminator = None
-        if file is not None:
-            self.file = file
-        if name is not None:
-            self.name = name
-        if cortex_document_type is not None:
-            self.cortex_document_type = cortex_document_type
-
-    @property
-    def file(self):
-        """Gets the file of this Body7.  # noqa: E501
-
-
-        :return: The file of this Body7.  # noqa: E501
-        :rtype: str
-        """
-        return self._file
-
-    @file.setter
-    def file(self, file):
-        """Sets the file of this Body7.
-
-
-        :param file: The file of this Body7.  # noqa: E501
-        :type: str
-        """
-
-        self._file = file
+        self.name = name
+        self.id = id
+        self.label = label
+        if synonyms is not None:
+            self.synonyms = synonyms
+        if properties is not None:
+            self.properties = properties
+        if delimeter is not None:
+            self.delimeter = delimeter
 
     @property
     def name(self):
         """Gets the name of this Body7.  # noqa: E501
 
+        Provide a name for the new ontology  # noqa: E501
 
         :return: The name of this Body7.  # noqa: E501
         :rtype: str
@@ -87,39 +79,134 @@ class Body7(object):
     def name(self, name):
         """Sets the name of this Body7.
 
+        Provide a name for the new ontology  # noqa: E501
 
         :param name: The name of this Body7.  # noqa: E501
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 
     @property
-    def cortex_document_type(self):
-        """Gets the cortex_document_type of this Body7.  # noqa: E501
+    def id(self):
+        """Gets the id of this Body7.  # noqa: E501
 
+        The column to use when creating term IDs  # noqa: E501
 
-        :return: The cortex_document_type of this Body7.  # noqa: E501
+        :return: The id of this Body7.  # noqa: E501
         :rtype: str
         """
-        return self._cortex_document_type
+        return self._id
 
-    @cortex_document_type.setter
-    def cortex_document_type(self, cortex_document_type):
-        """Sets the cortex_document_type of this Body7.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Body7.
 
+        The column to use when creating term IDs  # noqa: E501
 
-        :param cortex_document_type: The cortex_document_type of this Body7.  # noqa: E501
+        :param id: The id of this Body7.  # noqa: E501
         :type: str
         """
-        allowed_values = ["IMAGE", "DOCUMENT", "TABLE"]  # noqa: E501
-        if cortex_document_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cortex_document_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(cortex_document_type, allowed_values)
-            )
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
-        self._cortex_document_type = cortex_document_type
+        self._id = id
+
+    @property
+    def label(self):
+        """Gets the label of this Body7.  # noqa: E501
+
+        The column to use when creating term labels  # noqa: E501
+
+        :return: The label of this Body7.  # noqa: E501
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this Body7.
+
+        The column to use when creating term labels  # noqa: E501
+
+        :param label: The label of this Body7.  # noqa: E501
+        :type: str
+        """
+        if label is None:
+            raise ValueError("Invalid value for `label`, must not be `None`")  # noqa: E501
+
+        self._label = label
+
+    @property
+    def synonyms(self):
+        """Gets the synonyms of this Body7.  # noqa: E501
+
+        The column(s) to use when creating term synonyms  # noqa: E501
+
+        :return: The synonyms of this Body7.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._synonyms
+
+    @synonyms.setter
+    def synonyms(self, synonyms):
+        """Sets the synonyms of this Body7.
+
+        The column(s) to use when creating term synonyms  # noqa: E501
+
+        :param synonyms: The synonyms of this Body7.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._synonyms = synonyms
+
+    @property
+    def properties(self):
+        """Gets the properties of this Body7.  # noqa: E501
+
+        The column(s) to use when creating term properties  # noqa: E501
+
+        :return: The properties of this Body7.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """Sets the properties of this Body7.
+
+        The column(s) to use when creating term properties  # noqa: E501
+
+        :param properties: The properties of this Body7.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._properties = properties
+
+    @property
+    def delimeter(self):
+        """Gets the delimeter of this Body7.  # noqa: E501
+
+        If term synonyms are collected in a single column, please provide a delimeter to separate each one  # noqa: E501
+
+        :return: The delimeter of this Body7.  # noqa: E501
+        :rtype: str
+        """
+        return self._delimeter
+
+    @delimeter.setter
+    def delimeter(self, delimeter):
+        """Sets the delimeter of this Body7.
+
+        If term synonyms are collected in a single column, please provide a delimeter to separate each one  # noqa: E501
+
+        :param delimeter: The delimeter of this Body7.  # noqa: E501
+        :type: str
+        """
+
+        self._delimeter = delimeter
 
     def to_dict(self):
         """Returns the model properties as a dict"""

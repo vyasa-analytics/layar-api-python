@@ -71,7 +71,6 @@ from layar_api.models.body4 import Body4
 from layar_api.models.body5 import Body5
 from layar_api.models.body6 import Body6
 from layar_api.models.body7 import Body7
-from layar_api.models.body8 import Body8
 from layar_api.models.bulk_question import BulkQuestion
 from layar_api.models.bulk_question_command import BulkQuestionCommand
 from layar_api.models.bulk_question_search_command import BulkQuestionSearchCommand
@@ -113,6 +112,7 @@ from layar_api.models.extract_tables_command import ExtractTablesCommand
 from layar_api.models.field_count import FieldCount
 from layar_api.models.field_filter import FieldFilter
 from layar_api.models.field_filter_conditions import FieldFilterConditions
+from layar_api.models.group_terms_command import GroupTermsCommand
 from layar_api.models.inline_response200 import InlineResponse200
 from layar_api.models.inline_response2001 import InlineResponse2001
 from layar_api.models.inline_response2002 import InlineResponse2002
@@ -139,8 +139,8 @@ from layar_api.models.named_entity_response_named_entities import NamedEntityRes
 from layar_api.models.one_of_annotation_search_values_items import OneOfAnnotationSearchValuesItems
 from layar_api.models.one_ofbody1 import OneOfbody1
 from layar_api.models.one_ofbody2 import OneOfbody2
+from layar_api.models.one_ofbody3 import OneOfbody3
 from layar_api.models.one_ofbody4 import OneOfbody4
-from layar_api.models.one_ofbody5 import OneOfbody5
 from layar_api.models.one_ofinline_response201 import OneOfinlineResponse201
 from layar_api.models.one_ofinline_response2011 import OneOfinlineResponse2011
 from layar_api.models.ontology_search_command import OntologySearchCommand

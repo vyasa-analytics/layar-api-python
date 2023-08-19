@@ -29,23 +29,28 @@ class LayargrouptermsGroupingParams(object):
     """
     swagger_types = {
         'close_match_cutoff': 'float',
-        'split_up_lists': 'bool'
+        'split_up_lists': 'bool',
+        'ngram_size': 'float'
     }
 
     attribute_map = {
         'close_match_cutoff': 'close_match_cutoff',
-        'split_up_lists': 'split_up_lists'
+        'split_up_lists': 'split_up_lists',
+        'ngram_size': 'ngram_size'
     }
 
-    def __init__(self, close_match_cutoff=None, split_up_lists=None):  # noqa: E501
+    def __init__(self, close_match_cutoff=None, split_up_lists=None, ngram_size=None):  # noqa: E501
         """LayargrouptermsGroupingParams - a model defined in Swagger"""  # noqa: E501
         self._close_match_cutoff = None
         self._split_up_lists = None
+        self._ngram_size = None
         self.discriminator = None
         if close_match_cutoff is not None:
             self.close_match_cutoff = close_match_cutoff
         if split_up_lists is not None:
             self.split_up_lists = split_up_lists
+        if ngram_size is not None:
+            self.ngram_size = ngram_size
 
     @property
     def close_match_cutoff(self):
@@ -88,6 +93,27 @@ class LayargrouptermsGroupingParams(object):
         """
 
         self._split_up_lists = split_up_lists
+
+    @property
+    def ngram_size(self):
+        """Gets the ngram_size of this LayargrouptermsGroupingParams.  # noqa: E501
+
+
+        :return: The ngram_size of this LayargrouptermsGroupingParams.  # noqa: E501
+        :rtype: float
+        """
+        return self._ngram_size
+
+    @ngram_size.setter
+    def ngram_size(self, ngram_size):
+        """Sets the ngram_size of this LayargrouptermsGroupingParams.
+
+
+        :param ngram_size: The ngram_size of this LayargrouptermsGroupingParams.  # noqa: E501
+        :type: float
+        """
+
+        self._ngram_size = ngram_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -42,7 +42,7 @@ class LiveSourceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body4 body: (required)
+        :param Body3 body: (required)
         :return: InlineResponse2011
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,7 +64,7 @@ class LiveSourceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body4 body: (required)
+        :param Body3 body: (required)
         :return: InlineResponse2011
                  If the method is called asynchronously,
                  returns the request thread.
@@ -998,9 +998,9 @@ class LiveSourceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body5 body: (required)
+        :param Body4 body: (required)
         :param str id: (required)
-        :return: Body5
+        :return: Body4
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1021,9 +1021,9 @@ class LiveSourceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body5 body: (required)
+        :param Body4 body: (required)
         :param str id: (required)
-        :return: Body5
+        :return: Body4
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1087,7 +1087,7 @@ class LiveSourceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Body5',  # noqa: E501
+            response_type='Body4',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

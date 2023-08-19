@@ -28,68 +28,38 @@ class Body3(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'terms': 'list[str]',
-        'grouping_params': 'LayargrouptermsGroupingParams'
     }
 
     attribute_map = {
-        'terms': 'terms',
-        'grouping_params': 'grouping_params'
     }
 
-    def __init__(self, terms=None, grouping_params=None):  # noqa: E501
+    discriminator_value_class_map = {
+            'AZURE'.lower(): 'AzureConnector',
+            'DELL_ISILON'.lower(): 'IsilonConnector',
+            'FILE_SYSTEM'.lower(): 'FileSystemConnector',
+            'GBQ_PROJECT'.lower(): 'BQConnector',
+            'GBQ_DATASET'.lower(): 'BQConnector',
+            'GCS'.lower(): 'GCSConnector',
+            'GOOGLE_DRIVE'.lower(): 'GoogleDriveConnector',
+            'GFHIRS_PROJECT'.lower(): 'FHIRStoreConnector',
+            'IRODS'.lower(): 'IRODSConnector',
+            'JDBC_SNOWFLAKE'.lower(): 'SnowflakeConnector',
+            'JDBC_SAP_HANA'.lower(): 'SAPHanaConnector',
+            'JDBC_GENERIC'.lower(): 'SQLConnector',
+            'NEO4J_CYPHER'.lower(): 'Neo4jConnector',
+            'RSS'.lower(): 'RSSConnector',
+            'S3'.lower(): 'S3Connector',
+            'WEBSITE'.lower(): 'WebsiteConnector',
+    }
+
+    def __init__(self):  # noqa: E501
         """Body3 - a model defined in Swagger"""  # noqa: E501
-        self._terms = None
-        self._grouping_params = None
-        self.discriminator = None
-        if terms is not None:
-            self.terms = terms
-        if grouping_params is not None:
-            self.grouping_params = grouping_params
+        self.discriminator = 'live_source_type'
 
-    @property
-    def terms(self):
-        """Gets the terms of this Body3.  # noqa: E501
-
-        A list of terms to be grouped  # noqa: E501
-
-        :return: The terms of this Body3.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._terms
-
-    @terms.setter
-    def terms(self, terms):
-        """Sets the terms of this Body3.
-
-        A list of terms to be grouped  # noqa: E501
-
-        :param terms: The terms of this Body3.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._terms = terms
-
-    @property
-    def grouping_params(self):
-        """Gets the grouping_params of this Body3.  # noqa: E501
-
-
-        :return: The grouping_params of this Body3.  # noqa: E501
-        :rtype: LayargrouptermsGroupingParams
-        """
-        return self._grouping_params
-
-    @grouping_params.setter
-    def grouping_params(self, grouping_params):
-        """Sets the grouping_params of this Body3.
-
-
-        :param grouping_params: The grouping_params of this Body3.  # noqa: E501
-        :type: LayargrouptermsGroupingParams
-        """
-
-        self._grouping_params = grouping_params
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[self.discriminator].lower()
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""
