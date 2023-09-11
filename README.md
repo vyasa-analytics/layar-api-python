@@ -122,6 +122,7 @@ Class | Method | HTTP request | Description
 *OntologyTermApi* | [**delete_term**](docs/OntologyTermApi.md#delete_term) | **DELETE** /layar/ontologyTerm/{id} | Delete an ontology term
 *OntologyTermApi* | [**get_term**](docs/OntologyTermApi.md#get_term) | **GET** /layar/ontologyTerm/{id} | Get ontology term details
 *OntologyTermApi* | [**layar_ontology_term_get**](docs/OntologyTermApi.md#layar_ontology_term_get) | **GET** /layar/ontologyTerm | Search for ontology terms
+*OntologyTermApi* | [**reconcile**](docs/OntologyTermApi.md#reconcile) | **POST** /layar/ontologyTerm/reconcile | 
 *OntologyTermApi* | [**search_term**](docs/OntologyTermApi.md#search_term) | **POST** /layar/ontologyTerm/search | 
 *OntologyTermApi* | [**update_term**](docs/OntologyTermApi.md#update_term) | **PUT** /layar/ontologyTerm/{id} | Update ontology term details
 *ParagraphApi* | [**get_paragraph**](docs/ParagraphApi.md#get_paragraph) | **GET** /layar/paragraph/{id} | Get paragraph details
