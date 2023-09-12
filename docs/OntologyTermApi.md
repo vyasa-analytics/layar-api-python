@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reconcile**
-> list[OntologyTerm] reconcile(body=body)
+> ReconcileToOntologyResult reconcile(body=body)
 
 
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[OntologyTerm]**](OntologyTerm.md)
+[**ReconcileToOntologyResult**](ReconcileToOntologyResult.md)
 
 ### Authorization
 
