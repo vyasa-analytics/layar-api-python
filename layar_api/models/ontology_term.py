@@ -38,13 +38,13 @@ class OntologyTerm(DomainObject):
         'db_id': 'str',
         'definition': 'str',
         'document_id': 'str',
-        'id_path': 'str',
-        'name_path': 'str',
+        'id_path': 'list[str]',
+        'name_path': 'list[str]',
         'namespace': 'str',
         'obsolete': 'bool',
         'replaced_by': 'list[str]',
-        'sem_type_id_path': 'str',
-        'sem_type_name_path': 'str',
+        'sem_type_id_path': 'list[str]',
+        'sem_type_name_path': 'list[str]',
         'synonyms': 'list[str]',
         'xrefs': 'list[str]'
     }
@@ -326,10 +326,10 @@ class OntologyTerm(DomainObject):
     def id_path(self):
         """Gets the id_path of this OntologyTerm.  # noqa: E501
 
-        delimited list of the ID path hierarchy  # noqa: E501
+        delimited lists of the ID path hierarchy  # noqa: E501
 
         :return: The id_path of this OntologyTerm.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._id_path
 
@@ -337,10 +337,10 @@ class OntologyTerm(DomainObject):
     def id_path(self, id_path):
         """Sets the id_path of this OntologyTerm.
 
-        delimited list of the ID path hierarchy  # noqa: E501
+        delimited lists of the ID path hierarchy  # noqa: E501
 
         :param id_path: The id_path of this OntologyTerm.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._id_path = id_path
@@ -349,10 +349,10 @@ class OntologyTerm(DomainObject):
     def name_path(self):
         """Gets the name_path of this OntologyTerm.  # noqa: E501
 
-        delimited list of the name path hierarchy  # noqa: E501
+        delimited lists of the name path hierarchy  # noqa: E501
 
         :return: The name_path of this OntologyTerm.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._name_path
 
@@ -360,10 +360,10 @@ class OntologyTerm(DomainObject):
     def name_path(self, name_path):
         """Sets the name_path of this OntologyTerm.
 
-        delimited list of the name path hierarchy  # noqa: E501
+        delimited lists of the name path hierarchy  # noqa: E501
 
         :param name_path: The name_path of this OntologyTerm.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._name_path = name_path
@@ -435,10 +435,10 @@ class OntologyTerm(DomainObject):
     def sem_type_id_path(self):
         """Gets the sem_type_id_path of this OntologyTerm.  # noqa: E501
 
-        delimited list of the semantic type ID path hierarchy  # noqa: E501
+        delimited lists of the semantic type ID path hierarchy  # noqa: E501
 
         :return: The sem_type_id_path of this OntologyTerm.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._sem_type_id_path
 
@@ -446,10 +446,10 @@ class OntologyTerm(DomainObject):
     def sem_type_id_path(self, sem_type_id_path):
         """Sets the sem_type_id_path of this OntologyTerm.
 
-        delimited list of the semantic type ID path hierarchy  # noqa: E501
+        delimited lists of the semantic type ID path hierarchy  # noqa: E501
 
         :param sem_type_id_path: The sem_type_id_path of this OntologyTerm.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._sem_type_id_path = sem_type_id_path
@@ -458,10 +458,10 @@ class OntologyTerm(DomainObject):
     def sem_type_name_path(self):
         """Gets the sem_type_name_path of this OntologyTerm.  # noqa: E501
 
-        delimited list of the semantic type name path hierarchy  # noqa: E501
+        delimited lists of the semantic type name path hierarchy  # noqa: E501
 
         :return: The sem_type_name_path of this OntologyTerm.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._sem_type_name_path
 
@@ -469,10 +469,10 @@ class OntologyTerm(DomainObject):
     def sem_type_name_path(self, sem_type_name_path):
         """Sets the sem_type_name_path of this OntologyTerm.
 
-        delimited list of the semantic type name path hierarchy  # noqa: E501
+        delimited lists of the semantic type name path hierarchy  # noqa: E501
 
         :param sem_type_name_path: The sem_type_name_path of this OntologyTerm.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._sem_type_name_path = sem_type_name_path
