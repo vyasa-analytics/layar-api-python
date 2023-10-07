@@ -539,55 +539,45 @@ class SourceDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_table_ontology(self, id, **kwargs):  # noqa: E501
+    def create_table_ontology(self, body, id, **kwargs):  # noqa: E501
         """Create an ontology from a table  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_table_ontology(id, async_req=True)
+        >>> thread = api.create_table_ontology(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param Body7 body: (required)
         :param str id: The Layar ID for the table to be converted (required)
-        :param str name:
-        :param str id2:
-        :param str label:
-        :param list[str] synonyms:
-        :param list[str] properties:
-        :param str delimeter:
         :return: SourceDocument
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_table_ontology_with_http_info(id, **kwargs)  # noqa: E501
+            return self.create_table_ontology_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_table_ontology_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.create_table_ontology_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def create_table_ontology_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_table_ontology_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """Create an ontology from a table  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_table_ontology_with_http_info(id, async_req=True)
+        >>> thread = api.create_table_ontology_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param Body7 body: (required)
         :param str id: The Layar ID for the table to be converted (required)
-        :param str name:
-        :param str id2:
-        :param str label:
-        :param list[str] synonyms:
-        :param list[str] properties:
-        :param str delimeter:
         :return: SourceDocument
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'name', 'id2', 'label', 'synonyms', 'properties', 'delimeter']  # noqa: E501
+        all_params = ['body', 'id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -602,6 +592,10 @@ class SourceDocumentApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_table_ontology`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
@@ -619,29 +613,17 @@ class SourceDocumentApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'name' in params:
-            form_params.append(('name', params['name']))  # noqa: E501
-        if 'id' in params:
-            form_params.append(('id', params['id']))  # noqa: E501
-        if 'label' in params:
-            form_params.append(('label', params['label']))  # noqa: E501
-        if 'synonyms' in params:
-            form_params.append(('synonyms', params['synonyms']))  # noqa: E501
-            collection_formats['synonyms'] = 'multi'  # noqa: E501
-        if 'properties' in params:
-            form_params.append(('properties', params['properties']))  # noqa: E501
-            collection_formats['properties'] = 'multi'  # noqa: E501
-        if 'delimeter' in params:
-            form_params.append(('delimeter', params['delimeter']))  # noqa: E501
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['oAuth2ClientCredentials']  # noqa: E501

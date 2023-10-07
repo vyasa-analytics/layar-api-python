@@ -28,24 +28,19 @@ class NamedEntityResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'named_entities': 'list[NamedEntityResponseNamedEntities]',
-        'types': 'list[str]'
+        'named_entities': 'list[NamedEntityResponseNamedEntities]'
     }
 
     attribute_map = {
-        'named_entities': 'namedEntities',
-        'types': 'types'
+        'named_entities': 'namedEntities'
     }
 
-    def __init__(self, named_entities=None, types=None):  # noqa: E501
+    def __init__(self, named_entities=None):  # noqa: E501
         """NamedEntityResponse - a model defined in Swagger"""  # noqa: E501
         self._named_entities = None
-        self._types = None
         self.discriminator = None
         if named_entities is not None:
             self.named_entities = named_entities
-        if types is not None:
-            self.types = types
 
     @property
     def named_entities(self):
@@ -67,27 +62,6 @@ class NamedEntityResponse(object):
         """
 
         self._named_entities = named_entities
-
-    @property
-    def types(self):
-        """Gets the types of this NamedEntityResponse.  # noqa: E501
-
-
-        :return: The types of this NamedEntityResponse.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._types
-
-    @types.setter
-    def types(self, types):
-        """Sets the types of this NamedEntityResponse.
-
-
-        :param types: The types of this NamedEntityResponse.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._types = types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -55,6 +55,7 @@ class Question(DomainObject):
         'search_command_json_string': 'str',
         'section_keywords': 'list[str]',
         'single_doc_question_document_id': 'str',
+        'status': 'str',
         'template': 'str',
         'truncate_text_to_length': 'int',
         'type_of_search': 'QuestionAnswerTypeOfSearch',
@@ -91,6 +92,7 @@ class Question(DomainObject):
         'search_command_json_string': 'searchCommandJsonString',
         'section_keywords': 'sectionKeywords',
         'single_doc_question_document_id': 'singleDocQuestionDocumentId',
+        'status': 'status',
         'template': 'template',
         'truncate_text_to_length': 'truncateTextToLength',
         'type_of_search': 'typeOfSearch',
@@ -100,7 +102,7 @@ class Question(DomainObject):
     if hasattr(DomainObject, "attribute_map"):
         attribute_map.update(DomainObject.attribute_map)
 
-    def __init__(self, assigned_user_count=None, assigned_user_ids=None, batch_grouping_key=None, best_answers=None, complete=None, concept_types=None, curated_answer_user_count=None, curated_answer_total_count=None, curated_answer_unique_count=None, curation_percent_complete=None, curation_discord=None, deep_learning_model_id=None, data_providers=None, field_to_analyze=None, has_answers=None, job_id=None, minimum_requested_answers=None, moderated=None, moderator_user_ids=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, section_keywords=None, single_doc_question_document_id=None, template=None, truncate_text_to_length=None, type_of_search=None, user_curations=None, advanced_params=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, assigned_user_count=None, assigned_user_ids=None, batch_grouping_key=None, best_answers=None, complete=None, concept_types=None, curated_answer_user_count=None, curated_answer_total_count=None, curated_answer_unique_count=None, curation_percent_complete=None, curation_discord=None, deep_learning_model_id=None, data_providers=None, field_to_analyze=None, has_answers=None, job_id=None, minimum_requested_answers=None, moderated=None, moderator_user_ids=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, section_keywords=None, single_doc_question_document_id=None, status=None, template=None, truncate_text_to_length=None, type_of_search=None, user_curations=None, advanced_params=None, *args, **kwargs):  # noqa: E501
         """Question - a model defined in Swagger"""  # noqa: E501
         self._assigned_user_count = None
         self._assigned_user_ids = None
@@ -128,6 +130,7 @@ class Question(DomainObject):
         self._search_command_json_string = None
         self._section_keywords = None
         self._single_doc_question_document_id = None
+        self._status = None
         self._template = None
         self._truncate_text_to_length = None
         self._type_of_search = None
@@ -186,6 +189,8 @@ class Question(DomainObject):
             self.section_keywords = section_keywords
         if single_doc_question_document_id is not None:
             self.single_doc_question_document_id = single_doc_question_document_id
+        if status is not None:
+            self.status = status
         if template is not None:
             self.template = template
         if truncate_text_to_length is not None:
@@ -743,6 +748,33 @@ class Question(DomainObject):
         """
 
         self._single_doc_question_document_id = single_doc_question_document_id
+
+    @property
+    def status(self):
+        """Gets the status of this Question.  # noqa: E501
+
+
+        :return: The status of this Question.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Question.
+
+
+        :param status: The status of this Question.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["QUEUED", "COMPLETE", "ERROR"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
 
     @property
     def template(self):

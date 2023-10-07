@@ -31,38 +31,48 @@ class Body7(object):
         'name': 'str',
         'id': 'str',
         'label': 'str',
+        'parent': 'str',
         'synonyms': 'list[str]',
         'properties': 'list[str]',
-        'delimeter': 'str'
+        'delimiter': 'str',
+        'start_row': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'label': 'label',
+        'parent': 'parent',
         'synonyms': 'synonyms',
         'properties': 'properties',
-        'delimeter': 'delimeter'
+        'delimiter': 'delimiter',
+        'start_row': 'startRow'
     }
 
-    def __init__(self, name=None, id=None, label=None, synonyms=None, properties=None, delimeter=None):  # noqa: E501
+    def __init__(self, name=None, id=None, label=None, parent=None, synonyms=None, properties=None, delimiter=None, start_row=None):  # noqa: E501
         """Body7 - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._id = None
         self._label = None
+        self._parent = None
         self._synonyms = None
         self._properties = None
-        self._delimeter = None
+        self._delimiter = None
+        self._start_row = None
         self.discriminator = None
         self.name = name
         self.id = id
         self.label = label
+        if parent is not None:
+            self.parent = parent
         if synonyms is not None:
             self.synonyms = synonyms
         if properties is not None:
             self.properties = properties
-        if delimeter is not None:
-            self.delimeter = delimeter
+        if delimiter is not None:
+            self.delimiter = delimiter
+        if start_row is not None:
+            self.start_row = start_row
 
     @property
     def name(self):
@@ -93,7 +103,7 @@ class Body7(object):
     def id(self):
         """Gets the id of this Body7.  # noqa: E501
 
-        The column to use when creating term IDs  # noqa: E501
+        The column key to use when creating term IDs  # noqa: E501
 
         :return: The id of this Body7.  # noqa: E501
         :rtype: str
@@ -104,7 +114,7 @@ class Body7(object):
     def id(self, id):
         """Sets the id of this Body7.
 
-        The column to use when creating term IDs  # noqa: E501
+        The column key to use when creating term IDs  # noqa: E501
 
         :param id: The id of this Body7.  # noqa: E501
         :type: str
@@ -118,7 +128,7 @@ class Body7(object):
     def label(self):
         """Gets the label of this Body7.  # noqa: E501
 
-        The column to use when creating term labels  # noqa: E501
+        The column key to use when creating term labels  # noqa: E501
 
         :return: The label of this Body7.  # noqa: E501
         :rtype: str
@@ -129,7 +139,7 @@ class Body7(object):
     def label(self, label):
         """Sets the label of this Body7.
 
-        The column to use when creating term labels  # noqa: E501
+        The column key to use when creating term labels  # noqa: E501
 
         :param label: The label of this Body7.  # noqa: E501
         :type: str
@@ -140,10 +150,33 @@ class Body7(object):
         self._label = label
 
     @property
+    def parent(self):
+        """Gets the parent of this Body7.  # noqa: E501
+
+        The column key to use for creating hierarchical relationships. The value in this cell should match the ID value of another row in the table.  # noqa: E501
+
+        :return: The parent of this Body7.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent
+
+    @parent.setter
+    def parent(self, parent):
+        """Sets the parent of this Body7.
+
+        The column key to use for creating hierarchical relationships. The value in this cell should match the ID value of another row in the table.  # noqa: E501
+
+        :param parent: The parent of this Body7.  # noqa: E501
+        :type: str
+        """
+
+        self._parent = parent
+
+    @property
     def synonyms(self):
         """Gets the synonyms of this Body7.  # noqa: E501
 
-        The column(s) to use when creating term synonyms  # noqa: E501
+        The column key(s) to use when creating term synonyms  # noqa: E501
 
         :return: The synonyms of this Body7.  # noqa: E501
         :rtype: list[str]
@@ -154,7 +187,7 @@ class Body7(object):
     def synonyms(self, synonyms):
         """Sets the synonyms of this Body7.
 
-        The column(s) to use when creating term synonyms  # noqa: E501
+        The column key(s) to use when creating term synonyms  # noqa: E501
 
         :param synonyms: The synonyms of this Body7.  # noqa: E501
         :type: list[str]
@@ -166,7 +199,7 @@ class Body7(object):
     def properties(self):
         """Gets the properties of this Body7.  # noqa: E501
 
-        The column(s) to use when creating term properties  # noqa: E501
+        The column keys(s) to use when creating term properties  # noqa: E501
 
         :return: The properties of this Body7.  # noqa: E501
         :rtype: list[str]
@@ -177,7 +210,7 @@ class Body7(object):
     def properties(self, properties):
         """Sets the properties of this Body7.
 
-        The column(s) to use when creating term properties  # noqa: E501
+        The column keys(s) to use when creating term properties  # noqa: E501
 
         :param properties: The properties of this Body7.  # noqa: E501
         :type: list[str]
@@ -186,27 +219,50 @@ class Body7(object):
         self._properties = properties
 
     @property
-    def delimeter(self):
-        """Gets the delimeter of this Body7.  # noqa: E501
+    def delimiter(self):
+        """Gets the delimiter of this Body7.  # noqa: E501
 
-        If term synonyms are collected in a single column, please provide a delimeter to separate each one  # noqa: E501
+        If term synonyms are collected in a single column, please provide a delimiter to separate each one  # noqa: E501
 
-        :return: The delimeter of this Body7.  # noqa: E501
+        :return: The delimiter of this Body7.  # noqa: E501
         :rtype: str
         """
-        return self._delimeter
+        return self._delimiter
 
-    @delimeter.setter
-    def delimeter(self, delimeter):
-        """Sets the delimeter of this Body7.
+    @delimiter.setter
+    def delimiter(self, delimiter):
+        """Sets the delimiter of this Body7.
 
-        If term synonyms are collected in a single column, please provide a delimeter to separate each one  # noqa: E501
+        If term synonyms are collected in a single column, please provide a delimiter to separate each one  # noqa: E501
 
-        :param delimeter: The delimeter of this Body7.  # noqa: E501
+        :param delimiter: The delimiter of this Body7.  # noqa: E501
         :type: str
         """
 
-        self._delimeter = delimeter
+        self._delimiter = delimiter
+
+    @property
+    def start_row(self):
+        """Gets the start_row of this Body7.  # noqa: E501
+
+        The first row with ontology term data (and not a header row). Defaults to 0.  # noqa: E501
+
+        :return: The start_row of this Body7.  # noqa: E501
+        :rtype: int
+        """
+        return self._start_row
+
+    @start_row.setter
+    def start_row(self, start_row):
+        """Sets the start_row of this Body7.
+
+        The first row with ontology term data (and not a header row). Defaults to 0.  # noqa: E501
+
+        :param start_row: The start_row of this Body7.  # noqa: E501
+        :type: int
+        """
+
+        self._start_row = start_row
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **search_command_json_string** | **str** |  | [optional] 
 **section_keywords** | **list[str]** |  | [optional] 
 **single_doc_question_document_id** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 **template** | **str** |  | [optional] 
 **truncate_text_to_length** | **int** |  | [optional] 
 **type_of_search** | [**QuestionAnswerTypeOfSearch**](QuestionAnswerTypeOfSearch.md) |  | [optional] 

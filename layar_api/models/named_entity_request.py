@@ -29,23 +29,33 @@ class NamedEntityRequest(object):
     """
     swagger_types = {
         'text': 'str',
-        'types': 'list[str]'
+        'types': 'list[str]',
+        'ontology_ids': 'list[str]',
+        'with_custom_types': 'bool'
     }
 
     attribute_map = {
         'text': 'text',
-        'types': 'types'
+        'types': 'types',
+        'ontology_ids': 'ontologyIds',
+        'with_custom_types': 'withCustomTypes'
     }
 
-    def __init__(self, text=None, types=None):  # noqa: E501
+    def __init__(self, text=None, types=None, ontology_ids=None, with_custom_types=True):  # noqa: E501
         """NamedEntityRequest - a model defined in Swagger"""  # noqa: E501
         self._text = None
         self._types = None
+        self._ontology_ids = None
+        self._with_custom_types = None
         self.discriminator = None
         if text is not None:
             self.text = text
         if types is not None:
             self.types = types
+        if ontology_ids is not None:
+            self.ontology_ids = ontology_ids
+        if with_custom_types is not None:
+            self.with_custom_types = with_custom_types
 
     @property
     def text(self):
@@ -88,6 +98,50 @@ class NamedEntityRequest(object):
         """
 
         self._types = types
+
+    @property
+    def ontology_ids(self):
+        """Gets the ontology_ids of this NamedEntityRequest.  # noqa: E501
+
+
+        :return: The ontology_ids of this NamedEntityRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._ontology_ids
+
+    @ontology_ids.setter
+    def ontology_ids(self, ontology_ids):
+        """Sets the ontology_ids of this NamedEntityRequest.
+
+
+        :param ontology_ids: The ontology_ids of this NamedEntityRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._ontology_ids = ontology_ids
+
+    @property
+    def with_custom_types(self):
+        """Gets the with_custom_types of this NamedEntityRequest.  # noqa: E501
+
+        Include custom types (those returned by /conceptType/search) in addition to any types provided in the `types` parameter  # noqa: E501
+
+        :return: The with_custom_types of this NamedEntityRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._with_custom_types
+
+    @with_custom_types.setter
+    def with_custom_types(self, with_custom_types):
+        """Sets the with_custom_types of this NamedEntityRequest.
+
+        Include custom types (those returned by /conceptType/search) in addition to any types provided in the `types` parameter  # noqa: E501
+
+        :param with_custom_types: The with_custom_types of this NamedEntityRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._with_custom_types = with_custom_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""
