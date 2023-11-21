@@ -28,57 +28,55 @@ class Body7(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'file': 'str',
         'name': 'str',
-        'id': 'str',
-        'label': 'str',
-        'parent': 'str',
-        'synonyms': 'list[str]',
-        'properties': 'list[str]',
-        'delimiter': 'str',
-        'start_row': 'int'
+        'cortex_document_type': 'str'
     }
 
     attribute_map = {
+        'file': 'file',
         'name': 'name',
-        'id': 'id',
-        'label': 'label',
-        'parent': 'parent',
-        'synonyms': 'synonyms',
-        'properties': 'properties',
-        'delimiter': 'delimiter',
-        'start_row': 'startRow'
+        'cortex_document_type': 'cortexDocumentType'
     }
 
-    def __init__(self, name=None, id=None, label=None, parent=None, synonyms=None, properties=None, delimiter=None, start_row=None):  # noqa: E501
+    def __init__(self, file=None, name=None, cortex_document_type=None):  # noqa: E501
         """Body7 - a model defined in Swagger"""  # noqa: E501
+        self._file = None
         self._name = None
-        self._id = None
-        self._label = None
-        self._parent = None
-        self._synonyms = None
-        self._properties = None
-        self._delimiter = None
-        self._start_row = None
+        self._cortex_document_type = None
         self.discriminator = None
-        self.name = name
-        self.id = id
-        self.label = label
-        if parent is not None:
-            self.parent = parent
-        if synonyms is not None:
-            self.synonyms = synonyms
-        if properties is not None:
-            self.properties = properties
-        if delimiter is not None:
-            self.delimiter = delimiter
-        if start_row is not None:
-            self.start_row = start_row
+        if file is not None:
+            self.file = file
+        if name is not None:
+            self.name = name
+        if cortex_document_type is not None:
+            self.cortex_document_type = cortex_document_type
+
+    @property
+    def file(self):
+        """Gets the file of this Body7.  # noqa: E501
+
+
+        :return: The file of this Body7.  # noqa: E501
+        :rtype: str
+        """
+        return self._file
+
+    @file.setter
+    def file(self, file):
+        """Sets the file of this Body7.
+
+
+        :param file: The file of this Body7.  # noqa: E501
+        :type: str
+        """
+
+        self._file = file
 
     @property
     def name(self):
         """Gets the name of this Body7.  # noqa: E501
 
-        Provide a name for the new ontology  # noqa: E501
 
         :return: The name of this Body7.  # noqa: E501
         :rtype: str
@@ -89,180 +87,39 @@ class Body7(object):
     def name(self, name):
         """Sets the name of this Body7.
 
-        Provide a name for the new ontology  # noqa: E501
 
         :param name: The name of this Body7.  # noqa: E501
         :type: str
         """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 
     @property
-    def id(self):
-        """Gets the id of this Body7.  # noqa: E501
+    def cortex_document_type(self):
+        """Gets the cortex_document_type of this Body7.  # noqa: E501
 
-        The column key to use when creating term IDs  # noqa: E501
 
-        :return: The id of this Body7.  # noqa: E501
+        :return: The cortex_document_type of this Body7.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._cortex_document_type
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Body7.
+    @cortex_document_type.setter
+    def cortex_document_type(self, cortex_document_type):
+        """Sets the cortex_document_type of this Body7.
 
-        The column key to use when creating term IDs  # noqa: E501
 
-        :param id: The id of this Body7.  # noqa: E501
+        :param cortex_document_type: The cortex_document_type of this Body7.  # noqa: E501
         :type: str
         """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+        allowed_values = ["IMAGE", "DOCUMENT", "TABLE"]  # noqa: E501
+        if cortex_document_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cortex_document_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(cortex_document_type, allowed_values)
+            )
 
-        self._id = id
-
-    @property
-    def label(self):
-        """Gets the label of this Body7.  # noqa: E501
-
-        The column key to use when creating term labels  # noqa: E501
-
-        :return: The label of this Body7.  # noqa: E501
-        :rtype: str
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this Body7.
-
-        The column key to use when creating term labels  # noqa: E501
-
-        :param label: The label of this Body7.  # noqa: E501
-        :type: str
-        """
-        if label is None:
-            raise ValueError("Invalid value for `label`, must not be `None`")  # noqa: E501
-
-        self._label = label
-
-    @property
-    def parent(self):
-        """Gets the parent of this Body7.  # noqa: E501
-
-        The column key to use for creating hierarchical relationships. The value in this cell should match the ID value of another row in the table.  # noqa: E501
-
-        :return: The parent of this Body7.  # noqa: E501
-        :rtype: str
-        """
-        return self._parent
-
-    @parent.setter
-    def parent(self, parent):
-        """Sets the parent of this Body7.
-
-        The column key to use for creating hierarchical relationships. The value in this cell should match the ID value of another row in the table.  # noqa: E501
-
-        :param parent: The parent of this Body7.  # noqa: E501
-        :type: str
-        """
-
-        self._parent = parent
-
-    @property
-    def synonyms(self):
-        """Gets the synonyms of this Body7.  # noqa: E501
-
-        The column key(s) to use when creating term synonyms  # noqa: E501
-
-        :return: The synonyms of this Body7.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._synonyms
-
-    @synonyms.setter
-    def synonyms(self, synonyms):
-        """Sets the synonyms of this Body7.
-
-        The column key(s) to use when creating term synonyms  # noqa: E501
-
-        :param synonyms: The synonyms of this Body7.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._synonyms = synonyms
-
-    @property
-    def properties(self):
-        """Gets the properties of this Body7.  # noqa: E501
-
-        The column keys(s) to use when creating term properties  # noqa: E501
-
-        :return: The properties of this Body7.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._properties
-
-    @properties.setter
-    def properties(self, properties):
-        """Sets the properties of this Body7.
-
-        The column keys(s) to use when creating term properties  # noqa: E501
-
-        :param properties: The properties of this Body7.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._properties = properties
-
-    @property
-    def delimiter(self):
-        """Gets the delimiter of this Body7.  # noqa: E501
-
-        If term synonyms are collected in a single column, please provide a delimiter to separate each one  # noqa: E501
-
-        :return: The delimiter of this Body7.  # noqa: E501
-        :rtype: str
-        """
-        return self._delimiter
-
-    @delimiter.setter
-    def delimiter(self, delimiter):
-        """Sets the delimiter of this Body7.
-
-        If term synonyms are collected in a single column, please provide a delimiter to separate each one  # noqa: E501
-
-        :param delimiter: The delimiter of this Body7.  # noqa: E501
-        :type: str
-        """
-
-        self._delimiter = delimiter
-
-    @property
-    def start_row(self):
-        """Gets the start_row of this Body7.  # noqa: E501
-
-        The first row with ontology term data (and not a header row). Defaults to 0.  # noqa: E501
-
-        :return: The start_row of this Body7.  # noqa: E501
-        :rtype: int
-        """
-        return self._start_row
-
-    @start_row.setter
-    def start_row(self, start_row):
-        """Sets the start_row of this Body7.
-
-        The first row with ontology term data (and not a header row). Defaults to 0.  # noqa: E501
-
-        :param start_row: The start_row of this Body7.  # noqa: E501
-        :type: int
-        """
-
-        self._start_row = start_row
+        self._cortex_document_type = cortex_document_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

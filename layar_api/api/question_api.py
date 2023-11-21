@@ -145,7 +145,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param str job_id: (required)
-        :return: InlineResponse2002
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -166,7 +166,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param str job_id: (required)
-        :return: InlineResponse2002
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -220,7 +220,7 @@ class QuestionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2002',  # noqa: E501
+            response_type='InlineResponse2003',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -238,7 +238,7 @@ class QuestionApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Question body: (required)
+        :param Body6 body: (required)
         :param str x_vyasa_data_providers: remote data providers to query (required)
         :param str x_vyasa_advanced_parameters: for advanced users and debugging.  A JSON structure overriding default Question Answering parameters
         :return: Question
@@ -262,7 +262,7 @@ class QuestionApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Question body: (required)
+        :param Body6 body: (required)
         :param str x_vyasa_data_providers: remote data providers to query (required)
         :param str x_vyasa_advanced_parameters: for advanced users and debugging.  A JSON structure overriding default Question Answering parameters
         :return: Question
@@ -1305,7 +1305,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param BulkQuestionCommand body:
-        :return: InlineResponse2001
+        :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1326,7 +1326,7 @@ class QuestionApi(object):
 
         :param async_req bool
         :param BulkQuestionCommand body:
-        :return: InlineResponse2001
+        :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1380,7 +1380,7 @@ class QuestionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2001',  # noqa: E501
+            response_type='InlineResponse2002',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

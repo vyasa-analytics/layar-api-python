@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch**
-> InlineResponse2002 cancel_batch(job_id)
+> InlineResponse2003 cancel_batch(job_id)
 
 Cancel a bulk QA job request
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.QuestionApi(layar_api.ApiClient(configuration))
-body = layar_api.Question() # Question | 
+body = layar_api.Body6() # Body6 | 
 x_vyasa_data_providers = 'x_vyasa_data_providers_example' # str | remote data providers to query
 x_vyasa_advanced_parameters = 'x_vyasa_advanced_parameters_example' # str | for advanced users and debugging.  A JSON structure overriding default Question Answering parameters (optional)
 
@@ -164,7 +164,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Question**](Question.md)|  | 
+ **body** | [**Body6**](Body6.md)|  | 
  **x_vyasa_data_providers** | **str**| remote data providers to query | 
  **x_vyasa_advanced_parameters** | **str**| for advanced users and debugging.  A JSON structure overriding default Question Answering parameters | [optional] 
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **start_batch**
-> InlineResponse2001 start_batch(body=body)
+> InlineResponse2002 start_batch(body=body)
 
 Submit a bulk QA job request
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

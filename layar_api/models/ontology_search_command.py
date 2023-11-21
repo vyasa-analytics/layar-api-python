@@ -151,7 +151,7 @@ class OntologySearchCommand(BaseSearchCommand):
     def include_obsolete(self):
         """Gets the include_obsolete of this OntologySearchCommand.  # noqa: E501
 
-        include obsolte terms in the results  # noqa: E501
+        include obsolete terms in the results  # noqa: E501
 
         :return: The include_obsolete of this OntologySearchCommand.  # noqa: E501
         :rtype: bool
@@ -162,7 +162,7 @@ class OntologySearchCommand(BaseSearchCommand):
     def include_obsolete(self, include_obsolete):
         """Sets the include_obsolete of this OntologySearchCommand.
 
-        include obsolte terms in the results  # noqa: E501
+        include obsolete terms in the results  # noqa: E501
 
         :param include_obsolete: The include_obsolete of this OntologySearchCommand.  # noqa: E501
         :type: bool

@@ -41,7 +41,7 @@ class SourceDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Annotation body: (required)
+        :param Annotation1 body: (required)
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -63,7 +63,7 @@ class SourceDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Annotation body: (required)
+        :param Annotation1 body: (required)
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -142,7 +142,7 @@ class SourceDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Annotation] body: (required)
+        :param list[Annotation2] body: (required)
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -164,7 +164,7 @@ class SourceDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Annotation] body: (required)
+        :param list[Annotation2] body: (required)
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -548,7 +548,7 @@ class SourceDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body7 body: (required)
+        :param Body8 body: (required)
         :param str id: The Layar ID for the table to be converted (required)
         :return: SourceDocument
                  If the method is called asynchronously,
@@ -570,7 +570,7 @@ class SourceDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body7 body: (required)
+        :param Body8 body: (required)
         :param str id: The Layar ID for the table to be converted (required)
         :return: SourceDocument
                  If the method is called asynchronously,
@@ -2196,7 +2196,7 @@ class SourceDocumentApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :return: InlineResponse2004
+        :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2217,7 +2217,7 @@ class SourceDocumentApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :return: InlineResponse2004
+        :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2271,7 +2271,7 @@ class SourceDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2004',  # noqa: E501
+            response_type='InlineResponse2005',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

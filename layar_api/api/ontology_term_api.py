@@ -41,7 +41,7 @@ class OntologyTermApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OntologyTerm body: (required)
+        :param OntologyTerm1 body: (required)
         :return: OntologyTerm
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class OntologyTermApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OntologyTerm body: (required)
+        :param OntologyTerm1 body: (required)
         :return: OntologyTerm
                  If the method is called asynchronously,
                  returns the request thread.
@@ -338,7 +338,7 @@ class OntologyTermApi(object):
         :param list[str] db_ids: limit results to terms with specific IDs
         :param list[str] document_ids: limit results to terms from specific documents
         :param list[str] id_paths: limit results to terms with specific ID paths
-        :param bool include_obsolete: include obsolte terms in the results
+        :param bool include_obsolete: include obsolete terms in the results
         :param list[str] name_paths: limit results to terms with specific name paths
         :param str path_traversal: limit results based on a specific traversal strategy when restricting by idPath or namePath
         :param list[str] terms: limit results to terms matching the supplied terms (in either name or synonym)
@@ -372,7 +372,7 @@ class OntologyTermApi(object):
         :param list[str] db_ids: limit results to terms with specific IDs
         :param list[str] document_ids: limit results to terms from specific documents
         :param list[str] id_paths: limit results to terms with specific ID paths
-        :param bool include_obsolete: include obsolte terms in the results
+        :param bool include_obsolete: include obsolete terms in the results
         :param list[str] name_paths: limit results to terms with specific name paths
         :param str path_traversal: limit results based on a specific traversal strategy when restricting by idPath or namePath
         :param list[str] terms: limit results to terms matching the supplied terms (in either name or synonym)
@@ -465,37 +465,37 @@ class OntologyTermApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def reconcile(self, **kwargs):  # noqa: E501
+    def reconcile(self, body, **kwargs):  # noqa: E501
         """reconcile  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reconcile(async_req=True)
+        >>> thread = api.reconcile(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReconcileToOntologyCommand body:
+        :param ReconcileToOntologyCommand body: (required)
         :return: ReconcileToOntologyResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.reconcile_with_http_info(**kwargs)  # noqa: E501
+            return self.reconcile_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.reconcile_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.reconcile_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def reconcile_with_http_info(self, **kwargs):  # noqa: E501
+    def reconcile_with_http_info(self, body, **kwargs):  # noqa: E501
         """reconcile  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reconcile_with_http_info(async_req=True)
+        >>> thread = api.reconcile_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReconcileToOntologyCommand body:
+        :param ReconcileToOntologyCommand body: (required)
         :return: ReconcileToOntologyResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -516,6 +516,10 @@ class OntologyTermApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `reconcile`")  # noqa: E501
 
         collection_formats = {}
 

@@ -91,7 +91,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ProjectApi(layar_api.ApiClient(configuration))
-body = layar_api.Project() # Project | 
+body = layar_api.Project1() # Project1 | 
 
 try:
     # Create a new project
@@ -105,7 +105,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Project**](Project.md)|  | 
+ **body** | [**Project1**](Project1.md)|  | 
 
 ### Return type
 

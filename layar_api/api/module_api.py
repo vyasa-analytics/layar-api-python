@@ -41,7 +41,7 @@ class ModuleApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Module body: (required)
+        :param Module1 body: (required)
         :return: list[Module]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class ModuleApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Module body: (required)
+        :param Module1 body: (required)
         :return: list[Module]
                  If the method is called asynchronously,
                  returns the request thread.

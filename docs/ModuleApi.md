@@ -28,7 +28,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ModuleApi(layar_api.ApiClient(configuration))
-body = layar_api.Module() # Module | 
+body = layar_api.Module1() # Module1 | 
 
 try:
     # Create a new module
@@ -42,7 +42,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Module**](Module.md)|  | 
+ **body** | [**Module1**](Module1.md)|  | 
 
 ### Return type
 

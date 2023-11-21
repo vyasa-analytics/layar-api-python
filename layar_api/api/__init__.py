@@ -12,7 +12,9 @@ from layar_api.api.concept_type_api import ConceptTypeApi
 from layar_api.api.connector_api import ConnectorApi
 from layar_api.api.data_fabric_api import DataFabricApi
 from layar_api.api.event_api import EventApi
+from layar_api.api.gpt_api import GptApi
 from layar_api.api.group_api import GroupApi
+from layar_api.api.job_api import JobApi
 from layar_api.api.live_source_api import LiveSourceApi
 from layar_api.api.model_api import ModelApi
 from layar_api.api.module_api import ModuleApi

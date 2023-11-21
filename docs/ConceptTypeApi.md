@@ -35,7 +35,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.ConceptTypeApi(layar_api.ApiClient(configuration))
-body = layar_api.ConceptType() # ConceptType | 
+body = layar_api.ConceptType1() # ConceptType1 | 
 
 try:
     # Create a new concept type
@@ -49,7 +49,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ConceptType**](ConceptType.md)|  | 
+ **body** | [**ConceptType1**](ConceptType1.md)|  | 
 
 ### Return type
 

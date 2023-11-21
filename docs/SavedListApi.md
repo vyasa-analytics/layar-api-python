@@ -147,7 +147,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SavedListApi(layar_api.ApiClient(configuration))
-body = layar_api.SavedList() # SavedList | 
+body = layar_api.SavedList1() # SavedList1 | 
 x_vyasa_client_hint = 'x_vyasa_client_hint_example' # str | intended client application UI (optional)
 
 try:
@@ -162,7 +162,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SavedList**](SavedList.md)|  | 
+ **body** | [**SavedList1**](SavedList1.md)|  | 
  **x_vyasa_client_hint** | **str**| intended client application UI | [optional] 
 
 ### Return type

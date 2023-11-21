@@ -28,40 +28,92 @@ class InlineResponse2001(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'job_id': 'str'
+        'type': 'str',
+        'content': 'str',
+        'sources_used': 'list[float]'
     }
 
     attribute_map = {
-        'job_id': 'jobId'
+        'type': 'type',
+        'content': 'content',
+        'sources_used': 'sourcesUsed'
     }
 
-    def __init__(self, job_id=None):  # noqa: E501
+    def __init__(self, type=None, content=None, sources_used=None):  # noqa: E501
         """InlineResponse2001 - a model defined in Swagger"""  # noqa: E501
-        self._job_id = None
+        self._type = None
+        self._content = None
+        self._sources_used = None
         self.discriminator = None
-        if job_id is not None:
-            self.job_id = job_id
+        if type is not None:
+            self.type = type
+        if content is not None:
+            self.content = content
+        if sources_used is not None:
+            self.sources_used = sources_used
 
     @property
-    def job_id(self):
-        """Gets the job_id of this InlineResponse2001.  # noqa: E501
+    def type(self):
+        """Gets the type of this InlineResponse2001.  # noqa: E501
 
 
-        :return: The job_id of this InlineResponse2001.  # noqa: E501
+        :return: The type of this InlineResponse2001.  # noqa: E501
         :rtype: str
         """
-        return self._job_id
+        return self._type
 
-    @job_id.setter
-    def job_id(self, job_id):
-        """Sets the job_id of this InlineResponse2001.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this InlineResponse2001.
 
 
-        :param job_id: The job_id of this InlineResponse2001.  # noqa: E501
+        :param type: The type of this InlineResponse2001.  # noqa: E501
         :type: str
         """
 
-        self._job_id = job_id
+        self._type = type
+
+    @property
+    def content(self):
+        """Gets the content of this InlineResponse2001.  # noqa: E501
+
+
+        :return: The content of this InlineResponse2001.  # noqa: E501
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this InlineResponse2001.
+
+
+        :param content: The content of this InlineResponse2001.  # noqa: E501
+        :type: str
+        """
+
+        self._content = content
+
+    @property
+    def sources_used(self):
+        """Gets the sources_used of this InlineResponse2001.  # noqa: E501
+
+
+        :return: The sources_used of this InlineResponse2001.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._sources_used
+
+    @sources_used.setter
+    def sources_used(self, sources_used):
+        """Sets the sources_used of this InlineResponse2001.
+
+
+        :param sources_used: The sources_used of this InlineResponse2001.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._sources_used = sources_used
 
     def to_dict(self):
         """Returns the model properties as a dict"""

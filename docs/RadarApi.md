@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_radar_by_query_string**](RadarApi.md#get_radar_by_query_string) | **GET** /layar/radar/byQueryString | Find semantically similar terms for a string
 
 # **get_nearest_neighbor_count**
-> InlineResponse2003 get_nearest_neighbor_count(x_vyasa_data_providers, terms=terms)
+> InlineResponse2004 get_nearest_neighbor_count(x_vyasa_data_providers, terms=terms)
 
 Get nearest neighbor counts
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

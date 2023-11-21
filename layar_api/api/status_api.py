@@ -33,7 +33,7 @@ class StatusApi(object):
         self.api_client = api_client
 
     def get_app_status(self, **kwargs):  # noqa: E501
-        """Get app uptime status  # noqa: E501
+        """Get app availability status  # noqa: E501
 
         Check to see whether your Layar instance is up ('OK') or down.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -54,7 +54,7 @@ class StatusApi(object):
             return data
 
     def get_app_status_with_http_info(self, **kwargs):  # noqa: E501
-        """Get app uptime status  # noqa: E501
+        """Get app availability status  # noqa: E501
 
         Check to see whether your Layar instance is up ('OK') or down.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

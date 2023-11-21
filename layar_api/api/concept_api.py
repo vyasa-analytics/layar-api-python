@@ -141,7 +141,7 @@ class ConceptApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Concept body: (required)
+        :param Concept1 body: (required)
         :return: Concept
                  If the method is called asynchronously,
                  returns the request thread.
@@ -163,7 +163,7 @@ class ConceptApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Concept body: (required)
+        :param Concept1 body: (required)
         :return: Concept
                  If the method is called asynchronously,
                  returns the request thread.

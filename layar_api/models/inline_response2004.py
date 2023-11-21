@@ -28,40 +28,40 @@ class InlineResponse2004(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'count': 'int'
+        'total': 'float'
     }
 
     attribute_map = {
-        'count': 'count'
+        'total': 'total'
     }
 
-    def __init__(self, count=None):  # noqa: E501
+    def __init__(self, total=None):  # noqa: E501
         """InlineResponse2004 - a model defined in Swagger"""  # noqa: E501
-        self._count = None
+        self._total = None
         self.discriminator = None
-        if count is not None:
-            self.count = count
+        if total is not None:
+            self.total = total
 
     @property
-    def count(self):
-        """Gets the count of this InlineResponse2004.  # noqa: E501
+    def total(self):
+        """Gets the total of this InlineResponse2004.  # noqa: E501
 
 
-        :return: The count of this InlineResponse2004.  # noqa: E501
-        :rtype: int
+        :return: The total of this InlineResponse2004.  # noqa: E501
+        :rtype: float
         """
-        return self._count
+        return self._total
 
-    @count.setter
-    def count(self, count):
-        """Sets the count of this InlineResponse2004.
+    @total.setter
+    def total(self, total):
+        """Sets the total of this InlineResponse2004.
 
 
-        :param count: The count of this InlineResponse2004.  # noqa: E501
-        :type: int
+        :param total: The total of this InlineResponse2004.  # noqa: E501
+        :type: float
         """
 
-        self._count = count
+        self._total = total
 
     def to_dict(self):
         """Returns the model properties as a dict"""

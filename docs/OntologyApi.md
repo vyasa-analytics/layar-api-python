@@ -26,7 +26,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.OntologyApi(layar_api.ApiClient(configuration))
-body = layar_api.Body7() # Body7 | 
+body = layar_api.Body8() # Body8 | 
 id = 'id_example' # str | The Layar ID for the table to be converted
 
 try:
@@ -41,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body7**](Body7.md)|  | 
+ **body** | [**Body8**](Body8.md)|  | 
  **id** | **str**| The Layar ID for the table to be converted | 
 
 ### Return type

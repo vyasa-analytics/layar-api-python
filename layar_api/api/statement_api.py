@@ -136,7 +136,7 @@ class StatementApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Statement body: (required)
+        :param Body9 body: (required)
         :return: Statement
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +157,7 @@ class StatementApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Statement body: (required)
+        :param Body9 body: (required)
         :return: Statement
                  If the method is called asynchronously,
                  returns the request thread.

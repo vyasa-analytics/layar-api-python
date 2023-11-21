@@ -48,10 +48,8 @@ class ReconcileToOntologyCommand(object):
         self._max_predictions = None
         self._threshold = None
         self.discriminator = None
-        if ontology_id is not None:
-            self.ontology_id = ontology_id
-        if terms is not None:
-            self.terms = terms
+        self.ontology_id = ontology_id
+        self.terms = terms
         if max_predictions is not None:
             self.max_predictions = max_predictions
         if threshold is not None:
@@ -61,7 +59,7 @@ class ReconcileToOntologyCommand(object):
     def ontology_id(self):
         """Gets the ontology_id of this ReconcileToOntologyCommand.  # noqa: E501
 
-        the ID of the ontology terms will be reconciled to  # noqa: E501
+        the ID of the ontology file (sourceDocument) the terms will be reconciled against  # noqa: E501
 
         :return: The ontology_id of this ReconcileToOntologyCommand.  # noqa: E501
         :rtype: str
@@ -72,11 +70,13 @@ class ReconcileToOntologyCommand(object):
     def ontology_id(self, ontology_id):
         """Sets the ontology_id of this ReconcileToOntologyCommand.
 
-        the ID of the ontology terms will be reconciled to  # noqa: E501
+        the ID of the ontology file (sourceDocument) the terms will be reconciled against  # noqa: E501
 
         :param ontology_id: The ontology_id of this ReconcileToOntologyCommand.  # noqa: E501
         :type: str
         """
+        if ontology_id is None:
+            raise ValueError("Invalid value for `ontology_id`, must not be `None`")  # noqa: E501
 
         self._ontology_id = ontology_id
 
@@ -84,7 +84,7 @@ class ReconcileToOntologyCommand(object):
     def terms(self):
         """Gets the terms of this ReconcileToOntologyCommand.  # noqa: E501
 
-        terms to reconcile against the ontology  # noqa: E501
+        terms to reconcile against the ontology (maximum 500)  # noqa: E501
 
         :return: The terms of this ReconcileToOntologyCommand.  # noqa: E501
         :rtype: list[str]
@@ -95,11 +95,13 @@ class ReconcileToOntologyCommand(object):
     def terms(self, terms):
         """Sets the terms of this ReconcileToOntologyCommand.
 
-        terms to reconcile against the ontology  # noqa: E501
+        terms to reconcile against the ontology (maximum 500)  # noqa: E501
 
         :param terms: The terms of this ReconcileToOntologyCommand.  # noqa: E501
         :type: list[str]
         """
+        if terms is None:
+            raise ValueError("Invalid value for `terms`, must not be `None`")  # noqa: E501
 
         self._terms = terms
 

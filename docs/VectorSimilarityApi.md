@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_vectors_by_query_string**](VectorSimilarityApi.md#get_vectors_by_query_string) | **GET** /layar/vectorSimilarity/byQueryString | Find similar embeddings by query string
 
 # **create_vector_similarity**
-> VectorSimilarityRequest create_vector_similarity(body)
+> VectorSimilarityResponse create_vector_similarity(body)
 
 Create a new vector embedding
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VectorSimilarityRequest**](VectorSimilarityRequest.md)
+[**VectorSimilarityResponse**](VectorSimilarityResponse.md)
 
 ### Authorization
 

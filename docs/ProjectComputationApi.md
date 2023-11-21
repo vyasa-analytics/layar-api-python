@@ -5,6 +5,7 @@ All URIs are relative to *BASE_PATH*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancel_computation**](ProjectComputationApi.md#cancel_computation) | **POST** /layar/projectComputation/{id}/cancel | Cancel a project computation job (hard stop)
+[**download**](ProjectComputationApi.md#download) | **GET** /layar/projectComputation/{id}/download | Download computation job document based on id and url
 [**download_computation**](ProjectComputationApi.md#download_computation) | **GET** /layar/projectComputation/{id}/downloadZipResults | Download computation job documents as zip file
 [**download_logs**](ProjectComputationApi.md#download_logs) | **GET** /layar/projectComputation/{id}/downloadLogs | Download all computation job logs
 [**get_logs**](ProjectComputationApi.md#get_logs) | **GET** /layar/projectComputation/{id}/logs | Retrieve logs for computation job
@@ -59,6 +60,61 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **download**
+> str download(id, url=url)
+
+Download computation job document based on id and url
+
+Download documents for a project computation job
+
+### Example
+```python
+from __future__ import print_function
+import time
+import layar_api
+from layar_api.rest import ApiException
+from pprint import pprint
+
+# configure oauth access token for authorization
+configuration = layar_api.Configuration()
+configuration.host = 'HOST_NAME'
+configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIENT_SECRET')
+
+# create an instance of the api class
+api_instance = layar_api.ProjectComputationApi(layar_api.ApiClient(configuration))
+id = 'id_example' # str | 
+url = 'url_example' # str |  (optional)
+
+try:
+    # Download computation job document based on id and url
+    api_response = api_instance.download(id, url=url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProjectComputationApi->download: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **url** | **str**|  | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oAuth2ClientCredentials](../README.md#oAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

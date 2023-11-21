@@ -31,6 +31,7 @@ class ReconcileToOntologyResultResultsMatch(object):
         'db_id': 'str',
         'name': 'str',
         'synonyms': 'str',
+        'obsolete': 'bool',
         'id': 'str'
     }
 
@@ -38,14 +39,16 @@ class ReconcileToOntologyResultResultsMatch(object):
         'db_id': 'dbId',
         'name': 'name',
         'synonyms': 'synonyms',
+        'obsolete': 'obsolete',
         'id': 'id'
     }
 
-    def __init__(self, db_id=None, name=None, synonyms=None, id=None):  # noqa: E501
+    def __init__(self, db_id=None, name=None, synonyms=None, obsolete=None, id=None):  # noqa: E501
         """ReconcileToOntologyResultResultsMatch - a model defined in Swagger"""  # noqa: E501
         self._db_id = None
         self._name = None
         self._synonyms = None
+        self._obsolete = None
         self._id = None
         self.discriminator = None
         if db_id is not None:
@@ -54,6 +57,8 @@ class ReconcileToOntologyResultResultsMatch(object):
             self.name = name
         if synonyms is not None:
             self.synonyms = synonyms
+        if obsolete is not None:
+            self.obsolete = obsolete
         if id is not None:
             self.id = id
 
@@ -119,6 +124,27 @@ class ReconcileToOntologyResultResultsMatch(object):
         """
 
         self._synonyms = synonyms
+
+    @property
+    def obsolete(self):
+        """Gets the obsolete of this ReconcileToOntologyResultResultsMatch.  # noqa: E501
+
+
+        :return: The obsolete of this ReconcileToOntologyResultResultsMatch.  # noqa: E501
+        :rtype: bool
+        """
+        return self._obsolete
+
+    @obsolete.setter
+    def obsolete(self, obsolete):
+        """Sets the obsolete of this ReconcileToOntologyResultResultsMatch.
+
+
+        :param obsolete: The obsolete of this ReconcileToOntologyResultResultsMatch.  # noqa: E501
+        :type: bool
+        """
+
+        self._obsolete = obsolete
 
     @property
     def id(self):

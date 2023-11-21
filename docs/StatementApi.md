@@ -88,7 +88,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.StatementApi(layar_api.ApiClient(configuration))
-body = layar_api.Statement() # Statement | 
+body = layar_api.Body9() # Body9 | 
 
 try:
     # Create a new statement
@@ -102,7 +102,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Statement**](Statement.md)|  | 
+ **body** | [**Body9**](Body9.md)|  | 
 
 ### Return type
 

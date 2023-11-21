@@ -37,7 +37,7 @@ class ProjectComputation(object):
         'name': 'str',
         'project_id': 'str',
         'source_document': 'SourceDocument',
-        'status': 'str'
+        'status': 'JobStatus'
     }
 
     attribute_map = {
@@ -288,7 +288,7 @@ class ProjectComputation(object):
 
 
         :return: The status of this ProjectComputation.  # noqa: E501
-        :rtype: str
+        :rtype: JobStatus
         """
         return self._status
 
@@ -298,14 +298,8 @@ class ProjectComputation(object):
 
 
         :param status: The status of this ProjectComputation.  # noqa: E501
-        :type: str
+        :type: JobStatus
         """
-        allowed_values = ["RUNNING", "COMPLETE", "ERROR"]  # noqa: E501
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

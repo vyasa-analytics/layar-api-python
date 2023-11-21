@@ -41,7 +41,7 @@ class OntologyApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body7 body: (required)
+        :param Body8 body: (required)
         :param str id: The Layar ID for the table to be converted (required)
         :return: SourceDocument
                  If the method is called asynchronously,
@@ -63,7 +63,7 @@ class OntologyApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body7 body: (required)
+        :param Body8 body: (required)
         :param str id: The Layar ID for the table to be converted (required)
         :return: SourceDocument
                  If the method is called asynchronously,

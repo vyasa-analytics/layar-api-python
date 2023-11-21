@@ -55,7 +55,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-body = layar_api.Annotation() # Annotation | 
+body = layar_api.Annotation1() # Annotation1 | 
 id = 'id_example' # str | 
 
 try:
@@ -69,7 +69,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Annotation**](Annotation.md)|  | 
+ **body** | [**Annotation1**](Annotation1.md)|  | 
  **id** | **str**|  | 
 
 ### Return type
@@ -107,7 +107,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-body = [layar_api.Annotation()] # list[Annotation] | 
+body = [layar_api.Annotation2()] # list[Annotation2] | 
 id = 'id_example' # str | 
 
 try:
@@ -121,7 +121,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[Annotation]**](Annotation.md)|  | 
+ **body** | [**list[Annotation2]**](Annotation2.md)|  | 
  **id** | **str**|  | 
 
 ### Return type
@@ -321,7 +321,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.SourceDocumentApi(layar_api.ApiClient(configuration))
-body = layar_api.Body7() # Body7 | 
+body = layar_api.Body8() # Body8 | 
 id = 'id_example' # str | The Layar ID for the table to be converted
 
 try:
@@ -336,7 +336,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body7**](Body7.md)|  | 
+ **body** | [**Body8**](Body8.md)|  | 
  **id** | **str**| The Layar ID for the table to be converted | 
 
 ### Return type
@@ -1191,7 +1191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statement_counts**
-> InlineResponse2004 get_statement_counts(id)
+> InlineResponse2005 get_statement_counts(id)
 
 Get a count of all statements in a document
 
@@ -1228,7 +1228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

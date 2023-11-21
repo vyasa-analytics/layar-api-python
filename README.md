@@ -94,7 +94,9 @@ Class | Method | HTTP request | Description
 *DataFabricApi* | [**get_fabrics**](docs/DataFabricApi.md#get_fabrics) | **GET** /layar/fabric | Search for data fabrics
 *EventApi* | [**get_event**](docs/EventApi.md#get_event) | **GET** /layar/event/{id} | Get event details
 *EventApi* | [**search_events**](docs/EventApi.md#search_events) | **GET** /layar/event | Search for events
+*GptApi* | [**generate**](docs/GptApi.md#generate) | **POST** /layar/gpt/generate | Call Vyasa LLM to generate a system message and return the corresponding sources used
 *GroupApi* | [**group_terms**](docs/GroupApi.md#group_terms) | **POST** /layar/group/terms | group similar terms (eg, &#x27;Vyasa Analytics&#x27; and &#x27;Vyasa Analytics, LLC&#x27;)
+*JobApi* | [**get_job**](docs/JobApi.md#get_job) | **GET** /layar/job/{id} | Get job details
 *LiveSourceApi* | [**create_feeds**](docs/LiveSourceApi.md#create_feeds) | **POST** /layar/liveSource | Create a new connector
 *LiveSourceApi* | [**create_feeds_from_column**](docs/LiveSourceApi.md#create_feeds_from_column) | **POST** /layar/liveSource/createFeedsFromColumn | Create new RSS connectors from a spreadsheet of URLs
 *LiveSourceApi* | [**delete_feed**](docs/LiveSourceApi.md#delete_feed) | **DELETE** /layar/liveSource/{id} | Delete a connector
@@ -142,6 +144,7 @@ Class | Method | HTTP request | Description
 *ProjectApi* | [**search_projects**](docs/ProjectApi.md#search_projects) | **GET** /layar/project | Search for projects
 *ProjectApi* | [**update_project**](docs/ProjectApi.md#update_project) | **PUT** /layar/project/{id} | Update project details
 *ProjectComputationApi* | [**cancel_computation**](docs/ProjectComputationApi.md#cancel_computation) | **POST** /layar/projectComputation/{id}/cancel | Cancel a project computation job (hard stop)
+*ProjectComputationApi* | [**download**](docs/ProjectComputationApi.md#download) | **GET** /layar/projectComputation/{id}/download | Download computation job document based on id and url
 *ProjectComputationApi* | [**download_computation**](docs/ProjectComputationApi.md#download_computation) | **GET** /layar/projectComputation/{id}/downloadZipResults | Download computation job documents as zip file
 *ProjectComputationApi* | [**download_logs**](docs/ProjectComputationApi.md#download_logs) | **GET** /layar/projectComputation/{id}/downloadLogs | Download all computation job logs
 *ProjectComputationApi* | [**get_logs**](docs/ProjectComputationApi.md#get_logs) | **GET** /layar/projectComputation/{id}/logs | Retrieve logs for computation job
@@ -176,8 +179,7 @@ Class | Method | HTTP request | Description
 *SavedListApi* | [**remove_items**](docs/SavedListApi.md#remove_items) | **DELETE** /layar/savedList/{id}/removeItem | Remove items from a Layar set
 *SavedListApi* | [**search_saved_list**](docs/SavedListApi.md#search_saved_list) | **GET** /layar/savedList | Search for sets
 *SavedListApi* | [**update_saved_list**](docs/SavedListApi.md#update_saved_list) | **PUT** /layar/savedList/{id} | Update set details
-*SmilesApi* | [**create_tox_csv**](docs/SmilesApi.md#create_tox_csv) | **POST** /layar/smiles/createTox21CSV | Run the Tox21 model and download the results to a CSV
-*SmilesApi* | [**create_tox_som**](docs/SmilesApi.md#create_tox_som) | **POST** /layar/smiles/createTox21SOM | Run the Tox21 model and download the results to a SOM
+*SmilesApi* | [**similarity_vector_search**](docs/SmilesApi.md#similarity_vector_search) | **POST** /layar/smiles/similarity | Search similar compounds with a list of smiles
 *SourceDocumentApi* | [**add_annotation**](docs/SourceDocumentApi.md#add_annotation) | **POST** /layar/sourceDocument/{id}/addAnnotation | Add an annotation to a document
 *SourceDocumentApi* | [**add_annotations**](docs/SourceDocumentApi.md#add_annotations) | **POST** /layar/sourceDocument/{id}/addAnnotations | Add a list of annotations to a document
 *SourceDocumentApi* | [**add_column**](docs/SourceDocumentApi.md#add_column) | **PUT** /layar/sourceDocument/{id}/addColumn | Add a column to a table document
@@ -218,7 +220,7 @@ Class | Method | HTTP request | Description
 *StatementApi* | [**named_entity_tag**](docs/StatementApi.md#named_entity_tag) | **POST** /layar/statement/{id}/namedEntity/tag | Tag named entities within specific columns of a table
 *StatementApi* | [**search_statements**](docs/StatementApi.md#search_statements) | **POST** /layar/statement/search | Search for statements
 *StatementApi* | [**update_statement**](docs/StatementApi.md#update_statement) | **PUT** /layar/statement/{id} | Update statement details
-*StatusApi* | [**get_app_status**](docs/StatusApi.md#get_app_status) | **GET** /layar/app | Get app uptime status
+*StatusApi* | [**get_app_status**](docs/StatusApi.md#get_app_status) | **GET** /layar/app | Get app availability status
 *VectorSimilarityApi* | [**create_vector_similarity**](docs/VectorSimilarityApi.md#create_vector_similarity) | **POST** /layar/vectorSimilarity | Create a new vector embedding
 *VectorSimilarityApi* | [**get_similar_statements**](docs/VectorSimilarityApi.md#get_similar_statements) | **GET** /layar/vectorSimilarity/{similarityRequestId}/statements | Find similar statements by statement ID
 *VectorSimilarityApi* | [**get_vector_similarity**](docs/VectorSimilarityApi.md#get_vector_similarity) | **GET** /layar/vectorSimilarity/{id} | Get vector details

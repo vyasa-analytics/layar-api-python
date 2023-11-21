@@ -32,7 +32,7 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
-body = layar_api.OntologyTerm() # OntologyTerm | 
+body = layar_api.OntologyTerm1() # OntologyTerm1 | 
 
 try:
     # Create a new ontology term
@@ -46,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OntologyTerm**](OntologyTerm.md)|  | 
+ **body** | [**OntologyTerm1**](OntologyTerm1.md)|  | 
 
 ### Return type
 
@@ -198,7 +198,7 @@ to_date = '2013-10-20' # date | end of date range to return (optional)
 db_ids = ['db_ids_example'] # list[str] | limit results to terms with specific IDs (optional)
 document_ids = ['document_ids_example'] # list[str] | limit results to terms from specific documents (optional)
 id_paths = ['id_paths_example'] # list[str] | limit results to terms with specific ID paths (optional)
-include_obsolete = true # bool | include obsolte terms in the results (optional)
+include_obsolete = true # bool | include obsolete terms in the results (optional)
 name_paths = ['name_paths_example'] # list[str] | limit results to terms with specific name paths (optional)
 path_traversal = 'path_traversal_example' # str | limit results based on a specific traversal strategy when restricting by idPath or namePath (optional)
 terms = ['terms_example'] # list[str] | limit results to terms matching the supplied terms (in either name or synonym) (optional)
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
  **db_ids** | [**list[str]**](str.md)| limit results to terms with specific IDs | [optional] 
  **document_ids** | [**list[str]**](str.md)| limit results to terms from specific documents | [optional] 
  **id_paths** | [**list[str]**](str.md)| limit results to terms with specific ID paths | [optional] 
- **include_obsolete** | **bool**| include obsolte terms in the results | [optional] 
+ **include_obsolete** | **bool**| include obsolete terms in the results | [optional] 
  **name_paths** | [**list[str]**](str.md)| limit results to terms with specific name paths | [optional] 
  **path_traversal** | **str**| limit results based on a specific traversal strategy when restricting by idPath or namePath | [optional] 
  **terms** | [**list[str]**](str.md)| limit results to terms matching the supplied terms (in either name or synonym) | [optional] 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reconcile**
-> ReconcileToOntologyResult reconcile(body=body)
+> ReconcileToOntologyResult reconcile(body)
 
 
 
@@ -265,10 +265,10 @@ configuration.access_token = configuration.fetch_access_token('CLIENT_ID', 'CLIE
 
 # create an instance of the api class
 api_instance = layar_api.OntologyTermApi(layar_api.ApiClient(configuration))
-body = layar_api.ReconcileToOntologyCommand() # ReconcileToOntologyCommand |  (optional)
+body = layar_api.ReconcileToOntologyCommand() # ReconcileToOntologyCommand | 
 
 try:
-    api_response = api_instance.reconcile(body=body)
+    api_response = api_instance.reconcile(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyTermApi->reconcile: %s\n" % e)
@@ -278,7 +278,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReconcileToOntologyCommand**](ReconcileToOntologyCommand.md)|  | [optional] 
+ **body** | [**ReconcileToOntologyCommand**](ReconcileToOntologyCommand.md)|  | 
 
 ### Return type
 

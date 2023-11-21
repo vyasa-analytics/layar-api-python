@@ -28,20 +28,14 @@ class VectorSimilarityRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created_by_user': 'int',
-        'date_indexed': 'datetime',
-        'id': 'str',
         'name': 'str',
         'query_string': 'str',
         'raw_text_vector': 'list[float]',
-        'status': 'str',
+        'status': 'JobStatus',
         'vector_similarity_type': 'str'
     }
 
     attribute_map = {
-        'created_by_user': 'createdByUser',
-        'date_indexed': 'dateIndexed',
-        'id': 'id',
         'name': 'name',
         'query_string': 'queryString',
         'raw_text_vector': 'rawTextVector',
@@ -49,23 +43,14 @@ class VectorSimilarityRequest(object):
         'vector_similarity_type': 'vectorSimilarityType'
     }
 
-    def __init__(self, created_by_user=None, date_indexed=None, id=None, name=None, query_string=None, raw_text_vector=None, status=None, vector_similarity_type=None):  # noqa: E501
+    def __init__(self, name=None, query_string=None, raw_text_vector=None, status=None, vector_similarity_type=None):  # noqa: E501
         """VectorSimilarityRequest - a model defined in Swagger"""  # noqa: E501
-        self._created_by_user = None
-        self._date_indexed = None
-        self._id = None
         self._name = None
         self._query_string = None
         self._raw_text_vector = None
         self._status = None
         self._vector_similarity_type = None
         self.discriminator = None
-        if created_by_user is not None:
-            self.created_by_user = created_by_user
-        if date_indexed is not None:
-            self.date_indexed = date_indexed
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if query_string is not None:
@@ -76,69 +61,6 @@ class VectorSimilarityRequest(object):
             self.status = status
         if vector_similarity_type is not None:
             self.vector_similarity_type = vector_similarity_type
-
-    @property
-    def created_by_user(self):
-        """Gets the created_by_user of this VectorSimilarityRequest.  # noqa: E501
-
-
-        :return: The created_by_user of this VectorSimilarityRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._created_by_user
-
-    @created_by_user.setter
-    def created_by_user(self, created_by_user):
-        """Sets the created_by_user of this VectorSimilarityRequest.
-
-
-        :param created_by_user: The created_by_user of this VectorSimilarityRequest.  # noqa: E501
-        :type: int
-        """
-
-        self._created_by_user = created_by_user
-
-    @property
-    def date_indexed(self):
-        """Gets the date_indexed of this VectorSimilarityRequest.  # noqa: E501
-
-
-        :return: The date_indexed of this VectorSimilarityRequest.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date_indexed
-
-    @date_indexed.setter
-    def date_indexed(self, date_indexed):
-        """Sets the date_indexed of this VectorSimilarityRequest.
-
-
-        :param date_indexed: The date_indexed of this VectorSimilarityRequest.  # noqa: E501
-        :type: datetime
-        """
-
-        self._date_indexed = date_indexed
-
-    @property
-    def id(self):
-        """Gets the id of this VectorSimilarityRequest.  # noqa: E501
-
-
-        :return: The id of this VectorSimilarityRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this VectorSimilarityRequest.
-
-
-        :param id: The id of this VectorSimilarityRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def name(self):
@@ -209,7 +131,7 @@ class VectorSimilarityRequest(object):
 
 
         :return: The status of this VectorSimilarityRequest.  # noqa: E501
-        :rtype: str
+        :rtype: JobStatus
         """
         return self._status
 
@@ -219,14 +141,8 @@ class VectorSimilarityRequest(object):
 
 
         :param status: The status of this VectorSimilarityRequest.  # noqa: E501
-        :type: str
+        :type: JobStatus
         """
-        allowed_values = ["RUNNING", "COMPLETE", "ERROR"]  # noqa: E501
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

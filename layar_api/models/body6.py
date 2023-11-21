@@ -28,50 +28,184 @@ class Body6(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file': 'str',
         'name': 'str',
-        'cortex_document_type': 'str'
+        'date_published': 'datetime',
+        'assigned_user_count': 'int',
+        'assigned_user_ids': 'list[int]',
+        'batch_grouping_key': 'str',
+        'best_answers': 'list[str]',
+        'complete': 'bool',
+        'concept_types': 'list[str]',
+        'curated_answer_user_count': 'int',
+        'curated_answer_total_count': 'int',
+        'curated_answer_unique_count': 'int',
+        'curation_percent_complete': 'float',
+        'curation_discord': 'bool',
+        'deep_learning_model_id': 'str',
+        'data_providers': 'str',
+        'field_to_analyze': 'str',
+        'has_answers': 'bool',
+        'job_id': 'str',
+        'minimum_requested_answers': 'int',
+        'moderated': 'bool',
+        'moderator_user_ids': 'list[int]',
+        'number_of_best_answers': 'int',
+        'query_string': 'str',
+        'question_key': 'str',
+        'search': 'ParagraphQuestionSearchCommand',
+        'search_command_json_string': 'str',
+        'section_keywords': 'list[str]',
+        'single_doc_question_document_id': 'str',
+        'status': 'str',
+        'template': 'str',
+        'truncate_text_to_length': 'int',
+        'type_of_search': 'QuestionAnswerTypeOfSearch',
+        'user_curations': 'list[UserCuration]',
+        'advanced_params': 'object'
     }
 
     attribute_map = {
-        'file': 'file',
         'name': 'name',
-        'cortex_document_type': 'cortexDocumentType'
+        'date_published': 'datePublished',
+        'assigned_user_count': 'assignedUserCount',
+        'assigned_user_ids': 'assignedUserIds',
+        'batch_grouping_key': 'batchGroupingKey',
+        'best_answers': 'bestAnswers',
+        'complete': 'complete',
+        'concept_types': 'conceptTypes',
+        'curated_answer_user_count': 'curatedAnswerUserCount',
+        'curated_answer_total_count': 'curatedAnswerTotalCount',
+        'curated_answer_unique_count': 'curatedAnswerUniqueCount',
+        'curation_percent_complete': 'curationPercentComplete',
+        'curation_discord': 'curationDiscord',
+        'deep_learning_model_id': 'deepLearningModelId',
+        'data_providers': 'dataProviders',
+        'field_to_analyze': 'fieldToAnalyze',
+        'has_answers': 'hasAnswers',
+        'job_id': 'jobId',
+        'minimum_requested_answers': 'minimumRequestedAnswers',
+        'moderated': 'moderated',
+        'moderator_user_ids': 'moderatorUserIds',
+        'number_of_best_answers': 'numberOfBestAnswers',
+        'query_string': 'queryString',
+        'question_key': 'questionKey',
+        'search': 'search',
+        'search_command_json_string': 'searchCommandJsonString',
+        'section_keywords': 'sectionKeywords',
+        'single_doc_question_document_id': 'singleDocQuestionDocumentId',
+        'status': 'status',
+        'template': 'template',
+        'truncate_text_to_length': 'truncateTextToLength',
+        'type_of_search': 'typeOfSearch',
+        'user_curations': 'userCurations',
+        'advanced_params': 'advancedParams'
     }
 
-    def __init__(self, file=None, name=None, cortex_document_type=None):  # noqa: E501
+    def __init__(self, name=None, date_published=None, assigned_user_count=None, assigned_user_ids=None, batch_grouping_key=None, best_answers=None, complete=None, concept_types=None, curated_answer_user_count=None, curated_answer_total_count=None, curated_answer_unique_count=None, curation_percent_complete=None, curation_discord=None, deep_learning_model_id=None, data_providers=None, field_to_analyze=None, has_answers=None, job_id=None, minimum_requested_answers=None, moderated=None, moderator_user_ids=None, number_of_best_answers=None, query_string=None, question_key=None, search=None, search_command_json_string=None, section_keywords=None, single_doc_question_document_id=None, status=None, template=None, truncate_text_to_length=None, type_of_search=None, user_curations=None, advanced_params=None):  # noqa: E501
         """Body6 - a model defined in Swagger"""  # noqa: E501
-        self._file = None
         self._name = None
-        self._cortex_document_type = None
+        self._date_published = None
+        self._assigned_user_count = None
+        self._assigned_user_ids = None
+        self._batch_grouping_key = None
+        self._best_answers = None
+        self._complete = None
+        self._concept_types = None
+        self._curated_answer_user_count = None
+        self._curated_answer_total_count = None
+        self._curated_answer_unique_count = None
+        self._curation_percent_complete = None
+        self._curation_discord = None
+        self._deep_learning_model_id = None
+        self._data_providers = None
+        self._field_to_analyze = None
+        self._has_answers = None
+        self._job_id = None
+        self._minimum_requested_answers = None
+        self._moderated = None
+        self._moderator_user_ids = None
+        self._number_of_best_answers = None
+        self._query_string = None
+        self._question_key = None
+        self._search = None
+        self._search_command_json_string = None
+        self._section_keywords = None
+        self._single_doc_question_document_id = None
+        self._status = None
+        self._template = None
+        self._truncate_text_to_length = None
+        self._type_of_search = None
+        self._user_curations = None
+        self._advanced_params = None
         self.discriminator = None
-        if file is not None:
-            self.file = file
         if name is not None:
             self.name = name
-        if cortex_document_type is not None:
-            self.cortex_document_type = cortex_document_type
-
-    @property
-    def file(self):
-        """Gets the file of this Body6.  # noqa: E501
-
-
-        :return: The file of this Body6.  # noqa: E501
-        :rtype: str
-        """
-        return self._file
-
-    @file.setter
-    def file(self, file):
-        """Sets the file of this Body6.
-
-
-        :param file: The file of this Body6.  # noqa: E501
-        :type: str
-        """
-
-        self._file = file
+        if date_published is not None:
+            self.date_published = date_published
+        if assigned_user_count is not None:
+            self.assigned_user_count = assigned_user_count
+        if assigned_user_ids is not None:
+            self.assigned_user_ids = assigned_user_ids
+        if batch_grouping_key is not None:
+            self.batch_grouping_key = batch_grouping_key
+        if best_answers is not None:
+            self.best_answers = best_answers
+        if complete is not None:
+            self.complete = complete
+        if concept_types is not None:
+            self.concept_types = concept_types
+        if curated_answer_user_count is not None:
+            self.curated_answer_user_count = curated_answer_user_count
+        if curated_answer_total_count is not None:
+            self.curated_answer_total_count = curated_answer_total_count
+        if curated_answer_unique_count is not None:
+            self.curated_answer_unique_count = curated_answer_unique_count
+        if curation_percent_complete is not None:
+            self.curation_percent_complete = curation_percent_complete
+        if curation_discord is not None:
+            self.curation_discord = curation_discord
+        if deep_learning_model_id is not None:
+            self.deep_learning_model_id = deep_learning_model_id
+        if data_providers is not None:
+            self.data_providers = data_providers
+        if field_to_analyze is not None:
+            self.field_to_analyze = field_to_analyze
+        if has_answers is not None:
+            self.has_answers = has_answers
+        if job_id is not None:
+            self.job_id = job_id
+        if minimum_requested_answers is not None:
+            self.minimum_requested_answers = minimum_requested_answers
+        if moderated is not None:
+            self.moderated = moderated
+        if moderator_user_ids is not None:
+            self.moderator_user_ids = moderator_user_ids
+        if number_of_best_answers is not None:
+            self.number_of_best_answers = number_of_best_answers
+        if query_string is not None:
+            self.query_string = query_string
+        if question_key is not None:
+            self.question_key = question_key
+        if search is not None:
+            self.search = search
+        if search_command_json_string is not None:
+            self.search_command_json_string = search_command_json_string
+        if section_keywords is not None:
+            self.section_keywords = section_keywords
+        if single_doc_question_document_id is not None:
+            self.single_doc_question_document_id = single_doc_question_document_id
+        if status is not None:
+            self.status = status
+        if template is not None:
+            self.template = template
+        if truncate_text_to_length is not None:
+            self.truncate_text_to_length = truncate_text_to_length
+        if type_of_search is not None:
+            self.type_of_search = type_of_search
+        if user_curations is not None:
+            self.user_curations = user_curations
+        if advanced_params is not None:
+            self.advanced_params = advanced_params
 
     @property
     def name(self):
@@ -95,31 +229,703 @@ class Body6(object):
         self._name = name
 
     @property
-    def cortex_document_type(self):
-        """Gets the cortex_document_type of this Body6.  # noqa: E501
+    def date_published(self):
+        """Gets the date_published of this Body6.  # noqa: E501
 
 
-        :return: The cortex_document_type of this Body6.  # noqa: E501
+        :return: The date_published of this Body6.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_published
+
+    @date_published.setter
+    def date_published(self, date_published):
+        """Sets the date_published of this Body6.
+
+
+        :param date_published: The date_published of this Body6.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_published = date_published
+
+    @property
+    def assigned_user_count(self):
+        """Gets the assigned_user_count of this Body6.  # noqa: E501
+
+
+        :return: The assigned_user_count of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._assigned_user_count
+
+    @assigned_user_count.setter
+    def assigned_user_count(self, assigned_user_count):
+        """Sets the assigned_user_count of this Body6.
+
+
+        :param assigned_user_count: The assigned_user_count of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._assigned_user_count = assigned_user_count
+
+    @property
+    def assigned_user_ids(self):
+        """Gets the assigned_user_ids of this Body6.  # noqa: E501
+
+
+        :return: The assigned_user_ids of this Body6.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._assigned_user_ids
+
+    @assigned_user_ids.setter
+    def assigned_user_ids(self, assigned_user_ids):
+        """Sets the assigned_user_ids of this Body6.
+
+
+        :param assigned_user_ids: The assigned_user_ids of this Body6.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._assigned_user_ids = assigned_user_ids
+
+    @property
+    def batch_grouping_key(self):
+        """Gets the batch_grouping_key of this Body6.  # noqa: E501
+
+
+        :return: The batch_grouping_key of this Body6.  # noqa: E501
         :rtype: str
         """
-        return self._cortex_document_type
+        return self._batch_grouping_key
 
-    @cortex_document_type.setter
-    def cortex_document_type(self, cortex_document_type):
-        """Sets the cortex_document_type of this Body6.
+    @batch_grouping_key.setter
+    def batch_grouping_key(self, batch_grouping_key):
+        """Sets the batch_grouping_key of this Body6.
 
 
-        :param cortex_document_type: The cortex_document_type of this Body6.  # noqa: E501
+        :param batch_grouping_key: The batch_grouping_key of this Body6.  # noqa: E501
         :type: str
         """
-        allowed_values = ["IMAGE", "DOCUMENT", "TABLE"]  # noqa: E501
-        if cortex_document_type not in allowed_values:
+
+        self._batch_grouping_key = batch_grouping_key
+
+    @property
+    def best_answers(self):
+        """Gets the best_answers of this Body6.  # noqa: E501
+
+
+        :return: The best_answers of this Body6.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._best_answers
+
+    @best_answers.setter
+    def best_answers(self, best_answers):
+        """Sets the best_answers of this Body6.
+
+
+        :param best_answers: The best_answers of this Body6.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._best_answers = best_answers
+
+    @property
+    def complete(self):
+        """Gets the complete of this Body6.  # noqa: E501
+
+
+        :return: The complete of this Body6.  # noqa: E501
+        :rtype: bool
+        """
+        return self._complete
+
+    @complete.setter
+    def complete(self, complete):
+        """Sets the complete of this Body6.
+
+
+        :param complete: The complete of this Body6.  # noqa: E501
+        :type: bool
+        """
+
+        self._complete = complete
+
+    @property
+    def concept_types(self):
+        """Gets the concept_types of this Body6.  # noqa: E501
+
+
+        :return: The concept_types of this Body6.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._concept_types
+
+    @concept_types.setter
+    def concept_types(self, concept_types):
+        """Sets the concept_types of this Body6.
+
+
+        :param concept_types: The concept_types of this Body6.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._concept_types = concept_types
+
+    @property
+    def curated_answer_user_count(self):
+        """Gets the curated_answer_user_count of this Body6.  # noqa: E501
+
+
+        :return: The curated_answer_user_count of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._curated_answer_user_count
+
+    @curated_answer_user_count.setter
+    def curated_answer_user_count(self, curated_answer_user_count):
+        """Sets the curated_answer_user_count of this Body6.
+
+
+        :param curated_answer_user_count: The curated_answer_user_count of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._curated_answer_user_count = curated_answer_user_count
+
+    @property
+    def curated_answer_total_count(self):
+        """Gets the curated_answer_total_count of this Body6.  # noqa: E501
+
+
+        :return: The curated_answer_total_count of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._curated_answer_total_count
+
+    @curated_answer_total_count.setter
+    def curated_answer_total_count(self, curated_answer_total_count):
+        """Sets the curated_answer_total_count of this Body6.
+
+
+        :param curated_answer_total_count: The curated_answer_total_count of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._curated_answer_total_count = curated_answer_total_count
+
+    @property
+    def curated_answer_unique_count(self):
+        """Gets the curated_answer_unique_count of this Body6.  # noqa: E501
+
+
+        :return: The curated_answer_unique_count of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._curated_answer_unique_count
+
+    @curated_answer_unique_count.setter
+    def curated_answer_unique_count(self, curated_answer_unique_count):
+        """Sets the curated_answer_unique_count of this Body6.
+
+
+        :param curated_answer_unique_count: The curated_answer_unique_count of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._curated_answer_unique_count = curated_answer_unique_count
+
+    @property
+    def curation_percent_complete(self):
+        """Gets the curation_percent_complete of this Body6.  # noqa: E501
+
+
+        :return: The curation_percent_complete of this Body6.  # noqa: E501
+        :rtype: float
+        """
+        return self._curation_percent_complete
+
+    @curation_percent_complete.setter
+    def curation_percent_complete(self, curation_percent_complete):
+        """Sets the curation_percent_complete of this Body6.
+
+
+        :param curation_percent_complete: The curation_percent_complete of this Body6.  # noqa: E501
+        :type: float
+        """
+
+        self._curation_percent_complete = curation_percent_complete
+
+    @property
+    def curation_discord(self):
+        """Gets the curation_discord of this Body6.  # noqa: E501
+
+
+        :return: The curation_discord of this Body6.  # noqa: E501
+        :rtype: bool
+        """
+        return self._curation_discord
+
+    @curation_discord.setter
+    def curation_discord(self, curation_discord):
+        """Sets the curation_discord of this Body6.
+
+
+        :param curation_discord: The curation_discord of this Body6.  # noqa: E501
+        :type: bool
+        """
+
+        self._curation_discord = curation_discord
+
+    @property
+    def deep_learning_model_id(self):
+        """Gets the deep_learning_model_id of this Body6.  # noqa: E501
+
+
+        :return: The deep_learning_model_id of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_learning_model_id
+
+    @deep_learning_model_id.setter
+    def deep_learning_model_id(self, deep_learning_model_id):
+        """Sets the deep_learning_model_id of this Body6.
+
+
+        :param deep_learning_model_id: The deep_learning_model_id of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_learning_model_id = deep_learning_model_id
+
+    @property
+    def data_providers(self):
+        """Gets the data_providers of this Body6.  # noqa: E501
+
+
+        :return: The data_providers of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._data_providers
+
+    @data_providers.setter
+    def data_providers(self, data_providers):
+        """Sets the data_providers of this Body6.
+
+
+        :param data_providers: The data_providers of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._data_providers = data_providers
+
+    @property
+    def field_to_analyze(self):
+        """Gets the field_to_analyze of this Body6.  # noqa: E501
+
+
+        :return: The field_to_analyze of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._field_to_analyze
+
+    @field_to_analyze.setter
+    def field_to_analyze(self, field_to_analyze):
+        """Sets the field_to_analyze of this Body6.
+
+
+        :param field_to_analyze: The field_to_analyze of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._field_to_analyze = field_to_analyze
+
+    @property
+    def has_answers(self):
+        """Gets the has_answers of this Body6.  # noqa: E501
+
+
+        :return: The has_answers of this Body6.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_answers
+
+    @has_answers.setter
+    def has_answers(self, has_answers):
+        """Sets the has_answers of this Body6.
+
+
+        :param has_answers: The has_answers of this Body6.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_answers = has_answers
+
+    @property
+    def job_id(self):
+        """Gets the job_id of this Body6.  # noqa: E501
+
+
+        :return: The job_id of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._job_id
+
+    @job_id.setter
+    def job_id(self, job_id):
+        """Sets the job_id of this Body6.
+
+
+        :param job_id: The job_id of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._job_id = job_id
+
+    @property
+    def minimum_requested_answers(self):
+        """Gets the minimum_requested_answers of this Body6.  # noqa: E501
+
+
+        :return: The minimum_requested_answers of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._minimum_requested_answers
+
+    @minimum_requested_answers.setter
+    def minimum_requested_answers(self, minimum_requested_answers):
+        """Sets the minimum_requested_answers of this Body6.
+
+
+        :param minimum_requested_answers: The minimum_requested_answers of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._minimum_requested_answers = minimum_requested_answers
+
+    @property
+    def moderated(self):
+        """Gets the moderated of this Body6.  # noqa: E501
+
+
+        :return: The moderated of this Body6.  # noqa: E501
+        :rtype: bool
+        """
+        return self._moderated
+
+    @moderated.setter
+    def moderated(self, moderated):
+        """Sets the moderated of this Body6.
+
+
+        :param moderated: The moderated of this Body6.  # noqa: E501
+        :type: bool
+        """
+
+        self._moderated = moderated
+
+    @property
+    def moderator_user_ids(self):
+        """Gets the moderator_user_ids of this Body6.  # noqa: E501
+
+
+        :return: The moderator_user_ids of this Body6.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._moderator_user_ids
+
+    @moderator_user_ids.setter
+    def moderator_user_ids(self, moderator_user_ids):
+        """Sets the moderator_user_ids of this Body6.
+
+
+        :param moderator_user_ids: The moderator_user_ids of this Body6.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._moderator_user_ids = moderator_user_ids
+
+    @property
+    def number_of_best_answers(self):
+        """Gets the number_of_best_answers of this Body6.  # noqa: E501
+
+
+        :return: The number_of_best_answers of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_best_answers
+
+    @number_of_best_answers.setter
+    def number_of_best_answers(self, number_of_best_answers):
+        """Sets the number_of_best_answers of this Body6.
+
+
+        :param number_of_best_answers: The number_of_best_answers of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_best_answers = number_of_best_answers
+
+    @property
+    def query_string(self):
+        """Gets the query_string of this Body6.  # noqa: E501
+
+
+        :return: The query_string of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._query_string
+
+    @query_string.setter
+    def query_string(self, query_string):
+        """Sets the query_string of this Body6.
+
+
+        :param query_string: The query_string of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._query_string = query_string
+
+    @property
+    def question_key(self):
+        """Gets the question_key of this Body6.  # noqa: E501
+
+
+        :return: The question_key of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._question_key
+
+    @question_key.setter
+    def question_key(self, question_key):
+        """Sets the question_key of this Body6.
+
+
+        :param question_key: The question_key of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._question_key = question_key
+
+    @property
+    def search(self):
+        """Gets the search of this Body6.  # noqa: E501
+
+
+        :return: The search of this Body6.  # noqa: E501
+        :rtype: ParagraphQuestionSearchCommand
+        """
+        return self._search
+
+    @search.setter
+    def search(self, search):
+        """Sets the search of this Body6.
+
+
+        :param search: The search of this Body6.  # noqa: E501
+        :type: ParagraphQuestionSearchCommand
+        """
+
+        self._search = search
+
+    @property
+    def search_command_json_string(self):
+        """Gets the search_command_json_string of this Body6.  # noqa: E501
+
+
+        :return: The search_command_json_string of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._search_command_json_string
+
+    @search_command_json_string.setter
+    def search_command_json_string(self, search_command_json_string):
+        """Sets the search_command_json_string of this Body6.
+
+
+        :param search_command_json_string: The search_command_json_string of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._search_command_json_string = search_command_json_string
+
+    @property
+    def section_keywords(self):
+        """Gets the section_keywords of this Body6.  # noqa: E501
+
+
+        :return: The section_keywords of this Body6.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._section_keywords
+
+    @section_keywords.setter
+    def section_keywords(self, section_keywords):
+        """Sets the section_keywords of this Body6.
+
+
+        :param section_keywords: The section_keywords of this Body6.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._section_keywords = section_keywords
+
+    @property
+    def single_doc_question_document_id(self):
+        """Gets the single_doc_question_document_id of this Body6.  # noqa: E501
+
+
+        :return: The single_doc_question_document_id of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._single_doc_question_document_id
+
+    @single_doc_question_document_id.setter
+    def single_doc_question_document_id(self, single_doc_question_document_id):
+        """Sets the single_doc_question_document_id of this Body6.
+
+
+        :param single_doc_question_document_id: The single_doc_question_document_id of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._single_doc_question_document_id = single_doc_question_document_id
+
+    @property
+    def status(self):
+        """Gets the status of this Body6.  # noqa: E501
+
+
+        :return: The status of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Body6.
+
+
+        :param status: The status of this Body6.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["QUEUED", "COMPLETE", "ERROR"]  # noqa: E501
+        if status not in allowed_values:
             raise ValueError(
-                "Invalid value for `cortex_document_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(cortex_document_type, allowed_values)
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
             )
 
-        self._cortex_document_type = cortex_document_type
+        self._status = status
+
+    @property
+    def template(self):
+        """Gets the template of this Body6.  # noqa: E501
+
+
+        :return: The template of this Body6.  # noqa: E501
+        :rtype: str
+        """
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        """Sets the template of this Body6.
+
+
+        :param template: The template of this Body6.  # noqa: E501
+        :type: str
+        """
+
+        self._template = template
+
+    @property
+    def truncate_text_to_length(self):
+        """Gets the truncate_text_to_length of this Body6.  # noqa: E501
+
+
+        :return: The truncate_text_to_length of this Body6.  # noqa: E501
+        :rtype: int
+        """
+        return self._truncate_text_to_length
+
+    @truncate_text_to_length.setter
+    def truncate_text_to_length(self, truncate_text_to_length):
+        """Sets the truncate_text_to_length of this Body6.
+
+
+        :param truncate_text_to_length: The truncate_text_to_length of this Body6.  # noqa: E501
+        :type: int
+        """
+
+        self._truncate_text_to_length = truncate_text_to_length
+
+    @property
+    def type_of_search(self):
+        """Gets the type_of_search of this Body6.  # noqa: E501
+
+
+        :return: The type_of_search of this Body6.  # noqa: E501
+        :rtype: QuestionAnswerTypeOfSearch
+        """
+        return self._type_of_search
+
+    @type_of_search.setter
+    def type_of_search(self, type_of_search):
+        """Sets the type_of_search of this Body6.
+
+
+        :param type_of_search: The type_of_search of this Body6.  # noqa: E501
+        :type: QuestionAnswerTypeOfSearch
+        """
+
+        self._type_of_search = type_of_search
+
+    @property
+    def user_curations(self):
+        """Gets the user_curations of this Body6.  # noqa: E501
+
+
+        :return: The user_curations of this Body6.  # noqa: E501
+        :rtype: list[UserCuration]
+        """
+        return self._user_curations
+
+    @user_curations.setter
+    def user_curations(self, user_curations):
+        """Sets the user_curations of this Body6.
+
+
+        :param user_curations: The user_curations of this Body6.  # noqa: E501
+        :type: list[UserCuration]
+        """
+
+        self._user_curations = user_curations
+
+    @property
+    def advanced_params(self):
+        """Gets the advanced_params of this Body6.  # noqa: E501
+
+
+        :return: The advanced_params of this Body6.  # noqa: E501
+        :rtype: object
+        """
+        return self._advanced_params
+
+    @advanced_params.setter
+    def advanced_params(self, advanced_params):
+        """Sets the advanced_params of this Body6.
+
+
+        :param advanced_params: The advanced_params of this Body6.  # noqa: E501
+        :type: object
+        """
+
+        self._advanced_params = advanced_params
 
     def to_dict(self):
         """Returns the model properties as a dict"""

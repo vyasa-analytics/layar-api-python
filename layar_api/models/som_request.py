@@ -28,19 +28,24 @@ class SOMRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'smiles': 'list[str]'
+        'smiles': 'list[str]',
+        'jaccard_cutoff': 'float'
     }
 
     attribute_map = {
-        'smiles': 'smiles'
+        'smiles': 'smiles',
+        'jaccard_cutoff': 'jaccard_cutoff'
     }
 
-    def __init__(self, smiles=None):  # noqa: E501
+    def __init__(self, smiles=None, jaccard_cutoff=None):  # noqa: E501
         """SOMRequest - a model defined in Swagger"""  # noqa: E501
         self._smiles = None
+        self._jaccard_cutoff = None
         self.discriminator = None
         if smiles is not None:
             self.smiles = smiles
+        if jaccard_cutoff is not None:
+            self.jaccard_cutoff = jaccard_cutoff
 
     @property
     def smiles(self):
@@ -62,6 +67,27 @@ class SOMRequest(object):
         """
 
         self._smiles = smiles
+
+    @property
+    def jaccard_cutoff(self):
+        """Gets the jaccard_cutoff of this SOMRequest.  # noqa: E501
+
+
+        :return: The jaccard_cutoff of this SOMRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._jaccard_cutoff
+
+    @jaccard_cutoff.setter
+    def jaccard_cutoff(self, jaccard_cutoff):
+        """Sets the jaccard_cutoff of this SOMRequest.
+
+
+        :param jaccard_cutoff: The jaccard_cutoff of this SOMRequest.  # noqa: E501
+        :type: float
+        """
+
+        self._jaccard_cutoff = jaccard_cutoff
 
     def to_dict(self):
         """Returns the model properties as a dict"""

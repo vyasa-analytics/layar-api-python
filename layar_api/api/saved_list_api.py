@@ -262,7 +262,7 @@ class SavedListApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SavedList body: (required)
+        :param SavedList1 body: (required)
         :param str x_vyasa_client_hint: intended client application UI
         :return: SavedList
                  If the method is called asynchronously,
@@ -285,7 +285,7 @@ class SavedListApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SavedList body: (required)
+        :param SavedList1 body: (required)
         :param str x_vyasa_client_hint: intended client application UI
         :return: SavedList
                  If the method is called asynchronously,
