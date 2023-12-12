@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from layar_api.api.administration_api import AdministrationApi
 from layar_api.api.all_api import AllApi
 from layar_api.api.answer_api import AnswerApi
 from layar_api.api.autocomplete_api import AutocompleteApi
