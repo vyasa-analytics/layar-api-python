@@ -16,7 +16,6 @@ from __future__ import absolute_import
 # import models into model package
 from layar_api.models.add_column_command import AddColumnCommand
 from layar_api.models.add_documents_response import AddDocumentsResponse
-from layar_api.models.all_search_response import AllSearchResponse
 from layar_api.models.annotation import Annotation
 from layar_api.models.annotation1 import Annotation1
 from layar_api.models.annotation2 import Annotation2

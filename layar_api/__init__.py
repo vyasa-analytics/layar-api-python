@@ -16,7 +16,6 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from layar_api.api.administration_api import AdministrationApi
-from layar_api.api.all_api import AllApi
 from layar_api.api.answer_api import AnswerApi
 from layar_api.api.autocomplete_api import AutocompleteApi
 from layar_api.api.compound_api import CompoundApi
@@ -51,7 +50,6 @@ from layar_api.configuration import Configuration
 # import models into sdk package
 from layar_api.models.add_column_command import AddColumnCommand
 from layar_api.models.add_documents_response import AddDocumentsResponse
-from layar_api.models.all_search_response import AllSearchResponse
 from layar_api.models.annotation import Annotation
 from layar_api.models.annotation1 import Annotation1
 from layar_api.models.annotation2 import Annotation2

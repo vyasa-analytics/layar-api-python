@@ -53,7 +53,6 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AdministrationApi* | [**debug_logging**](docs/AdministrationApi.md#debug_logging) | **POST** /admin/debugLogging | temporarily (15m) enable DEBUG level logging
 *AdministrationApi* | [**diagnostics**](docs/AdministrationApi.md#diagnostics) | **GET** /admin/diagnostics | generate an encrypted diagnostics file
-*AllApi* | [**search_all**](docs/AllApi.md#search_all) | **GET** /layar/all | Search across all domain objects
 *AnswerApi* | [**get_answer**](docs/AnswerApi.md#get_answer) | **GET** /layar/answer/{id} | Get answer details
 *AnswerApi* | [**layar_answer_get**](docs/AnswerApi.md#layar_answer_get) | **GET** /layar/answer | 
 *AnswerApi* | [**search_answer**](docs/AnswerApi.md#search_answer) | **POST** /layar/answer/search | Search for answers
