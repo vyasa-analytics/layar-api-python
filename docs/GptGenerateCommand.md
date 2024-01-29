@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **conversation** | [**LayargptgenerateConversation**](LayargptgenerateConversation.md) |  | [optional] 
 **summarize** | [**LayargptgenerateConversation**](LayargptgenerateConversation.md) |  | [optional] 
 **prompts** | [**LayargptgeneratePrompts**](LayargptgeneratePrompts.md) |  | [optional] 
+**transient_data** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
