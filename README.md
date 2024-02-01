@@ -1,3 +1,8 @@
+# THIS LIBRARY HAS BEEN DEPRECATED AND IS NO LONGER SUPPORTED. 
+
+**Use of the Layar APIs from within Python should be done via `requests` (or any other suitable HTTP request library). Documentation including examples can be found at https://developer.vyasa.com/**
+
+
 # Layar API Python Client
 
 ## Requirements.
